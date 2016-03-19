@@ -1,0 +1,19 @@
+body {
+    width: 250px;
+    margin: 30px auto;
+    background-color: #FFF7F0;
+}
+
+input {
+    width: 250px;
+}
+
+#display-validation {
+    width: 240px;
+    padding: 5px;
+    display: none;
+}
+
+button {
+    margin-top: 5px;
+}
