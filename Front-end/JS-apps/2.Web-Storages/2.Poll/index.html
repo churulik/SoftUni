@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Poll</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="../jquery-2.2.0.min.js"></script>
+</head>
+<body>
+<form action="" method="post">
+    <div style="text-align: right">Time left: <span id="time"></span></div>
+    <fieldset>
+        <legend>Questions</legend>
+        <section class="question">
+            <h4>What is the most popular website?</h4>
+            <label>
+                <input type="radio" name="q1" required value="YouTube">YouTube
+            </label>
+            <label>
+                <input type="radio" name="q1" value="Google">Google
+            </label>
+            <label>
+                <input type="radio" name="q1" value="Facebook">Facebook
+            </label>
+            <label>
+                <input type="radio" name="q1" value="Yahoo!">Yahoo!
+            </label>
+        </section>
+        <section class="question">
+            <h4>When was Microsoft established?</h4>
+            <label>
+                <input type="radio" name="q2" value="1980" required>1980
+            </label>
+            <label>
+                <input type="radio" name="q2" value="1970">1970
+            </label>
+            <label>
+                <input type="radio" name="q2" value="1975">1975
+            </label>
+            <label>
+                <input type="radio" name="q2" value="1985">1985
+            </label>
+        </section>
+        <section class="question">
+            <h4>Which company is the founder of JavaScript?</h4>
+            <label>
+                <input type="radio" name="q3" value="Netscape" required>Netscape
+            </label>
+            <label>
+                <input type="radio" name="q3" value="Java">Java
+            </label>
+            <label>
+                <input type="radio" name="q3" value="Apple">Apple
+            </label>
+            <label>
+                <input type="radio" name="q3" value="Microsoft">Microsoft
+            </label>
+        </section>
+        <button type="submit" id="submit">Submit</button>
+        <button type="reset" id="reset" class="display-none">Reset</button>
+    </fieldset>
+</form>
+<div id="answers" class="answers display-none">
+    <div id="a1" class="display-none"></div>
+    <div id="a2" class="display-none"></div>
+    <div id="a3" class="display-none"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

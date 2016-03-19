@@ -1,0 +1,19 @@
+label {
+    display: block;
+}
+article {
+    background-color: aliceblue;
+    display: inline-block;
+    border: 1px solid gray;
+    margin-bottom: 5px;
+    width: 200px;
+    padding: 5px;
+}
+ul {
+    padding: 0;
+    text-decoration: none;
+}
+
+nav > ul > li {
+    display: inline-block;
+}

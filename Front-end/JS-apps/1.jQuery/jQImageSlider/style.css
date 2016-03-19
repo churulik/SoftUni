@@ -1,0 +1,20 @@
+.slider {
+    width: 640px;
+    height: 360px;
+    overflow: hidden;
+    margin: 30px auto;
+    background: url("img/loading200.gif") no-repeat center;
+}
+
+.shadow {
+    background: url("img/shadow.png") no-repeat top;
+    width: 864px;
+    height: 144px;
+    margin: -40px auto;
+}
+
+.slider img {
+    width: 640px;
+    height: 360px;
+    display: none;
+}

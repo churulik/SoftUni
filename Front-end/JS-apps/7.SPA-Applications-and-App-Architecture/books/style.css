@@ -1,0 +1,36 @@
+@font-face {
+    font-family: 'Glyphicons Halflings';
+    src: url(libraries/bootstrap/fonts/glyphicons-halflings-regular.eot);
+    src: url(libraries/bootstrap/fonts/glyphicons-halflings-regular.svg);
+    src: url(libraries/bootstrap/fonts/glyphicons-halflings-regular.woff2);
+    src: url(libraries/bootstrap/fonts/glyphicons-halflings-regular.woff);
+    src: url(libraries/bootstrap/fonts/glyphicons-halflings-regular.ttf);
+}
+
+#nav-home, #nav-register, #nav-login, #nav-logout, #nav-add-book, #nav-my-books, #container-edit-book, #message-container {
+    display: none;
+}
+
+.title {
+    color: saddlebrown;
+}
+
+.author {
+    color: cornflowerblue;
+}
+
+.isbn {
+    color: cornflowerblue;
+}
+
+.deleteMessage {
+    color: red;
+}
+
+.putMessage {
+    color: saddlebrown;
+}
+
+.postMessage {
+    color: green;
+}

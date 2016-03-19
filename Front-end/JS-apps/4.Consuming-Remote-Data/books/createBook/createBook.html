@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create a book</title>
+    <script src="../scripts/jquery-2.2.0.min.js"></script>
+    <script src="../scripts/repository.js"></script>
+    <link rel="stylesheet" href="../index/index.css">
+    <link rel="stylesheet" href="createBook.css">
+</head>
+<body>
+<div id="container">
+    <form action="" id="createForm">
+        <label>
+            <input type="text" id="title" required placeholder="title">
+        </label>
+        <label>
+            <input type="text" id="author" required placeholder="author">
+        </label>
+        <label>
+            <input type="text" id="isbn" required placeholder="isbn">
+        </label>
+        <label>
+            <input type="text" id="tags" required placeholder="tags">
+        </label>
+        <button>Create a book</button>
+    </form>
+    <a href="../index/index.html">Go back</a>
+    <div id="message"></div>
+</div>
+<script src="createBook.js"></script>
+<script src="../scripts/ajaxForm.js"></script>
+</body>
+</html>

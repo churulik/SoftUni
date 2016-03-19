@@ -1,0 +1,15 @@
+table, td, th {
+    border: 1px solid black;
+    text-align: left;
+}
+
+td, th {
+    padding: 5px;
+    margin: 0;
+}
+
+label, button {
+    margin-bottom: 5px;
+    display: block;
+}
+

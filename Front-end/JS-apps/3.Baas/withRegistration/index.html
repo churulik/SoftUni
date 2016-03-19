@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Country</title>
+    <script src="../libraries/jquery-2.2.0.min.js"></script>
+</head>
+<body>
+<div id="loginMessage"></div>
+<div id="countryMessage"></div>
+<div id="deleteMessage"></div>
+<label>
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+    <button id="loginButton">Login</button>
+</label>
+<button id="getCountries">Get all countries</button>
+<label>
+    <input type="text" id="addCountryInput" placeholder="Add country">
+    <button id="addCountryButton">Add county</button>
+</label>
+<label>
+    <input type="text" id="deleteCountryInput" placeholder="Delete country">
+    <button id="deleteCountryButton">Delete county</button>
+</label>
+
+
+<script>
+    function register(username, password) {
+        $.ajax({
+            method: 'POST',
+            headers: {
+                'Authorization': 'Basic a2lkX1pKRXVIeHVSQ3g6NWQxYTVlM2VmNzRmNDlhOWI0YzdhYWFjZDMxNzM2MWM',
+                'Content-Type': 'application/json'
+            },
+            url: 'https://baas.kinvey.com/user/kid_ZJEuHxuRCx',
+            data: JSON.stringify({
+                'username': username,
+                'password': password
+            })
+        }).success(function (data) {
+            console.log(data);
+        }).error(function (error) {
+            console.error(error)
+        })
+    }
+
+    function login(username, password) {
+        $.ajax({
+            method: 'POST',
+            headers: {
+                'Authorization': 'Basic a2lkX1pKRXVIeHVSQ3g6NWQxYTVlM2VmNzRmNDlhOWI0YzdhYWFjZDMxNzM2MWM',
+                'Content-Type': 'application/json'
+            },
+            url: 'https://baas.kinvey.com/user/kid_ZJEuHxuRCx/login',
+            data: JSON.stringify({
+                'username': username,
+                'password': password
+            })
+        }).success(function (data) {
+            sessionStorage['token'] = data._kmd.authtoken;
+            $('#loginMessage').text('You are logged in.')
+        }).error(function (error) {
+            console.error(error)
+        })
+    }
+
+    function addCountry(name) {
+        $.ajax({
+            method: 'POST',
+            headers: {
+                'Authorization': 'Kinvey ' + sessionStorage['token'],
+                'Content-Type': 'application/json'
+            },
+            url: 'https://baas.kinvey.com/appdata/kid_ZJEuHxuRCx/country',
+            data: JSON.stringify({
+                'name': name
+            })
+        }).success(function () {
+            $('#countryMessage').text(name + ' is add.');
+        }).error(function (error) {
+            console.error(error)
+        })
+    }
+
+    function getCountries() {
+        $.ajax({
+            method: 'GET',
+            headers: {
+                'Authorization': 'Kinvey ' + sessionStorage['token'],
+                'Content-Type': 'application/json'
+            },
+            url: 'https://baas.kinvey.com/appdata/kid_ZJEuHxuRCx/country'
+        }).success(function (data) {
+            $('#countryMessage').text(data.map(function (element) {
+                return element.name
+            }).join(', '));
+        }).error(function (error) {
+            console.error(error.responseText)
+        })
+    }
+
+    function getCountryId(countryName) {
+        var countryExist = false;
+        $.ajax({
+            method: 'GET',
+            headers: {
+                'Authorization': 'Kinvey ' + sessionStorage['token'],
+                'Content-Type': 'application/json'
+            },
+            url: 'https://baas.kinvey.com/appdata/kid_ZJEuHxuRCx/country'
+        }).success(function (data) {
+            for (var i = 0; i < data.length; i++) {
+                if (data[i].name == countryName) {
+                    countryExist = true;
+                    deleteCountry(countryName, data[i]._id);
+                    break;
+                }
+            }
+            if (!countryExist){
+                $('#deleteMessage').text(countryName + ' does not exist.');
+            }
+        }).error(function (error) {
+            console.error(error.responseText)
+        });
+    }
+
+    function deleteCountry(countryName, countryId) {
+        $.ajax({
+            method: 'DELETE',
+            headers: {
+                'Authorization': 'Kinvey ' + sessionStorage['token'],
+                'Content-Type': 'application/json'
+            },
+            data: JSON.stringify({}),
+            url: 'https://baas.kinvey.com/appdata/kid_ZJEuHxuRCx/country/' + countryId
+        }).success(function () {
+            $('#deleteMessage').text('You successfully delete ' + countryName);
+        }).error(function (error) {
+            console.error(error.responseText)
+        })
+    }
+
+    $('#loginButton').click(function() {
+        var username = $('#username').val();
+        var password = $('#password').val();
+        login(username, password);
+    });
+
+    $('#getCountries').click(function () {
+        getCountries();
+    });
+
+    $('#addCountryButton').click(function () {
+        var name = $('#addCountryInput').val();
+        addCountry(name);
+    });
+
+    $('#deleteCountryButton').click(function () {
+        var name = $('#deleteCountryInput').val();
+        confirm('Are you sure that you want to delete ' + name);
+        getCountryId(name)
+    });
+</script>
+</body>
+</html>

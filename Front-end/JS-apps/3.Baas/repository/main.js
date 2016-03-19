@@ -1,0 +1,14 @@
+require([
+    'index',
+    'country',
+    'town',
+    'verify',
+    'ajax',
+    '../models/country/addCountry',
+    '../models/country/deleteCountry',
+    '../models/country/editCountry',
+    '../models/country/getAllCountries',
+    '../models/town/addTown',
+    '../models/town/editTown',
+    '../models/town/deleteTown',
+    '../models/town/getAllTownsByCountry']);

@@ -1,0 +1,33 @@
+{{#books}}
+<div class="well">
+    <span class="title">{{title}}</span> by
+    <span class="author">{{author}}</span>
+    (ISBN: <span>{{isbn}}</span>)
+    <span class="pull-right">
+         <button class="edit-book-btn btn btn-success btn-xs" value="{{id}}">Edit</button>
+         <button class="delete-book-btn btn btn-danger btn-xs" value="{{id}}">Delete</button>
+    </span>
+</div>
+{{/books}}
+{{^books}}
+<a href="#/add-new-book" class="btn btn-default">Add yours first book!</a>
+{{/books}}
+<div id="container-edit-book">
+    <form action="#/my-books">
+        <div class="form-group">
+            <label for="edit-title">Title:</label>
+            <input type="text" id="edit-title" class="form-control" placeholder="Title">
+        </div>
+        <div class="form-group">
+            <label for="edit-author">Author:</label>
+            <input type="text" id="edit-author" class="form-control" placeholder="Author">
+        </div>
+        <div class="form-group">
+            <label for="edit-isbn">ISBN:</label>
+            <input type="text" id="edit-isbn" class="form-control" placeholder="ISBN">
+        </div>
+        <div class="form-group">
+            <button id="edit-book" class="btn btn-success">Edit book</button>
+        </div>
+    </form>
+</div>

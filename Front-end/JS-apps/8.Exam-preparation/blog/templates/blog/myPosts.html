@@ -1,0 +1,13 @@
+{{#myPosts}}
+<article data-id="{{id}}">
+    <h3>{{title}}</h3>
+    <p>{{text}}</p>
+    <h4><i>{{author}}</i></h4>
+    <button class="edit-post">Edit</button>
+    <button class="delete-post">Delete</button>
+</article>
+{{/myPosts}}
+{{^myPosts}}
+<a href="#/add-post/">Add your first post</a>
+{{/myPosts}}
+<div id="pagination"></div>

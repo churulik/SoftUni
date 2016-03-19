@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <script src="../libraries/jquery-2.2.0.min.js"></script>
+    <script data-main="../repository/main" src="../libraries/require.js"></script>
+</head>
+<body>
+<div id="back">
+    <a href="">&#x2190;Back</a>
+</div>
+<div id="message"></div>
+<!--Country-->
+<div id="contentCountry">
+    <!--Add country-->
+    <div>
+        <label>
+            <input type="text" id="addCountryInput" placeholder="Add country">
+        </label>
+        <button id="addCountryButton">Add county</button>
+    </div>
+    <!--Edit country-->
+    <div>
+        <label>
+            <select id="countryToBeEditInput" class="countryDropDown">
+                <option value="Select country" selected disabled>Select country</option>
+            </select>
+        </label>
+        <label>
+            <input type="text" id="editCountryInput" placeholder="Edit country">
+        </label>
+        <button id="editCountryButton">Edit county</button>
+    </div>
+    <!--Delete country-->
+    <div>
+        <label>
+            <select id="deleteCountryInput" class="countryDropDown">
+                <option value="Select country" selected disabled>Select country</option>
+            </select>
+        </label>
+        <button id="deleteCountryButton">Delete county</button>
+    </div>
+    <!--Get all countries-->
+    <button id="getCountries">All countries</button>
+</div>
+<!--Town-->
+<div id="contentTown">
+    <!--Add town-->
+    <div>
+        <label>
+            <select id="selectCountryInput" class="countryDropDown">
+                <option value="Select country" selected disabled>Select country</option>
+            </select>
+        </label>
+        <label>
+            <input type="text" id="addTownInput" placeholder="Add town">
+        </label>
+        <button id="addTownButton">Add town</button>
+    </div>
+    <!--Edit town-->
+    <div>
+        <label>
+            <select id="townToBeEditInput" class="townDropDown">
+                <option value="Select town" selected disabled>Select town</option>
+            </select>
+        </label>
+        <div id="editTownHidden">
+            <label>
+                <input type="text" id="editTownInput" placeholder="Edit town">
+            </label>
+            <label>
+                <select id="editTownCountryInput" class="countryDropDown">
+                    <option value="Select country" selected disabled>Select country</option>
+                </select>
+            </label>
+        </div>
+        <button id="editTownButton">Edit town</button>
+    </div>
+    <!--Delete town-->
+    <div>
+        <label>
+            <select id="deleteTownInput" class="townDropDown">
+                <option value="Select town" selected disabled>Select town</option>
+            </select>
+        </label>
+        <button id="deleteTownButton">Delete town</button>
+    </div>
+    <!--Get all towns-->
+    <div>
+        <label>
+            <select id="displayAllTownsByCountryInput" class="countryDropDown">
+                <option value="Select country" selected disabled>Select country</option>
+            </select>
+        </label>
+        <button id="displayAllTownsByCountryButton">All towns by country</button>
+    </div>
+</div>
+<!--Home-->
+<div id="homeButtons">
+    <button id="countryButton">Countries</button>
+    <button id="townButton">Towns</button>
+</div>
+</body>
+</html>

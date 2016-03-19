@@ -1,0 +1,13 @@
+#container {
+    width: 300px;
+    margin: 0 auto;
+}
+
+a {
+    width: 300px;
+    display: block;
+}
+
+#message {
+    text-align: left;
+}

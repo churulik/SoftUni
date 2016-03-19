@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit or delete a book</title>
+    <script src="../scripts/jquery-2.2.0.min.js"></script>
+    <script src="../scripts/repository.js"></script>
+    <script src="../scripts/getBooks.js"></script>
+    <script src="editDeleteBook.js"></script>
+    <link rel="stylesheet" href="../index/index.css">
+    <link rel="stylesheet" href="editDeleteBook.css">
+</head>
+<body>
+<div id="books"></div>
+<div id="goBack"></div>
+<div id="container">
+    <form action="" id="editDeleteForm">
+        <label>
+            <input type="hidden" id="bookId">
+        </label>
+        <label>
+            <input type="text" id="title" required placeholder="title">
+        </label>
+        <label>
+            <input type="text" id="author" required placeholder="author">
+        </label>
+        <label>
+            <input type="text" id="isbn" required placeholder="isbn">
+        </label>
+        <label>
+            <input type="text" id="tags" required placeholder="tags">
+        </label>
+        <button id="submitBtn">Edit</button>
+        <button id="resetBtn">Reset</button>
+    </form>
+</div>
+<div id="message"></div>
+<script src="../scripts/ajaxForm.js"></script>
+</body>
+</html>

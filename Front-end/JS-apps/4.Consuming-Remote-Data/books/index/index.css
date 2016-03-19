@@ -1,0 +1,40 @@
+body {
+    width: 800px;
+    margin: 20% auto;
+    text-align: center;
+    font-family: "Tempus Sans ITC", Arial, serif;
+    font-size: 20px;
+}
+
+a {
+    opacity: 0.4;
+    text-decoration: none;
+    border: 1px solid saddlebrown;
+    color: saddlebrown;
+    padding: 5px 15px;
+    transition: 0.7s;
+    box-sizing: border-box;
+}
+
+a:hover {
+    opacity: 1;
+    transition: 0.7s;
+}
+
+button, input, pre {
+    margin-bottom: 5px;
+    width: 300px;
+    box-sizing: border-box;
+    font-family: "Tempus Sans ITC", Arial, serif;
+    font-size: 20px;
+}
+
+button {
+    border: 1px solid saddlebrown;
+    color: saddlebrown;
+}
+
+button:hover {
+    font-weight: 900;
+    cursor: pointer;
+}

@@ -1,0 +1,44 @@
+body, button {
+    font-family: Gabriola, serif;
+    font-size: 20px;
+}
+
+body {
+    width: 400px;
+    margin: 10% auto;
+    background: url("bg.jpg") no-repeat;
+}
+
+label {
+    display: block;
+}
+
+h4 {
+    margin: 10px 0 5px 0;
+}
+
+button {
+    margin-top: 10px;
+}
+
+.display-none {
+    display: none;
+}
+
+form {
+    background-color: rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+}
+
+fieldset {
+    margin: 0 10px 10px 10px;
+}
+
+button {
+    cursor: pointer;
+}
+
+.answers {
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 10px;
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="libraries/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="libraries/jquery-2.2.0.min.js"></script>
+    <script src="libraries/bootstrap/js/bootstrap.min.js"></script>
+    <script src="libraries/sammy.js"></script>
+    <script src="libraries/q.js"></script>
+    <script src="libraries/mustache.min.js"></script>
+
+</head>
+<body>
+<div class="container">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse" id="navbar">
+                <ul class="nav navbar-nav">
+                    <li id="nav-home"><a href="#/"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+                    <li id="nav-add-book"><a href="#/add-new-book"><span class="glyphicon glyphicon-plus"></span> Add new book</a></li>
+                    <li id="nav-my-books"><a href="#/my-books"><span class="glyphicon glyphicon-book"></span> My books</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li id="nav-register">
+                        <a href="#/register"><span class="glyphicon glyphicon-pencil"></span> Register</a>
+                    </li>
+                    <li id="nav-login">
+                        <a href="#/login"><span class="glyphicon glyphicon-log-in"></span> Login</a>
+                    </li>
+                    <li id="nav-logout">
+                        <a href="#/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="row">
+        <div id="container" class="col-lg-10 col-md-12 col-lg-offset-1"></div>
+        <div id="message-container" class="col-lg-10 col-md-12 col-lg-offset-1">
+            <div id="message"></div>
+        </div>
+    </div>
+</div>
+<script src="js/bindingModel/book.js"></script>
+
+<script src="js/helpers/effects.js"></script>
+<script src="js/helpers/validation.js"></script>
+<script src="js/helpers/messages.js"></script>
+<script src="js/helpers/submitForm.js"></script>
+<script src="js/helpers/requester.js"></script>
+
+<script src="js/models/userModel.js"></script>
+<script src="js/models/booksModel.js"></script>
+
+<script src="js/views/userView.js"></script>
+<script src="js/views/booksView.js"></script>
+
+<script src="js/controllers/userController.js"></script>
+<script src="js/controllers/booksController.js"></script>
+
+<script src="js/app.js"></script>
+</body>
+</html>

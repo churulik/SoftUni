@@ -1,0 +1,35 @@
+#books, #goBack, #message {
+    width: 600px;
+    text-align: left;
+    margin: 0 auto;
+}
+
+.edit, .delete {
+    width: 50px;
+    padding: 0;
+    border: 0;
+    text-align: left;
+    color: cornflowerblue;
+    background-color: white;
+}
+
+#container {
+    width: 400px;
+    margin: 10px auto;
+    text-align: left;
+}
+
+#editDeleteForm {
+    display: none;
+}
+
+a {
+    padding: 0;
+    opacity: 1;
+    border: 0;
+    color: cornflowerblue;
+}
+
+a:hover {
+    font-weight: 900;
+}
