@@ -1,0 +1,9 @@
+﻿@using MvcCaching.Models
+@model IEnumerable<RssFeedViewModel>
+
+@foreach (var item in Model)
+{
+    <h4>Title: @item.Title</h4>
+    <h4>Link: <a href="@item.Link">@item.Link</a></h4>
+}
+    
