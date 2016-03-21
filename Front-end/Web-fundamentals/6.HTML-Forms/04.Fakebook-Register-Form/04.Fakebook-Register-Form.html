@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Fakebook Regiser Form</title>
+	<link rel="stylesheet" type="text/css" href="04.Fakebook-Register-Form.css">
+</head>
+<body>
+	<div id="wrapper">
+		<h1>fakebook<font size="1px" style="font-weight: normal"> &reg;</font></h1>
+		<h2>Registration</h2>
+		<h5>It is safe and it will always be!</h5>
+		<form method="post" action="#">
+			<fieldset id="noneImportant">
+				<legend>None-Important Information</legend>
+				<input type="text" name="firstName" placeholder="First Name"/>
+				<input type="text" name="lastName" placeholder="Last Name"/>
+				<input type="email" name="email" placeholder="Your Email"/>
+				<input type="phone" name="phone" placeholder="Phone Number"/>
+				<input type="password" name="password" placeholder="Your Password"/>
+				<input type="website" name="website" placeholder="Website"/>
+				<p>Birthday</p>
+				<input type="date" name="date"/>
+				<span>
+					<p><input type="radio" name="sex" value="1">Female</p>
+				</span>
+				<span>
+					<p><input type="radio" name="sex" value="2">Male</p>
+				</span>
+				<span>
+					<p><input type="radio" name="sex" value="3" checked="">Other</p>
+				</span>
+			</fieldset>
+			<fieldset id="important">
+				<legend>Important Information *required</legend>
+				<input list="country" name="country" placeholder="Country" required="true"/>
+				<datalist id="country"/>
+					<option value="Bulgaria">
+					<option value="England">
+					<option value="France">
+					<option value="Spain">
+					<option value="USA">
+				</datalist>
+				<input type="text" name="village" placeholder="Village" required="true"/>
+				<input type="text" name="district" placeholder="District" required="true"/>
+				<input type="text" name="street" placeholder="Street" required="true"/>
+				<input type="text" name="nr" placeholder="Nr" required="true"/>
+				<input type="text" name="floor" placeholder="Floor" required="true"/>
+				<input type="text" name="apNr" placeholder="Ap Nr" required="true"/>
+				<p>Door Color</p>
+				<input type="color" name="doorColor" required="true" value="#F5A9F2" />
+				<input type="text" name="water" placeholder="Water Meter Nr" required="true"/>
+				<input list="aunt" name="aunt" placeholder="Aunt Panties Size" required="true"/>
+				<datalist id="aunt"/>
+					<option value="1">
+					<option value="2">
+					<option value="3">
+					<option value="4">
+				</datalist>
+				<p>More Personal Information</p>
+				<textarea name="more-personal-info" required="true" placeholder="Give Us More Information!!!"></textarea>
+			</fieldset>
+			<label>
+				<input type="reset" value="Clear Form"/>
+				<input type="submit" value="Register"/>
+			</label>
+		</form>
+	</div>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Flight Order</title>
+	<link rel="stylesheet" type="text/css" href="2.Flight-Order.css">
+</head>
+<body>
+	<div>
+		<form action="#" method="post">
+			<h1>FLIGHT ORDER</h1>
+			<table>
+				<tr>
+					<td>
+						<label>
+							<p>From</p>
+							<input list="fromCity" name="fromCity" value="enter a city"/>
+							<datalist id="fromCity" />
+								<option value="London"/>
+								<option value="Madrid"/>
+								<option value="New York"/>
+								<option value="Paris"/>
+								<option value="Sofia"/>
+								<option value="Tel Aviv"/>
+							</datalist>
+						</label>
+					</td>
+					<td colspan="2">
+						<label>
+							<p>To</p>
+							<input list="toCity" name="toCity" value="enter a city" />
+							<datalist id="toCity" />
+								<option value="London"/>
+								<option value="Madrid"/>
+								<option value="New York"/>
+								<option value="Paris"/>
+								<option value="Sofia"/>
+								<option value="Tel Aviv"/>
+							</datalist>
+							<p><input type="checkbox" name="preferDirects" value="yes"/> Prefer directs</p>
+						</label>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>
+							<p>Departure Date</p>
+							<input name="departerDate" type="date"/>
+						</label>
+					</td>
+					<td>
+						<label>
+							<p>Time Interval</p>
+							<input name="startTime" type="time" value="00:20"/>
+						</label>
+					</td>
+					<td>
+						<label>
+							<input name="endTime" type="time" value="05:00"/>
+						</label>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>
+							<p>Return Date</p>
+							<input name="departerDate" type="date"/>
+						</label>
+					</td>
+					<td>
+						<label>
+							<p>Time Interval</p>
+							<input name="startTime" type="time" value="16:00"/>
+						</label>
+					</td>
+					<td>
+						<label>
+							<input name="endTime" type="time" value="22:00"/>
+						</label>
+					</td>
+				</tr>
+				<tr>
+					<td class="age">
+						<label>
+							<p>12+</p>
+							<input type="number" min="0" value="0" style="float=left"/>
+						</label>
+						<label>
+							<p>2-12</p>
+							<input type="number" min="2" max="12" value="0"/>
+						</label>
+						<label>
+							<p>0-2</p>
+							<input type="number" min="0" max="2" value="0"/>
+						</label>
+					</td>
+					<td colspan="2">
+						<label>
+							<p>Choose class</p>
+							<input list="chooseClass" name="chooseClass" value="Economy" />
+							<datalist id="chooseClass"/>
+								<option value="Economy"/>
+								<option value="Buisness"/>
+							</datalist>
+						</label>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="3">
+						<label>
+							<input type="submit" value="Search"/>
+						</label>
+					</td>
+				</tr>
+			</table>
+		</form>
+	</div>
+</body>
+</html>

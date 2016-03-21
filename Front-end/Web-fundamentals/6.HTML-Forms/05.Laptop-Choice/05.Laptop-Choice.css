@@ -1,0 +1,52 @@
+body {
+	font-family: "Calibri";
+	color: #0B3861;
+}
+h1 {
+	font-size: 28px;
+}
+.laptops {
+	width: 540px;
+	float: left;
+}
+.laptops div {
+	border: 1px solid #CEE3F6;
+	width: 160px;
+	padding: 5px 0 0 5px;
+	border-radius: 10px 10px 0px 10px; 
+	box-shadow: 1px 1px 1px #E6E6E6;
+	float: left;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	cursor: pointer;
+}
+h3, p {
+	margin: 0;
+}
+.price {
+	margin-left: 65px;
+	color: white;
+	border: 1px solid #084B8A;
+	border-radius: 5px 0 0 0;
+	background-color: #0B3861;
+	padding: 5px 0 5px 15px;
+}
+.laptops div:hover {
+	background-color: #E0ECF8;
+}
+
+.requirments {
+	border: 1px solid #CEE3F6;
+	width: 185px;
+	background-color: #EFF8FB;
+	float: left;
+	margin-top: 10px;
+}
+.requirments span {
+	font-size: 12px;
+	padding-top: 4px;
+}
+.requirments label input[type="range"] {
+	margin-bottom: 15px;
+	width: 180px;
+}

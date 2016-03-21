@@ -1,0 +1,70 @@
+body {
+			font-family: sans-serif;
+		}
+		#wrapper {
+			border: 1px solid #A4A4A4;
+			border-spacing: 0;
+		}
+		#tableHeader {
+			width: 900px;
+			padding: 1px 20px;
+		}
+		header {
+			text-align: left;
+			font-size: 24px;
+			padding-bottom: 40px;
+		}
+		.nav {
+			color: #A4A4A4;
+			font-size: 14px;
+			padding-left: 15px;
+			text-align: left;
+		}
+		#search {
+			text-align: right;
+		}
+		
+		aside {
+			font-size: 12px;
+			padding-left: 30px;
+			width: 100px;
+		}
+
+		#hrAside {
+			padding-left: 18px;
+			width: 140px;
+			text-align: left;
+		}
+		a:link, a:visited {
+			text-decoration: none;
+			color: #81BEF7;
+		}
+		#article {
+			width: 600px;
+			padding-left: 10px;
+		}
+		#tableMain {
+			width: 900px;
+		}
+		#aside-left {
+			width: 130px;
+			margin-bottom: 120px;
+			margin-right: 10px;
+		}
+		#aside-right{
+			width: 200px; 
+			margin-bottom: 300px;
+		}
+		td {
+			border: 1 px solid;
+		}
+		#footer {
+			padding: 24px;
+			background-color: black;
+			width: 900px;
+		}
+		#footer td{
+			vertical-align: top;
+			padding-right: 30px;
+			font-size: 14px;
+		}

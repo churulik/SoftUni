@@ -1,0 +1,92 @@
+#wrapper {
+	font-family: "Calibri";
+	background-color: #E6E6E6;
+	width: 600px;
+	height: 300px;
+	padding: 0px 10px 10px;
+}
+
+h1 {
+	font-size: 26px;
+	color: #084B8A;
+}
+p {
+	font-size: 12px;
+	color: #848484;
+}
+.new-user {
+	width: 300px;
+	float: left;
+	padding-top: 10px;
+}
+.new-user form label span {
+	padding-left: 20px;
+	color: #6E6E6E;
+	font-weight: bold;
+}
+.new-user form label a {
+	text-decoration: none;
+	color: #084B8A;
+}
+.new-user form label input {
+	display: block;
+	width: 250px;
+	padding: 5px;
+	margin: 10px 4px 10px 20px;
+	font-size: 12px;
+}
+#register {
+	width: 130px;
+	background-color: #E6E6E6;
+	border: 1px solid #084B8A;
+	color: #084B8A;
+	margin-left: 155px;
+}
+
+.login {
+	background-color: #084B8A;
+	width: 300px;
+	height: 208px;
+	float: left;
+	padding-top: 10px;
+
+}
+.login form label span {
+	padding-left: 20px;
+	color: #F2F2F2;
+	font-weight: bold;
+}
+.login input[type="text"], .login input[type="password"] {
+	display: block;
+	width: 250px;
+	padding: 5px;
+	margin: 10px 4px 10px 20px;
+	font-size: 12px;
+}
+.login input[type="checkbox"] {
+	padding: 5px;
+	margin-left: 20px;
+	font-size: 12px;
+	vertical-align: top;
+}
+.login form label p {
+	color: #F2F2F2;
+}
+
+#submit-login {
+	width: 100px;
+	height: 30px;
+	background-color: #084B8A;
+	border: 1px solid #DF7401;
+	color: #F2F2F2;
+	margin-left: 185px;
+}
+#forgot-pass {
+	text-align: right;
+	margin-right: 25px;
+	margin-top: 3px;
+}
+
+.login form label a {
+	color: #F2F2F2;
+}

@@ -1,0 +1,46 @@
+div {
+	width: 380px;
+	height: 285px;
+	background-color: pink;
+	padding: 0px 5px;
+}
+h1 {
+	font-style: italic;
+	text-align: center;
+}
+p {
+	font-size: 12px;
+	font-style: italic;
+	margin: 0;
+}
+input[name="fromCity"] {
+	margin-bottom: 20px;
+}
+input[name="toCity"] {
+	width: 190px;
+}
+
+input[type="date"] {
+	width: 166px;
+}
+input[name="endTime"] {
+	margin-top: 14px;
+	padding-bottom: 1px;
+}
+input[type="number"] {
+	width: 50px;
+}
+.age label {
+	display: inline-block;
+}
+input[list="chooseClass"] {
+	width: 190px;
+}
+input[list="chooseClass"] {
+	width: 190px;
+}
+input[type="submit"] {
+	width: 195px;
+	float: right;
+	padding:5px 0px;
+}

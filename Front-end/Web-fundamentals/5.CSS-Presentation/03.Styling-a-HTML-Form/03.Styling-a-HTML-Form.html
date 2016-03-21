@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Styling a HTML Form</title>
+	<link rel="stylesheet" type="text/css" href="03.Styling-a-HTML-Form.css"/>
+</head>
+<body>
+	<form action="#" method="post" class="light-style">
+		<h1>Step 1: Your details</h1>
+		<label>
+			<span>Name</span>
+			<input id="name" type="text" name="name" placeholder="First and last name"/>
+		</label>
+
+		<label>
+			<span>Email</span>
+			<input id="email" type="email" name="email" placeholder="example@domain.com"/>
+		</label>
+
+		<label>
+			<span>Phone</span>
+			<input id="phone" type="phone" name="phone" placeholder="eg. +447500000000"/>
+		</label>
+	</form>
+
+	<form action="#" method="post" class="light-style"/>
+		<h1>Step 1: Delivery address</h1>
+		<label>
+			<span>Address</span>
+			<textarea id="address" name="address"></textarea> 
+		</label>
+
+		<label>
+			<span>Post code</span>
+			<input id="post-code" type="text" name="post-code"/>
+		</label>
+
+		<label>
+			<span>Country</span>
+			<input id="country" type="text" name="country"/>
+		</label>
+	</form>
+
+	<form action="#" method="post" class="light-style">
+		<h1>Step 1: Card details</h1>
+		<label>
+			<p>Card type</p>
+			<input id="visa" type="radio" name="card" value="1"><img src="images/visa.png" height="30"/> VISA
+			<input id="amEx" type="radio" name="card" value="2"><img src="images/AmEx.png" height="30"/> AmEx
+			<input id="master" type="radio" name="card" value="3"><img src="images/master.png" height="30"/> Mastercard
+		</label>
+
+		<label>
+			<span>Card number</span>
+			<input id="card-number" type="text" name="card-number">
+		</label>
+
+		<label>
+			<span>Securety code</span>
+			<input id="securety-code" type="text" name="securety-code">
+		</label>
+		<label>
+			<span>Name on card</span>
+			<input id="name-on-card" type="text" name="name-on-card" placeholder="exact name as on the card">
+		</label>
+		<div align="middle">
+			<input id="button" type="button" value="BYE IT!">
+		</div>
+	</form>
+</body>
+</html>

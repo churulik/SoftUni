@@ -1,0 +1,66 @@
+body {
+	background-image: url('images/formBackground.jpg');
+	font-family: "Calibri";
+}
+.light-style {
+	width: 400px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.light-style h1 {
+	color: white;
+	font-size: 20px;
+}
+.light-style label {
+	display: block;
+	border: 1px solid white;
+	border-radius: 5px;
+	background-color: rgba(255, 255, 255, 0.3);
+	padding: 7px 15px;
+	margin: 2px;
+	font-size: 14px;
+}
+.light-style label span {
+	float: left;
+	width: 90px;
+	padding-right: 10px;
+	padding-top: 6px;
+}
+#name, #email, #phone, #post-code, #country, #card-number, #securety-code, #name-on-card{
+	font-size: 14px;
+	border-radius: 5px;
+	width: 55%;
+	padding: 5px;
+}
+#address {
+	font-size: 14px;
+	border-radius: 5px;
+	width: 55%;
+	height: 100px;
+}
+.light-style label img {
+	vertical-align: middle;
+
+}
+.light-style p {
+	margin: 0;
+	padding-bottom: 10px;
+}
+#visa {
+	margin-left: 10px;
+}
+#amEx, #master {
+	margin-left: 30px;
+}
+#button {
+	width: 90px;
+	background-color: #0B0B3B;
+	border-radius: 20px;
+	color: white;
+	border: none;
+	margin-top: 10px;
+	padding: 5px;
+}
+#button:hover {
+	background-color: #0431B4;
+}
