@@ -1,0 +1,6 @@
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\PrimitiveTypesVariables\11. BankAccounData\bin\Debug\_11.BankAccounData.exe.config
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\PrimitiveTypesVariables\11. BankAccounData\bin\Debug\_11.BankAccounData.exe
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\PrimitiveTypesVariables\11. BankAccounData\bin\Debug\_11.BankAccounData.pdb
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\PrimitiveTypesVariables\11. BankAccounData\obj\Debug\11. BankAccounData.csprojResolveAssemblyReference.cache
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\PrimitiveTypesVariables\11. BankAccounData\obj\Debug\_11.BankAccounData.exe
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\PrimitiveTypesVariables\11. BankAccounData\obj\Debug\_11.BankAccounData.pdb

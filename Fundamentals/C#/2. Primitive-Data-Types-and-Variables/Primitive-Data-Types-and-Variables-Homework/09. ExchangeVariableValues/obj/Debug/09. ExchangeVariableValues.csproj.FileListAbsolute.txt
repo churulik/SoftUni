@@ -1,0 +1,5 @@
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\PrimitiveTypesVariables\09. ExchangeVariableValues\bin\Debug\_09.ExchangeVariableValues.exe.config
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\PrimitiveTypesVariables\09. ExchangeVariableValues\bin\Debug\_09.ExchangeVariableValues.exe
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\PrimitiveTypesVariables\09. ExchangeVariableValues\bin\Debug\_09.ExchangeVariableValues.pdb
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\PrimitiveTypesVariables\09. ExchangeVariableValues\obj\Debug\_09.ExchangeVariableValues.exe
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\PrimitiveTypesVariables\09. ExchangeVariableValues\obj\Debug\_09.ExchangeVariableValues.pdb

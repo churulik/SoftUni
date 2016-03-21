@@ -1,0 +1,5 @@
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\PrimitiveTypesVariables\VariableHexdecimalFormat\bin\Debug\VariableHexdecimalFormat.exe.config
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\PrimitiveTypesVariables\VariableHexdecimalFormat\bin\Debug\VariableHexdecimalFormat.exe
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\PrimitiveTypesVariables\VariableHexdecimalFormat\bin\Debug\VariableHexdecimalFormat.pdb
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\PrimitiveTypesVariables\VariableHexdecimalFormat\obj\Debug\VariableHexdecimalFormat.exe
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\PrimitiveTypesVariables\VariableHexdecimalFormat\obj\Debug\VariableHexdecimalFormat.pdb

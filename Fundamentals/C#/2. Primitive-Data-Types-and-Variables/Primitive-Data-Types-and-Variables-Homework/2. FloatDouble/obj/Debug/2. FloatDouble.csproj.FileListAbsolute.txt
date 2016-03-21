@@ -1,0 +1,5 @@
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\PrimitiveTypesVariables\2. FloatDouble\bin\Debug\_2.FloatDouble.exe.config
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\PrimitiveTypesVariables\2. FloatDouble\bin\Debug\_2.FloatDouble.exe
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\PrimitiveTypesVariables\2. FloatDouble\bin\Debug\_2.FloatDouble.pdb
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\PrimitiveTypesVariables\2. FloatDouble\obj\Debug\_2.FloatDouble.exe
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\PrimitiveTypesVariables\2. FloatDouble\obj\Debug\_2.FloatDouble.pdb

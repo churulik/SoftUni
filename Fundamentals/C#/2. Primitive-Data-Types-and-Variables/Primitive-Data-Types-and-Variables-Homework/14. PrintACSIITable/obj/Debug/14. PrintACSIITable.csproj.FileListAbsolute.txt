@@ -1,0 +1,5 @@
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\PrimitiveTypesVariables\14. PrintACSIITable\bin\Debug\_14.PrintACSIITable.exe.config
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\PrimitiveTypesVariables\14. PrintACSIITable\bin\Debug\_14.PrintACSIITable.exe
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\PrimitiveTypesVariables\14. PrintACSIITable\bin\Debug\_14.PrintACSIITable.pdb
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\PrimitiveTypesVariables\14. PrintACSIITable\obj\Debug\_14.PrintACSIITable.exe
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\PrimitiveTypesVariables\14. PrintACSIITable\obj\Debug\_14.PrintACSIITable.pdb

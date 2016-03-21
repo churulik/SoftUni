@@ -1,0 +1,5 @@
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\PrimitiveTypesVariables\07. QuotesInString\bin\Debug\_07.QuotesInString.exe.config
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\PrimitiveTypesVariables\07. QuotesInString\bin\Debug\_07.QuotesInString.exe
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\PrimitiveTypesVariables\07. QuotesInString\bin\Debug\_07.QuotesInString.pdb
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\PrimitiveTypesVariables\07. QuotesInString\obj\Debug\_07.QuotesInString.exe
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\PrimitiveTypesVariables\07. QuotesInString\obj\Debug\_07.QuotesInString.pdb

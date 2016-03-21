@@ -1,0 +1,9 @@
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\PrimitiveTypesVariables\1. DecalareVariables\bin\Debug\_1.DecalareVariables.exe.config
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\PrimitiveTypesVariables\1. DecalareVariables\obj\Debug\_1.DecalareVariables.exe
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\PrimitiveTypesVariables\1. DecalareVariables\obj\Debug\_1.DecalareVariables.pdb
+C:\Users\Tushe.Tushe-PC\Desktop\SU\nov 2014 - nivo 0\4 Примитивни типове данни и променливи\Homework\PrimitiveTypesVariables\1. DecalareVariables\bin\Debug\_1.DecalareVariables.exe.config
+C:\Users\Tushe.Tushe-PC\Desktop\SU\nov 2014 - nivo 0\4 Примитивни типове данни и променливи\Homework\PrimitiveTypesVariables\1. DecalareVariables\obj\Debug\_1.DecalareVariables.exe
+C:\Users\Tushe.Tushe-PC\Desktop\SU\nov 2014 - nivo 0\4 Примитивни типове данни и променливи\Homework\PrimitiveTypesVariables\1. DecalareVariables\obj\Debug\_1.DecalareVariables.pdb
+C:\Users\Tushe.Tushe-PC\Desktop\SoftUni\Noemvri 2014 - nivo 0\4. Примитивни типове данни и променливи\Homework\PrimitiveTypesVariables\1. DecalareVariables\bin\Debug\_1.DecalareVariables.exe.config
+C:\Users\Tushe.Tushe-PC\Desktop\SoftUni\Noemvri 2014 - nivo 0\4. Примитивни типове данни и променливи\Homework\PrimitiveTypesVariables\1. DecalareVariables\obj\Debug\_1.DecalareVariables.exe
+C:\Users\Tushe.Tushe-PC\Desktop\SoftUni\Noemvri 2014 - nivo 0\4. Примитивни типове данни и променливи\Homework\PrimitiveTypesVariables\1. DecalareVariables\obj\Debug\_1.DecalareVariables.pdb

@@ -1,0 +1,6 @@
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\PrimitiveTypesVariables\05. BooleanVariable\bin\Debug\_05.BooleanVariable.exe.config
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\PrimitiveTypesVariables\05. BooleanVariable\bin\Debug\_05.BooleanVariable.exe
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\PrimitiveTypesVariables\05. BooleanVariable\bin\Debug\_05.BooleanVariable.pdb
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\PrimitiveTypesVariables\05. BooleanVariable\obj\Debug\05. BooleanVariable.csprojResolveAssemblyReference.cache
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\PrimitiveTypesVariables\05. BooleanVariable\obj\Debug\_05.BooleanVariable.exe
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\PrimitiveTypesVariables\05. BooleanVariable\obj\Debug\_05.BooleanVariable.pdb

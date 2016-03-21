@@ -1,0 +1,6 @@
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\PrimitiveTypesVariables\06. StringsVariable\bin\Debug\_06.StringsVariable.exe.config
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\PrimitiveTypesVariables\06. StringsVariable\bin\Debug\_06.StringsVariable.exe
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\PrimitiveTypesVariables\06. StringsVariable\bin\Debug\_06.StringsVariable.pdb
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\PrimitiveTypesVariables\06. StringsVariable\obj\Debug\06. StringsVariable.csprojResolveAssemblyReference.cache
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\PrimitiveTypesVariables\06. StringsVariable\obj\Debug\_06.StringsVariable.exe
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\PrimitiveTypesVariables\06. StringsVariable\obj\Debug\_06.StringsVariable.pdb

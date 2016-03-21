@@ -1,0 +1,6 @@
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\PrimitiveTypesVariables\2. FloatDouble\bin\Debug\_2.FloatDouble.exe.config
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\PrimitiveTypesVariables\2. FloatDouble\obj\Debug\_2.FloatDouble.exe
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\PrimitiveTypesVariables\2. FloatDouble\obj\Debug\_2.FloatDouble.pdb
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\PrimitiveTypesVariables\2. FloatDouble\obj\Debug\02. FloatDouble.csprojResolveAssemblyReference.cache
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\PrimitiveTypesVariables\2. FloatDouble\bin\Debug\_2.FloatDouble.exe
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\PrimitiveTypesVariables\2. FloatDouble\bin\Debug\_2.FloatDouble.pdb

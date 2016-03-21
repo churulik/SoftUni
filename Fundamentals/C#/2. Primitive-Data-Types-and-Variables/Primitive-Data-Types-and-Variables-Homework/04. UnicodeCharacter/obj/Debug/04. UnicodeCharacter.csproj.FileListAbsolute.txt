@@ -1,0 +1,8 @@
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\PrimitiveTypesVariables\04. UnicodeCharacter\bin\Debug\_04.UnicodeCharacter.exe.config
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\PrimitiveTypesVariables\04. UnicodeCharacter\bin\Debug\_04.UnicodeCharacter.exe
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\PrimitiveTypesVariables\04. UnicodeCharacter\bin\Debug\_04.UnicodeCharacter.pdb
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\PrimitiveTypesVariables\04. UnicodeCharacter\obj\Debug\_04.UnicodeCharacter.exe
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\PrimitiveTypesVariables\04. UnicodeCharacter\obj\Debug\_04.UnicodeCharacter.pdb
+C:\Users\Tushe.Tushe-PC\Desktop\Csharp-November-2014.git\trunk\2. Primitive-Data-Types-and-Variables\Primitive-Data-Types-and-Variables-Homework\04. UnicodeCharacter\bin\Debug\_04.UnicodeCharacter.exe.config
+C:\Users\Tushe.Tushe-PC\Desktop\Csharp-November-2014.git\trunk\2. Primitive-Data-Types-and-Variables\Primitive-Data-Types-and-Variables-Homework\04. UnicodeCharacter\obj\Debug\_04.UnicodeCharacter.exe
+C:\Users\Tushe.Tushe-PC\Desktop\Csharp-November-2014.git\trunk\2. Primitive-Data-Types-and-Variables\Primitive-Data-Types-and-Variables-Homework\04. UnicodeCharacter\obj\Debug\_04.UnicodeCharacter.pdb

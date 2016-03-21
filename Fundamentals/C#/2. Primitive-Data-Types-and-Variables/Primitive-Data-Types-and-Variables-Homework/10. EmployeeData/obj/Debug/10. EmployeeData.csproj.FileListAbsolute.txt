@@ -1,0 +1,6 @@
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\PrimitiveTypesVariables\10. EmployeeData\bin\Debug\_10.EmployeeData.exe.config
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\PrimitiveTypesVariables\10. EmployeeData\obj\Debug\10. EmployeeData.csprojResolveAssemblyReference.cache
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\PrimitiveTypesVariables\10. EmployeeData\bin\Debug\_10.EmployeeData.exe
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\PrimitiveTypesVariables\10. EmployeeData\bin\Debug\_10.EmployeeData.pdb
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\PrimitiveTypesVariables\10. EmployeeData\obj\Debug\_10.EmployeeData.exe
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\PrimitiveTypesVariables\10. EmployeeData\obj\Debug\_10.EmployeeData.pdb
