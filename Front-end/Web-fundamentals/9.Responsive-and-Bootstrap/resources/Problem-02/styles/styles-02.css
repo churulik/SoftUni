@@ -1,0 +1,228 @@
+body {
+	background-image: url('background-flowers.jpg');
+	font-family: sans-serif;
+}
+
+#wrapper {
+	width: 900px;
+	margin: 0 auto;
+	display: flex;
+	flex-flow: row wrap;
+}
+
+#wrapper > header {
+	order: 1;
+	flex: 0 1 100%;
+	border: 1px solid black;
+	background-color: rgba(246, 216, 206, 0.9);
+	height: 130px;
+	margin-bottom: 30px;
+}
+
+#wrapper > header > h1 > a {
+	text-decoration: none;
+	color: black;
+
+}
+#wrapper > header > h1 > a > img {
+	width: 150px;
+	padding-left: 10px;
+	float: left;
+}
+#wrapper > header > h1 > a > span {
+	float: right;
+	padding-right: 10px;
+	visibility: hidden;
+	width: 280px;
+	height: 40px;
+	text-align: right;
+}
+#wrapper > header > h1 > a > span:before {
+	float: right;
+	visibility: visible;
+	content: "Flowers' Home";
+	word-spacing: 20px;
+	width: 280px;
+	height: 40px;
+	text-align: right;
+}
+
+#wrapper > header > nav > ul {
+	float: right;
+	padding-right: 10px;
+	margin: 0;
+	margin-top: 10px;
+}
+#wrapper > header > nav > ul > li {
+	display: inline-block;
+	border: 1px solid black;
+	background-color: #FE2E9A;
+	padding: 5px 35px;
+	margin-left: 10px;
+	cursor: pointer;
+}
+#wrapper > header > nav > ul > li > a {
+	color: white;
+	text-decoration: none;
+	font-size: 18px;
+}
+#wrapper > aside {
+	border: 1px solid black;
+	background-color: rgba(246, 216, 206, 0.9);
+}
+#wrapper > .left {
+	order: 2;
+	flex: 0 1 15%;
+} 
+
+#wrapper > .left > ul {
+	list-style-type: none;
+	padding: 0 5px;
+}
+#wrapper > .left > ul > li > a {
+	text-decoration: none;
+	color: black;
+	font-size: 15px;
+}
+#wrapper > .left > ul > li > a > img {
+	height: 23px;
+	vertical-align: bottom;
+}
+
+#wrapper > .right {
+	order: 4;
+	flex: 0 1 16%;
+} 
+#wrapper > .right > ul {
+	list-style-type: none;
+	padding: 5px;
+	font-size: 15px;
+}
+
+#wrapper > section {
+	order: 3;
+	flex: 1;
+	border: 1px solid black;
+	background-color: rgba(246, 216, 206, 0.9);
+	margin: 0 10px 30px;
+	padding: 10px;
+
+}
+#wrapper > section > article > header > h1 {
+	margin: 0px;
+}
+#wrapper > section > article > div > img {
+	height: 105px;
+}
+#wrapper > footer {
+	order: 5;
+	flex: 0 1 100%;
+}
+#wrapper > footer > h2 {
+	border: 1px solid black;
+	background-color: rgba(246, 216, 206, 0.9);
+	text-align: center;
+	font-size: 18px;
+	padding: 20px;
+}
+#wrapper > footer > h2 > a {
+	color: black; 
+}
+
+@media only screen and (max-width: 960px) {
+	#wrapper {
+		width: 100%;
+	}
+	
+	#wrapper > section {
+		width: 50%;
+		margin-bottom: 0;
+	}
+	#wrapper > section > article > div {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-between;
+	}
+
+	#wrapper > section > article > div > img {
+		margin: 5px;
+	}
+}
+
+@media only screen and (max-width: 780px) {
+	#wrapper > header > h1 > a > span {
+		padding-right: 0.5em;
+	}
+	#wrapper > header > h1 > a > span:before {
+		padding-right: 0.5em;
+	}
+	
+	#wrapper > header > nav > ul {
+		padding-left: 0;
+	}
+	#wrapper > section {
+		order: 2;
+		margin: 0;
+	}
+	#wrapper > aside {
+		margin-top: 10px;
+	}
+	#wrapper > .left {
+		order: 3;
+		flex:0 1 100%;
+	}
+	#wrapper > .right {
+		order: 4;
+		flex:0 1 100%;
+	}
+	#wrapper > section > article > div > img {
+		height: 135px;
+	}
+}
+@media only screen and (max-width: 640px) {
+	#wrapper > header {
+		height: 230px;
+	}
+	#wrapper > header > h1 {
+		margin-top: 5px;
+		margin-bottom: 0;
+	}
+	#wrapper > header > h1 > a > img {
+		float: none;
+		display: block;
+		margin: 0 auto;		
+	}
+	#wrapper > header > h1 > a > span {
+		float: none;
+		display: block;
+		margin: 0 auto;
+		font-size: 30px;
+		padding: 0;
+		text-align: center;
+	}
+	#wrapper > header > h1 > a > span:before {
+		float: none;
+		display: block;
+		margin: 0 auto;
+		font-size: 30px;
+		padding: 0;
+		text-align: center;
+	}
+	#wrapper > header > nav {
+		margin-left: 10px;
+	}
+	#wrapper > header > nav > ul {
+		width: 100%;
+		text-align: center;
+	}
+	#wrapper > header > nav > ul > li {
+		display: block;
+	}
+	#wrapper > section > article > div > img {
+		height: 91px;
+	}
+	#wrapper > footer > h2 {
+		font-size: 16px;
+	}
+
+}

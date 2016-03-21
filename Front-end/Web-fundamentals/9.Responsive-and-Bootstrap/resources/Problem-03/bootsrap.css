@@ -1,0 +1,33 @@
+body {
+  margin-bottom: 80px;
+}
+.navbar-inverse {
+	background-image: linear-gradient(to bottom,#129004 0,#087C05 100%);
+}
+.navbar-inverse .navbar-nav>.active>a, 
+.navbar-inverse .navbar-nav>.open>a {
+	background-image: linear-gradient(to bottom,#9EFC89 0,#6FF480 100%);
+}
+
+.navbar-inverse .navbar-nav>.active>a, 
+.navbar-inverse .navbar-nav>.active>a:focus, 
+.navbar-inverse .navbar-nav>.active>a:hover {
+	color: #0A0303;
+	background-color: #080808;
+}
+
+.navbar-inverse .navbar-brand {
+color: #080707;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+color: #0A0909;
+}
+
+.list-group-item.active, 
+.list-group-item.active:focus, 
+.list-group-item.active:hover {
+	background-image: linear-gradient(to bottom,#9EFC89 0,#6FF480 100%);
+	color: #020202;
+}
+.list-group-item.active, .list-group-item.active:focus, .list-group-item.active:hover
