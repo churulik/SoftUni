@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewsDd.Models", "NewsDd.Models\NewsDd.Models.csproj", "{424002F4-22F9-40CC-ABC2-D632D1E7FD80}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewsDb.Data", "NewsDb.Data\NewsDb.Data.csproj", "{570266DA-3F5C-4A0A-9E03-EEDA2DCF6E3B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewsDb.Client", "NewsDb.Client\NewsDb.Client.csproj", "{BDA18404-78AC-46DA-A588-21DA059B358D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ATM-Withdraw", "ATM-Withdraw\ATM-Withdraw.csproj", "{428B26C0-029D-4278-ABFB-0C079007A3B2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Concurency", "2. Concurency", "{E38B893E-EC5C-4343-A7ED-1BFDF7C59BCD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4. ATM", "4. ATM", "{F0568628-BC0D-4A15-A64F-31CDCB3AE133}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{424002F4-22F9-40CC-ABC2-D632D1E7FD80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{424002F4-22F9-40CC-ABC2-D632D1E7FD80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{424002F4-22F9-40CC-ABC2-D632D1E7FD80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{424002F4-22F9-40CC-ABC2-D632D1E7FD80}.Release|Any CPU.Build.0 = Release|Any CPU
+		{570266DA-3F5C-4A0A-9E03-EEDA2DCF6E3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{570266DA-3F5C-4A0A-9E03-EEDA2DCF6E3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{570266DA-3F5C-4A0A-9E03-EEDA2DCF6E3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{570266DA-3F5C-4A0A-9E03-EEDA2DCF6E3B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDA18404-78AC-46DA-A588-21DA059B358D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDA18404-78AC-46DA-A588-21DA059B358D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDA18404-78AC-46DA-A588-21DA059B358D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDA18404-78AC-46DA-A588-21DA059B358D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{428B26C0-029D-4278-ABFB-0C079007A3B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{428B26C0-029D-4278-ABFB-0C079007A3B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{428B26C0-029D-4278-ABFB-0C079007A3B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{428B26C0-029D-4278-ABFB-0C079007A3B2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{424002F4-22F9-40CC-ABC2-D632D1E7FD80} = {E38B893E-EC5C-4343-A7ED-1BFDF7C59BCD}
+		{570266DA-3F5C-4A0A-9E03-EEDA2DCF6E3B} = {E38B893E-EC5C-4343-A7ED-1BFDF7C59BCD}
+		{BDA18404-78AC-46DA-A588-21DA059B358D} = {E38B893E-EC5C-4343-A7ED-1BFDF7C59BCD}
+		{428B26C0-029D-4278-ABFB-0C079007A3B2} = {F0568628-BC0D-4A15-A64F-31CDCB3AE133}
+	EndGlobalSection
+EndGlobal

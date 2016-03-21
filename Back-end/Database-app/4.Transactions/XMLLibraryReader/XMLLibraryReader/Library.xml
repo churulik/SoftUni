@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<library name=".NET Developer's Library">
+  <book>
+    <title>Professional C# 4.0 and .NET 4</title>
+    <author>Christian Nagel</author>
+    <isbn>978-0-470-50225-9</isbn>
+  </book>
+  <book>
+    <title>Silverlight in Action</title>
+    <author>Pete Brown</author>
+    <isbn>978-1-935182-37-5</isbn>
+  </book>
+  <book>
+  
+    
+    <isbn>978-1-935182-37-5</isbn>
+  </book>
+</library>
