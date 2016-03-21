@@ -1,0 +1,15 @@
+﻿@model Twitter.Web.Models.HomeModel
+
+<div class="media-left media-middle">
+    <a href="#">
+        <img class="media-object" src="@Html.DisplayFor(t => t.TweetViewModel.ImageUrl)" width="80">
+    </a>
+</div>
+<div class="media-body">
+    <h6>
+        <b style="font-size: 14px">@Html.DisplayFor(t => t.TweetViewModel.Username)</b>
+        - @Html.DisplayFor(t => t.TweetViewModel.CreatedOn)
+    </h6>
+    <p>@Html.DisplayFor(t => t.TweetViewModel.Content)</p>
+</div>
+

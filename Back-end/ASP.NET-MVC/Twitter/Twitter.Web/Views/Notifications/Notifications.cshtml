@@ -1,0 +1,15 @@
+﻿@model Twitter.Web.Models.HomeModel
+
+@{
+    ViewBag.Title = "Notifications";
+}
+
+<h2>Notifications</h2>
+
+@foreach (var note in Model.EnumNotificationsViewModel)
+{
+    <h5>
+        <a href="@Url.Action("Show", "User", new {channelName = @note.User})">@@@note.User</a> @note.Message -
+        <a href="@Url.Action("Notification", "Notifications", new {id = @note.Id})">@note.Date</a>
+    </h5>
+}

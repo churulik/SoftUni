@@ -1,0 +1,14 @@
+﻿@model Twitter.Web.Models.HomeModel
+
+<div class="tweetheader">
+    <a href="@Url.Action("Show", "User", new {ChannelName = @Html.DisplayFor(m => m.ChannelViewModel.Username)})" class="thumbnail">
+        <img src="@Html.DisplayFor(m => m.ChannelViewModel.ImageUrl)">
+    </a>
+    <h4><b>@Html.DisplayFor(m => m.ChannelViewModel.FullName)</b></h4>
+    <h6>
+        <a href="@Url.Action("Show", "User", new {ChannelName = @Html.DisplayFor(m => m.ChannelViewModel.Username)})">
+            @@@Html.DisplayFor(m => m.ChannelViewModel.Username)
+        </a>
+    </h6>
+    <div>@Html.DisplayFor(m => m.ChannelViewModel.Description)</div>
+</div>

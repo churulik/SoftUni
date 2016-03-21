@@ -1,0 +1,16 @@
+﻿@model Twitter.Web.Models.ViewModel.TweetViewModel
+
+<div class="alert alert-info">
+    <h5>
+        <a href="@Url.Action("Show", "Tweet", new {ChannelName = Model.Username})">
+            <i><b>@Model.Username</b></i>
+        </a>
+    </h5>
+    <h6>
+        <a href="@Url.Action("Id", "Tweet", new {Model.Id})"><i>@Model.CreatedOn</i></a>
+    </h6>
+    <p>@Model.Content</p>
+    <h6>
+        <a href="@Url.Action("Delete", "User", new {Model.Id})"><i>Delete this tweet</i></a>
+    </h6>
+</div>

@@ -1,0 +1,134 @@
+﻿@model Twitter.Web.Models.HomeModel
+@{
+    ViewBag.Title = @Html.DisplayFor(m => m.ChannelViewModel.Username);
+}
+
+<h2>@Html.DisplayFor(m => m.ChannelViewModel.Username)</h2>
+
+<nav class="col-md-3">
+    @Html.DisplayForModel("ShowTemplate")
+    @Cache["msg"] 
+</nav>
+<div class="col-md-9">
+    <div id="tabs">
+        <ul>
+            <li><a href="#tabs-1">Tweets @Model.EnumTweetViewModel.Count()</a></li>
+            <li><a href="#tabs-2">Following @Model.EnumChannelViewModel.Count()</a></li>
+            <li><a href="#tabs-3">Followers @Model.EnumFollowersViewModel.Count()</a></li>
+            <li><a href="#tabs-4">Favorites @Model.EnumFavoriteViewModel.Count()</a></li>
+        </ul>
+        <div id="tabs-1">
+            @if (@TempData["deletemsg"] != null)
+            {
+                <p class="alert alert-success text-center">@TempData["deletemsg"]</p>
+            }
+            @foreach (var tweet in Model.EnumTweetViewModel)
+            {
+
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="media">
+                            <div class="media-left media-middle">
+                                <a href="#">
+                                    <img class="media-object" src="@tweet.ImageUrl" width="80">
+                                </a>
+                            </div>
+                            <div class="media-body">
+                                @* Tweet content *@
+
+                                <span><b class="Fullname">@tweet.FullName</b></span>
+                                <a href="@Url.Action("Show", "User", new {ChannelName = tweet.Username})">@@@tweet.Username</a>
+                                <span> - </span>
+                                <a href="@Url.Action("Replay", "Tweet", new {@tweet.Id})">@tweet.CreatedOn</a>
+
+                                <p>@tweet.Content</p>
+
+                                @* Favorite *@
+                                <div class="tweetbtns">
+                                    @using (@Html.BeginForm("Favorite", "Tweet", FormMethod.Post))
+                                    {
+                                        @Html.HiddenFor(m => m.FavoriteBindingModel.TweetId, new {Value = @tweet.Id})
+                                        <input type="image" class="retweet" src="@Url.Content("~/Content/Images/favorite.png")">
+                                        if (@tweet.FavoritesCount > 0)
+                                        {
+                                            <span style="vertical-align: middle"> @tweet.FavoritesCount</span>
+                                        }
+                                    }
+                                </div>
+
+                                @* Report *@
+                                @{
+                                    TempData["tweetId"] = tweet.Id;
+                                }
+
+                                <a href="#@TempData["tweetId"]" data-toggle="modal">Report</a>
+                                @Html.Partial("_ReportPartial")
+
+                                @* Replay *@
+                                <a href="@Url.Action("Replay", "Tweet", new {@tweet.Id})">Replay</a>
+                                @if (@tweet.ReplaysCount > 0)
+                                {
+                                    <span style="vertical-align: middle">@tweet.ReplaysCount</span>
+                                }
+
+                                @*@if (@tweet.ChannelId == @tweet.MyChannelId && Request.IsAuthenticated)
+                                    {
+                                        <a href="@Url.Action("Delete", "Tweet", new {@tweet.Id})">Delete</a>
+                                    }*@</div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+        <div id="tabs-2">
+            @foreach (var following in Model.EnumChannelViewModel)
+            {
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <h5><b>@following.FullName</b></h5>
+                        <h6>@@@following.Username</h6>
+                    </div>
+                </div>
+            }
+        </div>
+        <div id="tabs-3">
+            @foreach (var following in Model.EnumFollowersViewModel)
+            {
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <h5><b>@following.FullName</b></h5>
+                        <h6>@@@following.Username</h6>
+                    </div>
+                </div>
+            }
+        </div>
+        <div id="tabs-4">
+            @foreach (var favorite in Model.EnumFavoriteViewModel)
+            {
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <span><b class="Fullname">@favorite.FullName</b></span>
+                        <a href="@Url.Action("Show", "User", new {ChannelName = favorite.Username})">@@@favorite.Username</a>
+                        <span> - </span>
+                        <a href="@Url.Action("Replay", "Tweet", new {@favorite.Id})">@favorite.CreatedOn</a>
+
+                        <p>@favorite.Content</p>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script>
+        $(function() {
+            $("#tabs").tabs();
+        });
+    </script>
+}
+
+
+
+
+

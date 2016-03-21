@@ -1,0 +1,46 @@
+﻿@model Twitter.Web.Models.HomeModel
+
+<div class="modal fade" id="@TempData["tweetId"]" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4>Report</h4>
+            </div>
+            <div class="modal-body">
+                <h5 style="color: gray"><b>Help us understand the problem. What is going on with this Tweet?</b></h5>
+                @using (Html.BeginForm("Report", "Tweet", FormMethod.Post))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary("", new {@class = "text-danger"})
+                    <div>
+                        @Html.RadioButtonFor(m => m.ReportBindingModel.ReportProblem, "I'm not intrested in this Tweet")
+                        <label>I'm not intrested in this Tweet</label>
+                    </div>
+
+                    <div>
+                        @Html.RadioButtonFor(m => m.ReportBindingModel.ReportProblem, "It's a spam")
+                        <label>It's a spam</label>
+                    </div>
+
+                    <div>
+                        @Html.RadioButtonFor(m => m.ReportBindingModel.ReportProblem, "It's abusive and harmful")
+                        <label>It's abusive and harmful</label>
+                    </div>
+                    @Html.HiddenFor(m => m.ReportBindingModel.TweetId, new {Value = @TempData["tweetId"]})
+
+
+                    <div class="modal-footer">
+                        <input class="btn btn-primary" type="submit" value="Submit"/>
+                        <a class="btn btn-default" data-dismiss="modal">Close</a>
+                    </div>
+                }
+
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+

@@ -1,0 +1,11 @@
+﻿@model Twitter.Web.Models.HomeModel
+    
+<div class="sidebar">
+    <a href="#" class="thumbnail">
+        <img src="@Html.DisplayFor(m => m.ChannelViewModel.ImageUrl)">
+    </a>
+    <h4><b>@Html.DisplayFor(m => m.ChannelViewModel.FullName)</b></h4>
+    <h6>@@@Html.DisplayFor(m => m.ChannelViewModel.Username)</h6>
+    <div>@Html.DisplayFor(m => m.ChannelViewModel.Description)</div>
+</div>
+

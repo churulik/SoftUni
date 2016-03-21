@@ -1,0 +1,25 @@
+﻿@using PagedList.Mvc
+@using Twitter.Web.Models
+@model HomeModel
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<h2>@ViewBag.Title</h2>
+<hr/>
+
+<div class="col-md-12">
+    @foreach (var tweet in Model.PageListTweetViewModel)
+    {
+        @Html.Partial("_TweetPartial", tweet)
+    }
+</div>
+
+
+<div class="col-md-9">
+    <div class="center-block">
+        @Html.PagedListPager(Model.PageListTweetViewModel, page => Url.Action("Index", "Home", new {page, pageSize = Model.PageListTweetViewModel.PageSize}))
+        Showing @Model.PageListTweetViewModel.FirstItemOnPage to @Model.PageListTweetViewModel.LastItemOnPage of @Model.PageListTweetViewModel.TotalItemCount Tweets
+    </div>
+</div>
+

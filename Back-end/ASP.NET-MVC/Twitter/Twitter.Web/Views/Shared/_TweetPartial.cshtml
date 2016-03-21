@@ -1,0 +1,14 @@
+﻿@using PagedList.Mvc
+@model Twitter.Web.Models.ViewModel.TweetViewModel
+
+<div class="tweetmsg">  
+    <h6 class="tweetheader">
+        <span><b class="Fullname">@Model.FullName</b></span>
+        <a href="@Url.Action("Show", "User", new {ChannelName = Model.Username})">@@@Model.Username</a>
+        <span> - </span>
+        <a href="@Url.Action("Replay", "Tweet", new {@Model.Id })">@Model.CreatedOn</a>
+    </h6>
+    <p>@Model.Content</p>
+</div>
+
+

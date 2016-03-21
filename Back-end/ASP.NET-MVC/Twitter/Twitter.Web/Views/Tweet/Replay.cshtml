@@ -1,0 +1,52 @@
+﻿@model Twitter.Web.Models.HomeModel
+
+@{
+    ViewBag.Title = "Tweet";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div class="col-md-offset-3 col-md-6 panel panel-default">
+    <div class="panel-body">
+        @Html.DisplayForModel("ReplayTemplate")
+        <div class="actionBox">
+            @using (Html.BeginForm("Replay", "Tweet", FormMethod.Post, new { @class = "form-inline", role = "form" }))
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary("", new { @class = "text-danger" })
+                <div class="form-group col-md-offset-2">
+                    @Html.TextBoxFor(m => m.ReplayBindingModel.ReplayText, new { @class = " form-control", placeholder = "Replay", rows = 1 })
+
+                </div>
+                @Html.HiddenFor(m => m.ReplayBindingModel.TweetId, new { Value = @Html.DisplayFor(m => m.TweetViewModel.Id) })
+
+                <div class="form-group">
+                    <button class="btn btn-default">Replay</button>
+                </div>
+            }
+        </div>
+        <div class="actionBox">
+            <ul class="commentList">
+                @foreach (var replay in Model.EnumReplayViewModel)
+            {
+                    <li>
+                        <div class="commentText">
+                            <div class="media-left media-middle">
+                                <a href="#">
+                                    <img class="media-object" src="@replay.ImageUrl" width="50">
+                                </a>
+                            </div>
+                            <div class="media-body">
+                                <h6>
+                                    <b style="font-size: 14px;">@replay.Username</b>
+                                    <span style="color: gray; font-size: 10px;"> - @replay.PostedOn</span>
+                                </h6>
+                                <p>@replay.ReplayText</p>
+                            </div>
+                        </div>
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+</div>

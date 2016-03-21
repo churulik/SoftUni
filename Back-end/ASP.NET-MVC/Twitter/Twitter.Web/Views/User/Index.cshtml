@@ -1,0 +1,157 @@
+﻿@using System.Collections
+@using PagedList.Mvc
+@using Twitter.Web.Models
+@model HomeModel
+
+@{
+    ViewBag.Title = "Home page";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div class="container">
+    @* Sidebar *@
+    <div class="col-md-3">
+        <nav>
+            @Html.DisplayForModel("HomeTemplate")
+        </nav>
+        <nav>
+            <h4>Who to follow</h4>
+            @foreach (var channel in Model.EnumChannelViewModel)
+            {
+                <div class="sidebar">
+                    <h6 class="tweetheader">
+                        <span><b class="Fullname">@channel.FullName</b></span>
+                        <a href="@Url.Action("Show", "User", new {ChannelName = channel.Username})">@@@channel.Username</a>
+                    </h6>
+                    <a href="@Url.Action("Follow", "User", new {id = @channel.ChannelId})" class="btn btn-default btn-sm">Follow</a>
+                </div>
+            }
+        </nav>
+    </div>
+
+    <div class="col-md-9">
+        @if (@TempData["reportmsg"] != null)
+        {
+            <p class="alert alert-warning text-center">@TempData["reportmsg"]</p>
+        }
+
+        @if (@TempData["NewTweet"] != null)
+        {
+            <p class="alert alert-info text-center">@TempData["NewTweet"]</p>
+        }
+
+        @* Display tweet form *@
+        @using (Html.BeginForm("New", "Tweet", FormMethod.Post, new {@class = "form-horizontal", role = "form"}))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary("", new {@class = "text-danger"})
+            <div class="form-group">
+                <div class="col-md-12">
+                    @Html.TextAreaFor(c => c.TweetBindingModel.Content, new {@class = "tweetmsg form-control", rows = 4})
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-10">
+                    <input type="submit" class="btn btn-primary" value="Tweet"/>
+                </div>
+            </div>
+        }
+
+        @* Display hub *@
+        @Html.Partial("_HubPartial")
+       
+        @* Display favorite tweets *@
+        @foreach (var tweets in Model.FollowViewModel)
+        {
+            foreach (var tweet in tweets.Tweets)
+            {
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="media">
+                            <div class="media-left media-middle">
+                                <a href="#">
+                                    <img class="media-object" src="@tweet.ImageUrl" width="80">
+                                </a>
+                            </div>
+                            <div class="media-body">
+                                @* Tweet content*@
+                                <span><b class="Fullname">@tweet.FullName</b></span>
+                                <a href="@Url.Action("Show", "User", new {ChannelName = tweet.Username})">@@@tweet.Username</a>
+                                <span> - </span>
+                                <a href="@Url.Action("Replay", "Tweet", new {@tweet.Id})">@tweet.CreatedOn</a>
+                                <p>@tweet.Content</p>
+
+                                @* Retweet *@
+                                <div class="tweetbtns">
+                                    @using (Html.BeginForm("Retweet", "Tweet", FormMethod.Post))
+                                    {
+                                        @Html.HiddenFor(m => m.RetweetBindigModel.ChannelId, new { Value = @tweet.ChannelId })
+                                        @Html.HiddenFor(m => m.RetweetBindigModel.CreatedOn, new { Value = @tweet.CreatedOn })
+                                        @Html.HiddenFor(m => m.RetweetBindigModel.Content, new { Value = @tweet.Content })
+                                        @Html.HiddenFor(m => m.RetweetBindigModel.TweetId, new { Value = @tweet.Id })
+                                        <input type="image" class="retweet" src="@Url.Content("~/Content/Images/retweet.png")">
+                                    }
+                                </div>
+
+                                @* Favorite *@
+                                <div class="tweetbtns">
+                                    @using (Html.BeginForm("Favorite", "Tweet", FormMethod.Post))
+                                    {
+                                        @Html.HiddenFor(m => m.FavoriteBindingModel.TweetId, new { Value = @tweet.Id })
+                                        <input type="image" class="retweet" src="@Url.Content("~/Content/Images/favorite.png")">
+                                        if (@tweet.FavoritesCount > 0)
+                                        {
+                                            <span style="vertical-align: middle">@tweet.FavoritesCount</span>
+                                        }
+                                    }
+                                </div>
+
+                                @* Report *@
+                                @{
+                                    TempData["tweetId"] = tweet.Id;
+                                }
+                                <a href="#@TempData["tweetId"]" data-toggle="modal">Report</a>
+                                @Html.Partial("_ReportPartial")
+
+                                @* Replay *@
+                                <a href="@Url.Action("Replay", "Tweet", new {@tweet.Id})">Replay</a>
+                                @if (@tweet.ReplaysCount > 0)
+                                {
+                                    <span style="vertical-align: middle">@tweet.ReplaysCount</span>
+                                }
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            }
+        }
+    </div>
+</div>
+
+@* Paging *@
+<div class="col-md-9">
+    <div class="center-block">
+        @Html.PagedListPager(Model.FollowViewModel, page => Url.Action("Index", "User", new {page, pageSize = Model.FollowViewModel.PageSize}))
+        Showing @Model.FollowViewModel.FirstItemOnPage to @Model.FollowViewModel.LastItemOnPage of @Model.FollowViewModel.TotalItemCount Tweets
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        $(document).ready(function () {
+
+            var notyHub = $.connection.twitter;
+
+            notyHub.client.newNoty = function (noty) {
+                $("#hideLi").hide();
+                $("#increment").html("Notificarions " + noty);
+               
+            };
+
+            $.connection.hub.start();
+        });
+    </script>
+}

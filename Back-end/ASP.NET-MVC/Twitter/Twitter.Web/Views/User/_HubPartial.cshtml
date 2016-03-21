@@ -1,0 +1,52 @@
+﻿<div id="content"></div>
+
+<script>
+    $(document).ready(function() {
+
+        var tweetHub = $.connection.twitter;
+
+        tweetHub.client.postTweet = function(tweet) {
+            var name = $("<span>");
+            var content = $("<span>");
+            var imgurl = "";
+            var username = "";
+            var tweetId = "";
+            var createdOn = "";
+            var replay = $("<span>");
+
+            $.each(tweet, function(k, v) {
+
+                if (k === "FullName") {
+                    $("<span>").text(v).css("font-weight", "bold").appendTo(name);
+                } else if (k === "Content") {
+                    $("<div>").text(v).appendTo(content);
+                } else if (k === "ImageUrl") {
+                    imgurl += v;
+                } else if (k === "Username") {
+                    username += " <a href='/User/Show/" + v + "'>@@" + v + "</a>";
+                } else if (k === "TweetId") {
+                    tweetId += v;
+                } else if (k === "CreatedOn") {
+                    createdOn += " - <a href='/Tweet/Replay/?Id=" + tweetId + "'>" + v + "</a>";
+                    $("<div>").html("<a href='/Tweet/Replay/?Id=" + tweetId + "'>Replay</a>").css("margin-top", "10px").appendTo(replay);
+                }
+
+            });
+            //var report = "<a href='#" + tweetId + "' data-toggle='modal'>Report</a>";
+            
+            var img = $("<img src='" + imgurl + "' width='80'>").addClass("media-object");
+            var ahref = $("<a href='#'>").append(img);
+            var mleft = $("<div>").addClass("media-left media-middle").append(ahref);
+            var output = $("<div>").append(name, username, createdOn, content, replay);
+            var mbody = $("<div>").addClass("media-body").append(output);
+            var media = $("<div>").addClass("media").append(mleft, mbody);
+            var pbody = $("<div>").addClass("panel-body").append(media);
+            var panel = $("<div>").addClass("panel panel-default").append(pbody);
+            var div = $("<div>", { id: "index" + tweetId }).append(panel);
+            $("#content").append(div);
+            var num = tweetId - 1;
+            $("#index" + tweetId).insertBefore("#index" + num);
+        }
+        $.connection.hub.start();
+    });
+</script>

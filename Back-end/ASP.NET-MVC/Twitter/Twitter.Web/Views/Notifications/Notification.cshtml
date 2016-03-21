@@ -1,0 +1,10 @@
+﻿@model Twitter.Web.Models.HomeModel
+@{
+    ViewBag.Title = "Notification";
+}
+
+<h2>Notification</h2>
+
+<h5> <b>@Html.DisplayFor(m => m.NotificationsViewModel.User)</b> @Html.DisplayFor(m => m.NotificationsViewModel.Message)
+     -  @Html.DisplayFor(m => m.NotificationsViewModel.Date)
+</h5>
