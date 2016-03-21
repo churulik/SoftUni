@@ -1,0 +1,5 @@
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\Intro-Programming-Homework1\7. Print First and Last Name\bin\Debug\_7.Print_First_and_Last_Name.exe.config
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\Intro-Programming-Homework1\7. Print First and Last Name\bin\Debug\_7.Print_First_and_Last_Name.exe
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\Intro-Programming-Homework1\7. Print First and Last Name\bin\Debug\_7.Print_First_and_Last_Name.pdb
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\Intro-Programming-Homework1\7. Print First and Last Name\obj\Debug\_7.Print_First_and_Last_Name.exe
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\Intro-Programming-Homework1\7. Print First and Last Name\obj\Debug\_7.Print_First_and_Last_Name.pdb

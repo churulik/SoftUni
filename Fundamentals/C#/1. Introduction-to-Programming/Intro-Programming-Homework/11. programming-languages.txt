@@ -1,0 +1,40 @@
+Perform a research (e.g. in Google or Wikipedia) and provide a short list with information about the most popular programming languages. How similar are they to C#? How do they differ from C#? Write in a text file called “programming-languages.txt” at least five languages 
+along with 2-3 sentences about each of them. Use English.
+
+***
+
+The 6 most popular computer languages according to Google Search Results are: C, Java, C++, C#, Visual Basic and PHP. 
+
+C is developed by Denis Ritchie between 1969 and 1973. It is one of the most used languages. Many other languages (Java, PHP, C#, JavaScript) use different elements that have been initiated in C.
+
+Java is one of the most popular languages that is used. The language is class-based oriented and is designed to have as few as implementation dependencies as possible. It derives much of its syntax from C and C++.
+
+C++ is object-oriented computer language. It is designed by Bjarne Stroustrup in 1979. It is useful for desktop applications, video games and servers.
+
+Visual Basic is released in 1991 by Microsoft. Microsoft intended Visual Basic to be relatively easy to learn and use. It is an  integrated development environment (IDE).
+
+PHP is a language for web developing. It is widely used. Rasmus Lerdrorf (1994) is the developer of the language. 
+
+Differences between C# and the other languages
+
+C is an older programming language that is not object oriented – you need to tell the program to do everything. C# is fully oriented.
+
+Open JDK is one of the major implementation of Java. Visual C#, .NET Framework, Mono and DotGNU are the major implementations of C#.
+
+In C++, classes and structs are virtually identical whereas in C#, they are quite different. C# classes can implement any number of interfaces, but can inherit from only one base class. Furthermore, C# structs do not support inheritance, and do not support explicit default constructors (one is provided by default).
+
+Though C# and Visual Basic are syntactically very different, that is where the differences mostly end. Their differences are primarily syntactic.
+
+C# is a programming language as PHP is, but with the difference that C# targets a platform (.NET) that also accepts other languages, including PHP.
+
+Similarities between C# and the other languages
+
+C# and Objective C have a class library.
+
+Both C# and Java are Type-Safe Languages
+
+C# inherits most of its operators, keywords, and statements directly from C++.
+
+VB and C# have converged over there life time as useful syntax features have been incorporated from each. 
+
+C# and PHP has multiple projects.

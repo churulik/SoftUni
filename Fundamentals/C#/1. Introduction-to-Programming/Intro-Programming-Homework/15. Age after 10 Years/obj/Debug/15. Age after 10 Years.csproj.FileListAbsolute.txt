@@ -1,0 +1,5 @@
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\Intro-Programming-Homework1\15. Age after 10 Years\bin\Debug\_15.Age_after_10_Years.exe.config
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\Intro-Programming-Homework1\15. Age after 10 Years\bin\Debug\_15.Age_after_10_Years.exe
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\Intro-Programming-Homework1\15. Age after 10 Years\bin\Debug\_15.Age_after_10_Years.pdb
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\Intro-Programming-Homework1\15. Age after 10 Years\obj\Debug\_15.Age_after_10_Years.exe
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\Intro-Programming-Homework1\15. Age after 10 Years\obj\Debug\_15.Age_after_10_Years.pdb

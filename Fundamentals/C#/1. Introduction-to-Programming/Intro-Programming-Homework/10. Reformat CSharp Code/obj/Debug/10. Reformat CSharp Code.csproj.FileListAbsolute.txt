@@ -1,0 +1,5 @@
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\Intro-Programming-Homework1\10. Reformat CSharp Code\bin\Debug\_10.Reformat_CSharp_Code.exe.config
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\Intro-Programming-Homework1\10. Reformat CSharp Code\bin\Debug\_10.Reformat_CSharp_Code.exe
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\Intro-Programming-Homework1\10. Reformat CSharp Code\bin\Debug\_10.Reformat_CSharp_Code.pdb
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\Intro-Programming-Homework1\10. Reformat CSharp Code\obj\Debug\_10.Reformat_CSharp_Code.exe
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\Intro-Programming-Homework1\10. Reformat CSharp Code\obj\Debug\_10.Reformat_CSharp_Code.pdb

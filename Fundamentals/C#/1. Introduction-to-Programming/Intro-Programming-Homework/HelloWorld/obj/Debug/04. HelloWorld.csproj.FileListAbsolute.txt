@@ -1,0 +1,6 @@
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\Intro-Programming-Homework1\HelloWorld\bin\Debug\HelloWorld.exe.config
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\Intro-Programming-Homework1\HelloWorld\obj\Debug\HelloWorld.exe
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\Intro-Programming-Homework1\HelloWorld\obj\Debug\HelloWorld.pdb
+C:\Users\Tushe.Tushe-PC\Desktop\SoftUni\Noemvri 2014 - nivo 0\3. Въведение в програмирането\1. Introduction-to-Programming-Homework\Intro-Programming-Homework1\HelloWorld\bin\Debug\HelloWorld.exe.config
+C:\Users\Tushe.Tushe-PC\Desktop\SoftUni\Noemvri 2014 - nivo 0\3. Въведение в програмирането\1. Introduction-to-Programming-Homework\Intro-Programming-Homework1\HelloWorld\obj\Debug\HelloWorld.exe
+C:\Users\Tushe.Tushe-PC\Desktop\SoftUni\Noemvri 2014 - nivo 0\3. Въведение в програмирането\1. Introduction-to-Programming-Homework\Intro-Programming-Homework1\HelloWorld\obj\Debug\HelloWorld.pdb

@@ -1,0 +1,5 @@
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\Intro-Programming-Homework1\2. Print Your Name\bin\Debug\_2.Print_Your_Name.exe.config
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\Intro-Programming-Homework1\2. Print Your Name\bin\Debug\_2.Print_Your_Name.exe
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\Intro-Programming-Homework1\2. Print Your Name\bin\Debug\_2.Print_Your_Name.pdb
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\Intro-Programming-Homework1\2. Print Your Name\obj\Debug\_2.Print_Your_Name.exe
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\Intro-Programming-Homework1\2. Print Your Name\obj\Debug\_2.Print_Your_Name.pdb

@@ -1,0 +1,5 @@
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\Intro-Programming-Homework1\6. Print Numbers\bin\Debug\_6.Print_Numbers.exe.config
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\Intro-Programming-Homework1\6. Print Numbers\bin\Debug\_6.Print_Numbers.exe
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\Intro-Programming-Homework1\6. Print Numbers\bin\Debug\_6.Print_Numbers.pdb
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\Intro-Programming-Homework1\6. Print Numbers\obj\Debug\_6.Print_Numbers.exe
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\Intro-Programming-Homework1\6. Print Numbers\obj\Debug\_6.Print_Numbers.pdb

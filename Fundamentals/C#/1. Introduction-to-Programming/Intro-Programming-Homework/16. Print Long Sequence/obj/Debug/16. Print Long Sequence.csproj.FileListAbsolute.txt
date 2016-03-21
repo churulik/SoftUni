@@ -1,0 +1,6 @@
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\Intro-Programming-Homework1\16. Print Long Sequence\bin\Debug\_16.Print_Long_Sequence.exe.config
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\Intro-Programming-Homework1\16. Print Long Sequence\obj\Debug\16. Print Long Sequence.csprojResolveAssemblyReference.cache
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\Intro-Programming-Homework1\16. Print Long Sequence\bin\Debug\_16.Print_Long_Sequence.exe
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\Intro-Programming-Homework1\16. Print Long Sequence\bin\Debug\_16.Print_Long_Sequence.pdb
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\Intro-Programming-Homework1\16. Print Long Sequence\obj\Debug\_16.Print_Long_Sequence.exe
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\Intro-Programming-Homework1\16. Print Long Sequence\obj\Debug\_16.Print_Long_Sequence.pdb

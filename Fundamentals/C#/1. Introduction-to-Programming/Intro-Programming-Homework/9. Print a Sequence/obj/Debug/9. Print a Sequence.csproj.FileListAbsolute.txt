@@ -1,0 +1,5 @@
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\Intro-Programming-Homework1\9. Print a Sequence\bin\Debug\_9.Print_a_Sequence.exe.config
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\Intro-Programming-Homework1\9. Print a Sequence\bin\Debug\_9.Print_a_Sequence.exe
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\Intro-Programming-Homework1\9. Print a Sequence\bin\Debug\_9.Print_a_Sequence.pdb
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\Intro-Programming-Homework1\9. Print a Sequence\obj\Debug\_9.Print_a_Sequence.exe
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\Intro-Programming-Homework1\9. Print a Sequence\obj\Debug\_9.Print_a_Sequence.pdb

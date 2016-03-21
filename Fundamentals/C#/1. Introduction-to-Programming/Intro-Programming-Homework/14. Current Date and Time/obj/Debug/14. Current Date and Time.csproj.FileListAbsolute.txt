@@ -1,0 +1,5 @@
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\Intro-Programming-Homework1\14. Current Date and Time\bin\Debug\_14.Current_Date_and_Time.exe.config
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\Intro-Programming-Homework1\14. Current Date and Time\bin\Debug\_14.Current_Date_and_Time.exe
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\Intro-Programming-Homework1\14. Current Date and Time\bin\Debug\_14.Current_Date_and_Time.pdb
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\Intro-Programming-Homework1\14. Current Date and Time\obj\Debug\_14.Current_Date_and_Time.exe
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\Intro-Programming-Homework1\14. Current Date and Time\obj\Debug\_14.Current_Date_and_Time.pdb
