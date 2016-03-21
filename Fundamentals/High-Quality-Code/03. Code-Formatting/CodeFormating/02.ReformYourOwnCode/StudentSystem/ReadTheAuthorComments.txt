@@ -1,0 +1,7 @@
+﻿This is one of the homeworks from the course "Database Application". 
+
+Some of the classes need to be formated in order to follow the OOP conventions:
+	- in folder "Client": 
+		- "Program.cs" needs to be renamed (ex. "Application", "ExecuteStudentSystem", etc.)
+	- in folder "Models":
+		- the classes needs to be in singular form(ex. "Student.cs" - not "Students.cs", "Resource.cs" - not "Resources.cs", etc.) 
