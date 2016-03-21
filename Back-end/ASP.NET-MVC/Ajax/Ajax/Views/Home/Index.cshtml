@@ -1,0 +1,72 @@
+﻿@model Ajax.Models.GetInfoViewModel
+@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<div class="row">
+
+    <div class="col-md-12">
+        <h2>MVC AJAX</h2>
+        <h3>AJAX Tooltip </h3>
+        <div>
+            <a href="#" data-toggle="popover" data-trigger="hover" data-html="true"
+               data-content='<img src="http://o.aolcdn.com/hss/storage/adam/f124048893180a858c1c3f2db45b62fa/porsche-918-spyder-frankfurt.jpg" width="250"> 
+              Year: 2016 <br> 
+              Model: Spyder <br>
+              Color: Silver'>Porshe</a>
+        </div>
+
+        <div>
+            <a href="#" data-toggle="popover" data-trigger="hover" data-html="true"
+               data-content='<img src="http://488gtb.ferrari.com/img/carHome.png" width="250">
+              Year: 2016 <br>
+              Model: 458 <br>
+              Color: Red'>Ferrari</a>
+        </div>
+
+        <div>
+            <a href="#" data-toggle="popover" data-trigger="hover" data-html="true"
+               data-content='<img src="http://static.dezeen.com/uploads/2015/05/BMW-i8_dezeen_468_8.jpg" width="250">
+              Year: 2016 <br>
+              Model: i8 <br>
+              Color: Silver'>BMW</a>
+        </div>
+    </div>
+
+    <div class="col-md-12">
+        <h3>AJAX Auto-Complete</h3>
+        @using (@Html.BeginForm("Cities", "Home", FormMethod.Get, new {@class = "form-inline"}))
+        {
+            @Html.TextBox("city", null, new {@class = "form-control", placeholder = "Enter city name"})
+            <input type="submit" value="Search" class="btn btn-primary"/>
+        }
+        <div id="cities"></div>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script type="text/jscript">       
+        $(document).ready(function () {
+            $('[data-toggle="popover"]').popover();
+        });
+        
+        $(document).ready(function () {
+            $("#city").keyup(function (e) {
+                var searchCity = $("#city").val();
+                $.getJSON("/Home/Cities", {
+                    city: searchCity
+                }, function (results) {                    
+                    var div = $("<div id=\"result\">");
+                    $.each(results, function (index, result) {                        
+                        $("<div>").text(result).appendTo(div);
+                    });
+                    $("#cities").html("");
+                    div.appendTo($("#cities"));
+                });
+            });
+        }); 
+    </script>
+}
