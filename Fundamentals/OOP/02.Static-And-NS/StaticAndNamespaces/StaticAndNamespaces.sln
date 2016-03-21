@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.Point3D", "01.Point3D\01.Point3D.csproj", "{B4926CEA-3CC6-475F-869D-26873F6A4EFA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.DistanceCalculator", "02.DistanceCalculator\02.DistanceCalculator.csproj", "{595C8B0F-DA3D-4CCD-A7EE-B19CF88F323D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03.Paths", "03.Paths\03.Paths.csproj", "{F37CF30F-1A7A-45D6-B90A-06DA39E2D083}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04.Namespaces", "04.Namespaces\04.Namespaces.csproj", "{F2324695-6B05-4C98-84CA-85C7C82CFB15}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B4926CEA-3CC6-475F-869D-26873F6A4EFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4926CEA-3CC6-475F-869D-26873F6A4EFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4926CEA-3CC6-475F-869D-26873F6A4EFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4926CEA-3CC6-475F-869D-26873F6A4EFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{595C8B0F-DA3D-4CCD-A7EE-B19CF88F323D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{595C8B0F-DA3D-4CCD-A7EE-B19CF88F323D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{595C8B0F-DA3D-4CCD-A7EE-B19CF88F323D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{595C8B0F-DA3D-4CCD-A7EE-B19CF88F323D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F37CF30F-1A7A-45D6-B90A-06DA39E2D083}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F37CF30F-1A7A-45D6-B90A-06DA39E2D083}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F37CF30F-1A7A-45D6-B90A-06DA39E2D083}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F37CF30F-1A7A-45D6-B90A-06DA39E2D083}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2324695-6B05-4C98-84CA-85C7C82CFB15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2324695-6B05-4C98-84CA-85C7C82CFB15}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2324695-6B05-4C98-84CA-85C7C82CFB15}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2324695-6B05-4C98-84CA-85C7C82CFB15}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
