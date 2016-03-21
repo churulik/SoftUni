@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<catalog>
+  <album>
+    <name>Good mornning</name>
+    <artist>Memphis</artist>
+    <year>1983</year>
+    <producer>The globe</producer>
+    <price>21.00</price>
+    <songs>
+      <song>
+        <title>Yesho</title>
+        <duration>5:00</duration>
+      </song>
+      <song>
+        <title>Halhal</title>
+        <duration>5:23</duration>
+      </song>
+      <song>
+        <title>This is on</title>
+        <duration>4:30</duration>
+      </song>
+    </songs>
+  </album>
+  <album>
+    <name>1989</name>
+    <artist>Tylow Swift</artist>
+    <year>2014</year>
+    <producer>Max Martin</producer>
+    <price>7.99</price>
+    <songs>
+      <song>
+        <title>Welcome To New York</title>
+        <duration>3:32</duration>
+      </song>
+      <song>
+        <title>Blank Space</title>
+        <duration>3:51</duration>
+      </song>
+      <song>
+        <title>Style</title>
+        <duration>3:50</duration>
+      </song>
+    </songs>
+  </album>
+  <album>
+    <name>Dear Agony</name>
+    <artist>Breaking Benjamin</artist>
+    <year>2009</year>
+    <producer>David Bendeth</producer>
+    <price>11.99</price>
+    <songs>
+      <song>
+        <title>Fade Away</title>
+        <duration>3:16</duration>
+      </song>
+      <song>
+        <title>I Will Not Bow</title>
+        <duration>3:36</duration>
+      </song>
+      <song>
+        <title>Crawl</title>
+        <duration>3:58</duration>
+      </song>
+    </songs>
+  </album>
+  <album>
+    <name>Dark Before Dawn</name>
+    <artist>Breaking Benjamin</artist>
+    <year>2015</year>
+    <producer>Benjamin Burnley</producer>
+    <price>20.99</price>
+    <songs>
+      <song>
+        <title>Dark</title>
+        <duration>2:10</duration>
+      </song>
+      <song>
+        <title>Failure</title>
+        <duration>3:34</duration>
+      </song>
+      <song>
+        <title>Angels Fall</title>
+        <duration>3:48</duration>
+      </song>
+    </songs>
+  </album>
+</catalog>

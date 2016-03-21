@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:students="urn:sample-org:students" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="students">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" name="student">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="name" type="xs:string" />
+              <xs:element name="gender" type="xs:string" />
+              <xs:element name="birth-date" type="xs:date" />
+              <xs:element name="phone-number" type="xs:string" minOccurs="0" />
+              <xs:element name="email" type="xs:string" />
+              <xs:element name="specialty" type="xs:string" />
+              <xs:element name="faculty-number" type="xs:unsignedInt" minOccurs="0" />
+              <xs:element name="exams">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="name" type="xs:string" />
+                    <xs:element name="date-taken" type="xs:date" />
+                    <xs:element name="grade" type="xs:decimal" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="endorsements" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="author" type="xs:string" />
+                    <xs:element name="author-email" type="xs:string" />
+                    <xs:element name="endorsment-date" type="xs:date" />
+                    <xs:element name="endotsment-text" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="name" type="xs:string" use="required" />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

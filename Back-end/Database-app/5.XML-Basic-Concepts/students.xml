@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<students xmlns:students="urn:sample-org:students" name="Student's Structure">
+  <student>
+    <name>Petar Petrov</name>
+    <gender>Male</gender>
+    <birth-date>1989-03-24</birth-date>
+    <phone-number></phone-number>
+    <email>p_petrov@gmail.com</email>
+    <specialty>Computer Engineer</specialty>
+    <faculty-number>01356798</faculty-number>
+    <exams>
+      <name>PHP</name>
+      <date-taken>2015-05-09</date-taken>
+      <grade>6.00</grade>
+    </exams>
+  </student>
+  <student>
+    <name>Ivanka Mineva</name>
+    <gender>Female</gender>
+    <birth-date>1993-10-20</birth-date>
+    <phone-number>0885677895</phone-number>
+    <email>imineva@abv.bg</email>
+    <specialty>Computer Engineer</specialty>
+    <faculty-number>01356799</faculty-number>
+    <exams>
+      <name>PHP</name>
+      <date-taken>2015-05-09</date-taken>
+      <grade>6.00</grade>
+    </exams>
+  </student>
+</students>
