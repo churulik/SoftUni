@@ -1,0 +1,186 @@
+body {
+	background-color: #1C1C1C;
+	font-family: Arial;
+}
+div {
+	width: 890px;
+	height: 1000px;
+	margin: 0 auto;
+	background-color: white;
+	position: relative;
+}
+
+div > header > img {
+	width: 890px;
+}
+div > header > h1 {
+	position: absolute;
+	top:200px;
+	left: 500px;
+	color: white;
+	font-size: 30px;
+	font-weight: bold;
+	width: 100%;
+}
+div > nav > ul {
+	margin-top: -4px;
+	border-bottom: 1px solid #E6E6E6;
+}
+div > nav > ul > li > ul {
+	background-color: #E6E6E6;
+	border-bottom: 1px solid white;
+}
+div > nav > ul > li > ul > li {
+	display: inline-block;
+	padding: 10px 30px;
+	border-right: 1px solid white;
+	font-size: 18px;
+}
+div > nav > ul > li > ul > li:hover {
+	cursor: pointer;
+}
+div > nav > ul > li > ul > .home {
+	background-color: #A4A4A4;
+}
+div > nav > ul > li > ul > .home > a {
+	text-decoration: none;
+	color: white;
+}
+div > nav > ul > li > ul > li > a {
+	text-decoration: none;
+	color: #6E6E6E;
+}
+
+div > main > .sectionTop {
+	float: left;
+	width: 535px;
+	margin: 20px 0px 20px 40px;
+	border-radius: 15px;
+	border: 1px solid #E6E6E6;
+	padding: 20px;
+}
+div > main > .sectionTop > h2 {
+	margin-bottom: 15px;
+	color: #86B404;
+	font-weight: bold;
+	font-size: 20px;
+}
+div > main > .sectionTop > p {
+	font-size: 13px;
+}
+div > main > .sectionTop > p > span{
+	font-weight: bold;
+}
+
+div > main > .asideTop {
+	float: right;
+	width: 145px;
+	margin: 20px 40px 20px 0px;
+	background-color: #E6E6E6;
+	padding: 20px 20px 10px;
+	border: 1px solid #E6E6E6;
+	border-radius: 15px;
+}
+div > main > .asideTop > h2 {
+	margin-bottom: 15px;
+	color: #86B404;
+	font-weight: bold;
+	font-size: 20px;
+}
+div > main > .asideTop > ul > li {
+	margin-bottom: 10px; 
+}
+div > main > .asideTop > ul > li > time {
+	font-weight: bold;
+	font-size: 11px;
+}
+div > main > .asideTop > ul > li > p {
+	font-size: 11px;
+}
+div > main > .asideTop > ul > li > a {
+	font-size: 11px;
+	color: #86B404;
+}
+div > main:after {
+	content: "";
+	display: block;
+	clear: both;
+	height: 0;
+}
+div > main > .sectionBottom {
+	float: left;
+	width: 535px;
+	height: 425px;
+	margin: 0px 0px 30px 40px;
+	border-radius: 15px;
+	border: 1px solid #E6E6E6;
+	padding: 20px;
+}
+div > main > .sectionBottom > h3 {
+	margin-bottom: 15px;
+	color: #86B404;
+	font-weight: bold;
+	font-size: 18px;
+}
+div > main > .sectionBottom > article > a {
+	text-decoration: none;
+	color: black;
+
+}
+div > main > .sectionBottom > article > a > img {
+	float: left;
+	margin-right: 25px;
+
+}
+div > main > .sectionBottom > article > a > h6 {
+	font-size: 13px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+div > main > .sectionBottom > article > a > p {
+	font-size: 13px;
+	margin-bottom: 35px;
+}
+
+div > main > .asideBottom {
+	float: right;
+	width: 145px;
+	margin: 0px 40px 30px 0px;
+	border: 1px solid #E6E6E6;
+	padding: 20px 20px 10px;
+	border-radius: 15px;
+}
+div > main > .asideBottom > h2 {
+	margin-bottom: 15px;
+	color: #86B404;
+	font-weight: bold;
+	font-size: 20px;
+}
+div > main > .asideBottom > time {
+	font-size: 11px;
+	font-weight: bold;
+}
+div > main > .asideBottom > p {
+	font-size: 11px;
+}
+div > main > .asideBottom > a {
+	font-size: 11px;
+	color: #86B404;
+}
+div > main:after {
+	content: "";
+	display: block;
+	clear: both;
+	height: 0;
+}
+div > footer {
+	background-color: #86B404;
+	height: 70px;
+	padding-top: 30px;
+	padding-left: 140px;
+	margin-bottom: 20px;
+}
+div > footer > p {
+	font-size: 13px;
+}
+
