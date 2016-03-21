@@ -1,0 +1,75 @@
+#wrapper {
+	width: 1100px;
+	height: 200px;
+	background-color: #234465;
+	padding: 60px 0px 60px 80px;
+	margin: 0 auto;
+	color: white;
+	font-size: 12px;
+	font-family: sans-serif;
+}
+
+#wrapper > footer > section {
+	float: left;
+	margin-right: 30px;
+}
+#wrapper > footer > section > button {
+	display: block;
+	width: 160px;
+	margin-bottom: 10px;
+	padding: 10px 15px;
+	background-color: #234465;
+	border: 1px solid #FE9A2E;
+	font-size: 12px;
+}
+#wrapper > footer > section > button:hover {
+	background-color: #FE9A2E;
+	cursor: pointer;
+	transition: 1s;
+}
+#wrapper > footer > section > button > a,
+#wrapper > footer > section > button > a:link,
+#wrapper > footer > section > button > a:visited {
+	text-decoration: none;
+	color: white;
+}
+
+#wrapper > footer > section > h6 {
+	color: #FE9A2E;
+	margin: 0;
+}
+
+#wrapper > footer > section > ul {
+	list-style-type: none;
+	padding: 0;
+}
+#wrapper > footer > section > ul > li {
+	padding-bottom: 5px;
+}
+#wrapper > footer > section > ul > li > a,
+#wrapper > footer > section > ul > li > a:link,
+#wrapper > footer > section > ul > li > a :visited  {
+	text-decoration: none;
+	color: white;
+}
+#wrapper > footer > section > ul > li > a:hover {
+	color: #FE9A2E;
+	cursor: pointer;
+	transition: 1s;
+}
+#wrapper > footer > section > a > img {
+	margin-right: 5px;
+}
+#wrapper > footer > section > a > img:hover {
+	opacity: 0.5;
+	cursor: pointer;
+	transition: 1s;
+}
+#wrapper > footer > .share {
+	width: 210px;
+}
+#wrapper > footer > section > .fb-like-box {
+    background-color: white;
+    float: left;
+    margin-left: 40px;
+}
