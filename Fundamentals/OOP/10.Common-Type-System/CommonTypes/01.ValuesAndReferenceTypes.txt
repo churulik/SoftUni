@@ -1,0 +1,34 @@
+Describe the differences between value and reference types. Answer the following questions:
+
+•	Which .NET data types are value types? Which types are reference types?
+	o	Value types are: int, bool, long, decimal, char, float, double, byte, sbyte, short, uint, ulong, ushort, struct, enum.
+	o	 Reference types are: class, delegate, dynamic, object, interface, string, interpolate strings.
+
+•	How do value and reference types differ when assigned to a variable? 
+	o	Value types: when assigned a small amount of memory is allocated in the stuck and is copied to the variable;
+	o	Reference types: when assigned a pointer is created on the stuck and the object is stored in the heap.
+
+•	How do value and reference types behave when passed as argument to a method?
+	o	Value types: when passed a smaller, compared to reference types, amount of memory is allocated to preserve the values.
+	o	Reference types: when passed the value is stored in the heap – it allocates more memory than value types.
+
+•	Where in memory are value types allocated? Where are reference types allocated?
+	o	Value types: in the stuck.
+	o	Reference types: in the heap;
+
+•	What is data mutation? Can value types be mutated? Can reference types be mutated?
+	o	A data mutation is when the memory dynamically changes. While value types have fix sized, reference types can dynamically grow.
+
+•	What is the difference between mutating and setting (assigning) a variable? Give examples.
+	o	When assigning a variable a fixed size of the memory (say 800 kb) is allocated to preserve values. 
+		If values size reaches the end size, the memory does not expand automatically 
+		and if another value is passed an out of memory exception will be triggered. 
+		Contrary, a mutating variable will dynamically expand when the maximal memory size is reached. 
+		Thus out of memory exception will depend solely on the size of the hard disk.
+
+•	What are the out and ref keywords used for? In what do they differ?
+	o	Ref and Out are used to pass arguments within a method or function. 
+		Both indicate that an argument is passed by reference (by default arguments are passed to a method by value).  
+		The main difference is that while Out arguments do not need to be initialized before being passed (ex. int a;), the Ref do (ex. int a = 5). 
+		Also, passing a parameter value by Ref is useful when the called method is also needed to modify the pass parameter. 
+		And finally declaring a parameter to an Out method is useful when multiple values need to be returned from a function or method.
