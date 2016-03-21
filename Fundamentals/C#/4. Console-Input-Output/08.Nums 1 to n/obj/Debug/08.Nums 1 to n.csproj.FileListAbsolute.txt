@@ -1,0 +1,5 @@
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Console-Input-Output\08.Nums 1 to n\bin\Debug\08.Nums 1 to n.exe.config
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Console-Input-Output\08.Nums 1 to n\bin\Debug\08.Nums 1 to n.exe
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Console-Input-Output\08.Nums 1 to n\bin\Debug\08.Nums 1 to n.pdb
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Console-Input-Output\08.Nums 1 to n\obj\Debug\08.Nums 1 to n.exe
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Console-Input-Output\08.Nums 1 to n\obj\Debug\08.Nums 1 to n.pdb

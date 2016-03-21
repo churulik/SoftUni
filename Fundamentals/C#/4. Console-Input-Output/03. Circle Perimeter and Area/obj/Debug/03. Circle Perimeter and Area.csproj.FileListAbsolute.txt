@@ -1,0 +1,5 @@
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\Console-Input-Output\03. Circle Perimeter and Area\bin\Debug\_03.Circle_Perimeter_and_Area.exe.config
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\Console-Input-Output\03. Circle Perimeter and Area\bin\Debug\_03.Circle_Perimeter_and_Area.exe
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\Console-Input-Output\03. Circle Perimeter and Area\bin\Debug\_03.Circle_Perimeter_and_Area.pdb
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\Console-Input-Output\03. Circle Perimeter and Area\obj\Debug\_03.Circle_Perimeter_and_Area.exe
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\Console-Input-Output\03. Circle Perimeter and Area\obj\Debug\_03.Circle_Perimeter_and_Area.pdb

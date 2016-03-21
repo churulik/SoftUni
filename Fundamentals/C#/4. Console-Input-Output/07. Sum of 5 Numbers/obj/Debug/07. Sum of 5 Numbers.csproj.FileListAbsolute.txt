@@ -1,0 +1,6 @@
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Console-Input-Output\07. Sum of 5 Numbers\bin\Debug\_07.Sum_of_5_Numbers.exe.config
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Console-Input-Output\07. Sum of 5 Numbers\bin\Debug\_07.Sum_of_5_Numbers.exe
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Console-Input-Output\07. Sum of 5 Numbers\bin\Debug\_07.Sum_of_5_Numbers.pdb
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Console-Input-Output\07. Sum of 5 Numbers\obj\Debug\07. Sum of 5 Numbers.csprojResolveAssemblyReference.cache
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Console-Input-Output\07. Sum of 5 Numbers\obj\Debug\_07.Sum_of_5_Numbers.exe
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Console-Input-Output\07. Sum of 5 Numbers\obj\Debug\_07.Sum_of_5_Numbers.pdb

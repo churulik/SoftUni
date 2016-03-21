@@ -1,0 +1,9 @@
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Console-Input-Output\09. Sum of n Numbers\bin\Debug\_09.Sum_of_n_Numbers.exe.config
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Console-Input-Output\09. Sum of n Numbers\bin\Debug\_09.Sum_of_n_Numbers.exe
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Console-Input-Output\09. Sum of n Numbers\bin\Debug\_09.Sum_of_n_Numbers.pdb
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Console-Input-Output\09. Sum of n Numbers\obj\Debug\09. Sum of n Numbers.csprojResolveAssemblyReference.cache
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Console-Input-Output\09. Sum of n Numbers\obj\Debug\_09.Sum_of_n_Numbers.exe
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Console-Input-Output\09. Sum of n Numbers\obj\Debug\_09.Sum_of_n_Numbers.pdb
+C:\Users\Tushe.Tushe-PC\Desktop\SU\Noemvri 2014 - nivo 0\6. Вход и изход от конзолата\Homework\Console-Input-Output\09. Sum of n Numbers\bin\Debug\_09.Sum_of_n_Numbers.exe.config
+C:\Users\Tushe.Tushe-PC\Desktop\SU\Noemvri 2014 - nivo 0\6. Вход и изход от конзолата\Homework\Console-Input-Output\09. Sum of n Numbers\obj\Debug\_09.Sum_of_n_Numbers.exe
+C:\Users\Tushe.Tushe-PC\Desktop\SU\Noemvri 2014 - nivo 0\6. Вход и изход от конзолата\Homework\Console-Input-Output\09. Sum of n Numbers\obj\Debug\_09.Sum_of_n_Numbers.pdb

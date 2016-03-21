@@ -1,0 +1,5 @@
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\Console-Input-Output\1. Sum of 3 Numbers\bin\Debug\_1.Sum_of_3_Numbers.exe.config
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\Console-Input-Output\1. Sum of 3 Numbers\bin\Debug\_1.Sum_of_3_Numbers.exe
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\Console-Input-Output\1. Sum of 3 Numbers\bin\Debug\_1.Sum_of_3_Numbers.pdb
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\Console-Input-Output\1. Sum of 3 Numbers\obj\Debug\_1.Sum_of_3_Numbers.exe
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\Console-Input-Output\1. Sum of 3 Numbers\obj\Debug\_1.Sum_of_3_Numbers.pdb
