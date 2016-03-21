@@ -1,0 +1,6 @@
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Operators Expressions and Statements\11. Extract Bit 3\bin\Debug\_11.Extract_Bit_3.exe.config
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Operators Expressions and Statements\11. Extract Bit 3\bin\Debug\_11.Extract_Bit_3.exe
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Operators Expressions and Statements\11. Extract Bit 3\bin\Debug\_11.Extract_Bit_3.pdb
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Operators Expressions and Statements\11. Extract Bit 3\obj\Debug\_11.Extract_Bit_3.exe
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Operators Expressions and Statements\11. Extract Bit 3\obj\Debug\_11.Extract_Bit_3.pdb
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Operators Expressions and Statements\11. Extract Bit 3\obj\Debug\11. Extract Bit 3.csprojResolveAssemblyReference.cache

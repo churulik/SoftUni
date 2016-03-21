@@ -1,0 +1,5 @@
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Operators Expressions and Statements\13. Check a Bit at Given Position\bin\Debug\_13.Check_a_Bit_at_Given_Position.exe.config
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Operators Expressions and Statements\13. Check a Bit at Given Position\bin\Debug\_13.Check_a_Bit_at_Given_Position.exe
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Operators Expressions and Statements\13. Check a Bit at Given Position\bin\Debug\_13.Check_a_Bit_at_Given_Position.pdb
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Operators Expressions and Statements\13. Check a Bit at Given Position\obj\Debug\_13.Check_a_Bit_at_Given_Position.exe
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Operators Expressions and Statements\13. Check a Bit at Given Position\obj\Debug\_13.Check_a_Bit_at_Given_Position.pdb

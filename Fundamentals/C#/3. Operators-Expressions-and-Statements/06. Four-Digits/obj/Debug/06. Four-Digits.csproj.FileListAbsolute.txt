@@ -1,0 +1,6 @@
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Operators Expressions and Statements\06. Four-Digits\bin\Debug\_06.Four_Digits.exe.config
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Operators Expressions and Statements\06. Four-Digits\bin\Debug\_06.Four_Digits.exe
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Operators Expressions and Statements\06. Four-Digits\bin\Debug\_06.Four_Digits.pdb
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Operators Expressions and Statements\06. Four-Digits\obj\Debug\06. Four-Digits.csprojResolveAssemblyReference.cache
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Operators Expressions and Statements\06. Four-Digits\obj\Debug\_06.Four_Digits.exe
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Operators Expressions and Statements\06. Four-Digits\obj\Debug\_06.Four_Digits.pdb

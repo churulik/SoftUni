@@ -1,0 +1,6 @@
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Operators Expressions and Statements\09. Trapezoids\bin\Debug\_09.Trapezoids.exe.config
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Operators Expressions and Statements\09. Trapezoids\bin\Debug\_09.Trapezoids.exe
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Operators Expressions and Statements\09. Trapezoids\bin\Debug\_09.Trapezoids.pdb
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Operators Expressions and Statements\09. Trapezoids\obj\Debug\09. Trapezoids.csprojResolveAssemblyReference.cache
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Operators Expressions and Statements\09. Trapezoids\obj\Debug\_09.Trapezoids.exe
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Operators Expressions and Statements\09. Trapezoids\obj\Debug\_09.Trapezoids.pdb

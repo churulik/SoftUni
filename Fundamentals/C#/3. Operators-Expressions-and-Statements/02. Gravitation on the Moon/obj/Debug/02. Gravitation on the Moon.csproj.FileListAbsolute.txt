@@ -1,0 +1,9 @@
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\Operators Expressions and Statements\02. Gravitation on the Moon\bin\Debug\_02.Gravitation_on_the_Moon.exe.config
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\Operators Expressions and Statements\02. Gravitation on the Moon\bin\Debug\_02.Gravitation_on_the_Moon.exe
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\Operators Expressions and Statements\02. Gravitation on the Moon\bin\Debug\_02.Gravitation_on_the_Moon.pdb
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\Operators Expressions and Statements\02. Gravitation on the Moon\obj\Debug\02. Gravitation on the Moon.csprojResolveAssemblyReference.cache
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\Operators Expressions and Statements\02. Gravitation on the Moon\obj\Debug\_02.Gravitation_on_the_Moon.exe
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\Operators Expressions and Statements\02. Gravitation on the Moon\obj\Debug\_02.Gravitation_on_the_Moon.pdb
+C:\Users\Tushe.Tushe-PC\Desktop\SU\nov 2014 - nivo 0\5 Оператори и изрази\Homeworl-Operators-Expressions-and-Statements\02. Gravitation on the Moon\bin\Debug\_02.Gravitation_on_the_Moon.exe.config
+C:\Users\Tushe.Tushe-PC\Desktop\SU\nov 2014 - nivo 0\5 Оператори и изрази\Homeworl-Operators-Expressions-and-Statements\02. Gravitation on the Moon\obj\Debug\_02.Gravitation_on_the_Moon.exe
+C:\Users\Tushe.Tushe-PC\Desktop\SU\nov 2014 - nivo 0\5 Оператори и изрази\Homeworl-Operators-Expressions-and-Statements\02. Gravitation on the Moon\obj\Debug\_02.Gravitation_on_the_Moon.pdb

@@ -1,0 +1,6 @@
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Operators Expressions and Statements\10. PointInsideCircleOutsideRectangle\bin\Debug\_10.PointInsideCircleOutsideRectangle.exe.config
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Operators Expressions and Statements\10. PointInsideCircleOutsideRectangle\bin\Debug\_10.PointInsideCircleOutsideRectangle.exe
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Operators Expressions and Statements\10. PointInsideCircleOutsideRectangle\bin\Debug\_10.PointInsideCircleOutsideRectangle.pdb
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Operators Expressions and Statements\10. PointInsideCircleOutsideRectangle\obj\Debug\10. Point-Inside-Circle-Outside-Rectangle.csprojResolveAssemblyReference.cache
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Operators Expressions and Statements\10. PointInsideCircleOutsideRectangle\obj\Debug\_10.PointInsideCircleOutsideRectangle.exe
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Operators Expressions and Statements\10. PointInsideCircleOutsideRectangle\obj\Debug\_10.PointInsideCircleOutsideRectangle.pdb

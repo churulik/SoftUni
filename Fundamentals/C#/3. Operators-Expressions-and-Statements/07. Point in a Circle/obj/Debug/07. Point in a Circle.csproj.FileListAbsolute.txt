@@ -1,0 +1,6 @@
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Operators Expressions and Statements\07. Point in a Circle\bin\Debug\_07.Point_in_a_Circle.exe.config
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Operators Expressions and Statements\07. Point in a Circle\bin\Debug\_07.Point_in_a_Circle.exe
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Operators Expressions and Statements\07. Point in a Circle\bin\Debug\_07.Point_in_a_Circle.pdb
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Operators Expressions and Statements\07. Point in a Circle\obj\Debug\_07.Point_in_a_Circle.exe
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Operators Expressions and Statements\07. Point in a Circle\obj\Debug\_07.Point_in_a_Circle.pdb
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Operators Expressions and Statements\07. Point in a Circle\obj\Debug\07. Point in a Circle.csprojResolveAssemblyReference.cache

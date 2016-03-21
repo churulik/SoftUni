@@ -1,0 +1,11 @@
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Operators Expressions and Statements\12. Extract Bit from Integer\bin\Debug\_12.Extract_Bit_from_Integer.exe.config
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Operators Expressions and Statements\12. Extract Bit from Integer\bin\Debug\_12.Extract_Bit_from_Integer.exe
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Operators Expressions and Statements\12. Extract Bit from Integer\bin\Debug\_12.Extract_Bit_from_Integer.pdb
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Operators Expressions and Statements\12. Extract Bit from Integer\obj\Debug\_12.Extract_Bit_from_Integer.exe
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Operators Expressions and Statements\12. Extract Bit from Integer\obj\Debug\_12.Extract_Bit_from_Integer.pdb
+C:\Users\Tushe.Tushe-PC\Desktop\SU\nov 2014 - nivo 0\5 Оператори и изрази\Homeworl-Operators-Expressions-and-Statements\12. Extract Bit from Integer\bin\Debug\_12.Extract_Bit_from_Integer.exe.config
+C:\Users\Tushe.Tushe-PC\Desktop\SU\nov 2014 - nivo 0\5 Оператори и изрази\Homeworl-Operators-Expressions-and-Statements\12. Extract Bit from Integer\obj\Debug\_12.Extract_Bit_from_Integer.exe
+C:\Users\Tushe.Tushe-PC\Desktop\SU\nov 2014 - nivo 0\5 Оператори и изрази\Homeworl-Operators-Expressions-and-Statements\12. Extract Bit from Integer\obj\Debug\_12.Extract_Bit_from_Integer.pdb
+C:\Users\Tushe.Tushe-PC\Desktop\SU\nov 2014 - nivo 0\5 Оператори и изрази\Homeworl-Operators-Expressions-and-Statements\12. Extract Bit from Integer\bin\Debug\_12.Extract_Bit_from_Integer.exe
+C:\Users\Tushe.Tushe-PC\Desktop\SU\nov 2014 - nivo 0\5 Оператори и изрази\Homeworl-Operators-Expressions-and-Statements\12. Extract Bit from Integer\bin\Debug\_12.Extract_Bit_from_Integer.pdb
+C:\Users\Tushe.Tushe-PC\Desktop\SU\nov 2014 - nivo 0\5 Оператори и изрази\Homeworl-Operators-Expressions-and-Statements\12. Extract Bit from Integer\obj\Debug\12. Extract Bit from Integer.csprojResolveAssemblyReference.cache
