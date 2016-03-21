@@ -1,0 +1,15 @@
+Problem 10. SQL Language
+
+SQL(Structured Query Language) is a standard language for accessing databases.
+
+What type of language is SQL?
+
+It is a query language, that consist of data definition language (alter, analyze, associate statics, audit, comment, create, drop, flashback, grant, purge, rename, revoke, truncate and undrop) and data manipulation language (call, delete, explain plan, inset, lock table, merge, select, update).
+
+What is its purpose?
+
+The purpose is to store, invoke, update or delete data.
+
+Provide an example with simple SQL query:
+
+SELECT * FROM Students;

@@ -1,0 +1,45 @@
+Problem 1.What Database Models do You Know?
+
+There are several kinds of database models:
+
+- hierarchical model – the data is organized into a tree structure;
+
+- network model – a graph structure, in which one child may have more than one parent;
+
+- relational model – data grouped into tables/relations;
+
+- entity-relationship model – data the relationships between entities – mostly used to represent a business data;
+
+- object model – store information as objects; combine data collection with object-oriented programming;
+
+- document model – used mainly in NoSQL; stores, retrieves and manages document information;
+
+- entity-attribute-value – a single table, that stores one fact, with three columns: an entity, an attribute and value;
+
+- star schema – the simplest data warehouse schema.
+
+More details about the entity-attribute-value model:
+
+The model can be understood if we imagine a supermarket in which we need to store data about different products. Each product has its entity (name), attribute (weight, category, description) and value (price or descriptive text). 
+
+Example: <apple><weight><0.5>. 
+
+The entity is the item name or the object ID.
+ 
+The attribute or the parameter is a foreign key that contains columns about: attribute id, attribute name, description and data type. 
+
+The value is the value of the attribute.
+In this model each entity is described by the attributes and the values. The table has one row for each entity-attribute-value triple.
+
+The model is mostly used for scientific database, when the numbers of attributes that may apply to a single entity are more than those that actually apply to an individual entity.
+
+For example, the Entity ID 101 might have many attributes and values:
+
+<Entity> <ID Attribute> <Value>
+<101>< Primary_Neuron >< Nigrostriate cell > 
+<101>< Soma_location >< ParsCompacta, S.Nigra > 
+<101>< Axon_Terminus_Location >< Corpus Striatum > 
+<101>< Receptor_Type >< D2> 
+<101>< Efferent_Neuron >< Striato-striatal > 
+
+One of the drawbacks is that the model is relatively simple and static and cannot be use, for instance, for business applications.

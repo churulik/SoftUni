@@ -1,0 +1,21 @@
+Problem 4. Difference between a Primary and Foreign Key
+
+What is the primary key?
+
+A primary key is a unique value that might be assigned per row. The primary key cannot be null and is recommended to be only one per row. It might be generate automatically by the database system or can be enter as a data unique for a person. 
+
+Why do we need it?
+
+In order to reference a specific row or use it as a reference by other tables (foreign keys). 
+
+What is the foreign key? 
+
+A foreign key is a reference of a table that connects/points to the primary key of other table.
+
+What is the purpose of foreign keys? 
+
+The purpose of it is to ensure the referential integrity in the database, i.e. that the primary key points at the right reference.
+ 
+What is the difference between a primary and foreign key?
+
+The difference is in that, contrary to the secondary key, the primary key will not accept null values and duplicates. Another difference is that the foreign key refers to the primary key. Also we might have only one primary key in a table, but several foreign keys. 

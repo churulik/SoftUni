@@ -1,0 +1,49 @@
+Problem 6. Schema Normalization
+
+The database normalization is a process which decreases repeating data attributes in a table. The repeated data is distributed among several tables. The idea is to isolate data so that additions, deletions, and modifications of an attribute can be made in just one table.
+
+For example: 
+
+Table: AirTickets
+TicketId, From, To, Company, AirPlaneNumber, ByFromCompany, LuggageInfo Price
+1023, Sofia, London, AirBulgaria, 777, Orbitz, 1 checked-in, 200
+1024, Paris, Moscow, AirFrance, 457, Orbitz, 1 checked-in, 320
+1025, Berlin, New York, Luftahse, 563, Lufhanse, 2 checked-in, 800
+1026, Varna, Moscow, AirBulgaria, 770, Orbitz, 1 checked-in, 400
+
+We can create several tables to normalize the table:
+
+Table: Company 
+Id, name
+1. AirBulgaria
+2. Luftahse,
+3. AirFrance
+
+Table: ByFromCompany
+Id, name
+1. Orbitz
+2. Lufthanse
+3. Airbulgaria
+
+Table: LuggageInfo
+1. 1 checked-in
+2. 2 checked-in
+
+TicketId, From, To, Company, AirPlaneNumber, ByFromCompany, LuggageInfo Price
+1023, Sofia, London, 1, 777, 1, 1, 200
+1024, Paris, Moscow, 2, 457, 1, 1, 320
+1025, Berlin, New York, 3, 563, 2, 2, 800
+1026, Varna, Moscow, 1, 770, 1, 1, 400
+
+If some company change its luggage policy, we can change the data only in one table.
+
+Problem 7. Advantages of Normalized Databases
+
+The benefits are (source - https://support.microsoft.com/en-us/kb/283878):
+
+Eliminate repeating groups in individual tables.
+Create a separate table for each set of related data.
+Identify each set of related data with a primary key.
+Create separate tables for sets of values that apply to multiple records.
+Relate these tables with a foreign key.
+Eliminate fields that do not depend on the key.

@@ -1,0 +1,20 @@
+Problem 8.Database Integrity Constraints
+
+Integrity constraints guarantee integrity, consistency and relationship in a database system. 
+
+There are several types of integrity constraints:
+
+a) Entity constraints, regarding the primary key:
+- ensure that there is one unique value per table;
+- ensure that there are no null values.
+
+b) Referential constraints, regarding the foreign key:
+- ensure that the foreign key value is referenced to the primary key value;
+- ensure that you cannot delete a primary key value if it is already related to a foreign key value.
+
+c) Domain constraints:
+- ensure that all columns have a value;
+- there are used upon creating a domain.
+
+d) User-defined constraints: 
+- referees to the user set of constraints.

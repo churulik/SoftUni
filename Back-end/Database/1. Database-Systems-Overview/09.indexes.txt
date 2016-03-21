@@ -1,0 +1,26 @@
+Problem 9.Pros and Cons of Using Indexes in a Database?
+
+What is index?
+An index is a data structure that stores the values of a column in a table. 
+
+What indexing methods exist? 
+Two methods: non-clustered and clustered.
+
+What is clustered index? 
+Clustered index ensure that the table rows are stored in order based on their key values.
+
+What is B-Tree? 
+It is a tree structure, an algorithm, which keeps data records allowing searches, sequential access, insertions, and deletions.
+
+What is column-store index? 
+It is method that uses columnar arrangement to store, retrieve and manage a data.
+
+What is full-text search index? 
+It allows searching to a document in a text database.
+
+What is spatial index? 
+It is an index that allows indexing a spatial column, a spatial data type, such as 3D objects, geometry, topological analyses and linear networks.
+
+What are the pros and cons of using indexes?
+Pros: the structure allows for quickly accessing to specific information.
+Cons: increase the disk space requirements of the database, slow down the process of inserting, updating or deleting data.

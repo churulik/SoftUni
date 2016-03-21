@@ -1,0 +1,30 @@
+Problem 2.Which are the Main Functions Performed by a RDBMS?
+
+A relational database management system (RDBMS) is a type of database management system that stores (creates, update and administrate) data into related tables.
+ 
+The main functions are aimed towards organizing, storing, accessing, securing and integrating data. RBDMS allows for adding, modifying, deleting and displaying data. 
+
+Here is a list of some frequently used functions:
+ 
+getConnectionStatus()
+setCurrentConnection()
+unsetConnection()
+beginTransaction()
+commit()
+rollback()
+insert()
+update()
+delete()
+queryUsingConceptProps()
+queryUsingPreparedStmt()
+queryUsingPrimaryKeys()
+queryUsingSQL()
+assertDBInstance()
+executePreparedStmt()
+executeSQL()
+createQuery()
+closeQuery()
+getNextPage()
+getNextPageFromOffset()
+getPreviousPage()
+getPreviousPageFromOffset()

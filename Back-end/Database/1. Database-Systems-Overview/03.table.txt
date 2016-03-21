@@ -1,0 +1,7 @@
+Problem 3. Define What is “Table” in Database Terms
+
+A database table is a data structure which stores information. It consists of row and columns.
+
+The information is stored by first giving a unique name to the table (for example: student). Then each column in the table also receives a unique name (id – it is a good practice to make the id automatically increment itself, in order to preserve its uniqueness, first_name, last_name, age). 
+
+A table can be considered relation. The difference between the two is that, first, contrary to the relation, a table can have duplicates, and second, a table rows and cols involves a particular ordering, and relation not. 

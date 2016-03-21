@@ -1,0 +1,43 @@
+Problem 5. Relationships between Tables in Relational Databases
+
+Table relationships
+
+The relationship between tables prevents repeating a data. For example, if you have a table called MyTeam, and in it: first_team_names, youth_team_names, game_played, etc., and you want under first_team_names more information, besides the name of the player, than you can create another table with the player futures (age, height, weight, preferred foot, etc.) and reference it to the players name. And if you need the players name to appear in several games than you don’t need to provide all the futures of the player, but only the name and the reference number.
+
+One-to-many
+
+One row of a table relates to many other rows in other tables, but the other tables can have only one match in the related table. For example a table called player-agent can have an agent-id, agent-name, agent-players-name. And a table called players, whit player-id, name and team. One player might have only one agent, but one agent might have many players.
+
+Many-to-many
+
+One or more rows in a table can relate to many other rows in another table. You need to create a third table (junction table) whose primary key consist of the foreign keys of the other tables. For example a player can have many physios and a physio can have many players. 
+
+Many-to-one
+
+Is like one-to-many – many rows points to one (many players have only one and the same agent).
+
+One-to-one
+
+One row of a table can match only one row from different table. It is not commonly used, because the two tables might merge into one. For example:
+ 
+Table: Person:
+ID, Name, Age
+01, John, 12
+02, Peter, 13
+03, Ivan, 15
+
+Table: Person-Description: 
+Id, Height, Weight, Hobby
+01, 1.67, 67, Ballet
+02, 1.71, 70, Box
+03, 1.70, 65, Swimming
+
+It might be used to: 
+
+Divide a table with many columns.
+Isolate part of a table for security reasons.
+Store data that is short-lived and could be easily deleted by simply deleting the table.
+Store information that applies only to a subset of the main table.
+
+
+

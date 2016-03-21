@@ -1,0 +1,25 @@
+Problem 12.What is a NoSQL Database?
+
+NoSQL is a database management system that uses a document based model to store data.
+ 
+NoSQL databases: 
+
+MongoDB. Open-source document database.
+
+CouchDB. Database that uses JSON for documents, JavaScript for MapReduce queries, and regular HTTP for an API.
+
+GemFire. Distributed data management platform providing dynamic scalability, high performance, and database-like persistence.
+
+Redis. Data structure server wherein keys can contain strings, hashes, lists, sets, and sorted sets.
+
+Cassandra. Database that provides scalability and high availability without compromising performance.
+
+memcached. Open source high-performance, distributed-memory, and object-caching system.
+
+Hazelcast. Open source highly scalable data distribution platform.
+
+HBase. Hadoop database, a distributed and scalable big data store.
+
+Mnesia. Distributed database management system that exhibits soft real-time properties.
+
+Neo4j. Open source high-performance, enterprise-grade graph database.

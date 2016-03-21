@@ -1,0 +1,9 @@
+Problem 11.Transactions
+
+A transaction is a sequence of operations performed as a single logical unit of work that is atomatic, consistent, isolated and durable. There are applicable everywhere where data is stored (in businesses, banks, governments, medias, etc.), in order to prevent loss of data when there is a system failure. 
+  
+What is ACID transaction?
+The ACID is a transaction that ensures that database transactions are proceeds reliably. ACID stands for: Atomicity, Consistency, Isolation and Durability.
+
+What is transaction log?
+The transaction log records all data transactions and alterations. It is used when system failure occurs in order to restore the database.
