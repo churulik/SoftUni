@@ -1,0 +1,12 @@
+﻿using _03.CompanyHierarchy.Employees.Enums;
+
+namespace _03.CompanyHierarchy.Employees.RegularEmployees
+{
+    public abstract class RegularEmployee : Employee
+    {
+        protected RegularEmployee(int id, string firstName, string lastName, decimal salary, Department department) 
+            : base(id, firstName, lastName, salary, department)
+        {
+        }
+    }
+}
