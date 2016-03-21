@@ -1,0 +1,30 @@
+<!--
+* Write a JavaScript function replaceATag(str)
+* that replaces in a HTML document given as string all the tags <a href="…">…</a>
+* with corresponding tags [URL=…]…/URL].
+* Write JS program aTagReplacer.js that invokes your function
+* with the sample input data below and prints the output at the console.
+-->
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Replace a tag</title>
+</head>
+<body>
+    <ul>
+        <li>
+            <a href=http://softuni.bg>SoftUni</a>
+        </li>
+    </ul>
+
+    <script>
+        function replaceATag(str) {
+            document.body.innerHTML = document.body.innerHTML.
+                    replace(/<a/g, '[URL').replace(/<\/a>/g, '[/URL]');
+        }
+        console.log(replaceATag());
+    </script>
+</body>
+</html>

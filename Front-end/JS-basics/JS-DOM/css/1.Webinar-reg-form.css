@@ -1,0 +1,31 @@
+form {
+    background-color: #FFF7F0;
+    width: 300px;
+    margin: 0 auto;
+    padding: 10px 0;
+}
+
+h1 {
+    font-size: 20px;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 40px;
+}
+
+div {
+    width: 200px;
+    margin: 0 auto;
+}
+
+p {
+    margin: 0;
+}
+
+span {
+    color: red;
+    font-size: 14px;
+}
+
+#textbox {
+    visibility: hidden;
+}

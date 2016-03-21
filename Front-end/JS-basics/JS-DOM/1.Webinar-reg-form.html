@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Webinar registration form</title>
+    <link rel="stylesheet" href="css/1.Webinar-reg-form.css"/>
+    <script src="scripts/1.Webinar-reg-form.js"></script>
+
+</head>
+<body>
+    <form action="#" method="post">
+        <h1>Регистрация за уебинар</h1>
+        <div>
+            <p>Име и Фамилия:<span>*</span></p>
+            <input type="text" name="име-фамилия" required/>
+            <p>Адрес:</p>
+            <input type="text" name="адрес" />
+            <p>Населено място:</p>
+            <input type="text" name="населено-място"/>
+            <p>Пощенски код</p>
+            <input type="text" name="пощенски-код"/>
+            <p>E-mail:<span>*</span></p>
+            <input type="text" name="e-mail" required/>
+            <p>Телефон:<span>*</span></p>
+            <input type="text" name="телефон" required/>
+            <p>Дата на семинар:<span>*</span></p>
+            <input type="date" name="дата-на-семинар" required/>
+            <p><input type="checkbox" name="желая-фактура" value="yes" id="checkbox" onclick="showHide()">Желая фактура</p>
+            <div id="textbox">
+                <p>Фирма/Организация:<span>*</span></p>
+                <input type="text" name="фирма" required/>
+                <p>МОЛ:<span>*</span></p>
+                <input type="text" name="мол" required/>
+                <p>ЕИК:<span>*</span></p>
+                <input type="text" name="еик" required/>
+                <p>ИН по ДДС:<span>*</span></p>
+                <input type="text" name="ин" required/>
+                <p>Адрес:<span>*</span></p>
+                <input type="text" name="адрес-фактура" required/>
+            </div>
+            <input type="submit" value="Регистрирай се"/>
+            <input type="reset" value="Изчисти"/>
+        </div>
+    </form>
+</body>
+</html>
