@@ -1,0 +1,86 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/AssemblyExplorer/XmlDocument/@EntryValue">&lt;AssemblyExplorer&gt;&#xD;
+  &lt;Assembly Path="C:\Windows\Microsoft.NET\Framework\v4.0.30319\mscorlib.dll" /&gt;&#xD;
+  &lt;Assembly Path="C:\Windows\Microsoft.NET\Framework\v4.0.30319\System.Core.dll" /&gt;&#xD;
+  &lt;Assembly Path="C:\Users\Tushe.Tushe-PC\Desktop\SoftUni\2.Back-end\Web-Services-and-Cloud\Homeworks\4.Testing\News\packages\Moq.4.2.1507.0118\lib\net40\Moq.dll" /&gt;&#xD;
+  &lt;Assembly Path="C:\Users\Tushe.Tushe-PC\Desktop\SoftUni\2.Back-end\Web-Services-and-Cloud\Homeworks\4.Testing\News\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll" /&gt;&#xD;
+  &lt;Assembly Path="C:\Users\Tushe.Tushe-PC\Desktop\SoftUni\2.Back-end\Web-Services-and-Cloud\Homeworks\4.Testing\News\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll" /&gt;&#xD;
+&lt;/AssemblyExplorer&gt;</s:String>
+	<s:Boolean x:Key="/Default/Housekeeping/UnitTestingMru/UnitTestSessionPersistentData/=519013B54D4540A4880E81984E9C1564/@KeyIndexDefined">True</s:Boolean>
+	<s:Int64 x:Key="/Default/Housekeeping/UnitTestingMru/UnitTestSessionPersistentData/=519013B54D4540A4880E81984E9C1564/GroupingIndex/@EntryValue">4</s:Int64>
+	<s:String x:Key="/Default/Housekeeping/UnitTestingMru/UnitTestSessionPersistentData/=519013B54D4540A4880E81984E9C1564/Name/@EntryValue">ModifyNews_WithIncorrectData_ShouldReturn400BadRequest</s:String>
+	<s:String x:Key="/Default/Housekeeping/UnitTestingMru/UnitTestSessionPersistentData/=519013B54D4540A4880E81984E9C1564/XmlSerializedElements/@EntryValue">&lt;Session&gt;&lt;e Id="IntegrationTesting.IntegrationTests.DeleteNews_WithIncorrectData_ShouldReturn400BadRequest" Project="2BD71639-B8C2-46F8-A08E-6F5D64C40AD3" Provider="MSTest" /&gt;&lt;e Id="IntegrationTesting.IntegrationTests.DeleteNews_WithCorrectData_ShouldReturn200Ok" Project="2BD71639-B8C2-46F8-A08E-6F5D64C40AD3" Provider="MSTest" /&gt;&lt;e Id="IntegrationTesting.IntegrationTests.ModifyNews_WithIncorrectData_ShouldReturn400BadRequest" Project="2BD71639-B8C2-46F8-A08E-6F5D64C40AD3" Provider="MSTest" /&gt;&lt;e Id="IntegrationTesting.IntegrationTests.ModifyNews_WithCorrectData_ShouldReturn200Ok" Project="2BD71639-B8C2-46F8-A08E-6F5D64C40AD3" Provider="MSTest" /&gt;&lt;e Id="IntegrationTesting.IntegrationTests.PostNews_InDb_ShouldReturn400BadRequest" Project="2BD71639-B8C2-46F8-A08E-6F5D64C40AD3" Provider="MSTest" /&gt;&lt;e Id="IntegrationTesting.IntegrationTests.PostNews_FromDb_ShouldReturn201CreatedAndAllNews" Project="2BD71639-B8C2-46F8-A08E-6F5D64C40AD3" Provider="MSTest" /&gt;&lt;e Id="IntegrationTesting.IntegrationTests.GetAllNews_FromDb_ShouldReturn200OkAndAllNews" Project="2BD71639-B8C2-46F8-A08E-6F5D64C40AD3" Provider="MSTest" /&gt;&lt;e Id="IntegrationTesting.IntegrationTests" Project="2BD71639-B8C2-46F8-A08E-6F5D64C40AD3" Provider="MSTest" /&gt;&lt;e Id="TestingRepositories.TestingRepositories" Project="CA22CB9E-D42B-469E-9C03-6840C22519E2" Provider="MSTest" /&gt;&lt;e Id="TestingRepositories.TestingRepositories.AddANewsWithoutTitle_RepoAddSaveChanges_ShouldThrоwDbEntityValidationException" Project="CA22CB9E-D42B-469E-9C03-6840C22519E2" Provider="MSTest" /&gt;&lt;e Id="TestingRepositories.TestingRepositories.AddANews_RepoAddFindSaveChanges_ShouldCreateAndReturnTheNewsFromDb" Project="CA22CB9E-D42B-469E-9C03-6840C22519E2" Provider="MSTest" /&gt;&lt;e Id="TestingRepositories.TestingRepositories.DeleteExistingNews_RepoDelete_ShouldDeleteTheNews" Project="CA22CB9E-D42B-469E-9C03-6840C22519E2" Provider="MSTest" /&gt;&lt;e Id="TestingRepositories.TestingRepositories.DeleteNonExistingNews_RepoDelete_ShouldThrоwArgumentNullException" Project="CA22CB9E-D42B-469E-9C03-6840C22519E2" Provider="MSTest" /&gt;&lt;e Id="TestingRepositories.TestingRepositories.EditExistingNews_RepoAddSaveChangesFindUpdate_ShouldThrоwDbEntityValidationException" Project="CA22CB9E-D42B-469E-9C03-6840C22519E2" Provider="MSTest" /&gt;&lt;e Id="TestingRepositories.TestingRepositories.EditExistingNews_RepoAddUpdateSaveChanges_ShouldBeModified" Project="CA22CB9E-D42B-469E-9C03-6840C22519E2" Provider="MSTest" /&gt;&lt;e Id="TestingRepositories.TestingRepositories.EditNonExistingNews_RepoFindUpateSaveChanges_ShouldThrоwNullReferenceException" Project="CA22CB9E-D42B-469E-9C03-6840C22519E2" Provider="MSTest" /&gt;&lt;e Id="TestingRepositories.TestingRepositories.ListAllNews_RepoAllAddSaveChanges_ShouldReturnAllNewsCount" Project="CA22CB9E-D42B-469E-9C03-6840C22519E2" Provider="MSTest" /&gt;&lt;e Id="TestingApiCotrollerWithMocking.MockTests" Project="C364133C-EB78-4A3A-97B9-9193A5DD6522" Provider="MSTest" /&gt;&lt;e Id="TestingApiCotrollerWithMocking.MockTests.EditNews_ThatDoesNotExists_ShouldReturn400BadRequest" Project="C364133C-EB78-4A3A-97B9-9193A5DD6522" Provider="MSTest" /&gt;&lt;e Id="TestingApiCotrollerWithMocking.MockTests.EditNews_WithCorrectData_ShouldReturn200OkModifiesTheNewsInCorrectWay" Project="C364133C-EB78-4A3A-97B9-9193A5DD6522" Provider="MSTest" /&gt;&lt;e Id="TestingApiCotrollerWithMocking.MockTests.PostNews_ThatIsIncorrect_ShouldThorw400BadRequeis" Project="C364133C-EB78-4A3A-97B9-9193A5DD6522" Provider="MSTest" /&gt;&lt;e Id="TestingApiCotrollerWithMocking.MockTests.PostNews_WithCorrectData_ShouldReturn201CreatedAndCreatedNews" Project="C364133C-EB78-4A3A-97B9-9193A5DD6522" Provider="MSTest" /&gt;&lt;e Id="TestingApiCotrollerWithMocking.MockTests.DeleteNews_ThatExists_ShouldReturn200OkAndDeleteTheNews" Project="C364133C-EB78-4A3A-97B9-9193A5DD6522" Provider="MSTest" /&gt;&lt;e Id="TestingApiCotrollerWithMocking.MockTests.EditNews_WithIncorrectData_ShouldReturn400BadRequest" Project="C364133C-EB78-4A3A-97B9-9193A5DD6522" Provider="MSTest" /&gt;&lt;e Id="TestingApiCotrollerWithMocking.MockTests.DeleteNews_ThatDoesNotExists_ShouldReturn400BadRequest" Project="C364133C-EB78-4A3A-97B9-9193A5DD6522" Provider="MSTest" /&gt;&lt;e Id="TestingApiCotrollerWithMocking.MockTests.GetAllNews_WithCorrectData_ShouldReturn201CreatedAndCreatedNews" Project="C364133C-EB78-4A3A-97B9-9193A5DD6522" Provider="MSTest" /&gt;&lt;/Session&gt;</s:String>
+	
+	
+	
+	
+	<s:Boolean x:Key="/Default/Housekeeping/UnitTestingMru/UnitTestSessionPersistentData/=F99C005FF45949728122B68E830D1774/@KeyIndexDefined">True</s:Boolean>
+	<s:Int64 x:Key="/Default/Housekeeping/UnitTestingMru/UnitTestSessionPersistentData/=F99C005FF45949728122B68E830D1774/GroupingIndex/@EntryValue">4</s:Int64>
+	<s:String x:Key="/Default/Housekeeping/UnitTestingMru/UnitTestSessionPersistentData/=F99C005FF45949728122B68E830D1774/Name/@EntryValue">PostNews_FromDb_ShouldReturn201CreatedAndAllNews</s:String>
+	<s:String x:Key="/Default/Housekeeping/UnitTestingMru/UnitTestSessionPersistentData/=F99C005FF45949728122B68E830D1774/XmlSerializedElements/@EntryValue">&lt;Session&gt;&lt;/Session&gt;</s:String>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	</wpf:ResourceDictionary>
