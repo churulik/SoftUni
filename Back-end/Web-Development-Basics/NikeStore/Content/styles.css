@@ -1,0 +1,440 @@
+/* DEFAULTS*/
+a {
+    text-decoration: none;
+    color: black;
+}
+a:hover {
+    transition: 1s;
+    color: orange;
+}
+.textarea {
+    font-size: 17px;
+    font-family: 'Century Gothic', arial, serif;
+    width: 300px;
+    height: 130px;
+    margin-bottom: 10px;
+
+}
+input {
+    font-size: 17px;
+    font-family: 'Century Gothic', arial, serif;
+}
+input[type=text] {
+    width: 300px;
+    height: 30px;
+    margin-bottom: 10px;
+}
+.dropdown{
+    width: 300px;
+    height: 30px;
+    margin-bottom: 10px;
+    font-size: 17px;
+    font-family: 'Century Gothic', arial, serif;
+}
+input[type=number] {
+    width: 300px;
+    height: 30px;
+    margin-bottom: 10px;
+}
+
+input[type=password] {
+    width: 300px;
+    height: 30px;
+    margin-bottom: 10px;
+    font-family: 'Century Gothic', arial, serif;
+}
+input[type=email] {
+    width: 300px;
+    height: 30px;
+    margin-bottom: 10px;
+}
+input[type=submit] {
+     height: 30px;
+     margin-bottom: 10px;
+     color: white;
+     background-color: cornflowerblue;
+     border: none;
+
+ }
+input[type=submit]:hover {
+    transition: 1s;
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+/* BODY*/
+body{
+    font-family: 'Century Gothic', arial, serif;
+    width: 1200px;
+    margin: 0 auto;
+    font-size: 17px;
+}
+
+body>header {
+    border: 1px solid lightgray;
+    border-top: none;
+    padding: 10px;
+    margin-bottom: 10px;
+
+}
+/* MENU */
+#store{
+    opacity: 0.3;
+    transition: 1s;
+
+}
+#store:hover{
+    opacity: 1;
+    transition: 1s;
+}
+ul#mainmenu {
+    float: right;
+    padding: 0;
+}
+li.logo>a{
+    border: none;
+}
+li.logo>a:hover{
+    background-color: white;
+}
+li.logo>a>img{
+    width: 40px;
+}
+li.cart>a{
+    border: none;
+    padding: 0;
+}
+li.cart>a:hover{
+   background-color: white;
+}
+li.cart>a>img{
+    width: 30px;
+    vertical-align: middle;
+}
+
+body>header>ul {
+    display: inline-block;
+}
+
+body>header>ul>li {
+    display: inline-block;
+}
+
+body>header>ul>li>a {
+    opacity: 0.3;
+    color: gray;
+    padding: 7px;
+
+}
+body>header>ul>li>a:hover {
+    opacity: 1;
+    color: orange;
+}
+
+.home>a:hover {
+    color: limegreen;
+}
+
+body>header>a>img {
+    display: inline-block;
+    vertical-align: middle;
+    width: 200px;
+}
+.product>a:hover{
+    color: cornflowerblue;
+}
+.logout>a{
+    color: gray;
+    opacity: 0.3;
+}
+.logout>a:hover{
+    color: palevioletred;
+    opacity: 1;
+}
+
+li>a.menuprofile{
+    opacity: 0.6;
+}
+li>a.menuprofile:hover{
+    color: blueviolet;
+}
+
+/* CATEGORY */
+.category {
+    margin-bottom: 20px;
+}
+.category{
+    font-size: 16px;
+    opacity: 0.4;
+    margin-bottom: 10px;
+}
+.categoryProduct>a{
+    font-size: 16px;
+
+    margin-bottom: 10px;
+}
+.categoryProduct>a:hover{
+    opacity: 1;
+    color: orangered;
+}
+.categoryItems{
+    text-align: center;
+    display: block;
+}
+.categoryItems>div{
+    text-align: center;
+    margin-top: 10px;
+    width: 150px;
+    display: inline-block;
+}
+
+/* HOME */
+.homeImg{
+    margin-top: 10px;
+    text-align: center;
+}
+
+.home1 {
+    font-size: 60px;
+    position: absolute;
+    top: 200px;
+    left: 200px;
+}
+
+.home2 {
+    text-indent: 30px;
+    font-size: 60px;
+    position: absolute;
+    top: 250px;
+    left: 200px;
+}
+
+.home3 {
+    text-indent: 60px;
+    font-size: 60px;
+    position: absolute;
+    top: 310px;
+    left: 200px;
+    color: darkviolet;
+}
+
+.home4 {
+    text-indent: 85px;
+    font-size: 60px;
+    position: absolute;
+    top: 360px;
+    left: 200px;
+    color: darkviolet;
+}
+
+/* REGISTER */
+.register{
+    margin: 100px auto;
+    width: 300px;
+    padding: 15px;
+}
+
+.regImg{
+    margin-bottom: 200px;
+    text-align: center;
+}
+.regImg>img{
+    width: 200px;
+}
+
+/* LOGIN */
+
+.login{
+    margin: 200px auto 50px;
+    width: 300px;
+}
+.logologin{
+    text-align: center;
+    margin-bottom: 200px;
+}
+.logologin>img{
+    width: 300px;
+}
+
+/* SHOES */
+ .shoes{
+     width: 150px;
+
+     display: inline-block;
+     text-align: center;
+     padding: 35px 0;
+     margin: 10px 5px;
+
+ }
+
+.shoes>a:hover{
+    color: cornflowerblue;
+    transition: 1s;
+}
+
+.outershoes{
+    text-align: center;
+}
+
+/* SHIRTS */
+
+.outershirts{
+    text-align: center;
+}
+.shirts{
+    width: 150px;
+    display: inline-block;
+    text-align: center;
+    padding: 35px 0;
+    margin: 10px 5px;
+}
+
+.shirts>a:hover{
+    color: cornflowerblue;
+    transition: 1s;
+}
+.shirtsImg{
+    border-radius: 20px;
+}
+.shirtsImg:hover{
+    transition: 1s;
+    opacity: 1;
+}
+/* CART */
+.tablecart{
+    margin: 0 auto;
+    width: 400px;
+    text-align: center;
+
+}
+.remove {
+    color: cornflowerblue;
+}
+.cardmenu{
+    width: 400px;
+    margin: 20px auto;
+}
+
+.checkout>a{
+    color: white;
+    padding: 5px;
+    background-color: green;
+
+}
+.checkout>a:hover{
+    color: white;
+    opacity: 0.7;
+}
+.button {
+    margin-bottom: 15px;
+
+}
+.button>a{
+    color: white;
+    padding: 5px;
+    background-color: cornflowerblue;
+}
+.button>a:hover{
+    color: white;
+    opacity: 0.7;
+}
+#checkoutBtn {
+    color: white;
+    padding: 5px;
+    background-color: green;
+}
+
+#checkoutBtn:hover {
+    opacity: 0.7;
+}
+.cancelBtn {
+    color: white;
+    padding: 5px;
+    background-color: indianred;
+}
+.cancelBtn:hover {
+    color: white;
+    opacity: 0.7;
+}
+/* PRODUCTS */
+
+#editBtn:hover {
+    color: green;
+}
+#deleteBtn:hover {
+    color: red;
+}
+/* HELP DESK */
+.contactUs{
+    margin: 10px 0;
+}
+.help1{
+    text-indent: 30px;
+    font-size: 60px;
+    position: absolute;
+    top: 500px;
+    left: 450px;
+    color: white;
+}
+.help2{
+    text-indent: 30px;
+    font-size: 60px;
+    position: absolute;
+    top: 550px;
+    left: 450px;
+    color: orange;
+}
+/* CONTACT US */
+#msg {
+    text-align: center;
+}
+
+#contact{
+    margin: 10px auto;
+    width: 300px;
+    padding: 15px;
+}
+/* EDITOR */
+#addcateogry{
+    height: 35px;
+}
+/* FOOTER */
+
+body>footer {
+
+    text-align: left;
+    margin-top: 10px;
+    padding: 0;
+    width: 1200px;
+    height:30px;
+    font-size: 14px;
+    color: lightgray;
+
+}
+
+p.info {
+    padding: 5px;
+    background-color: green;
+    text-align: center;
+    color: white;
+}
+
+p.error {
+    padding: 5px;
+    background-color: darkred;
+    text-align: center;
+    color: white;
+}
+
+.log > form {
+    display: inline-block;
+}
+#contactus {
+    width: 200px;
+}
+
+
+
+
+
+
