@@ -1,0 +1,5 @@
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Conditional-Statements\06. The Biggest of Five Numbers\bin\Debug\_06.The_Biggest_of_Five_Numbers.exe.config
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Conditional-Statements\06. The Biggest of Five Numbers\bin\Debug\_06.The_Biggest_of_Five_Numbers.exe
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Conditional-Statements\06. The Biggest of Five Numbers\bin\Debug\_06.The_Biggest_of_Five_Numbers.pdb
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Conditional-Statements\06. The Biggest of Five Numbers\obj\Debug\_06.The_Biggest_of_Five_Numbers.exe
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Conditional-Statements\06. The Biggest of Five Numbers\obj\Debug\_06.The_Biggest_of_Five_Numbers.pdb

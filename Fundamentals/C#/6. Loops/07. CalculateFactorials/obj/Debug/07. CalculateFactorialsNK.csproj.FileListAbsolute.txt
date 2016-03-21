@@ -1,0 +1,6 @@
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Loops\07. CalculateFactorials\bin\Debug\_07.CalculateFactorials.exe.config
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Loops\07. CalculateFactorials\bin\Debug\_07.CalculateFactorials.exe
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Loops\07. CalculateFactorials\bin\Debug\_07.CalculateFactorials.pdb
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Loops\07. CalculateFactorials\obj\Debug\_07.CalculateFactorials.exe
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Loops\07. CalculateFactorials\obj\Debug\_07.CalculateFactorials.pdb
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Loops\07. CalculateFactorials\obj\Debug\07. CalculateFactorialsNK.csprojResolveAssemblyReference.cache

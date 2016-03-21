@@ -1,0 +1,5 @@
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Loops\09. MatrixOfNumbers\bin\Debug\_09.MatrixOfNumbers.exe.config
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Loops\09. MatrixOfNumbers\bin\Debug\_09.MatrixOfNumbers.exe
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Loops\09. MatrixOfNumbers\bin\Debug\_09.MatrixOfNumbers.pdb
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Loops\09. MatrixOfNumbers\obj\Debug\_09.MatrixOfNumbers.exe
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Loops\09. MatrixOfNumbers\obj\Debug\_09.MatrixOfNumbers.pdb

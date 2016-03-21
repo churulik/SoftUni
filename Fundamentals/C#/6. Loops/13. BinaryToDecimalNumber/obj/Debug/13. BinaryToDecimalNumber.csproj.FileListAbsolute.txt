@@ -1,0 +1,6 @@
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Loops\13. BinaryToDecimalNumber\bin\Debug\_13.BinaryToDecimalNumber.exe.config
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Loops\13. BinaryToDecimalNumber\bin\Debug\_13.BinaryToDecimalNumber.exe
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Loops\13. BinaryToDecimalNumber\bin\Debug\_13.BinaryToDecimalNumber.pdb
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Loops\13. BinaryToDecimalNumber\obj\Debug\13. BinaryToDecimalNumber.csprojResolveAssemblyReference.cache
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Loops\13. BinaryToDecimalNumber\obj\Debug\_13.BinaryToDecimalNumber.exe
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Loops\13. BinaryToDecimalNumber\obj\Debug\_13.BinaryToDecimalNumber.pdb

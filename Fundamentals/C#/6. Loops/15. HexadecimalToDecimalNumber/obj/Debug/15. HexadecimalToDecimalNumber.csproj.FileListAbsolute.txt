@@ -1,0 +1,6 @@
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Loops\15. HexadecimalToDecimalNumber\bin\Debug\_15.HexadecimalToDecimalNumber.exe.config
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Loops\15. HexadecimalToDecimalNumber\bin\Debug\_15.HexadecimalToDecimalNumber.exe
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Loops\15. HexadecimalToDecimalNumber\bin\Debug\_15.HexadecimalToDecimalNumber.pdb
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Loops\15. HexadecimalToDecimalNumber\obj\Debug\15. HexadecimalToDecimalNumber.csprojResolveAssemblyReference.cache
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Loops\15. HexadecimalToDecimalNumber\obj\Debug\_15.HexadecimalToDecimalNumber.exe
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Loops\15. HexadecimalToDecimalNumber\obj\Debug\_15.HexadecimalToDecimalNumber.pdb

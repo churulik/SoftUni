@@ -1,0 +1,6 @@
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Conditional-Statements\03. Check for a Play Card\bin\Debug\_03.Check_for_a_Play_Card.exe.config
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Conditional-Statements\03. Check for a Play Card\bin\Debug\_03.Check_for_a_Play_Card.exe
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Conditional-Statements\03. Check for a Play Card\bin\Debug\_03.Check_for_a_Play_Card.pdb
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Conditional-Statements\03. Check for a Play Card\obj\Debug\03. Check for a Play Card.csprojResolveAssemblyReference.cache
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Conditional-Statements\03. Check for a Play Card\obj\Debug\_03.Check_for_a_Play_Card.exe
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Conditional-Statements\03. Check for a Play Card\obj\Debug\_03.Check_for_a_Play_Card.pdb

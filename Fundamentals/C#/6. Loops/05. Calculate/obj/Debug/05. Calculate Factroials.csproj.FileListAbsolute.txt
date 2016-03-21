@@ -1,0 +1,6 @@
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\Loops\05. Calculate\obj\Debug\05. Calculate Factroials.csprojResolveAssemblyReference.cache
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\Loops\05. Calculate\bin\Debug\_05.Calculate.exe.config
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\Loops\05. Calculate\bin\Debug\_05.Calculate.exe
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\Loops\05. Calculate\bin\Debug\_05.Calculate.pdb
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\Loops\05. Calculate\obj\Debug\_05.Calculate.exe
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\Loops\05. Calculate\obj\Debug\_05.Calculate.pdb

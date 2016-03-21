@@ -1,0 +1,5 @@
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Loops\06. CalculateNK\bin\Debug\_06.CalculateNK.exe.config
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Loops\06. CalculateNK\bin\Debug\_06.CalculateNK.exe
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Loops\06. CalculateNK\bin\Debug\_06.CalculateNK.pdb
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Loops\06. CalculateNK\obj\Debug\_06.CalculateNK.exe
+C:\Users\Tushe.Tushe-PC\documents\visual studio 2013\Projects\Loops\06. CalculateNK\obj\Debug\_06.CalculateNK.pdb

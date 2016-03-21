@@ -1,0 +1,5 @@
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\Conditional-Statements\02. Bonus Score\bin\Debug\_02.Bonus_Score.exe.config
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\Conditional-Statements\02. Bonus Score\bin\Debug\_02.Bonus_Score.exe
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\Conditional-Statements\02. Bonus Score\bin\Debug\_02.Bonus_Score.pdb
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\Conditional-Statements\02. Bonus Score\obj\Debug\_02.Bonus_Score.exe
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\Conditional-Statements\02. Bonus Score\obj\Debug\_02.Bonus_Score.pdb

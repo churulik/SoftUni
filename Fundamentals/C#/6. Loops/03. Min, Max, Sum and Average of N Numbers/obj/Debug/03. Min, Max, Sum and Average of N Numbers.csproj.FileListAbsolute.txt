@@ -1,0 +1,6 @@
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\Loops\03. Min, Max, Sum and Average of N Numbers\bin\Debug\_03.Min__Max__Sum_and_Average_of_N_Numbers.exe.config
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\Loops\03. Min, Max, Sum and Average of N Numbers\bin\Debug\_03.Min__Max__Sum_and_Average_of_N_Numbers.exe
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\Loops\03. Min, Max, Sum and Average of N Numbers\bin\Debug\_03.Min__Max__Sum_and_Average_of_N_Numbers.pdb
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\Loops\03. Min, Max, Sum and Average of N Numbers\obj\Debug\_03.Min__Max__Sum_and_Average_of_N_Numbers.exe
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\Loops\03. Min, Max, Sum and Average of N Numbers\obj\Debug\_03.Min__Max__Sum_and_Average_of_N_Numbers.pdb
+c:\users\tushe.tushe-pc\documents\visual studio 2013\Projects\Loops\03. Min, Max, Sum and Average of N Numbers\obj\Debug\03. Min, Max, Sum and Average of N Numbers.csprojResolveAssemblyReference.cache
