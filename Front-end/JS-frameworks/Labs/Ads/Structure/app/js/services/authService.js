@@ -2,33 +2,59 @@
 
 app.factory('authService',
     function ($http, baseServiceUrl) {
+        var currentUserText = 'currentUser';
         return {
             login: function (userData, success, error) {
-                // TODO
+                var request = {
+                    method: 'POST',
+                    url: baseServiceUrl + '/api/user/login',
+                    data: userData
+                };
+                $http(request).success(function (data) {
+                    sessionStorage[currentUserText] = JSON.stringify(data);
+                    success(data);
+                }).error(error);
             },
-            register:  function (userData, success, error) {
-                // TODO
+            register: function (userData, success, error) {
+                var request = {
+                    method: 'POST',
+                    url: baseServiceUrl + '/api/user/register',
+                    data: userData
+                };
+                $http(request).success(function (data) {
+                    sessionStorage[currentUserText] = JSON.stringify(data);
+                    success(data);
+                }).error(error);
             },
             logout: function () {
-                // TODO
+                delete sessionStorage[currentUserText];
             },
             getCurrentUser: function () {
-                // TODO
+                var userObject = sessionStorage[currentUserText];
+                if (userObject) {
+                    return JSON.parse(userObject)
+                }
             },
             isAnonymous: function () {
-                // TODO
+                return sessionStorage[currentUserText] == undefined;
             },
             isLoggedIn: function () {
-                // TODO
+                return sessionStorage[currentUserText] != undefined;
             },
             isNormalUser: function () {
-                // TODO
+                var currentUser = this.getCurrentUser();
+                return (currentUser != undefined) && (!currentUser.isAdmin);
             },
             isAdmin: function () {
-                // TODO
+                var currentUser = this.getCurrentUser();
+                return (currentUser != undefined) && (currentUser.isAdmin);
             },
             getAuthHeaders: function () {
-                // TODO
+                var headers = {};
+                var currentUser = this.getCurrentUser();
+                if(currentUser) {
+                    headers['Authorization'] = 'Bearer ' + currentUser.access_token;
+                }
             }
         }
     }

@@ -24,5 +24,17 @@ app.controller('HomeController',
 
 
         $scope.reloadAds();
+
+        $scope.$on('categorySelectionChanged', function (event, selectedCategoryId) {
+            $scope.adsParams.categoryId = selectedCategoryId;
+            $scope.adsParams.startPage = 1;
+            $scope.reloadAds();
+        });
+
+        $scope.$on('townSelectionChanged', function (event, selectedtownId) {
+            $scope.adsParams.townId = selectedtownId;
+            $scope.adsParams.startPage = 1;
+            $scope.reloadAds();
+        });
     }
 );

@@ -1,4 +1,52 @@
 <div class="box">
     <h2>Register</h2>
-    TODO
+    <p>
+        <label>
+            Username:
+            <input type="text" id="username" ng-model="userData.username" required />
+        </label>
+    </p>
+    <p>
+        <label>
+            Password:
+            <input type="password" id="password" ng-model="userData.password" required />
+        </label>
+    </p>
+    <p>
+        <label>
+            Confirm Password:
+            <input type="password" id="confirmPassword" ng-model="userData.confirmPassword" required />
+        </label>
+    </p>
+    <p>
+        <label>
+            Name:
+            <input type="text" id="name" ng-model="userData.name" required />
+        </label>
+    </p>
+    <p>
+        <label>
+            Email:
+            <input type="email" id="email" ng-model="userData.email" required />
+        </label>
+    </p>
+    <p>
+        <label>
+            Phone:
+            <input type="text" id="phone" ng-model="userData.phone" required />
+        </label>
+    </p>
+    <p>
+        <label>
+            Town:
+            <select id="town" ng-model="userData.townId">
+                <option value="null">(None)</option>
+                <option ng-repeat="town in towns" value="{{town.id}}">{{town.name}}</option>
+            </select>
+        </label>
+    </p>
+    <p>
+        <a ng-click="register(userData)" class="button">Register</a>
+        <a href="#/login" class="link">Login</a>
+    </p>
 </div>
