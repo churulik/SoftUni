@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="image">
+<head>
+    <meta charset="UTF-8">
+    <title>Bind Image</title>
+</head>
+<body ng-controller="ImageController">
+<label>
+    <input type="text" ng-model="img" placeholder="Enter an image link" size="100">
+</label>
+<p id="container" style="display: none">
+    {{img | noImg}}
+</p>
+<script src="js/lib/jquery-2.2.1.min.js"></script>
+<script src="js/lib/angular.js"></script>
+<script>
+    var app = angular.module('image', []);
+
+    app.controller('ImageController', function ($scope) {
+        $scope.img = '';
+    });
+
+    app.filter('noImg', function () {
+        return function (input) {
+            if (input.match(/\.(jpeg|jpg|gif|png)$/) != null) {
+                $('#container').html('<img src="' + input + '" alt="Image">').show();
+            } else if ($('#container').is(':visible')) {
+                $('#container').empty().hide();
+            }
+        }
+    });
+</script>
+</body>
+</html>
