@@ -8,11 +8,11 @@
 <label>
     <input type="text" ng-model="img" placeholder="Enter an image link" size="100">
 </label>
-<p id="container" style="display: none">
+<p id="container" style="display: none;">
     {{img | noImg}}
 </p>
-<script src="js/lib/jquery-2.2.1.min.js"></script>
-<script src="js/lib/angular.js"></script>
+<script src="../libs/js/jquery-2.2.2.js"></script>
+<script src="../libs/js/angular.js"></script>
 <script>
     var app = angular.module('image', []);
 
@@ -24,7 +24,7 @@
         return function (input) {
             if (input.match(/\.(jpeg|jpg|gif|png)$/) != null) {
                 $('#container').html('<img src="' + input + '" alt="Image">').show();
-            } else if ($('#container').is(':visible')) {
+            } else if ($('#container').css('display') !== 'none') {
                 $('#container').empty().hide();
             }
         }
