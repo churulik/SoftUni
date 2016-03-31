@@ -21,5 +21,26 @@ app.config(function ($routeProvider) {
         controller: 'RegisterController'
     });
 
+    $routeProvider.when('/user/ads', {
+        templateUrl: 'templates/user/user-ads.html',
+        controller: 'UserAdsController'
+    });
+    
+    $routeProvider.when('/user/ads/publish', {
+        templateUrl: 'templates/user/publish-new-ad.html',
+        controller: 'UserPublishNewAdController'
+    });
+
+    
+
     $routeProvider.otherwise({redirectTo: '/'});
+});
+
+app.run(function ($rootScope, $location, authService, notifyService) {
+    $rootScope.$on('$locationChangeStart', function () {
+        if ($location.path().indexOf('/user/') != -1 && !authService.isLoggedIn()) {
+            notifyService.showInfo('In order to see this page login first.');
+            $location.path('/');
+        }
+    })
 });

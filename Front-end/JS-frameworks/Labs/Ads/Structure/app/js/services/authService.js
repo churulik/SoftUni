@@ -55,6 +55,7 @@ app.factory('authService',
                 if(currentUser) {
                     headers['Authorization'] = 'Bearer ' + currentUser.access_token;
                 }
+                return headers;
             }
         }
     }
