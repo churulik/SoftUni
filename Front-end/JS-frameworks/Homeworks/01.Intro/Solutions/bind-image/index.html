@@ -6,29 +6,12 @@
 </head>
 <body ng-controller="ImageController">
 <label>
-    <input type="text" ng-model="img" placeholder="Enter an image link" size="100">
+    <input type="text" ng-model="img" ng-pattern="regex" placeholder="Enter an image link" size="100">
 </label>
-<p id="container" style="display: none;">
-    {{img | noImg}}
+<p>
+    <img ng-src="{{img}}"/>
 </p>
-<script src="../libs/js/jquery-2.2.2.js"></script>
 <script src="../libs/js/angular.js"></script>
-<script>
-    var app = angular.module('image', []);
-
-    app.controller('ImageController', function ($scope) {
-        $scope.img = '';
-    });
-
-    app.filter('noImg', function () {
-        return function (input) {
-            if (input.match(/\.(jpeg|jpg|gif|png)$/) != null) {
-                $('#container').html('<img src="' + input + '" alt="Image">').show();
-            } else if ($('#container').css('display') !== 'none') {
-                $('#container').empty().hide();
-            }
-        }
-    });
-</script>
+<script src="js/app.js"></script>
 </body>
 </html>
