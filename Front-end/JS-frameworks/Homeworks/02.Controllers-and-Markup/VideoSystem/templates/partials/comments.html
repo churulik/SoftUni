@@ -1,0 +1,10 @@
+<div ng-if="video.comments.length > 0">
+    <p class="bold">Comments:</p>
+    <div ng-repeat="comment in video.comments" class="well">
+        <p><span class="bold">Username:</span> {{comment.username}}</p>
+        <p><span class="bold">Content:</span> {{comment.content}}</p>
+        <p><span class="bold">Date:</span> {{comment.date | date}}</p>
+        <p><span class="bold">Rating:</span> {{comment.rating}}</p>
+        <p><span class="bold">Website:</span> <a ng-href="{{comment.websiteUrl}}">{{comment.websiteUrl}}</a></p>
+    </div>
+</div>

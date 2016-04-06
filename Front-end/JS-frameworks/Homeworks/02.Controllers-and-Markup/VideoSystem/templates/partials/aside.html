@@ -1,0 +1,30 @@
+<div class="panel panel-default">
+    <div class="panel-body">
+        <h5>Order By:</h5>
+        <ul class="ul">
+            <li><a href ng-click="videoOrderBy('title')">Title</a></li>
+            <li><a href ng-click="videoOrderBy('length')">Length</a></li>
+            <li><a href ng-click="videoOrderBy('-date')">Date</a></li>
+            <li><a href ng-click="videoOrderBy('-rating')">Rating</a></li>
+        </ul>
+        <h5>Filter By Category:</h5>
+        <ul class="ul">
+            <li ng-repeat="category in categories"><a href ng-click="videoCategory(category)">{{category}}</a></li>
+            <li><a href ng-click="videoCategory('all')">All Videos</a></li>
+        </ul>
+        <h5>Filter By Date:</h5>
+        <ul class="ul">
+            <li><a href ng-click="videoDate('today')">Today</a></li>
+            <li><a href ng-click="videoDate('lastThreeDays')">Last Three Days</a></li>
+            <li><a href ng-click="videoDate('thisWeek')">This Week</a></li>
+            <li><a href ng-click="videoDate('thisMonth')">This Month</a></li>
+            <li><a href ng-click="videoDate('all')">All Videos</a></li>
+        </ul>
+        <h5>Filter By Subtitles:</h5>
+        <ul class="ul">
+            <li><a href ng-click="videoHaveSubtitles('true')">With Subtitles</a></li>
+            <li><a href ng-click="videoHaveSubtitles('false')">Without Subtitles</a></li>
+            <li><a href ng-click="videoHaveSubtitles('all')">All Videos</a></li>
+        </ul>
+    </div>
+</div>

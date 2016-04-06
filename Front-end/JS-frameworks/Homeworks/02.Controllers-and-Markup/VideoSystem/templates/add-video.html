@@ -1,0 +1,66 @@
+<div class="row">
+    <div class="col-md-8 col-lg-offset-2">
+        <form class="form-horizontal" name="videoForm">
+            <fieldset class="form-group">
+                <label for="title" class="col-md-2 control-label">Title</label>
+                <div class="col-md-9">
+                    <input type="text" class="form-control " ng-model="videoData.title" id="title" required="required">
+                </div>
+                <div class="col-md-1 required">*</div>
+            </fieldset>
+            <fieldset class="form-group">
+                <label for="pictureUrl" class="col-md-2 control-label">Picture url</label>
+                <div class="col-md-9">
+                    <input type="text" class="form-control" ng-model="videoData.pictureUrl" id="pictureUrl"
+                           pattern=".+.(jpeg|jpg|gif|png)$" required="required"
+                           placeholder="Valid picture url should end on: .jpeg, .jpg, .gif or .png">
+                </div>
+                <div class="col-md-1 required">*</div>
+            </fieldset>
+            <fieldset class="form-group">
+                <label for="length" class="col-md-2 control-label">Length</label>
+                <div class="col-md-9">
+                    <input type="time" class="form-control" ng-model="videoData.length" id="length"
+                           placeholder="Eg. 01:30">
+                </div>
+            </fieldset>
+            <fieldset class="form-group">
+                <label for="category" class="col-md-2 control-label">Category</label>
+                <div class="col-md-9">
+                    <select class="form-control" id="category" ng-model="videoData.category" required="required">
+                        <option value="" disabled>-- Select Category --</option>
+                        <option ng-repeat="category in categories" value="{{category}}">{{category}}</option>
+                    </select>
+                </div>
+
+                <div class="col-md-1 required">*</div>
+            </fieldset>
+
+            <fieldset class="form-group">
+                <label for="subscribers" class="col-md-2 control-label">Subscribers</label>
+                <div class="col-md-9">
+                    <input type="number" min="0" class="form-control" ng-model="videoData.subscribers" id="subscribers">
+                </div>
+            </fieldset>
+            <fieldset class="form-group">
+                <label class="col-md-2 control-label">Subtitles</label>
+                <div class="col-md-9 radio">
+                    <label>
+                        <input type="radio" ng-model="videoData.haveSubtitles" name="subtitles" value="true"> Yes
+                    </label>
+                    <label>
+                        <input type="radio" ng-model="videoData.haveSubtitles" name="subtitles" value="false"> No
+                    </label>
+                </div>
+            </fieldset>
+            <div class="form-group">
+                <div class="col-md-11">
+                    <button class="btn btn-primary pull-right" ng-click="addVideo(videoData)"
+                            ng-disabled="videoForm.$invalid">Add video
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+

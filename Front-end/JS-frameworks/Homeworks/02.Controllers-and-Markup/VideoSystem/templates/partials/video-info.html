@@ -1,0 +1,9 @@
+<p><span class="bold">Title:</span> {{video.title}}</p>
+<p><span class="bold">Length:</span> {{video.length | date:'H:mm'}} Hours</p>
+<p><span class="bold">Category:</span> {{video.category}}</p>
+<p ng-if="video.rating !== 0"><span class="bold">Rating:</span> {{video.rating}}</p>
+<p ng-if="video.rating === 0"><span class="bold">Rating:</span> -</p>
+<p ng-if="video.haveSubtitles"><span class="bold">Subtitles:</span> Yes</p>
+<p ng-if="!video.haveSubtitles"><span class="bold">Subtitles:</span> No</p>
+<p><span class="bold">Subscribers:</span> {{video.subscribers}}</p>
+<p><span class="bold">Date:</span> {{video.date | date}}</p>

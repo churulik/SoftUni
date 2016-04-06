@@ -1,0 +1,19 @@
+.required {
+    color: red;
+}
+.bold {
+    font-weight: 700;
+}
+
+.small-img {
+    height: 230px;
+}
+
+.big-image {
+    width: 550px;
+}
+
+.ul {
+    list-style-type: none;
+    padding-left: 0;
+}
