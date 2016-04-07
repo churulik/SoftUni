@@ -12,7 +12,7 @@ angular.module('videoSystem.videoDetails', [])
             if (!sessionStorage['database']) {
                 databaseServices.videoSeed();
             }
-            
+
             var video = databaseServices.retrieveDataByTitle($routeParams.title);
             $scope.video = video;
 
@@ -29,5 +29,4 @@ angular.module('videoSystem.videoDetails', [])
 
                 $route.reload();
             };
-
         }]);
