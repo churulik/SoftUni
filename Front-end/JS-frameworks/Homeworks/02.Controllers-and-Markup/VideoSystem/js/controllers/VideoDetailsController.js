@@ -7,8 +7,8 @@ angular.module('videoSystem.videoDetails', [])
             controller: 'VideoDetailsController'
         });
     }])
-    .controller('VideoDetailsController', ['$scope', '$routeParams', '$location', 'databaseServices',
-        function ($scope, $routeParams, $location, databaseServices) {
+    .controller('VideoDetailsController', ['$scope', '$routeParams', '$route', 'databaseServices',
+        function ($scope, $routeParams, $route, databaseServices) {
             if (!sessionStorage['database']) {
                 databaseServices.videoSeed();
             }
@@ -21,13 +21,13 @@ angular.module('videoSystem.videoDetails', [])
                 databaseServices.pushComment(video, comment);
                 noty({
                     layout: 'topCenter',
-                    type: 'alert',
+                    type: 'information',
                     text: 'The comment is add',
                     timeout: 4000,
                     close: ['click']
                 });
 
-                $location.path('/')
+                $route.reload();
             };
 
         }]);
