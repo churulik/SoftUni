@@ -10,6 +10,7 @@ angular.module('issueTracker', ['ngRoute',
         'issueTracker.issues',
         'issueTracker.projects',
         'issueTracker.notifyService'])
+    .constant('BASE_URL', 'http://softuni-social-network.azurewebsites.net/api/')
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider.otherwise({redirectTo: '/'});
     }]);
