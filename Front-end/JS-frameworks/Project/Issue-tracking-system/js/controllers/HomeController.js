@@ -7,6 +7,7 @@ angular.module('issueTracker.home', [])
             controller: 'HomeController'
         })
     }])
-    .controller('HomeController', ['$scope', function ($scope) {
-
+    .controller('HomeController', ['$scope', 'notifyService', function ($scope, notifyService) {
+        notifyService.showInfo('Exellent');
+        notifyService.showError('Exellent');
     }]);
