@@ -1,2 +1,8 @@
-<section ng-include="'views/partials/register-login.html'"></section>
-<section ng-include="'views/partials/dashboard.html'"></section>
+<section ng-if="!isAuthorized">
+    <div ng-controller="UserController" ng-include="'views/partials/register-login.html'"></div>
+
+</section>
+
+<section ng-if="isAuthorized">
+    <div ng-controller="DashboardController" ng-include="'views/partials/dashboard.html'"></div>
+</section>

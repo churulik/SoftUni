@@ -7,7 +7,9 @@ angular.module('issueTracker.home', [])
             controller: 'HomeController'
         })
     }])
-    .controller('HomeController', ['$scope', 'notifyService', function ($scope, notifyService) {
-        notifyService.showInfo('Exellent');
-        notifyService.showError('Exellent');
+    .controller('HomeController', ['$scope', function ($scope) {
+        var auth = false;
+        $scope.isAuthorized = auth;
+        console.log(auth)
+
     }]);
