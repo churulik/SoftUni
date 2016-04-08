@@ -8,8 +8,5 @@ angular.module('issueTracker.home', [])
         })
     }])
     .controller('HomeController', ['$scope', function ($scope) {
-        var auth = false;
-        $scope.isAuthorized = auth;
-        console.log(auth)
-
+        $scope.isAuthorized = false;
     }]);
