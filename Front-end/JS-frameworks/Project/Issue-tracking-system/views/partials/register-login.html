@@ -38,19 +38,23 @@
                 </div>
                 <div class="input-group form-group">
                     <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
-                    <input type="password" minlength="6" ng-model="registerData.password" class="form-control register"
-                           placeholder="Password" required="required">
+                    <input type="password" ng-minlength="3" ng-model="registerData.password"
+                           class="form-control register"
+                           placeholder="Password" required="required" id="pw1" name="password">
                 </div>
                 <div class="input-group form-group">
                     <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
-                    <input type="password" minlength="6" ng-model="registerData.confirmPassword"
+                    <input type="password" ng-minlength="3" ng-model="registerData.confirmPassword"
                            class="form-control register"
-                           placeholder="Confirm Password" required="required">
+                           placeholder="Confirm Password" required="required"
+                           name="confirmPassword"
+                           confirm-password-validation="registerData.password"
+                           >
                 </div>
                 <div class="input-group form-group">
                     <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
-                    <input type="email" ng-model="registerData.email" class="form-control register" placeholder="E-mail"
-                           required="required">
+                    <input type="text" ng-model="registerData.email" ng-pattern="regex" class="form-control register" placeholder="E-mail"
+                           ng-required="required">
                 </div>
                 <div class="form-group">
                     <button class="btn btn-primary" ng-click="register(registerData)"

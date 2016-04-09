@@ -18,6 +18,10 @@ angular.module('issueTracker.user', [])
     }])
     .controller('UserController', ['$scope', '$location', 'notifyService',
         function ($scope, $location, notifyService) {
+            $scope.loginData = {};
+            $scope.registerData = {};
+            $scope.regex = /^(([^<>()\[\]\\.,;:\s@']+(\.[^<>()\[\]\\.,;:\s@']+)*)|('.+'))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
             $scope.login = function (loginData) {
                 console.log(loginData);
             };
@@ -26,6 +30,22 @@ angular.module('issueTracker.user', [])
                 console.log(registerData)
             };
         }])
+    .directive('confirmPasswordValidation', [function () {
+        return {
+            require: 'ngModel',
+            link: function (scope, element, attrs, controller) {
+                var password = attrs.confirmPasswordValidation;
+                var confirmPassword = attrs.ngModel;
+
+                console.log(password);
+                // console.log(confirmPassword);
+
+                scope.$watchGroup([password, confirmPassword], function (value) {
+                    controller.$setValidity('confirmPassword', value[0] === value[1])
+                });
+            }
+        };
+    }])
     .directive('logout', ['$location', 'notifyService', function ($location, notifyService) {
         return {
             link: function () {
