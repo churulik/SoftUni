@@ -11,7 +11,8 @@ angular.module('issueTracker', ['ngRoute',
         'issueTracker.projects',
         'issueTracker.notifyService'])
     .constant('BASE_URL', 'http://softuni-social-network.azurewebsites.net/api/')
-    .config(['$routeProvider', function ($routeProvider) {
+    .config(['$routeProvider', 'cfpLoadingBarProvider', function ($routeProvider, cfpLoadingBarProvider) {
         $routeProvider.otherwise({redirectTo: '/'});
+        cfpLoadingBarProvider.includeSpinner = false;
     }]);
    
