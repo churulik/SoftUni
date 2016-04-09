@@ -16,8 +16,8 @@ angular.module('issueTracker.user', [])
                 controller: 'UserController'
             });
     }])
-    .controller('UserController', ['$scope', '$location', 'notifyService',
-        function ($scope, $location, notifyService) {
+    .controller('UserController', ['$scope', '$location', 'notifyService', 'authServices',
+        function ($scope, $location, notifyService, authServices) {
             $scope.loginData = {};
             $scope.registerData = {};
             $scope.regex = /^(([^<>()\[\]\\.,;:\s@']+(\.[^<>()\[\]\\.,;:\s@']+)*)|('.+'))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -27,6 +27,7 @@ angular.module('issueTracker.user', [])
             };
 
             $scope.register = function (registerData) {
+                authServices.register(registerData);
                 console.log(registerData)
             };
         }])
@@ -36,10 +37,6 @@ angular.module('issueTracker.user', [])
             link: function (scope, element, attrs, controller) {
                 var password = attrs.confirmPasswordValidation;
                 var confirmPassword = attrs.ngModel;
-
-                console.log(password);
-                // console.log(confirmPassword);
-
                 scope.$watchGroup([password, confirmPassword], function (value) {
                     controller.$setValidity('confirmPassword', value[0] === value[1])
                 });

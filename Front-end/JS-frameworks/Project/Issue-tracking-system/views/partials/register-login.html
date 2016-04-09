@@ -33,28 +33,40 @@
                 <div class="input-group form-group">
                     <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
                     <input type="text" ng-model="registerData.username" class="form-control register"
-                           placeholder="Username"
-                           required="required">
+                           placeholder="Username" ng-required="required">
                 </div>
                 <div class="input-group form-group">
                     <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
-                    <input type="password" ng-minlength="3" ng-model="registerData.password"
+                    <input type="password" ng-minlength="6" ng-model="registerData.password"
                            class="form-control register"
                            placeholder="Password" required="required" id="pw1" name="password">
                 </div>
                 <div class="input-group form-group">
                     <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
-                    <input type="password" ng-minlength="3" ng-model="registerData.confirmPassword"
-                           class="form-control register"
-                           placeholder="Confirm Password" required="required"
-                           name="confirmPassword"
-                           confirm-password-validation="registerData.password"
-                           >
+                    <input type="password" ng-minlength="6" ng-model="registerData.confirmPassword"
+                           class="form-control register" placeholder="Confirm Password" required="required"
+                           name="confirmPassword" confirm-password-validation="registerData.password">
+                </div>
+                <div class="input-group form-group">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-pencil"></span></span>
+                    <input type="text" ng-model="registerData.name" class="form-control register"
+                           placeholder="Name" required="required">
                 </div>
                 <div class="input-group form-group">
                     <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
-                    <input type="text" ng-model="registerData.email" ng-pattern="regex" class="form-control register" placeholder="E-mail"
-                           ng-required="required">
+                    <input type="text" ng-model="registerData.email" ng-pattern="regex" class="form-control register"
+                           placeholder="E-mail" required="required">
+                </div>
+                <div class="form-group">
+                    <label class="radio-inline">
+                        <input type="radio" name="sex" value="1" ng-model="registerData.sex" required="required" ng-checked=true>Male
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="sex" value="2" ng-model="registerData.sex">Female
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="sex" value="0" ng-model="registerData.sex">No specified
+                    </label>
                 </div>
                 <div class="form-group">
                     <button class="btn btn-primary" ng-click="register(registerData)"
@@ -65,5 +77,8 @@
             <!-- Register End -->
         </uib-accordion-group>
     </uib-accordion>
+
+
+
 </div>
 
