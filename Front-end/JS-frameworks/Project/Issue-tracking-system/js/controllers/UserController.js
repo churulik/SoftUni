@@ -20,8 +20,9 @@ angular.module('issueTracker.user', [])
         function ($scope, $location, notifyService, authServices) {
             $scope.loginData = {};
             $scope.registerData = {};
-            $scope.regex = /^(([^<>()\[\]\\.,;:\s@']+(\.[^<>()\[\]\\.,;:\s@']+)*)|('.+'))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-
+            $scope.emailValidationRegex =
+                /^(([^<>()\[\]\\.,;:\s@']+(\.[^<>()\[\]\\.,;:\s@']+)*)|('.+'))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+           
             $scope.login = function (loginData) {
                 console.log(loginData);
             };
