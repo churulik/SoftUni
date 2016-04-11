@@ -103,6 +103,20 @@ angular.module('issueTracker.authServices', [])
                 return deferred.promise;
             }
 
+            function getProjectById(id) {
+                var deferred = $q.defer();
+
+                $http.get(BASE_URL + 'projects/' + id, {
+                    headers: authHeader()
+                }).then(function (project) {
+                    console.log(project)
+                    deferred.resolve(project.data);
+                }, function (error) {
+                    deferred.reject(error);
+                });
+
+                return deferred.promise;
+            }
 
             return {
                 login: login,
@@ -111,6 +125,7 @@ angular.module('issueTracker.authServices', [])
                 isAdministrator: isAdministrator,
                 getMyIssues: getMyIssues,
                 getAllUsers: getAllUsers,
-                getAllProjects: getAllProjects
+                getAllProjects: getAllProjects,
+                getProjectById: getProjectById
             }
         }]);

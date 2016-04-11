@@ -10,7 +10,7 @@ angular.module('issueTracker', ['ngRoute',
         'issueTracker.issues',
         'issueTracker.projects',
         'issueTracker.notifyService',
-        'issueTracker.authServices'])
+        'issueTracker.authServices',])
     .constant('BASE_URL', 'http://softuni-issue-tracker.azurewebsites.net/')
     .config(['$routeProvider', 'cfpLoadingBarProvider', function ($routeProvider, cfpLoadingBarProvider) {
         $routeProvider.otherwise({redirectTo: '/'});

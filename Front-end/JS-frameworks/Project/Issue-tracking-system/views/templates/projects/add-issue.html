@@ -7,13 +7,15 @@
     <div class="form-group">
         <label for="title" class="control-label col-md-3">Title</label>
         <div class="col-md-6">
-            <input type="text" id="title" class="form-control" ng-model="issueData.Title" placeholder="Title" required="required">
+            <input type="text" id="title" class="form-control" ng-model="issueData.Title" placeholder="Title"
+                   required="required">
         </div>
     </div>
     <div class="form-group">
         <label for="assignee" class="control-label col-md-3">Assignee</label>
         <div class="col-md-6">
-            <select id="assignee" ng-model="issueData.AssigneeId" ng-options="user.Username for user in users track by user.Id"
+            <select id="assignee" ng-model="issueData.AssigneeId"
+                    ng-options="user.Username for user in users track by user.Id"
                     required="required" class="form-control">
                 <option value="" disabled>-- Select Assignee --</option>
             </select>
@@ -22,7 +24,8 @@
     <div class="form-group">
         <label for="project" class="control-label col-md-3">Project</label>
         <div class="col-md-6">
-            <select id="project" ng-model="issueData.ProjectId" ng-options="project.Name for project in projects track by project.Id"
+            <select id="project" ng-model="issueData.ProjectId"
+                    ng-options="project.Name for project in projects track by project.Id"
                     required="required" class="form-control">
                 <option value="" disabled>-- Select Project --</option>
             </select>
@@ -31,7 +34,8 @@
     <div class="form-group">
         <label for="issueKey" class="control-label col-md-3">Due Date</label>
         <div class="col-md-6">
-            <input type="datetime" id="issueKey" class="form-control" ng-model="issueData.DueDate" placeholder="yyyy/mm/dd">
+            <input type="datetime" id="issueKey" class="form-control" ng-model="issueData.DueDate"
+                   placeholder="yyyy/mm/dd">
         </div>
     </div>
     <div class="form-group">
@@ -47,23 +51,40 @@
     <div class="form-group">
         <label for="labels" class="control-label col-md-3">Labels</label>
         <div class="col-md-6">
-            <input type="text" id="labels" class="form-control" ng-model="issueData.Labels" placeholder="Labels" required="required">
+            <input type="text" id="labels" class="form-control" ng-model="issueData.Labels" placeholder="Labels"
+                   required="required">
         </div>
-        <div class="col-md-offset-3 col-md-6">
-            <span ng-repeat="project in projects">
-                <span ng-repeat="label in project.Labels">{{label.Name}}{{$last ? '': ', '}}</span>
+        <div class="col-md-offset-3 col-md-6" ng-show="issueData.Labels.length > 0">
+            <span>
+                <span ng-repeat="project in projects">
+                <span ng-if="$last">
+                    <span ng-repeat="label in project.Labels | filter:issueData.Labels">
+                        <span>{{label.Name}}{{$last ? '': ', '}}</span>
+                    </span>
+                </span>
+                <span ng-if="!$last">
+                    <span ng-repeat="label in project.Labels | filter:issueData.Labels">
+                        <span>{{label.Name}}, </span>
+                    </span>
+                </span>
             </span>
+            </span>
+
         </div>
     </div>
     <div class="form-group">
         <label for="description" class="control-label col-md-3">Description</label>
         <div class="col-md-6">
-            <textarea id="description" class="col-md-6 form-control" placeholder="Description" required="required"></textarea>
+            <textarea id="description" class="col-md-6 form-control" placeholder="Description"
+                      required="required"></textarea>
         </div>
     </div>
     <div class="form-group">
         <div class="col-md-offset-3 col-md-9">
-            <button class="btn btn-primary" ng-click="addIssue(issueData)" ng-disabled="issueForm.$invalid">Add Issue</button>
+            <button class="btn btn-primary" ng-click="addIssue(issueData)" ng-disabled="issueForm.$invalid">Add Issue
+            </button>
         </div>
     </div>
 </form>
+
+
