@@ -7,6 +7,6 @@ angular.module('issueTracker.home', [])
             controller: 'HomeController'
         })
     }])
-    .controller('HomeController', ['$scope', function ($scope) {
-        $scope.isAuthorized = false;
+    .controller('HomeController', ['$scope', 'authServices', function ($scope, authServices) {       
+        $scope.isAuthenticated = authServices.isAuthenticated();
     }]);

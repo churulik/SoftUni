@@ -38,3 +38,7 @@
 #loading-bar .bar {
     height: 3px;
 }
+
+.even {
+    background-color: #f5f5f0;
+}

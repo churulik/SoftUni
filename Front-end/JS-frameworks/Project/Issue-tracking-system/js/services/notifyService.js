@@ -5,7 +5,7 @@ angular.module('issueTracker.notifyService', [])
             function showInfo(message) {
                 noty({
                     text: message,
-                    type: 'alert',
+                    type: 'information',
                     layout: 'bottomRight',
                     timeout: 3000,
                     animation: {
@@ -17,21 +17,29 @@ angular.module('issueTracker.notifyService', [])
 
             function showError(message, serverError) {
                 var errors = [];
-                if (serverError && serverError.data.message) {
-                    errors.push(serverError.data.message);
-                }
+                if (serverError ) {
+                    if (serverError.data.message) {
+                        errors.push(serverError.data.message);
+                    }
 
-                if (serverError && serverError.data.modelState) {
-                    var modelStateErrors = serverError.data.modelState;
-                    for (var propertyName in modelStateErrors) {
-                        var errorMessages = modelStateErrors[propertyName];
-                        var trimmedName = propertyName.substr(propertyName.indexOf('.') + 1);
-                        for (var i = 0; i < errorMessages.length; i++) {
-                            var currentError = errorMessages[i];
-                            errors.push(trimmedName + ' - ' + currentError)
+                    if (serverError.data.modelState) {
+                        var modelStateErrors = serverError.data.modelState;
+                        for (var propertyName in modelStateErrors) {
+                            var errorMessages = modelStateErrors[propertyName];
+                            var trimmedName = propertyName.substr(propertyName.indexOf('.') + 1);
+                            for (var i = 0; i < errorMessages.length; i++) {
+                                var currentError = errorMessages[i];
+                                errors.push(trimmedName + ' - ' + currentError)
+                            }
                         }
                     }
+
+                    if (serverError.data.error_description) {
+                        errors.push(serverError.data.error_description)
+                    }
                 }
+
+
                 if (errors.length > 0) {
                     message = message + ':<br>' + errors.join('<br>');
                 }

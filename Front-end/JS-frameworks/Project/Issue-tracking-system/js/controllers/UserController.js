@@ -16,20 +16,41 @@ angular.module('issueTracker.user', [])
                 controller: 'UserController'
             });
     }])
-    .controller('UserController', ['$scope', '$location', 'notifyService', 'authServices',
-        function ($scope, $location, notifyService, authServices) {
-            $scope.loginData = {};
+    .controller('UserController', ['$scope', '$location', '$route', 'notifyService', 'authServices',
+        function ($scope, $location, $route, notifyService, authServices) {
+            $scope.loginData = {grant_type: 'password'};
             $scope.registerData = {};
             $scope.emailValidationRegex =
                 /^(([^<>()\[\]\\.,;:\s@']+(\.[^<>()\[\]\\.,;:\s@']+)*)|('.+'))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-           
+
             $scope.login = function (loginData) {
-                console.log(loginData);
+                authServices.login(loginData).then(function () {
+                    notifyService.showInfo('Successful login');
+                    $route.reload();
+                }, function (error) {
+                    notifyService.showError('Unsuccessful login', error);
+                    console.log(error)
+                });
             };
 
             $scope.register = function (registerData) {
-                authServices.register(registerData);
-                console.log(registerData)
+                authServices.register(registerData).then(function (responce) {
+                    notifyService.showInfo('Successful registration');
+                    //Automatically login the registered user
+                    var loginData = {
+                        Username: responce.config.data.Email,
+                        Password: responce.config.data.Password,
+                        grant_type: 'password'
+                    };
+                    authServices.login(loginData).then(function () {
+                        $route.reload();
+                    }, function (error) {
+                        console.log(error)
+                    });
+                }, function (error) {
+                    notifyService.showError('Unsuccessful registration', error);
+                    console.log(error)
+                });
             };
         }])
     .directive('confirmPasswordValidation', [function () {
@@ -47,6 +68,7 @@ angular.module('issueTracker.user', [])
     .directive('logout', ['$location', 'notifyService', function ($location, notifyService) {
         return {
             link: function () {
+                sessionStorage.clear();
                 notifyService.showInfo('Successful log out');
                 $location.path('/');
             }
