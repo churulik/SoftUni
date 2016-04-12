@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('issueTracker.authServices', [])
+angular.module('issueTracker.services.authServices', [])
     .factory('authServices', ['$http', '$q', 'BASE_URL', 'notifyService',
         function ($http, $q, BASE_URL, notifyService) {
             var accessToken = 'access_token';

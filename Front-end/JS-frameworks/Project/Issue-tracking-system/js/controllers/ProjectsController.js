@@ -1,8 +1,12 @@
 'use strict';
 
-angular.module('issueTracker.projects', [])
+angular.module('issueTracker.controllers.projects', [])
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider
+            .when('/projects', {
+                templateUrl: 'views/templates/projects/project-by-id.html',
+                controller: 'ProjectsController'
+            })
             .when('/projects/:id', {
                 templateUrl: 'views/templates/projects/project-by-id.html',
                 controller: 'ProjectsController'

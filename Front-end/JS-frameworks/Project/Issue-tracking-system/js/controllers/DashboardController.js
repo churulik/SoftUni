@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('issueTracker.dashboard', [])
+angular.module('issueTracker.controllers.dashboard', [])
     .controller('DashboardController', ['$scope', 'authServices', function ($scope, authServices) {
         var isAuthenticated = authServices.isAuthenticated();
         if (isAuthenticated) {

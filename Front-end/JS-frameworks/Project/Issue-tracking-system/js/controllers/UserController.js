@@ -1,12 +1,8 @@
 'use strict';
 
-angular.module('issueTracker.user', [])
+angular.module('issueTracker.controllers.user', [])
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider
-            .when('/profile', {
-                templateUrl: 'views/templates/user/profile.html',
-                controller: 'UserController'
-            })
             .when('/profile/password', {
                 templateUrl: 'views/templates/user/change-password.html',
                 controller: 'UserController'
@@ -55,6 +51,7 @@ angular.module('issueTracker.user', [])
         }])
     .directive('confirmPasswordValidation', [function () {
         return {
+            restrict: 'A',
             require: 'ngModel',
             link: function (scope, element, attrs, controller) {
                 var password = attrs.confirmPasswordValidation;
@@ -67,6 +64,7 @@ angular.module('issueTracker.user', [])
     }])
     .directive('logout', ['$location', 'notifyService', function ($location, notifyService) {
         return {
+            restrict: 'A',
             link: function () {
                 sessionStorage.clear();
                 notifyService.showInfo('Successful log out');
