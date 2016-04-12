@@ -1,27 +1,28 @@
 'use strict';
 
 angular.module('issueTracker.services.issues', [])
-    .factory('issuesServices', ['$http', '$q', 'BASE_URL', function ($http, $q, BASE_URL) {
-        function authHeader() {
-            return {Authorization: sessionStorage['access_token']};
-        }
-        
-        function getMyIssues(params) {
+    .factory('issuesServices', ['$http', '$q', '$location', 'BASE_URL', 'notifyService',
+        function ($http, $q, $location, BASE_URL, notifyService) {
+            function authHeader() {
+                return {Authorization: sessionStorage['access_token']};
+            }
 
-            var deferred = $q.defer();
+            function getMyIssues(params) {
 
-            $http.get(BASE_URL + 'Issues/me?pageSize=' + params.pageSize + '&pageNumber=' + params.pageNumber + '&orderBy=DueDate desc', {
-                headers: authHeader()
-            }).then(function (myIssues) {
-                deferred.resolve(myIssues.data);
-            }, function (error) {
-                deferred.reject(error);
-            });
+                var deferred = $q.defer();
 
-            return deferred.promise;
-        }
-        
-        return {
-            getMyIssues: getMyIssues
-        }
-    }]);
+                $http.get(BASE_URL + 'issues/me?pageSize=' + params.pageSize + '&pageNumber=' + params.pageNumber + '&orderBy=DueDate desc', {
+                    headers: authHeader()
+                }).then(function (myIssues) {
+                    deferred.resolve(myIssues.data);
+                }, function (error) {
+                    deferred.reject(error);
+                });
+
+                return deferred.promise;
+            }            
+
+            return {
+                getMyIssues: getMyIssues                
+            }
+        }]);
