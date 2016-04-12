@@ -5,12 +5,14 @@ app.factory('authService',
         var currentUserText = 'currentUser';
         return {
             login: function (userData, success, error) {
+                console.log(userData)
                 var request = {
                     method: 'POST',
                     url: baseServiceUrl + '/api/user/login',
                     data: userData
                 };
                 $http(request).success(function (data) {
+                    console.log(data)
                     sessionStorage[currentUserText] = JSON.stringify(data);
                     success(data);
                 }).error(error);

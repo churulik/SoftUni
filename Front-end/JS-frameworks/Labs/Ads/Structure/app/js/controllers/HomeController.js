@@ -14,6 +14,7 @@ app.controller('HomeController',
             adsService.getAds(
                 $scope.adsParams,
                 function success(data) {
+                    console.log(data)
                     $scope.ads = data;
                 },
                 function error(error) {
