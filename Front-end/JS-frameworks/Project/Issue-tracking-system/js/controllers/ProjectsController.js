@@ -24,19 +24,19 @@ angular.module('issueTracker.controllers.projects', [])
                 controller: 'ProjectsController'
             })
     }])
-    .controller('ProjectsController', ['$scope', '$routeParams', 'authServices',
-        function ($scope, $routeParams, authServices) {
+    .controller('ProjectsController', ['$scope', '$routeParams', 'authServices', 'projectsServices',
+        function ($scope, $routeParams, authServices, projectsServices) {
             $scope.issueData = {};
             
             authServices.getAllUsers().then(function (users) {
                 $scope.users = users;
             });
 
-            authServices.getAllProjects().then(function (projects) {
+            projectsServices.getAllProjects().then(function (projects) {
                 $scope.projects = projects;
             });
 
-            authServices.getProjectById($routeParams.id).then(function (project) {
+            projectsServices.getProjectById($routeParams.id).then(function (project) {
                 $scope.projectById = project;
             });
             

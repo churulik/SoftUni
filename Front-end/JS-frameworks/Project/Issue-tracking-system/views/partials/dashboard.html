@@ -1,6 +1,15 @@
-<div class="row">
+<div class="row" >
     <div class="col-md-12">
         <h2>Dashboard</h2>
+    </div>
+    <div class="col-md-6">
+        <h3>Assigned Projects</h3>
+        <div ng-repeat="issue in myIssues | unique:'issue'">
+            <a ng-href="#/projects/{{issue.Project.Id}}">{{issue.Project.Name}}</a>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <h3>Issues</h3>
         <table class="table">
             <thead>
             <tr>
@@ -10,9 +19,9 @@
             </tr>
             </thead>
             <tbody ng-repeat="issue in myIssues">
-            <tr ng-class-even="'even'">
+            <tr>
                 <td>{{issue.Title}}</td>
-                <td>{{issue.Project.Name}}</td>
+                <td><a ng-href="#/projects/{{issue.Project.Id}}">{{issue.Project.Name}}</a></td>
                 <td>{{issue.DueDate | date}}</td>
             </tr>
             </tbody>

@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('issueTracker.services.authServices', [])
-    .factory('authServices', ['$http', '$q', 'BASE_URL', 'notifyService',
-        function ($http, $q, BASE_URL, notifyService) {
+    .factory('authServices', ['$http', '$q', 'BASE_URL',
+        function ($http, $q, BASE_URL) {
             var accessToken = 'access_token';
             var username = 'username';
 
@@ -46,13 +46,10 @@ angular.module('issueTracker.services.authServices', [])
             function isAdministrator() {
                 var deferred = $q.defer();
 
-                $http.get(BASE_URL + 'users', {
+                $http.get(BASE_URL + 'users/me', {
                     headers: authHeader()
                 }).then(function (response) {
-                    var user = response.data.filter(function (user) {
-                        return user.Username === sessionStorage[username];
-                    })[0];
-                    deferred.resolve(user.isAdmin);
+                    deferred.resolve(response.data.isAdmin);
                 }, function (error) {
                     deferred.reject(error);
                 });
@@ -60,72 +57,26 @@ angular.module('issueTracker.services.authServices', [])
                 return deferred.promise;
             }
 
-            function getMyIssues(pageSize) {
-                pageSize = pageSize || 10;
-                var deferred = $q.defer();
+            // function getAllUsers() {
+            //     var deferred = $q.defer();
+            //
+            //     $http.get(BASE_URL + 'users', {
+            //         headers: authHeader()
+            //     }).then(function (users) {
+            //         deferred.resolve(users.data);
+            //     }, function (error) {
+            //         deferred.reject(error);
+            //     });
+            //
+            //     return deferred.promise;
+            // }
 
-                $http.get(BASE_URL + 'Issues/me?pageSize=' + pageSize + '&pageNumber=1&orderBy=DueDate desc', {
-                    headers: authHeader()
-                }).then(function (myIssues) {
-                    deferred.resolve(myIssues.data.Issues);
-                }, function (error) {
-                    deferred.reject(error);
-                });
-
-                return deferred.promise;
-            }
-
-            function getAllUsers() {
-                var deferred = $q.defer();
-
-                $http.get(BASE_URL + 'users', {
-                    headers: authHeader()
-                }).then(function (users) {
-                    deferred.resolve(users.data);
-                }, function (error) {
-                    deferred.reject(error);
-                });
-
-                return deferred.promise;
-            }
-
-            function getAllProjects() {
-                var deferred = $q.defer();
-
-                $http.get(BASE_URL + 'projects', {
-                    headers: authHeader()
-                }).then(function (projects) {
-                    deferred.resolve(projects.data);
-                }, function (error) {
-                    deferred.reject(error);
-                });
-
-                return deferred.promise;
-            }
-
-            function getProjectById(id) {
-                var deferred = $q.defer();
-
-                $http.get(BASE_URL + 'projects/' + id, {
-                    headers: authHeader()
-                }).then(function (project) {
-                    console.log(project)
-                    deferred.resolve(project.data);
-                }, function (error) {
-                    deferred.reject(error);
-                });
-
-                return deferred.promise;
-            }
 
             return {
                 login: login,
                 register: register,
                 isAuthenticated: isAuthenticated,
                 isAdministrator: isAdministrator,
-                getMyIssues: getMyIssues,
-                getAllUsers: getAllUsers,
-                getAllProjects: getAllProjects,
-                getProjectById: getProjectById
+                // getAllUsers: getAllUsers
             }
         }]);
