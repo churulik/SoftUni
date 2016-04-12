@@ -57,19 +57,19 @@ angular.module('issueTracker.services.authServices', [])
                 return deferred.promise;
             }
 
-            // function getAllUsers() {
-            //     var deferred = $q.defer();
-            //
-            //     $http.get(BASE_URL + 'users', {
-            //         headers: authHeader()
-            //     }).then(function (users) {
-            //         deferred.resolve(users.data);
-            //     }, function (error) {
-            //         deferred.reject(error);
-            //     });
-            //
-            //     return deferred.promise;
-            // }
+            function getAllUsers() {
+                var deferred = $q.defer();
+            
+                $http.get(BASE_URL + 'users', {
+                    headers: authHeader()
+                }).then(function (users) {
+                    deferred.resolve(users.data);
+                }, function (error) {
+                    deferred.reject(error);
+                });
+            
+                return deferred.promise;
+            }
 
 
             return {
@@ -77,6 +77,6 @@ angular.module('issueTracker.services.authServices', [])
                 register: register,
                 isAuthenticated: isAuthenticated,
                 isAdministrator: isAdministrator,
-                // getAllUsers: getAllUsers
+                getAllUsers: getAllUsers
             }
         }]);

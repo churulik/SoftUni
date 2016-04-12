@@ -3,12 +3,6 @@
 angular.module('issueTracker.controllers.dashboard', [])
     .controller('DashboardController', ['$scope', 'authServices', 'issuesServices',
         function ($scope, authServices, issuesServices) {
-            var isAuthenticated = authServices.isAuthenticated();
-            if (isAuthenticated) {
-                authServices.isAdministrator().then(function (data) {
-                    $scope.isAdmin = data;
-                });
-            }
             //Paging
             const pageSize = 5;
             

@@ -5,7 +5,7 @@ angular.module('issueTracker.services.projects', [])
         function authHeader() {
             return {Authorization: sessionStorage['access_token']};
         }
-        
+
         function getAllProjects() {
             var deferred = $q.defer();
 
@@ -26,8 +26,21 @@ angular.module('issueTracker.services.projects', [])
             $http.get(BASE_URL + 'projects/' + id, {
                 headers: authHeader()
             }).then(function (project) {
-                console.log(project)
                 deferred.resolve(project.data);
+            }, function (error) {
+                deferred.reject(error);
+            });
+
+            return deferred.promise;
+        }
+
+        function getProjectIssues(id) {
+            var deferred = $q.defer();
+
+            $http.get(BASE_URL + 'projects/' + id + '/issues', {
+                headers: authHeader()
+            }).then(function (issuses) {
+                deferred.resolve(issuses.data);
             }, function (error) {
                 deferred.reject(error);
             });
@@ -37,6 +50,7 @@ angular.module('issueTracker.services.projects', [])
 
         return {
             getAllProjects: getAllProjects,
-            getProjectById: getProjectById
+            getProjectById: getProjectById,
+            getProjectIssues: getProjectIssues
         }
     }]);

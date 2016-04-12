@@ -9,7 +9,7 @@
         </div>
     </div>
     <div class="col-md-8">
-        <h3>Issues</h3>
+        <h3>Assigned Issues</h3>
         <table class="table">
             <thead>
             <tr>
@@ -21,7 +21,7 @@
             </thead>
             <tbody ng-repeat="issue in myIssues.Issues">
             <tr>
-                <td>{{issue.Title}}</td>
+                <td><a ng-href="#/issues/{{issue.Id}}">{{issue.Title}}</a></td>
                 <td>{{issue.Description}}</td>
                 <td><a ng-href="#/projects/{{issue.Project.Id}}">{{issue.Project.Name}}</a></td>
                 <td>{{issue.DueDate | date}}</td>
@@ -34,13 +34,7 @@
                             previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;">
             </uib-pagination>
         </div>
-
     </div>
-    <div ng-if="isAdmin" class="col-md-12">
-        <button class="btn btn-success">Add New Project</button>
-        <a href="#/projects/1/add-issue" class="btn btn-success">Add New Issue</a>
-    </div>
-
 </div>
 
 
