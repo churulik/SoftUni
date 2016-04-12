@@ -6,11 +6,26 @@ angular.module('issueTracker.controllers.dashboard', [])
             var isAuthenticated = authServices.isAuthenticated();
             if (isAuthenticated) {
                 authServices.isAdministrator().then(function (data) {
-                    console.log(data)
                     $scope.isAdmin = data;
                 });
             }
-            issuesServices.getMyIssues(5).then(function (myIssues) {
-                $scope.myIssues = myIssues;
-            });
+            //Paging
+            const pageSize = 5;
+            
+            $scope.issuesParams = {
+                pageNumber: 1,
+                pageSize: pageSize
+            };
+
+            $scope.reloadIssues = function () {
+                issuesServices.getMyIssues($scope.issuesParams)
+                    .then(function (myIssues) {
+                        $scope.totalItems = myIssues.TotalPages * pageSize;
+                        $scope.myIssues = myIssues;
+                    }, function (error) {
+                        console.log(error)
+                    });
+            };
+
+            $scope.reloadIssues();
         }]);

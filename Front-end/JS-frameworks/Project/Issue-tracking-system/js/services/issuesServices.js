@@ -6,14 +6,14 @@ angular.module('issueTracker.services.issues', [])
             return {Authorization: sessionStorage['access_token']};
         }
         
-        function getMyIssues(pageSize) {
-            pageSize = pageSize || 10;
+        function getMyIssues(params) {
+
             var deferred = $q.defer();
 
-            $http.get(BASE_URL + 'Issues/me?pageSize=' + pageSize + '&pageNumber=1&orderBy=DueDate desc', {
+            $http.get(BASE_URL + 'Issues/me?pageSize=' + params.pageSize + '&pageNumber=' + params.pageNumber + '&orderBy=DueDate desc', {
                 headers: authHeader()
             }).then(function (myIssues) {
-                deferred.resolve(myIssues.data.Issues);
+                deferred.resolve(myIssues.data);
             }, function (error) {
                 deferred.reject(error);
             });
