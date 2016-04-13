@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('issueTracker.services.authServices', [])
-    .factory('authServices', ['$http', '$q', 'BASE_URL',
-        function ($http, $q, BASE_URL) {
+    .factory('authServices', ['$http', '$q', '$location', 'BASE_URL', 'notifyService',
+        function ($http, $q, $location, BASE_URL, notifyService) {
             var accessToken = 'access_token';
             var username = 'username';
 
@@ -39,6 +39,18 @@ angular.module('issueTracker.services.authServices', [])
                 return deferred.promise;
             }
 
+            function changePassword(changePasswordData) {
+                $http.post(BASE_URL + 'api/account/changePassword', changePasswordData, {headers: authHeader()})
+                    .then(function (response) {
+                        console.log(response)
+                        notifyService.showInfo('Successfully password change');
+                        $location.path('/');
+                    }, function (error) {
+                        console.log(error)
+                        notifyService.showError('Unsuccessful password change', error);
+                    })
+            }
+
             function isAuthenticated() {
                 return sessionStorage[accessToken];
             }
@@ -71,12 +83,20 @@ angular.module('issueTracker.services.authServices', [])
                 return deferred.promise;
             }
 
+            function getCurrentUser() {
+                if(sessionStorage['username']) {
+                    return sessionStorage['username'];
+                }
+            }
+
 
             return {
                 login: login,
                 register: register,
+                changePassword: changePassword,
                 isAuthenticated: isAuthenticated,
                 isAdministrator: isAdministrator,
-                getAllUsers: getAllUsers
+                getAllUsers: getAllUsers,
+                getCurrentUser: getCurrentUser
             }
         }]);

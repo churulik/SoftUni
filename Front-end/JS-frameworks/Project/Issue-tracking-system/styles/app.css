@@ -11,27 +11,27 @@
     outline: none;
 }
 
-.form-control.register.ng-dirty.ng-valid-parse.ng-touched.ng-not-empty.ng-valid.ng-valid-required,
-.form-control.register.ng-valid-required.ng-not-empty.ng-dirty.ng-valid-parse.ng-valid.ng-valid-pattern.ng-untouched,
-.form-control.register.ng-dirty.ng-valid-parse.ng-touched.ng-not-empty.ng-valid-required.ng-valid.ng-valid-confirm-password {
+.form-control.display-validation.ng-dirty.ng-valid-parse.ng-touched.ng-not-empty.ng-valid.ng-valid-required,
+.form-control.display-validation.ng-valid-required.ng-not-empty.ng-dirty.ng-valid-parse.ng-valid.ng-valid-pattern.ng-untouched,
+.form-control.display-validation.ng-dirty.ng-valid-parse.ng-touched.ng-not-empty.ng-valid-required.ng-valid.ng-valid-confirm-password {
     border: 1px solid #67b168;
 }
 
-.form-control.register.ng-dirty.ng-valid-parse.ng-touched.ng-not-empty.ng-valid.ng-valid-required:focus,
-.form-control.register.ng-valid-required.ng-not-empty.ng-dirty.ng-valid-parse.ng-valid.ng-valid-pattern.ng-untouched:focus,
-.form-control.register.ng-dirty.ng-valid-parse.ng-touched.ng-not-empty.ng-valid-required.ng-valid.ng-valid-confirm-password:focus {
+.form-control.display-validation.ng-dirty.ng-valid-parse.ng-touched.ng-not-empty.ng-valid.ng-valid-required:focus,
+.form-control.display-validation.ng-valid-required.ng-not-empty.ng-dirty.ng-valid-parse.ng-valid.ng-valid-pattern.ng-untouched:focus,
+.form-control.display-validation.ng-dirty.ng-valid-parse.ng-touched.ng-not-empty.ng-valid-required.ng-valid.ng-valid-confirm-password:focus {
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #67b168;
 }
 
-.form-control.register.ng-not-empty.ng-dirty.ng-valid-parse.ng-valid-required.ng-invalid.ng-invalid-minlength.ng-touched,
-.form-control.register.ng-not-empty.ng-dirty.ng-valid-required.ng-invalid.ng-invalid-pattern.ng-touched,
-.form-control.register.ng-not-empty.ng-dirty.ng-valid-parse.ng-valid-required.ng-touched.ng-invalid.ng-invalid-confirm-password.ng-valid-minlength {
+.form-control.display-validation.ng-not-empty.ng-dirty.ng-valid-parse.ng-valid-required.ng-invalid.ng-invalid-minlength.ng-touched,
+.form-control.display-validation.ng-not-empty.ng-dirty.ng-valid-required.ng-invalid.ng-invalid-pattern.ng-touched,
+.form-control.display-validation.ng-not-empty.ng-dirty.ng-valid-parse.ng-valid-required.ng-touched.ng-invalid.ng-invalid-confirm-password.ng-valid-minlength {
     border: 1px solid #ce8483;
 }
 
-.form-control.register.ng-not-empty.ng-dirty.ng-valid-parse.ng-valid-required.ng-invalid.ng-invalid-minlength.ng-touched:focus,
-.form-control.register.ng-not-empty.ng-dirty.ng-valid-required.ng-invalid.ng-invalid-pattern.ng-touched:focus,
-.form-control.register.ng-not-empty.ng-dirty.ng-valid-parse.ng-valid-required.ng-touched.ng-invalid.ng-invalid-confirm-password.ng-valid-minlength:focus{
+.form-control.display-validation.ng-not-empty.ng-dirty.ng-valid-parse.ng-valid-required.ng-invalid.ng-invalid-minlength.ng-touched:focus,
+.form-control.display-validation.ng-not-empty.ng-dirty.ng-valid-required.ng-invalid.ng-invalid-pattern.ng-touched:focus,
+.form-control.display-validation.ng-not-empty.ng-dirty.ng-valid-parse.ng-valid-required.ng-touched.ng-invalid.ng-invalid-confirm-password.ng-valid-minlength:focus{
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #ce8483;
 }
 
@@ -45,5 +45,9 @@
 
 .bold {
     font-weight: 600
+}
+
+.error-message {
+    color: #ce8483;
 }
 

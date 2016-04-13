@@ -1,21 +1,22 @@
 'use strict';
 
-angular.module('issueTracker.controllers.user', [])
+angular.module('issueTracker.controllers.account', [])
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider
             .when('/profile/password', {
                 templateUrl: 'views/templates/user/change-password.html',
-                controller: 'UserController'
+                controller: 'AccountController'
             })
             .when('/logout', {
                 templateUrl: 'views/templates/user/logout.html',
-                controller: 'UserController'
+                controller: 'AccountController'
             });
     }])
-    .controller('UserController', ['$scope', '$location', '$route', 'notifyService', 'authServices',
+    .controller('AccountController', ['$scope', '$location', '$route', 'notifyService', 'authServices',
         function ($scope, $location, $route, notifyService, authServices) {
             $scope.loginData = {grant_type: 'password'};
             $scope.registerData = {};
+            $scope.changePasswordData = {};
             $scope.emailValidationRegex =
                 /^(([^<>()\[\]\\.,;:\s@']+(\.[^<>()\[\]\\.,;:\s@']+)*)|('.+'))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
@@ -32,22 +33,28 @@ angular.module('issueTracker.controllers.user', [])
             $scope.register = function (registerData) {
                 authServices.register(registerData).then(function (responce) {
                     notifyService.showInfo('Successful registration');
+
                     //Automatically login the registered user
                     var loginData = {
                         Username: responce.config.data.Email,
                         Password: responce.config.data.Password,
                         grant_type: 'password'
                     };
+
                     authServices.login(loginData).then(function () {
-                        $route.reload();
-                    }, function (error) {
-                        console.log(error)
-                    });
+                            $route.reload();
+                        }, function (error) {
+                            console.log(error)
+                        });
                 }, function (error) {
                     notifyService.showError('Unsuccessful registration', error);
                     console.log(error)
                 });
             };
+
+            $scope.changePassword = function (changePasswordData) {
+                authServices.changePassword(changePasswordData);
+            }
         }])
     .directive('confirmPasswordValidation', [function () {
         return {
@@ -57,7 +64,8 @@ angular.module('issueTracker.controllers.user', [])
                 var password = attrs.confirmPasswordValidation;
                 var confirmPassword = attrs.ngModel;
                 scope.$watchGroup([password, confirmPassword], function (value) {
-                    controller.$setValidity('confirmPassword', value[0] === value[1])
+                    var confirmPasswordMatch = value[0] === value[1];
+                    controller.$setValidity('confirmPasswordMatch', confirmPasswordMatch)
                 });
             }
         };

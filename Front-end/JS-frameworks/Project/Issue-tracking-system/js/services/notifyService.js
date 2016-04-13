@@ -18,18 +18,13 @@ angular.module('issueTracker.services.notifyService', [])
             function showError(message, serverError) {
                 var errors = [];
                 if (serverError ) {
-                    if (serverError.data.message) {
-                        errors.push(serverError.data.message);
-                    }
-
-                    if (serverError.data.modelState) {
-                        var modelStateErrors = serverError.data.modelState;
+                    if (serverError.data.ModelState) {
+                        var modelStateErrors = serverError.data.ModelState;
                         for (var propertyName in modelStateErrors) {
                             var errorMessages = modelStateErrors[propertyName];
-                            var trimmedName = propertyName.substr(propertyName.indexOf('.') + 1);
                             for (var i = 0; i < errorMessages.length; i++) {
                                 var currentError = errorMessages[i];
-                                errors.push(trimmedName + ' - ' + currentError)
+                                errors.push(currentError)
                             }
                         }
                     }

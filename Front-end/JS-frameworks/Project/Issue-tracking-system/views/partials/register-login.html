@@ -1,16 +1,18 @@
-<div class="col-md-8 col-md-offset-2" ng-controller="AccordionController">
-    <uib-accordion>
-        <uib-accordion-group uib-accordion-header is-open="status.isFirstOpen">
-            <uib-accordion-heading>
-                <div>Login</div>
-            </uib-accordion-heading>
-            <div ng-include="'views/partials/login-form.html'"></div>
-        </uib-accordion-group>
-        <uib-accordion-group panel-class="panel-primary">
-            <uib-accordion-heading>
-                <div>Register</div>
-            </uib-accordion-heading>
-            <div ng-include="'views/partials/register-form.html'"></div>
-        </uib-accordion-group>
-    </uib-accordion>
+<div class="row">
+    <div class="col-md-8 col-md-offset-2" ng-controller="AccordionController">
+        <uib-accordion>
+            <uib-accordion-group uib-accordion-header is-open="status.isFirstOpen">
+                <uib-accordion-heading>
+                    <div>Login</div>
+                </uib-accordion-heading>
+                <div ng-include="'views/partials/login-form.html'"></div>
+            </uib-accordion-group>
+            <uib-accordion-group panel-class="panel-primary">
+                <uib-accordion-heading>
+                    <div>Register</div>
+                </uib-accordion-heading>
+                <div ng-include="'views/partials/register-form.html'"></div>
+            </uib-accordion-group>
+        </uib-accordion>
+    </div>
 </div>
