@@ -4,11 +4,11 @@ angular.module('issueTracker.controllers.account', [])
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider
             .when('/profile/password', {
-                templateUrl: 'views/templates/user/change-password.html',
+                templateUrl: 'views/templates/account/change-password.html',
                 controller: 'AccountController'
             })
             .when('/logout', {
-                templateUrl: 'views/templates/user/logout.html',
+                templateUrl: 'views/templates/account/logout.html',
                 controller: 'AccountController'
             });
     }])

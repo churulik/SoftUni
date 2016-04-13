@@ -27,9 +27,10 @@ angular.module('issueTracker.controllers.projects', [])
     .controller('ProjectsController', ['$scope', '$routeParams', 'authServices', 'projectsServices',
         function ($scope, $routeParams, authServices, projectsServices) {
             var projectId = $routeParams.id;
+            $scope.isAdmin = authServices.isAdministrator();
             $scope.issueData = {};
             $scope.projectId = projectId;
-            $scope.dateValidation = /^\d{4}\/\d{2}\/\d{2}$/;
+            $scope.dateValidation = /^\d{4}\/\d{2}\/\d{2}$/;            
 
             authServices.getAllUsers().then(function (users) {
                 $scope.users = users;
@@ -37,9 +38,7 @@ angular.module('issueTracker.controllers.projects', [])
 
             projectsServices.getAllProjects().then(function (projects) {
                 $scope.projects = projects;
-            });
-
-            $scope.isAdmin = authServices.isAdministrator();
+            });            
 
             projectsServices.getProjectById(projectId).then(function (project) {
                 var labels = [],
@@ -89,6 +88,6 @@ angular.module('issueTracker.controllers.projects', [])
             };
 
             $scope.addIssue = function (issueData) {
-                console.log(issueData)
+
             };
         }]);

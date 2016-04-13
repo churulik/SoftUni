@@ -5,7 +5,7 @@ angular.module('issueTracker.services.notifyService', [])
             function showInfo(message) {
                 noty({
                     text: message,
-                    type: 'success',
+                    type: 'alert',
                     layout: 'bottomRight',
                     timeout: 3000,
                     animation: {
@@ -18,6 +18,9 @@ angular.module('issueTracker.services.notifyService', [])
             function showError(message, serverError) {
                 var errors = [];
                 if (serverError ) {
+                    if (serverError.data.Message) {
+                        errors.push(serverError.data.Message)
+                    }
                     if (serverError.data.ModelState) {
                         var modelStateErrors = serverError.data.ModelState;
                         for (var propertyName in modelStateErrors) {

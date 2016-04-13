@@ -1,0 +1,53 @@
+<div class="row">
+    <div class="col-md-12">
+        <h3>Issue
+            <span ng-show="isAdmin">
+                    <a href="#/projects/{{issueId}}/edit" class="btn btn-success btn-sm">Edit</a>
+            </span>
+        </h3>
+    </div>
+
+    <div class="col-md-8">
+        <p><span class="bold">Title: </span>{{issue.Title}}</p>
+        <p><span class="bold">Key: </span>{{issue.IssueKey}}</p>
+        <p><span class="bold">Description: </span>{{issue.Description}}</p>
+        <p><span class="bold">Assignee Id: </span>{{issue.Assignee.Id}}
+            <span class="gray-info">
+                ({{issue.Assignee.Username}})
+            </span>
+        </p>
+        <p><span class="bold">Priority Id: </span>{{issue.Priority.Id}}
+            <span class="gray-info">
+                ({{issue.Priority.Name}})
+            </span>
+        </p>
+        <p><span class="bold">Due Date: </span>{{issue.DueDate | date}}</p>
+        <p><span class="bold">Author: </span>{{issue.Author.Username}}</p>
+        <p><span class="bold">Project: </span>{{issue.Project.Name}}</p>
+        <p><span class="bold">Status: </span>{{issue.Status.Name}}</p>
+        <p><span class="bold">Labels: </span>
+            <span ng-if="issue.Labels.length === 0">
+                None
+            </span>
+            <span ng-repeat="label in issue.Labels">
+                {{label.Name}}{{$last ? '': ', '}}
+            </span>
+        </p>
+    </div>
+    <div class="col-md-4">
+        <p class="bold">
+            AvailableStatuses:
+            <span ng-if="issue.AvailableStatuses.length === 0">
+                None
+            </span>
+        </p>
+        <div ng-repeat="status in issue.AvailableStatuses">
+            <p>
+                <span>-- {{status.Name}}</span>
+                <span>
+                    <button class="btn btn-success btn-sm" ng-click="changeStatus(status.Id)">Change</button>
+                </span>
+            </p>
+        </div>
+    </div>
+</div>

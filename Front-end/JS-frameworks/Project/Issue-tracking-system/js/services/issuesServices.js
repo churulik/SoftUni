@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('issueTracker.services.issues', [])
-    .factory('issuesServices', ['$http', '$q', '$location', 'BASE_URL', 'notifyService',
-        function ($http, $q, $location, BASE_URL, notifyService) {
+    .factory('issuesServices', ['$http', '$q', '$location', '$route', 'BASE_URL', 'notifyService',
+        function ($http, $q, $location, $route, BASE_URL, notifyService) {
             function authHeader() {
                 return {Authorization: sessionStorage['access_token']};
             }
@@ -11,18 +11,46 @@ angular.module('issueTracker.services.issues', [])
 
                 var deferred = $q.defer();
 
-                $http.get(BASE_URL + 'issues/me?pageSize=' + params.pageSize + '&pageNumber=' + params.pageNumber + '&orderBy=DueDate desc', {
-                    headers: authHeader()
-                }).then(function (myIssues) {
+                $http.get(
+                    BASE_URL + 'issues/me?pageSize=' + params.pageSize + '&pageNumber=' + params.pageNumber + '&orderBy=DueDate desc',
+                    {headers: authHeader()}
+                ).then(function (myIssues) {
                     deferred.resolve(myIssues.data);
                 }, function (error) {
                     deferred.reject(error);
                 });
 
                 return deferred.promise;
-            }            
+            }
+
+            function getIssueById(id) {
+                var deferred = $q.defer();
+
+                $http.get(BASE_URL + 'issues/' + id, {headers: authHeader()}
+                ).then(function (issue) {
+                    deferred.resolve(issue.data);
+                }, function (error) {
+                    deferred.reject(error);
+                });
+
+                return deferred.promise;
+            }
+
+            function changeStatus(issueId, statusId) {
+
+                $http.put(BASE_URL + 'issues/' + issueId + '/changestatus?statusid=' + statusId,
+                    null, {headers: authHeader()}
+                ).then(function () {
+                    notifyService.showInfo('Status changed');
+                    $route.reload();
+                }, function (error) {
+                    notifyService.showError('Fail to change the status', error);
+                });
+            }
 
             return {
-                getMyIssues: getMyIssues                
+                getMyIssues: getMyIssues,
+                getIssueById: getIssueById,
+                changeStatus: changeStatus
             }
         }]);

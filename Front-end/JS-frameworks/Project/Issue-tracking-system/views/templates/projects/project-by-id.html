@@ -11,8 +11,11 @@
         <p><span class="bold">Name: </span>{{project.Name}}</p>
         <p><span class="bold">Key: </span>{{project.ProjectKey}}</p>
         <p><span class="bold">Description: </span>{{project.Description}}</p>
-        <p><span class="bold">Leader: </span>{{project.Lead.Username}}</p>
-        <p><span class="bold">Leader ID: </span>{{project.Lead.Id}}</p>
+        <p><span class="bold">Leader Id: </span> {{project.Lead.Id}}
+            <span class="gray-info">
+                ({{project.Lead.Username}})
+            </span>
+        </p>
         <p><span class="bold">Labels: </span>
             <span ng-repeat="label in project.Labels">
                 {{label.Name}}{{$last ? '': ', '}}
