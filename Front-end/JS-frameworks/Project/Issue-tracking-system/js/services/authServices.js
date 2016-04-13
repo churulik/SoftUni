@@ -16,7 +16,6 @@ angular.module('issueTracker.services.authServices', [])
                 $http.post(BASE_URL + 'api/token', $.param(loginData), {
                     headers: {'Content-Type': 'application/x-www-form-urlencoded'}
                 }).then(function (response) {
-                    sessionStorage[username] = response.data.userName;
                     sessionStorage[accessToken] = 'Bearer ' + response.data.access_token;
                     deferred.resolve(response);
                 }, function (error) {
@@ -42,11 +41,9 @@ angular.module('issueTracker.services.authServices', [])
             function changePassword(changePasswordData) {
                 $http.post(BASE_URL + 'api/account/changePassword', changePasswordData, {headers: authHeader()})
                     .then(function (response) {
-                        console.log(response)
                         notifyService.showInfo('Successfully password change');
                         $location.path('/');
                     }, function (error) {
-                        console.log(error)
                         notifyService.showError('Unsuccessful password change', error);
                     })
             }
@@ -55,23 +52,27 @@ angular.module('issueTracker.services.authServices', [])
                 return sessionStorage[accessToken];
             }
 
-            function isAdministrator() {
-                var deferred = $q.defer();
-
+            function getUserInfo() {
                 $http.get(BASE_URL + 'users/me', {
                     headers: authHeader()
                 }).then(function (response) {
-                    deferred.resolve(response.data.isAdmin);
+                    sessionStorage['userInfo'] = JSON.stringify(response.data);
                 }, function (error) {
-                    deferred.reject(error);
+                    console.log(error);
                 });
+            }
 
-                return deferred.promise;
+            function isAdministrator() {
+                var userInfo = sessionStorage['userInfo'];
+                if (userInfo) {
+                    var parseUserInfo = JSON.parse(userInfo);
+                    return parseUserInfo.isAdmin;
+                }
             }
 
             function getAllUsers() {
                 var deferred = $q.defer();
-            
+
                 $http.get(BASE_URL + 'users', {
                     headers: authHeader()
                 }).then(function (users) {
@@ -79,21 +80,23 @@ angular.module('issueTracker.services.authServices', [])
                 }, function (error) {
                     deferred.reject(error);
                 });
-            
+
                 return deferred.promise;
             }
 
             function getCurrentUser() {
-                if(sessionStorage['username']) {
-                    return sessionStorage['username'];
+                var userInfo = sessionStorage['userInfo'];
+                if (userInfo) {
+                    var parseUserInfo = JSON.parse(userInfo);
+                    return parseUserInfo.Username;
                 }
             }
-
 
             return {
                 login: login,
                 register: register,
                 changePassword: changePassword,
+                getUserInfo: getUserInfo,
                 isAuthenticated: isAuthenticated,
                 isAdministrator: isAdministrator,
                 getAllUsers: getAllUsers,

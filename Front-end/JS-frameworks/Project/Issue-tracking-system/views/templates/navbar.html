@@ -16,12 +16,39 @@
                     <a href="#/"><span class="glyphicon glyphicon-tasks"></span> Dashboard</a>
                 </li>
             </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li class="dropdown" ng-class="{active: isActive('/profile/password')}">
-                    <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                        <span class="glyphicon glyphicon-user"></span> Me ({{authServices.getCurrentUser()}})<span class="caret"></span>
+            <ul class="nav navbar-nav navbar-right" ng-show="!authServices.isAdministrator()">
+                <li class="dropdown" ng-class="{active: isActive('/profilerofisword')}">
+                    <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">
+                        <span class="glyphicon glyphicon-user"></span><span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
+                        <li>
+                            <a style="cursor: default">
+                                <span class="glyphicon glyphicon-user"></span>
+                                {{authServices.getCurrentUser()}}
+                            </a>
+                        </li>
+                        <li ng-class="{active: isActive('/profile/password')}">
+                            <a href="#/profile/password"><span class="glyphicon glyphicon-lock"></span> Change Password</a>
+                        </li>
+                        <li><a href="#/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right" ng-show="authServices.isAdministrator()">
+                <li class="dropdown" ng-class="{active: isActive('/profile/password')}">
+                    <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">
+                        <span class="glyphicon glyphicon-user"></span><span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a style="cursor: default">
+                                <span class="glyphicon glyphicon-user"></span>
+                                Administrator ({{authServices.getCurrentUser()}})
+                            </a>
+                        </li>
                         <li ng-class="{active: isActive('/profile/password')}">
                             <a href="#/profile/password"><span class="glyphicon glyphicon-lock"></span> Change Password</a>
                         </li>

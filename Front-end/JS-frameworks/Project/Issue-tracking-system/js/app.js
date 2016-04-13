@@ -1,7 +1,6 @@
 'use strict';
 
 angular.module('issueTracker', ['ngRoute', 'ngAnimate', 'chieffancypants.loadingBar',
-        'issueTracker.controller.app',
         'issueTracker.controllers.admin',
         'issueTracker.controllers.navbar',
         'issueTracker.controllers.home',

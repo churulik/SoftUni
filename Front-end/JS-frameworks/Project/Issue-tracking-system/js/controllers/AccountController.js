@@ -22,11 +22,12 @@ angular.module('issueTracker.controllers.account', [])
 
             $scope.login = function (loginData) {
                 authServices.login(loginData).then(function () {
+                    //Get user Info
+                    authServices.getUserInfo();
                     notifyService.showInfo('Successful login');
                     $route.reload();
                 }, function (error) {
-                    notifyService.showError('Unsuccessful login', error);
-                    console.log(error)
+                    notifyService.showError('Unsuccessful login', error);                    
                 });
             };
 

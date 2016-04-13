@@ -39,9 +39,7 @@ angular.module('issueTracker.controllers.projects', [])
                 $scope.projects = projects;
             });
 
-            authServices.isAdministrator().then(function (data) {
-                $scope.isAdmin = data;
-            });
+            $scope.isAdmin = authServices.isAdministrator();
 
             projectsServices.getProjectById(projectId).then(function (project) {
                 var labels = [],
