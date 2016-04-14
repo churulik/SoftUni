@@ -1,31 +1,38 @@
 <form name="issueAddForm" class="form-horizontal">
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
-            <h2>Add New Issue</h2>
+            <h3>Add New Issue</h3>
         </div>
     </div>
     <div class="form-group">
         <label for="title" class="control-label col-md-3">Title</label>
-        <div class="col-md-6">
+        <div class="col-md-8">
             <input type="text" id="title" class="form-control" ng-model="issueData.Title" placeholder="Title"
                    required="required">
         </div>
     </div>
     <div class="form-group">
+        <label for="description" class="control-label col-md-3">Description</label>
+        <div class="col-md-8">
+            <textarea id="description" ng-model="issueData.Description" class="col-md-8 form-control"
+                      required="required"
+                      placeholder="Description"></textarea>
+        </div>
+    </div>
+    <div class="form-group">
         <label for="assignee" class="control-label col-md-3">Assignee</label>
-        <div class="col-md-6">
-            <select id="assignee" ng-model="issueData.AssigneeId"
-                    ng-options="user.Username for user in users track by user.Id"
-                    required="required" class="form-control">
+        <div class="col-md-8">
+            <select id="assignee" ng-model="issueData.AssigneeId" required="required" class="form-control">
                 <option value="" disabled>-- Select Assignee --</option>
+                <option ng-repeat="user in users | orderBy:'Username'" value="{{user.Id}}">{{user.Username}}</option>
             </select>
         </div>
     </div>
     <div class="form-group">
         <label for="project" class="control-label col-md-3">Project</label>
-        <div class="col-md-6">
-            <select id="project" ng-model="issueData.ProjectId"
-                    ng-options="project.Name for project in projects track by project.Id"
+        <div class="col-md-8">
+            <select id="project" ng-model="selectedProject"
+                    ng-options="project.Name for project in projects | orderBy:'Name'"
                     required="required" class="form-control">
                 <option value="" disabled>-- Select Project --</option>
             </select>
@@ -33,59 +40,59 @@
     </div>
     <div class="form-group">
         <label for="issueKey" class="control-label col-md-3">Due Date</label>
-        <div class="col-md-6">
-            <input type="datetime" id="issueKey" class="form-control" ng-model="issueData.DueDate"
-                   placeholder="yyyy/mm/dd" ng-pattern="dateValidation" required="required">
+        <div class="col-md-8">
+            <div class="input-group">
+                <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="dt"
+                       is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close"
+                       alt-input-formats="altInputFormats" id="issueKey" required="required"/>
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="open1()">
+                    <i class="glyphicon glyphicon-calendar"></i>
+                </button>
+              </span>
+            </div>
         </div>
     </div>
     <div class="form-group">
         <label for="priority" class="control-label col-md-3">Priority</label>
-        <div class="col-md-6">
-            <select id="priority" ng-model="issueData.PriorityId"
-                    ng-options="priority.Name for priority in issueData.ProjectId.Priorities track by priority.Id"
-                    required="required" class="form-control">
+        <div class="col-md-8">
+            <select id="priority" ng-model="issueData.PriorityId" required="required" class="form-control">
                 <option value="" disabled>-- Select Priority --</option>
+                <option ng-repeat="priority in selectedProject.Priorities" value="{{priority.Id}}">{{priority.Name}}
+                </option>
             </select>
         </div>
     </div>
     <div class="form-group">
         <label for="labels" class="control-label col-md-3">Labels</label>
-        <div class="col-md-6">
-            <input type="text" id="labels" class="form-control" ng-model="issueData.Labels" placeholder="Labels"
-                   required="required">
+        <div class="col-md-8">
+            <input type="text" id="labels" class="form-control" ng-model="issueData.Labels" to-array-object-parser
+                   placeholder="Labels" required="required">
         </div>
         <!--<div class="col-md-offset-3 col-md-6" ng-show="issueData.Labels.length > 0">-->
-            <!--<span>-->
-                <!--<span ng-repeat="project in projects">-->
-                    <!--<span ng-if="$last">-->
-                        <!--<span ng-repeat="label in project.Labels | filter:issueData.Labels">-->
-                            <!--<span>{{label.Name}}{{$last ? '': ', '}}</span>-->
-                        <!--</span>-->
-                    <!--</span>-->
-                    <!--<span ng-if="!$last">-->
-                        <!--<span ng-repeat="label in project.Labels | filter:issueData.Labels">-->
-                            <!--<span>{{label.Name}}, </span>-->
-                        <!--</span>-->
-                    <!--</span>-->
-                <!--</span>-->
-            <!--</span>-->
+        <!--<span>-->
+        <!--<span ng-repeat="project in projects">-->
+        <!--<span ng-if="$last">-->
+        <!--<span ng-repeat="label in project.Labels | filter:issueData.Labels">-->
+        <!--<span>{{label.Name}}{{$last ? '': ', '}}</span>-->
+        <!--</span>-->
+        <!--</span>-->
+        <!--<span ng-if="!$last">-->
+        <!--<span ng-repeat="label in project.Labels | filter:issueData.Labels">-->
+        <!--<span>{{label.Name}}, </span>-->
+        <!--</span>-->
+        <!--</span>-->
+        <!--</span>-->
+        <!--</span>-->
         <!--</div>-->
     </div>
     <div class="form-group">
-        <label for="description" class="control-label col-md-3">Description</label>
-        <div class="col-md-6">
-            <textarea id="description" ng-model="issueData.Description" class="col-md-6 form-control" required="required"
-            placeholder="Description"></textarea>
-        </div>
-    </div>
-    <div class="form-group">
         <div class="col-md-offset-3 col-md-9">
-            <button class="btn btn-primary" ng-click="addIssue(issueData)" ng-disabled="issueAddForm.$invalid">
+            <button class="btn btn-success" ng-click="addIssue(issueData, selectedProject, dt)"
+                    ng-disabled="issueAddForm.$invalid" data-dismiss="modal">
                 Add Issue
             </button>
-            <a ng-href="#/projects/{{projectId}}" class="btn btn-default">Cancel</a>
+            <a ng-href="#/projects/{{projectId}}" class="btn btn-default" data-dismiss="modal">Cancel</a>
         </div>
     </div>
 </form>
-
-

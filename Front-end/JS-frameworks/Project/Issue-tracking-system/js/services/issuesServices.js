@@ -48,9 +48,9 @@ angular.module('issueTracker.services.issues', [])
                 });
             }
 
-            // function redirect() {                
-            //     return $location.path('/');
-            // }
+            function redirect() {                
+                return $location.path('/');
+            }
 
             function editIssue(issueDate, id) {
                 $http.put(BASE_URL + 'issues/' + id, issueDate, {headers: authHeader()})
@@ -67,7 +67,7 @@ angular.module('issueTracker.services.issues', [])
                 getMyIssues: getMyIssues,
                 getIssueById: getIssueById,
                 changeStatus: changeStatus,
-                editIssue: editIssue
-                // redirect: redirect
+                editIssue: editIssue,
+                redirect: redirect
             }
         }]);

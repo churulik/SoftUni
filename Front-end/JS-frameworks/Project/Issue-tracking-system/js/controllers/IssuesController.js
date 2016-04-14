@@ -8,48 +8,37 @@ angular.module('issueTracker.controllers.issues', [])
                 controller: 'IssuesController'
             })
             .when('/issues/:id/edit', {
-                templateUrl: 'views/templates/issues/edit.html',
+                templateUrl: 'views/templates/issues/edit-issue.html',
                 controller: 'IssuesController'
             })
     }])
-    .controller('IssuesController', ['$scope', '$routeParams', '$location', 'issuesServices', 'authServices',
-        function ($scope, $routeParams, $location, issuesServices, authServices) {
+    .controller('IssuesController', ['$scope', '$routeParams', '$location', 'issuesServices', 'authServices', 'datePickerService',
+        function ($scope, $routeParams, $location, issuesServices, authServices, datePickerService) {
             var issueId = $routeParams.id;
             $scope.isAdmin = authServices.isAdministrator();
             $scope.issueId = issueId;
             issuesServices.getIssueById(issueId).then(function (issueData) {
                 $scope.issuesServices = issuesServices;
                 $scope.issue = issueData;
+                datePickerService.datePicker($scope, issueData.DueDate);
                 $scope.isAssignee = authServices.getCurrentUser() === issueData.Assignee.Username;
                 $scope.isProjectLeader = authServices.getCurrentUser() === issueData.Author.Username;
-                var labels = [];
-                for (var i = 0; i < issueData.Labels.length; i++) {
-                    labels.push(issueData.Labels[i].Name);
-
-                }
-                $scope.issueLabels = labels.join(', ');
-
             });
 
             $scope.changeStatus = function (statusId) {
                 issuesServices.changeStatus(issueId, statusId);
             };
 
-            $scope.editIssue = function (issueDate, labels) {
+            $scope.editIssue = function (issueDate, date) {
                 var editIssueDate = {
                     Title: issueDate.Title,
                     Description: issueDate.Description,
-                    DueDate: issueDate.DueDate,
+                    DueDate: date,
                     AssigneeId: issueDate.Assignee.Id,
                     PriorityId: issueDate.Priority.Id,
-                    Labels: []
-                },
-                splitLabels = labels.split(', ');
-
-                for (var i = 0; i < splitLabels.length; i++) {
-                    editIssueDate.Labels.push({Name: splitLabels[i]})
-                }
-
+                    Labels: issueDate.Labels
+                };
+                
                 issuesServices.editIssue(editIssueDate, issueId);
             }
         }]);

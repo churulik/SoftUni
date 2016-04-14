@@ -49,6 +49,17 @@ angular.module('issueTracker.services.projects', [])
                 return deferred.promise;
             }
 
+            function addProject(projectData) {
+                $http.post(BASE_URL + 'projects', projectData, {headers: authHeader()})
+                    .then(function () {
+                        notifyService.showInfo('Project add successfully');
+                        $location.path('/projects');
+
+                    }, function (error) {
+                        notifyService.showError('Fail to add the project', error);
+                    });
+            }
+
             function editProject(projectData, id) {
                 $http.put(BASE_URL + 'projects/' + id, projectData, {headers: authHeader()})
                     .then(function () {
@@ -60,10 +71,28 @@ angular.module('issueTracker.services.projects', [])
                     });
             }
 
+            function addIssue(issueData) {
+                $http.post(BASE_URL + 'issues', issueData, {headers: authHeader()})
+                    .then(function () {
+                        notifyService.showInfo('Issue add successfully');
+                        $location.path('/');
+
+                    }, function (error) {
+                        notifyService.showError('Fail to add the issue', error);
+                    });
+            }
+
+            function redirect() {
+                return $location.path('/');
+            }
+
             return {
                 getAllProjects: getAllProjects,
                 getProjectById: getProjectById,
                 getProjectIssues: getProjectIssues,
-                editProject: editProject
+                addProject: addProject,
+                editProject: editProject,
+                addIssue: addIssue,
+                redirect: redirect
             }
         }]);

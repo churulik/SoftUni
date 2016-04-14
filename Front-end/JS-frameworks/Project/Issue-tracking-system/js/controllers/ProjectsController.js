@@ -4,7 +4,7 @@ angular.module('issueTracker.controllers.projects', [])
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider
             .when('/projects', {
-                templateUrl: 'views/templates/projects/home.html',
+                templateUrl: 'views/templates/projects/list-all-projects.html',
                 controller: 'ProjectsController'
             })
             .when('/projects/add', {
@@ -16,7 +16,7 @@ angular.module('issueTracker.controllers.projects', [])
                 controller: 'ProjectsController'
             })
             .when('/projects/:id/edit', {
-                templateUrl: 'views/templates/projects/edit.html',
+                templateUrl: 'views/templates/projects/edit-project.html',
                 controller: 'ProjectsController'
             })
             .when('/projects/:id/add-issue', {
@@ -24,13 +24,15 @@ angular.module('issueTracker.controllers.projects', [])
                 controller: 'ProjectsController'
             })
     }])
-    .controller('ProjectsController', ['$scope', '$routeParams', 'authServices', 'projectsServices',
-        function ($scope, $routeParams, authServices, projectsServices) {
+    .controller('ProjectsController', ['$scope', '$routeParams', 'authServices', 'projectsServices', 'datePickerService',
+        function ($scope, $routeParams, authServices, projectsServices, datePickerService) {
             var projectId = $routeParams.id;
+            $scope.projectsServices = projectsServices;
             $scope.isAdmin = authServices.isAdministrator();
-            $scope.issueData = {};
             $scope.projectId = projectId;
-            $scope.dateValidation = /^\d{4}\/\d{2}\/\d{2}$/;            
+            $scope.issueData = {};
+            $scope.projectData = {};
+            $scope.selectedProject = {};
 
             authServices.getAllUsers().then(function (users) {
                 $scope.users = users;
@@ -38,56 +40,40 @@ angular.module('issueTracker.controllers.projects', [])
 
             projectsServices.getAllProjects().then(function (projects) {
                 $scope.projects = projects;
-            });            
-
-            projectsServices.getProjectById(projectId).then(function (project) {
-                var labels = [],
-                    priorities = [];
-
-                angular.forEach(project.Labels, function (label) {
-                    labels.push(label.Name);
-                });
-
-                angular.forEach(project.Priorities, function (priority) {
-                    priorities.push(priority.Name);
-                });
-
-                $scope.project = project;
-                $scope.labels = labels.join(', ');
-                $scope.priorities = priorities.join(', ');
             });
 
+            //TODO Lazy loading
+            projectsServices.getProjectById(projectId).then(function (project) {
+                $scope.isProjectLeader = authServices.getCurrentUser() === project.Lead.Username;
+                $scope.project = project;
+            });
+
+            //TODO Lazy loading
             projectsServices.getProjectIssues(projectId).then(function (issues) {
                 $scope.issues = issues;
+                datePickerService.datePicker($scope);
             });
 
-            $scope.editProject = function (project, labels, priorities) {
+            $scope.editProject = function (project) {
                 var projectData = {
-                        Name: project.Name,
-                        Description: project.Description,
-                        LeadId: project.Lead.Id,
-                        Labels: [],
-                        Priorities: []
-
-                    },
-                    splitLabels = labels.split(', '),
-                    splitPriorities = priorities.split(', ');
-
-                for (var i = 0; i < splitLabels.length; i++) {
-                    projectData.Labels.push({Name: splitLabels[i]});
-
-                }
-
-                for (i = 0; i < splitPriorities.length; i++) {
-                    projectData.Priorities.push({Name: splitPriorities[i]});
-
-                }
+                    Name: project.Name,
+                    Description: project.Description,
+                    LeadId: project.Lead.Id,
+                    Labels: project.Labels,
+                    Priorities: project.Priorities
+                };
 
                 projectsServices.editProject(projectData, projectId);
 
             };
 
-            $scope.addIssue = function (issueData) {
+            $scope.addIssue = function (issueData, project, date) {
+                issueData['ProjectId'] = project.Id;
+                issueData['DueDate'] = date;
+                projectsServices.addIssue(issueData);
+            };
 
+            $scope.addProject = function (projectData) {
+                projectsServices.addProject(projectData);
             };
         }]);

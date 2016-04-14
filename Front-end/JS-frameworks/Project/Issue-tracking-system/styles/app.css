@@ -54,3 +54,6 @@
 .gray-info {
     color: slategray;
 }
+.inline-block {
+    display: inline-block;
+}

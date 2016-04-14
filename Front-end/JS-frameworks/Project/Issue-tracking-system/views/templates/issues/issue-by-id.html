@@ -1,8 +1,8 @@
 <div class="row">
     <div class="col-md-12">
         <h3>Issue
-            <span ng-if="isProjectLeader">
-                    <a href="#/issues/{{issueId}}/edit" class="btn btn-success btn-sm">Edit</a>
+            <span ng-if="isProjectLeader || isAdmin">
+                    <a ng-href="#/issues/{{issueId}}/edit" class="btn btn-success btn-sm">Edit</a>
             </span>
         </h3>
     </div>
@@ -44,7 +44,7 @@
         <div ng-repeat="status in issue.AvailableStatuses">
             <p>
                 <span>-- {{status.Name}}</span>
-                <span ng-if="isAssignee">
+                <span ng-if="isAssignee || isAdmin">
                     <button class="btn btn-success btn-sm" ng-click="changeStatus(status.Id)">Change</button>
                 </span>
             </p>

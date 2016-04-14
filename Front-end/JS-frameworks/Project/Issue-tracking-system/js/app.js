@@ -13,7 +13,9 @@ angular.module('issueTracker', ['ngRoute', 'ngAnimate', 'chieffancypants.loading
         'issueTracker.services.notifyService',
         'issueTracker.services.projects',
         'issueTracker.services.issues',
-        'issueTracker.services.authServices'])
+        'issueTracker.services.authServices',
+        'issueTracker.services.datePicker',
+        'issueTracker.directives.common'])
     .constant('BASE_URL', 'http://softuni-issue-tracker.azurewebsites.net/')
     .config(['$routeProvider', 'cfpLoadingBarProvider', function ($routeProvider, cfpLoadingBarProvider) {
         $routeProvider.otherwise({redirectTo: '/'});

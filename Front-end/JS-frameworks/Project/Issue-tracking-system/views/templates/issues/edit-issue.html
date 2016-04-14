@@ -10,13 +10,13 @@
         </div>
         <div class="form-group">
             <label for="title" class="control-label col-md-3">Title</label>
-            <div class="col-md-6">
+            <div class="col-md-8">
                 <input type="text" id="title" ng-model="issue.Title" class="form-control" required="required">
             </div>
         </div>
         <div class="form-group">
             <label for="description" class="control-label col-md-3">Description</label>
-            <div class="col-md-6">
+            <div class="col-md-8">
             <textarea id="description" ng-model="issue.Description" class="form-control" required="required">
                 {{issue.Description}}
             </textarea>
@@ -24,34 +24,42 @@
         </div>
         <div class="form-group">
             <label for="dueDate" class="control-label col-md-3">Due Date</label>
-            <div class="col-md-6">
-                <input type="datetime" id="dueDate" ng-model="issue.DueDate" class="form-control" required="required">
+            <div class="col-md-8">
+                <div class="input-group">
+                    <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="dt" is-open="popup1.opened"
+                           datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats"
+                           id="dueDate" required="required"/>
+                      <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
+                      </span>
+                </div>
             </div>
         </div>
         <div class="form-group">
             <label for="assigneeId" class="control-label col-md-3">Assignee Id</label>
-            <div class="col-md-6">
+            <div class="col-md-8">
                 <input type="text" id="assigneeId" ng-model="issue.Assignee.Id" class="form-control"
                        required="required">
             </div>
         </div>
         <div class="form-group">
             <label for="priorityId" class="control-label col-md-3">Priority Id</label>
-            <div class="col-md-6">
+            <div class="col-md-8">
                 <input type="text" id="priorityId" ng-model="issue.Priority.Id" class="form-control"
                        required="required">
             </div>
         </div>
         <div class="form-group">
             <label for="labels" class="control-label col-md-3">Labels</label>
-            <div class="col-md-6">
-                <input type="text" id="labels" ng-model="issueLabels" class="form-control" required="required">
+            <div class="col-md-8">
+                <input type="text" id="labels" ng-model="issue.Labels" to-string-formatter to-array-object-parser
+                       class="form-control" required="required">
             </div>
         </div>
         <div class="form-group">
             <div class="col-md-9 col-md-offset-3">
                 <button class="btn btn-primary" ng-disabled="editIssueForm.$invalid"
-                        ng-click="editIssue(issue, issueLabels)">Edit
+                        ng-click="editIssue(issue, dt)">Edit
                 </button>
                 <a ng-href="#/issues/{{issueId}}" class="btn btn-default">Cancel</a>
             </div>
