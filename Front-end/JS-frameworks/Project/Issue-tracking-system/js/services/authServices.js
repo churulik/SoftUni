@@ -2,12 +2,10 @@
 
 angular.module('issueTracker.services.authServices', [])
     .factory('authServices', ['$http', '$q', '$location', 'BASE_URL', 'notifyService',
-        function ($http, $q, $location, BASE_URL, notifyService) {
-            var accessToken = 'access_token';
-            var username = 'username';
+        function ($http, $q, $location, BASE_URL, notifyService) {            
 
             function authHeader() {
-                return {Authorization: sessionStorage[accessToken]};
+                return {Authorization: sessionStorage['access_token']};
             }
 
             function login(loginData) {
@@ -16,7 +14,7 @@ angular.module('issueTracker.services.authServices', [])
                 $http.post(BASE_URL + 'api/token', $.param(loginData), {
                     headers: {'Content-Type': 'application/x-www-form-urlencoded'}
                 }).then(function (response) {
-                    sessionStorage[accessToken] = 'Bearer ' + response.data.access_token;
+                    sessionStorage['access_token'] = 'Bearer ' + response.data.access_token;
                     deferred.resolve(response);
                 }, function (error) {
                     deferred.reject(error)
@@ -49,7 +47,7 @@ angular.module('issueTracker.services.authServices', [])
             }
 
             function isAuthenticated() {
-                return sessionStorage[accessToken];
+                return sessionStorage['access_token'];
             }
 
             function getUserInfo() {

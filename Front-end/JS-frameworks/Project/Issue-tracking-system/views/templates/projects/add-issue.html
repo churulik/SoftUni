@@ -80,7 +80,7 @@
     </div>
     <div class="form-group">
         <div class="col-md-offset-3 col-md-9">
-            <button class="btn btn-primary" ng-click="addIssue(issueData)" >
+            <button class="btn btn-primary" ng-click="addIssue(issueData)" ng-disabled="issueAddForm.$invalid">
                 Add Issue
             </button>
             <a ng-href="#/projects/{{projectId}}" class="btn btn-default">Cancel</a>

@@ -35,6 +35,10 @@
             </uib-pagination>
         </div>
     </div>
+    <div class="col-md-12" ng-if="authServices.isAdministrator()">
+        <a href="#/projects/add" class="btn btn-success">Add New Project</a>
+        <a href="#/projects" class="btn btn-success">List All Projects</a>
+    </div>
 </div>
 
 

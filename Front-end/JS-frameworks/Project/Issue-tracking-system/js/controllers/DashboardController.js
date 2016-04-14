@@ -3,6 +3,7 @@
 angular.module('issueTracker.controllers.dashboard', [])
     .controller('DashboardController', ['$scope', 'authServices', 'issuesServices',
         function ($scope, authServices, issuesServices) {
+            $scope.authServices = authServices;
             //Paging
             const pageSize = 5;
             

@@ -51,14 +51,13 @@ angular.module('issueTracker.services.projects', [])
 
             function editProject(projectData, id) {
                 $http.put(BASE_URL + 'projects/' + id, projectData, {headers: authHeader()})
-                    .then(function (response) {
-                        console.log(response);
+                    .then(function () {
                         notifyService.showInfo('Project edit successfully');
-                        $location.path('/projects/' + id)
+                        $location.path('/projects/' + id);
 
                     }, function (error) {
                         notifyService.showError('Fail to edit the project', error);
-                    })
+                    });
             }
 
             return {

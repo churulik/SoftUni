@@ -48,9 +48,26 @@ angular.module('issueTracker.services.issues', [])
                 });
             }
 
+            // function redirect() {                
+            //     return $location.path('/');
+            // }
+
+            function editIssue(issueDate, id) {
+                $http.put(BASE_URL + 'issues/' + id, issueDate, {headers: authHeader()})
+                    .then(function () {
+                        notifyService.showInfo('Issue edit successfully');
+                        $location.path('/issues/' + id);
+
+                    }, function (error) {
+                        notifyService.showError('Fail to edit the issue', error);
+                    });
+            }
+
             return {
                 getMyIssues: getMyIssues,
                 getIssueById: getIssueById,
-                changeStatus: changeStatus
+                changeStatus: changeStatus,
+                editIssue: editIssue
+                // redirect: redirect
             }
         }]);
