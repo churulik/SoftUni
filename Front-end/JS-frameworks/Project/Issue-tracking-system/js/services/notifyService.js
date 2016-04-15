@@ -5,7 +5,7 @@ angular.module('issueTracker.services.notifyService', [])
             function showInfo(message) {
                 noty({
                     text: message,
-                    type: 'alert',
+                    type: 'information',
                     layout: 'bottomRight',
                     timeout: 3000,
                     animation: {

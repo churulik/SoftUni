@@ -18,11 +18,24 @@ angular.module('issueTracker.controllers.issues', [])
             $scope.isAdmin = authServices.isAdministrator();
             $scope.issueId = issueId;
             issuesServices.getIssueById(issueId).then(function (issueData) {
+                
+                // Scope issuesServices
                 $scope.issuesServices = issuesServices;
+                
+                // Scope issue data
                 $scope.issue = issueData;
+                
+                // Set date
                 datePickerService.datePicker($scope, issueData.DueDate);
+                
+                // Get auth roles
                 $scope.isAssignee = authServices.getCurrentUser() === issueData.Assignee.Username;
                 $scope.isProjectLeader = authServices.getCurrentUser() === issueData.Author.Username;
+                
+                // Get issue comments
+                issuesServices.viewComments(issueId).then(function (comments) {
+                    $scope.comments = comments;
+                })
             });
 
             $scope.changeStatus = function (statusId) {
@@ -40,5 +53,9 @@ angular.module('issueTracker.controllers.issues', [])
                 };
                 
                 issuesServices.editIssue(editIssueDate, issueId);
-            }
+            };
+
+            $scope.addIssueComment = function (comment) {
+                issuesServices.addComment(comment, issueId);
+            };
         }]);

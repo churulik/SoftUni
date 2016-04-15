@@ -62,12 +62,37 @@ angular.module('issueTracker.services.issues', [])
                         notifyService.showError('Fail to edit the issue', error);
                     });
             }
+            
+            function viewComments(id) {
+                var deferred = $q.defer();
+                
+                $http.get(BASE_URL + 'issues/' + id + '/comments', {headers: authHeader()})
+                    .then(function (comments) {
+                        deferred.resolve(comments.data);
+                    }, function (error) {
+                        deferred.reject(error);
+                    });
+                
+                return deferred.promise;
+            }
+
+            function addComment(comment, id) {
+                $http.post(BASE_URL + 'issues/' + id + '/comments', comment, {headers: authHeader()})
+                    .then(function () {
+                        notifyService.showInfo('Your comment is add successfully');
+                        $route.reload();
+                    }, function (error) {
+                        notifyService.showError('Fail to add your comment', error);
+                    });
+            }
 
             return {
                 getMyIssues: getMyIssues,
                 getIssueById: getIssueById,
                 changeStatus: changeStatus,
                 editIssue: editIssue,
+                viewComments: viewComments,
+                addComment: addComment,
                 redirect: redirect
             }
         }]);

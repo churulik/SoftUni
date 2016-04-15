@@ -27,15 +27,9 @@
             </span>
         </p>
     </div>
-    <div ng-controller="NavbarController">
-        <div class="col-md-12" ng-show="isAdmin">
-
-
-        </div>
-    </div>
     <div class="col-md-12">
         <h3 class="inline-block">Project Issues</h3>
-        <div ng-if="isAdmin" class="inline-block">
+        <div ng-if="isAdmin || isProjectLeader" class="inline-block">
             <!-- Button trigger modal -->
             <button class="btn btn-success btn-sm" data-toggle="modal" data-target="#addIssue">Add</button>
 
@@ -49,7 +43,8 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <div ng-controller="ProjectsController" ng-include="'views/templates/projects/add-issue.html'"></div>
+                            <div ng-controller="ProjectsController"
+                                 ng-include="'views/templates/projects/add-issue.html'"></div>
                         </div>
                     </div>
                 </div>
@@ -57,21 +52,28 @@
         </div>
     </div>
     <div class="col-md-12">
+        <div class="checkbox">
+            <label><input type="checkbox" ng-model="checked" ng-click="filterIssues()"/>Show all issues</label>
+        </div>
         <table class="table table-hover">
             <thead>
             <tr>
-                <th>Issue</th>
-                <th>Description</th>
-                <th>Due Date</th>
-                <th>Assignee</th>
+                <th class="col-md-3">Issue</th>
+                <th class="col-md-4">Description</th>
+                <th class="col-md-2">Due Date</th>
+                <th class="col-md-2">Assignee</th>
+                <th class="col-md-2">Priority</th>
+                <th class="col-md-2">Status</th>
             </tr>
             </thead>
-            <tbody ng-repeat="issue in issues">
+            <tbody ng-repeat="issue in issues | filter:filterMyIssues">
             <tr>
                 <td><a ng-href="#/issues/{{issue.Id}}">{{issue.Title}}</a></td>
-                <td class="col-md-4">{{issue.Description}}</td>
+                <td>{{issue.Description}}</td>
                 <td>{{issue.DueDate | date}}</td>
                 <td>{{issue.Assignee.Username}}</td>
+                <td >{{issue.Priority.Name}}</td>
+                <td>{{issue.Status.Name}}</td>
             </tr>
             </tbody>
         </table>

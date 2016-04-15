@@ -27,13 +27,14 @@ angular.module('issueTracker.controllers.projects', [])
     .controller('ProjectsController', ['$scope', '$routeParams', 'authServices', 'projectsServices', 'datePickerService',
         function ($scope, $routeParams, authServices, projectsServices, datePickerService) {
             var projectId = $routeParams.id;
+            var currentUser = authServices.getCurrentUser();
             $scope.projectsServices = projectsServices;
             $scope.isAdmin = authServices.isAdministrator();
             $scope.projectId = projectId;
             $scope.issueData = {};
             $scope.projectData = {};
             $scope.selectedProject = {};
-
+            sessionStorage['user'] = authServices.getCurrentUser();
             authServices.getAllUsers().then(function (users) {
                 $scope.users = users;
             });
@@ -44,7 +45,7 @@ angular.module('issueTracker.controllers.projects', [])
 
             //TODO Lazy loading
             projectsServices.getProjectById(projectId).then(function (project) {
-                $scope.isProjectLeader = authServices.getCurrentUser() === project.Lead.Username;
+                $scope.isProjectLeader = currentUser === project.Lead.Username;
                 $scope.project = project;
             });
 
@@ -76,4 +77,15 @@ angular.module('issueTracker.controllers.projects', [])
             $scope.addProject = function (projectData) {
                 projectsServices.addProject(projectData);
             };
+            
+            //Filter issues
+            $scope.checked = false;
+            $scope.filterMyIssues = {Assignee: {Username: currentUser}};
+            $scope.filterIssues = function () {
+                if (!$scope.checked) {
+                    $scope.filterMyIssues = {Assignee: {Username: currentUser}};
+                } else {
+                    $scope.filterMyIssues = '';
+                }
+            }
         }]);

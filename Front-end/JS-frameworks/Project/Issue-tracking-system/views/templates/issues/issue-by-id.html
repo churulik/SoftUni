@@ -6,7 +6,6 @@
             </span>
         </h3>
     </div>
-
     <div class="col-md-8">
         <p><span class="bold">Title: </span>{{issue.Title}}</p>
         <p><span class="bold">Key: </span>{{issue.IssueKey}}</p>
@@ -23,7 +22,10 @@
         </p>
         <p><span class="bold">Due Date: </span>{{issue.DueDate | date}}</p>
         <p><span class="bold">Author: </span>{{issue.Author.Username}}</p>
-        <p><span class="bold">Project: </span>{{issue.Project.Name}}</p>
+        <p>
+            <span class="bold">Project: </span>
+            <a ng-href="#/projects/{{issue.Project.Id}}">{{issue.Project.Name}}</a>
+        </p>
         <p><span class="bold">Status: </span>{{issue.Status.Name}}</p>
         <p><span class="bold">Labels: </span>
             <span ng-if="issue.Labels.length === 0">
@@ -48,6 +50,38 @@
                     <button class="btn btn-success btn-sm" ng-click="changeStatus(status.Id)">Change</button>
                 </span>
             </p>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-10" ng-if="isAssignee || isProjectLeader || isAdmin">
+        <h4>Leave a comment:</h4>
+        <form name="issueCommentsForm">
+            <div class="form-group">
+                <label for="comment"></label>
+                <textarea id="comment" class="form-control" ng-model="comment.Text" required="required"></textarea>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary" ng-click="addIssueComment(comment)"
+                        ng-disabled="issueCommentsForm.$invalid">
+                    Submit
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-10" ng-if="comments.length > 0">
+        <h4>Comments:</h4>
+        <div ng-repeat="comment in comments">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    {{comment.Author.Username}} - {{comment.CreatedOn | date}}
+                </div>
+                <div class="panel-body">
+                    {{comment.Text}}
+                </div>
+            </div>
         </div>
     </div>
 </div>

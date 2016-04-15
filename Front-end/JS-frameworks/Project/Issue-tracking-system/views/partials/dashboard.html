@@ -4,7 +4,8 @@
     </div>
     <div class="col-md-3">
         <h3>Assigned Projects</h3>
-        <div ng-repeat="issue in myIssues.Issues | unique:'issue'">
+        <div ng-repeat="issue in myIssues.Issues | uniqueObject: 'Project': 'Name'">
+            <!--<div>{{issue}}</div>-->
             <a ng-href="#/projects/{{issue.Project.Id}}">{{issue.Project.Name}}</a>
         </div>
     </div>
@@ -58,5 +59,6 @@
         <a href="#/projects" class="btn btn-success">List All Projects</a>
     </div>
 </div>
+
 
 

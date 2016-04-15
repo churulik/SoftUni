@@ -1,16 +1,16 @@
 'use strict';
 
 angular.module('issueTracker.filters.common', [])
-    .filter('unique', function () {
-        return function (collection, keyname) {
+    .filter('uniqueObject', function () {
+        return function (collection, key, value) {
             var output = [],
                 keys = [];
-
-            angular.forEach(collection, function (item) {
-                var key = item[keyname];
-                if (keys.indexOf(key) === -1) {
-                    keys.push(key);
-                    output.push(item);
+            angular.forEach(collection, function (obj) {
+                var item = obj[key][value];
+                
+                if (keys.indexOf(item) === -1) {
+                    keys.push(item);
+                    output.push(obj);
                 }
             });
 
