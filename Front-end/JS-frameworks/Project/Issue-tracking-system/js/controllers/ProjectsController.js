@@ -24,8 +24,9 @@ angular.module('issueTracker.controllers.projects', [])
                 controller: 'ProjectsController'
             })
     }])
-    .controller('ProjectsController', ['$scope', '$routeParams', 'authServices', 'projectsServices', 'datePickerService',
-        function ($scope, $routeParams, authServices, projectsServices, datePickerService) {
+    .controller('ProjectsController', ['$scope', '$routeParams', 'authServices', 'projectsServices',
+        'datePickerService', 'filterServices',
+        function ($scope, $routeParams, authServices, projectsServices, datePickerService, filterServices) {
             var projectId = $routeParams.id;
             var currentUser = authServices.getCurrentUser();
             $scope.projectsServices = projectsServices;
@@ -34,7 +35,7 @@ angular.module('issueTracker.controllers.projects', [])
             $scope.issueData = {};
             $scope.projectData = {};
             $scope.selectedProject = {};
-            sessionStorage['user'] = authServices.getCurrentUser();
+           
             authServices.getAllUsers().then(function (users) {
                 $scope.users = users;
             });
@@ -81,11 +82,23 @@ angular.module('issueTracker.controllers.projects', [])
             //Filter issues
             $scope.checked = false;
             $scope.filterMyIssues = {Assignee: {Username: currentUser}};
+            $scope.filterByPriority = {};
+            $scope.statusOpen = false;
+            $scope.statusInProgress = false;
+            $scope.statusStoppedProgress  = false;
+            $scope.statusClosed  = false;
             $scope.filterIssues = function () {
                 if (!$scope.checked) {
                     $scope.filterMyIssues = {Assignee: {Username: currentUser}};
                 } else {
                     $scope.filterMyIssues = '';
                 }
-            }
+            };
+            $scope.filterIssuesByDueDate = function (day) {
+                filterServices.filterByDueDate($scope, day);
+            };
+
+            $scope.filterIssuesByStatus = function () {
+                filterServices.filterByStatus($scope);
+            };
         }]);

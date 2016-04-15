@@ -14,17 +14,17 @@
         <table class="table">
             <thead>
             <tr>
+                <th>Project</th>
                 <th>Issue</th>
                 <th>Description</th>
-                <th>Project</th>
                 <th>Due Date</th>
             </tr>
             </thead>
             <tbody ng-repeat="issue in myIssues.Issues">
             <tr>
+                <td><a ng-href="#/projects/{{issue.Project.Id}}">{{issue.Project.Name}}</a></td>
                 <td><a ng-href="#/issues/{{issue.Id}}">{{issue.Title}}</a></td>
                 <td>{{issue.Description}}</td>
-                <td><a ng-href="#/projects/{{issue.Project.Id}}">{{issue.Project.Name}}</a></td>
                 <td>{{issue.DueDate | date}}</td>
             </tr>
             </tbody>
@@ -48,6 +48,7 @@
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
+                        <h4 class="modal-title">Add Project</h4>
                     </div>
                     <div class="modal-body">
                         <div ng-controller="ProjectsController"

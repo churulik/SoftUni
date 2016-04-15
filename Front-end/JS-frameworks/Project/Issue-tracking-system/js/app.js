@@ -14,6 +14,7 @@ angular.module('issueTracker', ['ngRoute', 'ngAnimate', 'chieffancypants.loading
         'issueTracker.services.projects',
         'issueTracker.services.issues',
         'issueTracker.services.authServices',
+        'issueTracker.services.filter',
         'issueTracker.services.datePicker',
         'issueTracker.directives.common'])
     .constant('BASE_URL', 'http://softuni-issue-tracker.azurewebsites.net/')
@@ -23,7 +24,7 @@ angular.module('issueTracker', ['ngRoute', 'ngAnimate', 'chieffancypants.loading
     }])
     .run(function ($rootScope, $location, notifyService) {
 
-        // register listener to watch route changes
+        // redirect to home page if not logged in
         $rootScope.$on("$routeChangeStart", function (event, next) {
             if (next.originalPath !== '/' && !sessionStorage['access_token']) {
                 notifyService.showInfo('Login first');
