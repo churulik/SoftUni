@@ -40,43 +40,8 @@ angular.module('issueTracker.services.filter', [])
             }
         }
 
-        function filterByStatus($scope, status) {
-            $scope.statusFilter = function (issue) {
-                if ($scope.statusOpen && $scope.statusInProgress && $scope.statusStoppedProgress && $scope.statusClosed) {
-                    return issue.Status.Name;
-                }
-
-                if ($scope.statusOpen && $scope.statusInProgress && $scope.statusStoppedProgress && $scope.statusClosed) {
-                    return issue.Status.Name;
-                }
-
-                if ($scope.statusOpen && $scope.statusInProgress) {
-                    return issue.Status.Name === 'Open' || issue.Status.Name === 'InProgress';
-                }
-
-                if ($scope.statusOpen) {
-                    return issue.Status.Name === 'Open';
-                }
-
-                if ($scope.statusInProgress) {
-                    return issue.Status.Name === 'InProgress';
-                }
-
-                if ($scope.statusStoppedProgress) {
-                    return issue.Status.Name === 'StoppedProgress';
-                }
-
-                if ($scope.statusClosed) {
-                    return issue.Status.Name === 'Closed';
-                }
-
-                return issue.Status.Name;
-            };
-        }
-
         return {
-            filterByDueDate: filterByDueDate,
-            filterByStatus: filterByStatus
+            filterByDueDate: filterByDueDate
         }
     });
 

@@ -35,7 +35,7 @@ angular.module('issueTracker.controllers.projects', [])
             $scope.issueData = {};
             $scope.projectData = {};
             $scope.selectedProject = {};
-           
+
             authServices.getAllUsers().then(function (users) {
                 $scope.users = users;
             });
@@ -78,15 +78,15 @@ angular.module('issueTracker.controllers.projects', [])
             $scope.addProject = function (projectData) {
                 projectsServices.addProject(projectData);
             };
-            
+
             //Filter issues
             $scope.checked = false;
             $scope.filterMyIssues = {Assignee: {Username: currentUser}};
             $scope.filterByPriority = {};
             $scope.statusOpen = false;
             $scope.statusInProgress = false;
-            $scope.statusStoppedProgress  = false;
-            $scope.statusClosed  = false;
+            $scope.statusStoppedProgress = false;
+            $scope.statusClosed = false;
             $scope.filterIssues = function () {
                 if (!$scope.checked) {
                     $scope.filterMyIssues = {Assignee: {Username: currentUser}};
@@ -97,8 +97,18 @@ angular.module('issueTracker.controllers.projects', [])
             $scope.filterIssuesByDueDate = function (day) {
                 filterServices.filterByDueDate($scope, day);
             };
+            
+            $scope.issueStatus = {};
+            $scope.filterIssuesByStatus = function (status) {
+                function noFilter(filterObj) {
+                    for (var status in filterObj) {
+                        if (filterObj[status]) {
+                            return false;
+                        }
+                    }
+                    return true;
+                }
 
-            $scope.filterIssuesByStatus = function () {
-                filterServices.filterByStatus($scope);
+                return $scope.issueStatus[status.Status.Name] || noFilter($scope.issueStatus);
             };
         }]);

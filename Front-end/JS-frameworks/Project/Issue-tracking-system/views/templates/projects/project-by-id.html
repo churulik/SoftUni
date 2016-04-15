@@ -52,79 +52,78 @@
             </div>
         </div>
     </div>
-    <div class="col-md-12">
-        <div class="col-md-2">
+    <div class="col-md-2">
+        <div class="checkbox">
+            <label><input type="checkbox" ng-model="checked" ng-click="filterIssues()"/>Show all issues</label>
+        </div>
+        <div>
+            <h5 class="bold">Filter by due date:</h5>
+            <div class="radio">
+                <label><input type="radio" name="issue" ng-click="filterIssuesByDueDate('Today')"/>Today</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="issue" ng-click="filterIssuesByDueDate('InThreeDays')"/>In Three Days</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="issue" ng-click="filterIssuesByDueDate('InFiveDays')"/>In Five Days</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="issue" ng-click="filterIssuesByDueDate('ThisWeek')"/>This Week</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="issue" ng-click="filterIssuesByDueDate('InTenDays')"/>In Ten Days</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="issue" ng-click="filterIssuesByDueDate('InTwoWeeks')"/>In Two Weeks</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="issue" ng-click="filterIssuesByDueDate('All')"/>All Issues</label>
+            </div>
+        </div>
+        <div>
+            <h5 class="bold">Filter by status:</h5>
             <div class="checkbox">
-                <label><input type="checkbox" ng-model="checked" ng-click="filterIssues()"/>Show all issues</label>
+                <label><input type="checkbox" ng-model="issueStatus['Open']"/>Open</label>
             </div>
-            <div>
-                <h5>Filter by due date:</h5>
-                <div class="radio">
-                    <label><input type="radio" name="issue" ng-click="filterIssuesByDueDate('Today')"/>Today</label>
-                </div>
-                <div class="radio">
-                    <label><input type="radio" name="issue" ng-click="filterIssuesByDueDate('InThreeDays')"/>In Three Days</label>
-                </div>
-                <div class="radio">
-                    <label><input type="radio" name="issue" ng-click="filterIssuesByDueDate('InFiveDays')"/>In Five Days</label>
-                </div>
-                <div class="radio">
-                    <label><input type="radio" name="issue" ng-click="filterIssuesByDueDate('ThisWeek')"/>This Week</label>
-                </div>
-                <div class="radio">
-                    <label><input type="radio" name="issue" ng-click="filterIssuesByDueDate('InTenDays')"/>In Ten Days</label>
-                </div>
-                <div class="radio">
-                    <label><input type="radio" name="issue" ng-click="filterIssuesByDueDate('InTwoWeeks')"/>In Two Weeks</label>
-                </div>
-                <div class="radio">
-                    <label><input type="radio" name="issue" ng-click="filterIssuesByDueDate('All')"/>All Issues</label>
-                </div>
+            <div class="checkbox">
+                <label><input type="checkbox" ng-model="issueStatus['InProgress']"/>In Progress</label>
             </div>
-            <div>
-                <h5>Filter by status:</h5>
-                <div class="checkbox">
-                    <label><input type="checkbox" ng-model="status.Status.Name" ng-true-value="'Open'" ng-false-value=""/>Open</label>
-                </div>
-                <div class="checkbox">
-                    <label><input type="checkbox" ng-model="status.Status.Name" ng-true-value="'InProgress'" ng-false-value=""/>In Progress</label>
-                </div>
-                <div class="checkbox">
-                    <label><input type="checkbox" ng-model="statusStoppedProgress" ng-click="filterIssuesByStatus()"/>Stopped Progress</label>
-                </div>
-                <div class="checkbox">
-                    <label><input type="checkbox" ng-model="statusClosed" ng-click="filterIssuesByStatus()"/>Closed</label>
-                </div>
+            <div class="checkbox">
+                <label><input type="checkbox" ng-model="issueStatus['StoppedProgress']"/>Stopped Progress</label>
             </div>
-            <div>
-                <input type="text" class="form-control" ng-model="filterByPriority.Priority.Name"
-                       placeholder="Filter by priority"/>
+            <div class="checkbox">
+                <label><input type="checkbox" ng-model="issueStatus['Closed']"/>Closed</label>
             </div>
         </div>
-        <div class="col-md-10">
-            <table class="table table-hover">
-                <thead>
-                <tr>
-                    <th class="col-md-3">Issue</th>
-                    <th class="col-md-4">Description</th>
-                    <th class="col-md-2">Due Date</th>
-                    <th class="col-md-2">Assignee</th>
-                    <th class="col-md-2">Priority</th>
-                    <th class="col-md-2">Status</th>
-                </tr>
-                </thead>
-                <tbody ng-repeat="issue in issues | filter:filterMyIssues | filter:filterByPriority
-                | filter:dateFilter | filter:status">
-                <tr>
-                    <td><a ng-href="#/issues/{{issue.Id}}">{{issue.Title}}</a></td>
-                    <td>{{issue.Description}}</td>
-                    <td>{{issue.DueDate | date}}</td>
-                    <td>{{issue.Assignee.Username}}</td>
-                    <td >{{issue.Priority.Name}}</td>
-                    <td>{{issue.Status.Name}}</td>
-                </tr>
-                </tbody>
-            </table>
+        <div>
+            <h5 class="bold">Filter by priority:</h5>
+            <input type="text" class="form-control" ng-model="filterByPriority.Priority.Name"
+                   placeholder="Priority name"/>
         </div>
+    </div>
+    <div class="col-md-10">
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th class="col-md-3">Issue</th>
+                <th class="col-md-4">Description</th>
+                <th class="col-md-2">Due Date</th>
+                <th class="col-md-2">Assignee</th>
+                <th class="col-md-2">Priority</th>
+                <th class="col-md-2">Status</th>
+            </tr>
+            </thead>
+            <tbody ng-repeat="issue in issues | filter:filterMyIssues | filter:filterByPriority
+                | filter:dateFilter | filter:filterIssuesByStatus">
+            <tr>
+                <td><a ng-href="#/issues/{{issue.Id}}">{{issue.Title}}</a></td>
+                <td>{{issue.Description}}</td>
+                <td>{{issue.DueDate | date}}</td>
+                <td>{{issue.Assignee.Username}}</td>
+                <td >{{issue.Priority.Name}}</td>
+                <td>{{issue.Status.Name}}</td>
+            </tr>
+            </tbody>
+        </table>
     </div>
 </div>
