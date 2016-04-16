@@ -82,6 +82,18 @@ angular.module('issueTracker.services.projects', [])
                     });
             }
 
+            function getLabels() {
+                var deferred = $q.defer();
+                $http.get(BASE_URL + 'labels/?filter=', {headers: authHeader()})
+                    .then(function (response) {
+                        deferred.resolve(response.data);
+                    }, function (error) {
+                        deferred.reject(error);
+                    });
+                
+                return deferred.promise;
+            }
+            
             function redirect() {
                 return $location.path('/');
             }
@@ -93,6 +105,7 @@ angular.module('issueTracker.services.projects', [])
                 addProject: addProject,
                 editProject: editProject,
                 addIssue: addIssue,
+                getLabels: getLabels,
                 redirect: redirect
             }
         }]);

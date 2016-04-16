@@ -37,7 +37,6 @@ angular.module('issueTracker.services.issues', [])
             }
 
             function changeStatus(issueId, statusId) {
-
                 $http.put(BASE_URL + 'issues/' + issueId + '/changestatus?statusid=' + statusId,
                     null, {headers: authHeader()}
                 ).then(function () {
@@ -61,6 +60,18 @@ angular.module('issueTracker.services.issues', [])
                     }, function (error) {
                         notifyService.showError('Fail to edit the issue', error);
                     });
+            }
+
+            function getLabels() {
+                var deferred = $q.defer();
+                $http.get(BASE_URL + 'labels/?filter=', {headers: authHeader()})
+                    .then(function (response) {
+                        deferred.resolve(response.data);
+                    }, function (error) {
+                        deferred.reject(error);
+                    });
+
+                return deferred.promise;
             }
             
             function viewComments(id) {
@@ -93,6 +104,7 @@ angular.module('issueTracker.services.issues', [])
                 editIssue: editIssue,
                 viewComments: viewComments,
                 addComment: addComment,
+                getLabels: getLabels,
                 redirect: redirect
             }
         }]);

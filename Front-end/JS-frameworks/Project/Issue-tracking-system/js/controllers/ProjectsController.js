@@ -25,8 +25,8 @@ angular.module('issueTracker.controllers.projects', [])
             })
     }])
     .controller('ProjectsController', ['$scope', '$routeParams', 'authServices', 'projectsServices',
-        'datePickerService', 'filterServices',
-        function ($scope, $routeParams, authServices, projectsServices, datePickerService, filterServices) {
+        'datePickerService', 'filterServices', '$http',
+        function ($scope, $routeParams, authServices, projectsServices, datePickerService, filterServices, $http) {
             var projectId = $routeParams.id;
             var currentUser = authServices.getCurrentUser();
             $scope.projectsServices = projectsServices;
@@ -35,6 +35,7 @@ angular.module('issueTracker.controllers.projects', [])
             $scope.issueData = {};
             $scope.projectData = {};
             $scope.selectedProject = {};
+            $scope.labels = [];
 
             authServices.getAllUsers().then(function (users) {
                 $scope.users = users;
@@ -44,34 +45,45 @@ angular.module('issueTracker.controllers.projects', [])
                 $scope.projects = projects;
             });
 
-            //TODO Lazy loading
-            projectsServices.getProjectById(projectId).then(function (project) {
-                $scope.isProjectLeader = currentUser === project.Lead.Username;
-                $scope.project = project;
-            });
+            if (projectId) {
+                //TODO Lazy loading
+                projectsServices.getProjectById(projectId).then(function (project) {
+                    $scope.isProjectLeader = currentUser === project.Lead.Username;
+                    $scope.project = project;
+                });
 
-            //TODO Lazy loading
-            projectsServices.getProjectIssues(projectId).then(function (issues) {
-                $scope.issues = issues;
-                datePickerService.datePicker($scope);
-            });
+                //TODO Lazy loading
+                projectsServices.getProjectIssues(projectId).then(function (issues) {
+                    $scope.issues = issues;
+                    datePickerService.datePicker($scope);
+                });
 
-            $scope.editProject = function (project) {
-                var projectData = {
-                    Name: project.Name,
-                    Description: project.Description,
-                    LeadId: project.Lead.Id,
-                    Labels: project.Labels,
-                    Priorities: project.Priorities
+                $scope.editProject = function (project) {
+                    var projectData = {
+                        Name: project.Name,
+                        Description: project.Description,
+                        LeadId: project.Lead.Id,
+                        Labels: project.Labels,
+                        Priorities: project.Priorities
+                    };
+
+                    projectsServices.editProject(projectData, projectId);
+
                 };
+            }
 
-                projectsServices.editProject(projectData, projectId);
-
-            };
+            projectsServices.getLabels().then(function (response) {
+                $scope.loadLabels = function ($query) {
+                    return response.filter(function (label) {
+                        return label.Name.toLowerCase().indexOf($query.toLowerCase()) != -1;
+                    })
+                };
+            });
 
             $scope.addIssue = function (issueData, project, date) {
                 issueData['ProjectId'] = project.Id;
                 issueData['DueDate'] = date;
+                console.log(issueData);
                 projectsServices.addIssue(issueData);
             };
 
@@ -80,7 +92,7 @@ angular.module('issueTracker.controllers.projects', [])
             };
 
             //Filter issues
-            $scope.checked = false;
+            $scope.show = {all: false};
             $scope.filterMyIssues = {Assignee: {Username: currentUser}};
             $scope.filterByPriority = {};
             $scope.statusOpen = false;
@@ -88,16 +100,18 @@ angular.module('issueTracker.controllers.projects', [])
             $scope.statusStoppedProgress = false;
             $scope.statusClosed = false;
             $scope.filterIssues = function () {
-                if (!$scope.checked) {
+                if (!$scope.show.all) {
                     $scope.filterMyIssues = {Assignee: {Username: currentUser}};
+
                 } else {
                     $scope.filterMyIssues = '';
+
                 }
             };
             $scope.filterIssuesByDueDate = function (day) {
                 filterServices.filterByDueDate($scope, day);
             };
-            
+
             $scope.issueStatus = {};
             $scope.filterIssuesByStatus = function (status) {
                 function noFilter(filterObj) {
@@ -108,7 +122,6 @@ angular.module('issueTracker.controllers.projects', [])
                     }
                     return true;
                 }
-
                 return $scope.issueStatus[status.Status.Name] || noFilter($scope.issueStatus);
             };
         }]);

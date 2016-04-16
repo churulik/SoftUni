@@ -37,11 +37,19 @@ angular.module('issueTracker.controllers.issues', [])
                     $scope.comments = comments;
                 })
             });
-
+        
             $scope.changeStatus = function (statusId) {
                 issuesServices.changeStatus(issueId, statusId);
             };
-
+            
+            issuesServices.getLabels().then(function (response) {
+                $scope.loadLabels = function ($query) {
+                    return response.filter(function (label) {
+                        return label.Name.toLowerCase().indexOf($query.toLowerCase()) != -1;
+                    })
+                };
+            });
+            
             $scope.editIssue = function (issueDate, date) {
                 var editIssueDate = {
                     Title: issueDate.Title,

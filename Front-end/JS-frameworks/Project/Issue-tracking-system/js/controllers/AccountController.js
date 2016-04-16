@@ -8,7 +8,7 @@ angular.module('issueTracker.controllers.account', [])
                 controller: 'AccountController'
             })
             .when('/logout', {
-                templateUrl: 'views/templates/account/logout.html',
+                template: '<div logout></div>',
                 controller: 'AccountController'
             });
     }])

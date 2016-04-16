@@ -13,8 +13,7 @@ angular.module('issueTracker.controllers.dashboard', [])
             };
 
             $scope.reloadIssues = function () {
-                issuesServices.getMyIssues($scope.issuesParams)
-                    .then(function (myIssues) {
+                issuesServices.getMyIssues($scope.issuesParams).then(function (myIssues) {
                         $scope.totalItems = myIssues.TotalPages * pageSize;
                         $scope.myIssues = myIssues;
                     }, function (error) {

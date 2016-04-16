@@ -38,7 +38,7 @@ angular.module('issueTracker.services.authServices', [])
 
             function changePassword(changePasswordData) {
                 $http.post(BASE_URL + 'api/account/changePassword', changePasswordData, {headers: authHeader()})
-                    .then(function (response) {
+                    .then(function () {
                         notifyService.showInfo('Successfully password change');
                         $location.path('/');
                     }, function (error) {

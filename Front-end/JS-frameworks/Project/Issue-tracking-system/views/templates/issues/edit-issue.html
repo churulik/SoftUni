@@ -49,14 +49,16 @@
         <div class="form-group">
             <label for="labels" class="control-label col-md-3">Labels</label>
             <div class="col-md-8">
-                <input type="text" id="labels" ng-model="issue.Labels" to-string-formatter to-array-object-parser
-                       class="form-control" required="required">
+                <tags-input id="labels" ng-model="issue.Labels" display-property="Name" placeholder="Labels"
+                            replace-spaces-with-dashes="false" required="required">
+                    <auto-complete source="loadLabels($query)" min-length="0"></auto-complete>
+                </tags-input>
             </div>
         </div>
         <div class="form-group">
             <div class="col-md-9 col-md-offset-3">
-                <button class="btn btn-primary" ng-disabled="editIssueForm.$invalid"
-                        ng-click="editIssue(issue, dt)">Edit
+                <button class="btn btn-success" ng-disabled="editIssueForm.$invalid"
+                        ng-click="editIssue(issue, dt)">Edit Issue
                 </button>
                 <a ng-href="#/issues/{{issueId}}" class="btn btn-default">Cancel</a>
             </div>
