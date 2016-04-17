@@ -12,17 +12,13 @@ angular.module('issueTracker.controllers.issues', [])
                 controller: 'IssuesController'
             })
     }])
-    .controller('IssuesController', ['$scope', '$routeParams', '$location', 'issuesServices', 'authServices', 'datePickerService',
-        function ($scope, $routeParams, $location, issuesServices, authServices, datePickerService) {
+    .controller('IssuesController', ['$scope', '$routeParams', '$location', 'issuesServices', 'authServices', 'datePickerService','notifyService',
+        function ($scope, $routeParams, $location, issuesServices, authServices, datePickerService, notifyService) {
             var issueId = $routeParams.id;
             $scope.isAdmin = authServices.isAdministrator();
             $scope.issueId = issueId;
             issuesServices.getIssueById(issueId).then(function (issueData) {
-                
-                // Scope issuesServices
                 $scope.issuesServices = issuesServices;
-                
-                // Scope issue data
                 $scope.issue = issueData;
                 
                 // Set date
@@ -36,6 +32,9 @@ angular.module('issueTracker.controllers.issues', [])
                 issuesServices.viewComments(issueId).then(function (comments) {
                     $scope.comments = comments;
                 })
+            }, function () {
+                $location.path('/');
+                notifyService.showError('An issue with this id does not exist');
             });
         
             $scope.changeStatus = function (statusId) {

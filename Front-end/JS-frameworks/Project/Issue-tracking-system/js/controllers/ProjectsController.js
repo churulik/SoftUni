@@ -24,9 +24,9 @@ angular.module('issueTracker.controllers.projects', [])
                 controller: 'ProjectsController'
             })
     }])
-    .controller('ProjectsController', ['$scope', '$routeParams', 'authServices', 'projectsServices',
-        'datePickerService', 'filterServices', '$http',
-        function ($scope, $routeParams, authServices, projectsServices, datePickerService, filterServices, $http) {
+    .controller('ProjectsController', ['$scope', '$routeParams', '$location', 'authServices', 'projectsServices',
+        'datePickerService', 'filterServices', 'notifyService',
+        function ($scope, $routeParams, $location, authServices, projectsServices, datePickerService, filterServices, notifyService) {
             var projectId = $routeParams.id;
             var currentUser = authServices.getCurrentUser();
             $scope.projectsServices = projectsServices;
@@ -50,6 +50,9 @@ angular.module('issueTracker.controllers.projects', [])
                 projectsServices.getProjectById(projectId).then(function (project) {
                     $scope.isProjectLeader = currentUser === project.Lead.Username;
                     $scope.project = project;
+                }, function () {
+                    $location.path('/');
+                    notifyService.showError('A project with this id does not exist');
                 });
 
                 //TODO Lazy loading
@@ -68,7 +71,6 @@ angular.module('issueTracker.controllers.projects', [])
                     };
 
                     projectsServices.editProject(projectData, projectId);
-
                 };
             }
 
@@ -83,7 +85,6 @@ angular.module('issueTracker.controllers.projects', [])
             $scope.addIssue = function (issueData, project, date) {
                 issueData['ProjectId'] = project.Id;
                 issueData['DueDate'] = date;
-                console.log(issueData);
                 projectsServices.addIssue(issueData);
             };
 
@@ -122,6 +123,7 @@ angular.module('issueTracker.controllers.projects', [])
                     }
                     return true;
                 }
+
                 return $scope.issueStatus[status.Status.Name] || noFilter($scope.issueStatus);
             };
         }]);

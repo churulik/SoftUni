@@ -22,13 +22,20 @@ angular.module('issueTracker', ['ngRoute', 'ngAnimate', 'chieffancypants.loading
         $routeProvider.otherwise({redirectTo: '/'});
         cfpLoadingBarProvider.includeSpinner = false;
     }])
-    .run(function ($rootScope, $location, notifyService) {
-
-        // redirect to home page if not logged in
+    .run(['$rootScope', '$location', 'notifyService', 'authServices', function ($rootScope, $location, notifyService, authServices) {
         $rootScope.$on("$routeChangeStart", function (event, next) {
+
+            // Redirect to Home page if not logged in
             if (next.originalPath !== '/' && !sessionStorage['access_token']) {
                 notifyService.showInfo('Login first');
-                $location.path('/');
+                return $location.path('/');
+            }
+
+            // Redirect to Home page if not admin
+            var admin = authServices.isAdministrator();
+            if ((next.originalPath === '/projects' || next.originalPath === '/projects/add'
+                || next.originalPath === '/projects/:id/edit') && !admin) {
+                return $location.path('/');
             }
         });
-    });
+    }]);

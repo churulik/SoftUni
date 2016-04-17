@@ -8,7 +8,6 @@ angular.module('issueTracker.services.issues', [])
             }
 
             function getMyIssues(params) {
-
                 var deferred = $q.defer();
 
                 $http.get(

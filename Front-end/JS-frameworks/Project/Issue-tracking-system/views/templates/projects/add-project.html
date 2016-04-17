@@ -19,7 +19,7 @@
     <div class="form-group">
         <label for="description" class="control-label col-md-2">Description</label>
         <div class="col-md-9">
-            <textarea id="description" ng-model="projectLabels" class="col-md-8 form-control" required="required" placeholder="Description"></textarea>
+            <textarea id="description" ng-model="projectData.Description" class="col-md-8 form-control" required="required" placeholder="Description"></textarea>
         </div>
     </div>
     <div class="form-group">
@@ -33,16 +33,19 @@
         </div>
     </div>
     <div class="form-group">
+        <label for="labels" class="control-label col-md-2">Labels</label>
+        <div class="col-md-9">
+            <tags-input id="labels" ng-model="projectData.Labels" display-property="Name" placeholder="Labels"
+                        replace-spaces-with-dashes="false" required="required">
+                <auto-complete source="loadLabels($query)" min-length="0"></auto-complete>
+            </tags-input>
+        </div>
+    </div>
+    <div class="form-group">
         <label for="priorities" class="control-label col-md-2">Priorities</label>
         <div class="col-md-9">
             <input type="text" id="priorities" class="form-control" ng-model="projectData.Priorities" to-array-object-parser
                    required="required" placeholder="Priorities">
-        </div>
-    </div>
-    <div class="form-group">
-        <label for="labels" class="control-label col-md-2">Labels</label>
-        <div class="col-md-9">
-            <input type="text" id="labels" class="form-control" ng-model="projectData.Labels" to-array-object-parser placeholder="Labels" required="required">
         </div>
     </div>
     <div class="form-group">

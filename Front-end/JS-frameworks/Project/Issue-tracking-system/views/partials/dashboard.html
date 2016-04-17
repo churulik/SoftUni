@@ -3,9 +3,9 @@
         <h2>Dashboard</h2>
     </div>
     <div class="col-md-3">
-        <h3>Assigned Projects</h3>
-        <div ng-repeat="issue in myIssues.Issues | uniqueObject: 'Project': 'Name'">
-            <a ng-href="#/projects/{{issue.Project.Id}}">{{issue.Project.Name}}</a>
+        <h3>Project Leader</h3>
+        <div ng-repeat="project in projects">
+            <a ng-href="#/projects/{{project.Id}}">{{project.Name}}</a>
         </div>
     </div>
     <div class="col-md-9">
@@ -40,7 +40,7 @@
         <button class="btn btn-success" data-toggle="modal" data-target="#addProject">Add New Project</button>
         <a href="#/projects" class="btn btn-default">List All Projects</a>
         <!-- Modal -->
-        <div ng-include="'views/modals/add-project-modal.html'"></div>
+        <div ng-controller="ProjectsController" ng-include="'views/modals/add-project-modal.html'"></div>
     </div>
 </div>
 

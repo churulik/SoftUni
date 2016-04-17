@@ -7,6 +7,7 @@
         </h3>
     </div>
     <div class="col-md-12">
+        <!-- Project Info -->
         <p><span class="bold">Name: </span>{{project.Name}}</p>
         <p><span class="bold">Key: </span>{{project.ProjectKey}}</p>
         <p><span class="bold">Description: </span>{{project.Description}}</p>
@@ -35,32 +36,38 @@
             <div ng-include="'views/modals/add-issue-modal.html'"></div>
         </div>
     </div>
-    <!-- Filters -->
-    <div class="col-md-2" ng-include="'views/partials/issue-filters.html'">
-    </div>
-    <div class="col-md-10">
-        <table class="table table-hover">
-            <thead>
-            <tr>
-                <th class="col-md-3">Issue</th>
-                <th class="col-md-4">Description</th>
-                <th class="col-md-2">Due Date</th>
-                <th class="col-md-2">Assignee</th>
-                <th class="col-md-2">Priority</th>
-                <th class="col-md-2">Status</th>
-            </tr>
-            </thead>
-            <tbody ng-repeat="issue in issues | filter:filterMyIssues | filter:filterByPriority
+    <div ng-if="issues.length > 0">
+        <!-- Filters -->
+        <div class="col-md-2" ng-include="'views/partials/issue-filters.html'"></div>
+        <!-- Issues -->
+        <div class="col-md-10">
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th class="col-md-3">Issue</th>
+                    <th class="col-md-4">Description</th>
+                    <th class="col-md-2">Due Date</th>
+                    <th class="col-md-2">Assignee</th>
+                    <th class="col-md-2">Priority</th>
+                    <th class="col-md-2">Status</th>
+                </tr>
+                </thead>
+                <tbody ng-repeat="issue in issues | filter:filterMyIssues | filter:filterByPriority
                 | filter:dateFilter | filter:filterIssuesByStatus">
-            <tr>
-                <td><a ng-href="#/issues/{{issue.Id}}">{{issue.Title}}</a></td>
-                <td>{{issue.Description}}</td>
-                <td>{{issue.DueDate | date}}</td>
-                <td>{{issue.Assignee.Username}}</td>
-                <td>{{issue.Priority.Name}}</td>
-                <td>{{issue.Status.Name}}</td>
-            </tr>
-            </tbody>
-        </table>
+                <tr>
+                    <td><a ng-href="#/issues/{{issue.Id}}">{{issue.Title}}</a></td>
+                    <td>{{issue.Description}}</td>
+                    <td>{{issue.DueDate | date}}</td>
+                    <td>{{issue.Assignee.Username}}</td>
+                    <td>{{issue.Priority.Name}}</td>
+                    <td>{{issue.Status.Name}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
+    <div class="col-md-12" ng-if="issues.length === 0">
+        <h4>None</h4>
+    </div>
+
 </div>
