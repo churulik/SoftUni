@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('issueTracker.services.projects', [])
-    .factory('projectsServices', ['$http', '$q', '$location', 'BASE_URL', 'notifyService',
-        function ($http, $q, $location, BASE_URL, notifyService) {
+    .factory('projectsServices', ['$http', '$q', '$location', 'BASE_URL', 'notifyServices',
+        function ($http, $q, $location, BASE_URL, notifyServices) {
             function authHeader() {
                 return {Authorization: sessionStorage['access_token']};
             }
@@ -52,33 +52,33 @@ angular.module('issueTracker.services.projects', [])
             function addProject(projectData) {
                 $http.post(BASE_URL + 'projects', projectData, {headers: authHeader()})
                     .then(function () {
-                        notifyService.showInfo('Project add successfully');
+                        notifyServices.showInfo('Project add successfully');
                         $location.path('/projects');
 
                     }, function (error) {
-                        notifyService.showError('Fail to add the project', error);
+                        notifyServices.showError('Fail to add the project', error);
                     });
             }
 
             function editProject(projectData, id) {
                 $http.put(BASE_URL + 'projects/' + id, projectData, {headers: authHeader()})
                     .then(function () {
-                        notifyService.showInfo('Project edit successfully');
+                        notifyServices.showInfo('Project edit successfully');
                         $location.path('/projects/' + id);
 
                     }, function (error) {
-                        notifyService.showError('Fail to edit the project', error);
+                        notifyServices.showError('Fail to edit the project', error);
                     });
             }
 
             function addIssue(issueData) {
                 $http.post(BASE_URL + 'issues', issueData, {headers: authHeader()})
                     .then(function () {
-                        notifyService.showInfo('Issue add successfully');
+                        notifyServices.showInfo('Issue add successfully');
                         $location.path('/');
 
                     }, function (error) {
-                        notifyService.showError('Fail to add the issue', error);
+                        notifyServices.showError('Fail to add the issue', error);
                     });
             }
 

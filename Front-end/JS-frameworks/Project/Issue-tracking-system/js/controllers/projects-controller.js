@@ -25,8 +25,8 @@ angular.module('issueTracker.controllers.projects', [])
             })
     }])
     .controller('ProjectsController', ['$scope', '$routeParams', '$location', 'authServices', 'projectsServices',
-        'datePickerService', 'filterServices', 'notifyService',
-        function ($scope, $routeParams, $location, authServices, projectsServices, datePickerService, filterServices, notifyService) {
+        'datePickerService', 'filterServices', 'notifyServices',
+        function ($scope, $routeParams, $location, authServices, projectsServices, datePickerService, filterServices, notifyServices) {
             var projectId = $routeParams.id;
             var currentUser = authServices.getCurrentUser();
             $scope.projectsServices = projectsServices;
@@ -52,7 +52,7 @@ angular.module('issueTracker.controllers.projects', [])
                     $scope.project = project;
                 }, function () {
                     $location.path('/');
-                    notifyService.showError('A project with this id does not exist');
+                    notifyServices.showError('A project with this id does not exist');
                 });
 
                 //TODO Lazy loading

@@ -4,7 +4,7 @@ angular.module('issueTracker.controllers.account', [])
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider
             .when('/profile/password', {
-                templateUrl: 'views/templates/change-password.html',
+                templateUrl: 'views/templates/account/change-password.html',
                 controller: 'AccountController'
             })
             .when('/logout', {
@@ -12,8 +12,8 @@ angular.module('issueTracker.controllers.account', [])
                 controller: 'AccountController'
             });
     }])
-    .controller('AccountController', ['$scope', '$location', '$route', 'notifyService', 'authServices',
-        function ($scope, $location, $route, notifyService, authServices) {
+    .controller('AccountController', ['$scope', '$location', '$route', 'notifyServices', 'authServices',
+        function ($scope, $location, $route, notifyServices, authServices) {
             $scope.loginData = {grant_type: 'password'};
             $scope.registerData = {};
             $scope.changePasswordData = {};
@@ -24,16 +24,16 @@ angular.module('issueTracker.controllers.account', [])
                 authServices.login(loginData).then(function () {
                     //Get user Info
                     authServices.getUserInfo();
-                    notifyService.showInfo('Successful login');
+                    notifyServices.showInfo('Successful login');
                     $route.reload();
                 }, function (error) {
-                    notifyService.showError('Unsuccessful login', error);                    
+                    notifyServices.showError('Unsuccessful login', error);                    
                 });
             };
 
             $scope.register = function (registerData) {
                 authServices.register(registerData).then(function (responce) {
-                    notifyService.showInfo('Successful registration');
+                    notifyServices.showInfo('Successful registration');
 
                     //Automatically login the registered user
                     var loginData = {
@@ -48,7 +48,7 @@ angular.module('issueTracker.controllers.account', [])
                             console.log(error)
                         });
                 }, function (error) {
-                    notifyService.showError('Unsuccessful registration', error);
+                    notifyServices.showError('Unsuccessful registration', error);
                     console.log(error)
                 });
             };
@@ -71,12 +71,12 @@ angular.module('issueTracker.controllers.account', [])
             }
         };
     }])
-    .directive('logout', ['$location', 'notifyService', function ($location, notifyService) {
+    .directive('logout', ['$location', 'notifyServices', function ($location, notifyServices) {
         return {
             restrict: 'A',
             link: function () {
                 sessionStorage.clear();
-                notifyService.showInfo('Successful log out');
+                notifyServices.showInfo('Successful log out');
                 $location.path('/');
             }
         };

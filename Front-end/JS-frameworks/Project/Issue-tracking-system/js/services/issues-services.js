@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('issueTracker.services.issues', [])
-    .factory('issuesServices', ['$http', '$q', '$location', '$route', 'BASE_URL', 'notifyService',
-        function ($http, $q, $location, $route, BASE_URL, notifyService) {
+    .factory('issuesServices', ['$http', '$q', '$location', '$route', 'BASE_URL', 'notifyServices',
+        function ($http, $q, $location, $route, BASE_URL, notifyServices) {
             function authHeader() {
                 return {Authorization: sessionStorage['access_token']};
             }
@@ -39,10 +39,10 @@ angular.module('issueTracker.services.issues', [])
                 $http.put(BASE_URL + 'issues/' + issueId + '/changestatus?statusid=' + statusId,
                     null, {headers: authHeader()}
                 ).then(function () {
-                    notifyService.showInfo('Status changed');
+                    notifyServices.showInfo('Status changed');
                     $route.reload();
                 }, function (error) {
-                    notifyService.showError('Fail to change the status', error);
+                    notifyServices.showError('Fail to change the status', error);
                 });
             }
 
@@ -53,11 +53,11 @@ angular.module('issueTracker.services.issues', [])
             function editIssue(issueDate, id) {
                 $http.put(BASE_URL + 'issues/' + id, issueDate, {headers: authHeader()})
                     .then(function () {
-                        notifyService.showInfo('Issue edit successfully');
+                        notifyServices.showInfo('Issue edit successfully');
                         $location.path('/issues/' + id);
 
                     }, function (error) {
-                        notifyService.showError('Fail to edit the issue', error);
+                        notifyServices.showError('Fail to edit the issue', error);
                     });
             }
 
@@ -89,10 +89,10 @@ angular.module('issueTracker.services.issues', [])
             function addComment(comment, id) {
                 $http.post(BASE_URL + 'issues/' + id + '/comments', comment, {headers: authHeader()})
                     .then(function () {
-                        notifyService.showInfo('Your comment is add successfully');
+                        notifyServices.showInfo('Your comment is add successfully');
                         $route.reload();
                     }, function (error) {
-                        notifyService.showError('Fail to add your comment', error);
+                        notifyServices.showError('Fail to add your comment', error);
                     });
             }
 

@@ -1,8 +1,8 @@
 'use strict';
 
-angular.module('issueTracker.services.authServices', [])
-    .factory('authServices', ['$http', '$q', '$location', 'BASE_URL', 'notifyService',
-        function ($http, $q, $location, BASE_URL, notifyService) {            
+angular.module('issueTracker.services.auth', [])
+    .factory('authServices', ['$http', '$q', '$location', 'BASE_URL', 'notifyServices',
+        function ($http, $q, $location, BASE_URL, notifyServices) {            
 
             function authHeader() {
                 return {Authorization: sessionStorage['access_token']};
@@ -39,10 +39,10 @@ angular.module('issueTracker.services.authServices', [])
             function changePassword(changePasswordData) {
                 $http.post(BASE_URL + 'api/account/changePassword', changePasswordData, {headers: authHeader()})
                     .then(function () {
-                        notifyService.showInfo('Successfully password change');
+                        notifyServices.showInfo('Successfully password change');
                         $location.path('/');
                     }, function (error) {
-                        notifyService.showError('Unsuccessful password change', error);
+                        notifyServices.showError('Unsuccessful password change', error);
                     })
             }
 

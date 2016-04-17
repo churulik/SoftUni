@@ -12,8 +12,8 @@ angular.module('issueTracker.controllers.issues', [])
                 controller: 'IssuesController'
             })
     }])
-    .controller('IssuesController', ['$scope', '$routeParams', '$location', 'issuesServices', 'authServices', 'datePickerService','notifyService',
-        function ($scope, $routeParams, $location, issuesServices, authServices, datePickerService, notifyService) {
+    .controller('IssuesController', ['$scope', '$routeParams', '$location', 'issuesServices', 'authServices', 'datePickerService','notifyServices',
+        function ($scope, $routeParams, $location, issuesServices, authServices, datePickerService, notifyServices) {
             var issueId = $routeParams.id;
             $scope.isAdmin = authServices.isAdministrator();
             $scope.issueId = issueId;
@@ -34,7 +34,7 @@ angular.module('issueTracker.controllers.issues', [])
                 })
             }, function () {
                 $location.path('/');
-                notifyService.showError('An issue with this id does not exist');
+                notifyServices.showError('An issue with this id does not exist');
             });
         
             $scope.changeStatus = function (statusId) {

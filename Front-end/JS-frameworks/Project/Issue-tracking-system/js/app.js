@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('issueTracker', ['ngRoute', 'ngAnimate', 'chieffancypants.loadingBar',
-        'issueTracker.controllers.admin',
+        'issueTracker.controllers.base',
         'issueTracker.controllers.navbar',
         'issueTracker.controllers.home',
         'issueTracker.controllers.account',
@@ -10,10 +10,10 @@ angular.module('issueTracker', ['ngRoute', 'ngAnimate', 'chieffancypants.loading
         'issueTracker.controllers.projects',
         'issueTracker.repository.accordion',
         'issueTracker.filters.common',
-        'issueTracker.services.notifyService',
+        'issueTracker.services.notify',
         'issueTracker.services.projects',
         'issueTracker.services.issues',
-        'issueTracker.services.authServices',
+        'issueTracker.services.auth',
         'issueTracker.services.filter',
         'issueTracker.services.datePicker',
         'issueTracker.directives.common', 'ngTagsInput'])
@@ -22,19 +22,18 @@ angular.module('issueTracker', ['ngRoute', 'ngAnimate', 'chieffancypants.loading
         $routeProvider.otherwise({redirectTo: '/'});
         cfpLoadingBarProvider.includeSpinner = false;
     }])
-    .run(['$rootScope', '$location', 'notifyService', 'authServices', function ($rootScope, $location, notifyService, authServices) {
+    .run(['$rootScope', '$location', 'notifyServices', 'authServices', function ($rootScope, $location, notifyServices, authServices) {
         $rootScope.$on("$routeChangeStart", function (event, next) {
 
             // Redirect to Home page if not logged in
             if (next.originalPath !== '/' && !sessionStorage['access_token']) {
-                notifyService.showInfo('Login first');
+                notifyServices.showInfo('Login first');
                 return $location.path('/');
             }
 
             // Redirect to Home page if not admin
             var admin = authServices.isAdministrator();
-            if ((next.originalPath === '/projects' || next.originalPath === '/projects/add'
-                || next.originalPath === '/projects/:id/edit') && !admin) {
+            if ((next.originalPath === '/projects' || next.originalPath === '/projects/add' || next.originalPath === '/projects/:id/edit') && !admin) {
                 return $location.path('/');
             }
         });
