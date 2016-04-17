@@ -6,12 +6,72 @@
     <link rel="stylesheet" href="lib/bootstrap/bootstrap.css">
     <link rel="stylesheet" href="lib/angular-loading-bar/loading-bar.css">
     <link rel="stylesheet" href="lib/animate.css">
-    <link rel="stylesheet" href="styles/ng-tags-input.css">
-    <link rel="stylesheet" href="styles/ng-tags-input.bootstrap.css">
+    <link rel="stylesheet" href="lib/ng-tags-input/ng-tags-input.css">
+    <link rel="stylesheet" href="lib/ng-tags-input/ng-tags-input.bootstrap.css">
     <link rel="stylesheet" href="styles/app.css">
 </head>
 <body ng-cloak ng-controller="BaseController">
-<nav ng-include="'views/templates/navbar.html'"></nav>
+<nav class="navbar navbar-inverse" ng-controller="NavbarController">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#/">Issue Tracking System</a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar" ng-if="authServices.isAuthenticated()">
+            <ul class="nav navbar-nav">
+                <li ng-class="{active: isActive('/')}">
+                    <a href="#/"><span class="glyphicon glyphicon-tasks"></span> Dashboard</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right" ng-show="!authServices.isAdministrator()">
+                <li class="dropdown" ng-class="{active: isActive('/profilerofisword')}">
+                    <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">
+                        <span class="glyphicon glyphicon-user"></span><span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a style="cursor: default">
+                                <span class="glyphicon glyphicon-user"></span>
+                                {{authServices.getCurrentUser()}}
+                            </a>
+                        </li>
+                        <li ng-class="{active: isActive('/profile/password')}">
+                            <a href="#/profile/password"><span class="glyphicon glyphicon-lock"></span> Change Password</a>
+                        </li>
+                        <li><a href="#/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right" ng-show="authServices.isAdministrator()">
+                <li class="dropdown" ng-class="{active: isActive('/profile/password')}">
+                    <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">
+                        <span class="glyphicon glyphicon-user"></span><span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a style="cursor: default">
+                                <span class="glyphicon glyphicon-user"></span>
+                                Administrator ({{authServices.getCurrentUser()}})
+                            </a>
+                        </li>
+                        <li ng-class="{active: isActive('/profile/password')}">
+                            <a href="#/profile/password"><span class="glyphicon glyphicon-lock"></span> Change Password</a>
+                        </li>
+                        <li><a href="#/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
 <main class="container" ng-view></main>
 <!-- Start Libs -->
 <script src="lib/angular/angular.js"></script>
@@ -23,32 +83,32 @@
 <script src="lib/ui.bootstrap/ui-bootstrap-tpls-1.3.1.js"></script>
 <script src="lib/jquery.noty/jquery.noty.packaged.js"></script>
 <!-- End Libs -->
-<script src="js/app.js"></script>
+<script src="app.js"></script>
 <!-- Start Controllers -->
-<script src="js/controllers/base-controller.js"></script>
-<script src="js/controllers/navbar-controller.js"></script>
-<script src="js/controllers/home-controller.js"></script>
-<script src="js/controllers/account-controller.js"></script>
-<script src="js/controllers/dashboard-controller.js"></script>
-<script src="js/controllers/issues-controller.js"></script>
-<script src="js/controllers/projects-controller.js"></script>
+<script src="components/base-controller.js"></script>
+<script src="navbar/navbar-controller.js"></script>
+<script src="home/home-controller.js"></script>
+<script src="account/account-controller.js"></script>
+<script src="dashboard/dashboard-controller.js"></script>
+<script src="issues/issues-controller.js"></script>
+<script src="projects/projects-controller.js"></script>
 <!-- End Controllers -->
 <!-- Start Repositories-->
-<script src="js/repository/ng-tags-input.js"></script>
-<script src="js/repository/accordion.js"></script>
+<script src="lib/ng-tags-input/ng-tags-input.js"></script>
+<script src="components/accordion.js"></script>
 <!-- End Repositories-->
 <!-- Start Filters -->
-<script src="js/filters/common-filters.js"></script>
+<script src="components/common-filters.js"></script>
 <!-- End Filters -->
 <!-- Start Services -->
-<script src="js/services/notify-services.js"></script>
-<script src="js/services/issues-services.js"></script>
-<script src="js/services/projects-services.js"></script>
-<script src="js/services/auth-services.js"></script>
-<script src="js/services/date-picker-service.js"></script>
-<script src="js/services/filter-services.js"></script>
+<script src="components/notify-services.js"></script>
+<script src="issues/issues-services.js"></script>
+<script src="projects/projects-services.js"></script>
+<script src="account/account-services.js"></script>
+<script src="components/date-picker-service.js"></script>
+<script src="components/filter-services.js"></script>
 <!-- End Services -->
-<script src="js/directives/common-directives.js"></script>
+<script src="components/common-directives.js"></script>
 
 </body>
 </html>

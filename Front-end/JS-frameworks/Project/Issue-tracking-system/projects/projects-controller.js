@@ -4,23 +4,23 @@ angular.module('issueTracker.controllers.projects', [])
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider
             .when('/projects', {
-                templateUrl: 'views/templates/projects/list-all-projects.html',
+                templateUrl: 'projects/list-all-projects.html',
                 controller: 'ProjectsController'
             })
             .when('/projects/add', {
-                templateUrl: 'views/templates/projects/add-project.html',
+                templateUrl: 'projects/add-project.html',
                 controller: 'ProjectsController'
             })
             .when('/projects/:id', {
-                templateUrl: 'views/templates/projects/project-by-id.html',
+                templateUrl: 'projects/project-by-id.html',
                 controller: 'ProjectsController'
             })
             .when('/projects/:id/edit', {
-                templateUrl: 'views/templates/projects/edit-project.html',
+                templateUrl: 'projects/edit-project.html',
                 controller: 'ProjectsController'
             })
             .when('/projects/:id/add-issue', {
-                templateUrl: 'views/templates/projects/add-issue.html',
+                templateUrl: 'projects/add-issue.html',
                 controller: 'ProjectsController'
             })
     }])

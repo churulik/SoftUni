@@ -33,12 +33,20 @@
             <!-- Button trigger modal -->
             <button class="btn btn-success btn-sm" data-toggle="modal" data-target="#addIssue">Add</button>
             <!-- Modal -->
-            <div ng-include="'views/modals/add-issue-modal.html'"></div>
+            <div class="modal fade" id="addIssue" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <div ng-controller="ProjectsController" ng-include="'projects/add-issue.html'"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <div ng-if="issues.length > 0">
         <!-- Filters -->
-        <div class="col-md-2" ng-include="'views/partials/issue-filters.html'"></div>
+        <div class="col-md-2" ng-include="'projects/issue-filters.html'"></div>
         <!-- Issues -->
         <div class="col-md-10">
             <table class="table table-hover">

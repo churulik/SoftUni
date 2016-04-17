@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('issueTracker', ['ngRoute', 'ngAnimate', 'chieffancypants.loadingBar',
+angular.module('issueTracker', ['ngRoute', 'ngAnimate', 'angular-loading-bar', 'ngTagsInput',
         'issueTracker.controllers.base',
         'issueTracker.controllers.navbar',
         'issueTracker.controllers.home',
@@ -16,7 +16,7 @@ angular.module('issueTracker', ['ngRoute', 'ngAnimate', 'chieffancypants.loading
         'issueTracker.services.auth',
         'issueTracker.services.filter',
         'issueTracker.services.datePicker',
-        'issueTracker.directives.common', 'ngTagsInput'])
+        'issueTracker.directives.common'])
     .constant('BASE_URL', 'http://softuni-issue-tracker.azurewebsites.net/')
     .config(['$routeProvider', 'cfpLoadingBarProvider', function ($routeProvider, cfpLoadingBarProvider) {
         $routeProvider.otherwise({redirectTo: '/'});

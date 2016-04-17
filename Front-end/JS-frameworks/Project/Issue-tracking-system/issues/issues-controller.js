@@ -4,11 +4,11 @@ angular.module('issueTracker.controllers.issues', [])
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider
             .when('/issues/:id', {
-                templateUrl: 'views/templates/issues/issue-by-id.html',
+                templateUrl: 'issues/issue-by-id.html',
                 controller: 'IssuesController'
             })
             .when('/issues/:id/edit', {
-                templateUrl: 'views/templates/issues/edit-issue.html',
+                templateUrl: 'issues/edit-issue.html',
                 controller: 'IssuesController'
             })
     }])

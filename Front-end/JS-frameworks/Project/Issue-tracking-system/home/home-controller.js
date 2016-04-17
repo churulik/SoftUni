@@ -3,7 +3,7 @@
 angular.module('issueTracker.controllers.home', [])
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider.when('/', {
-            templateUrl: 'views/templates/home.html',
+            templateUrl: 'home/home.html',
             controller: 'HomeController'
         })
     }])

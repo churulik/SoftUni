@@ -1,0 +1,6 @@
+<section ng-if="!isAuthenticated">
+    <div ng-controller="AccountController" ng-include="'account/register-login.html'"></div>
+</section>
+<section ng-if="isAuthenticated">
+    <div ng-controller="DashboardController" ng-include="'dashboard/dashboard.html'"></div>
+</section>
