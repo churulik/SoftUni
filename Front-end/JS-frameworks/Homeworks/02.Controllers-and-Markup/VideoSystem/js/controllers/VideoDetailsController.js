@@ -26,7 +26,6 @@ angular.module('videoSystem.videoDetails', [])
                     timeout: 4000,
                     close: ['click']
                 });
-                console.log($route)
                 $route.reload();
             };
         }]);
