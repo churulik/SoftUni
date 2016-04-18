@@ -1,11 +1,17 @@
 'use strict';
 
-angular.module('issueTracker.projects', ['issueTracker.projectsServices',
-        'issueTracker.filterServices',
-        'issueTracker.datePickerService',
-        'issueTracker.commonDirective'
+angular
+    .module('issueTracker.projects', [
+        'issueTracker.datePickerServices',
+        'issueTracker.filterByDateService',
+        'issueTracker.formatterDirective',
+        'issueTracker.labels',
+        'issueTracker.parserDirective',
+        'issueTracker.projectsServices'
     ])
+
     .config(['$routeProvider', function ($routeProvider) {
+
         $routeProvider
             .when('/projects', {
                 templateUrl: 'projects/list-all-projects.html',
@@ -28,43 +34,71 @@ angular.module('issueTracker.projects', ['issueTracker.projectsServices',
                 controller: 'ProjectsController'
             })
     }])
-    .controller('ProjectsController', ['$scope', '$routeParams', '$location', 'accountServices', 'projectsServices',
-        'datePickerService', 'filterServices', 'notifyServices',
-        function ($scope, $routeParams, $location, accountServices, projectsServices, datePickerService, filterServices, notifyServices) {
-            var projectId = $routeParams.id;
-            var currentUser = accountServices.getCurrentUser();
-            $scope.projectsServices = projectsServices;
+
+    .controller('ProjectsController', ['$scope', '$routeParams', '$location', 'accountServices', 'datePickerServices',
+        'filterByDateService', 'notifyServices', 'projectsServices',
+        function ($scope, $routeParams, $location, accountServices, datePickerServices, filterByDateService, notifyServices, projectsServices) {
+
+            var currentUser = accountServices.getCurrentUser(),
+                projectId = $routeParams.id,
+                assignee = {Assignee: {Username: currentUser}};
+
+            $scope.filterByPriority = {};
+            $scope.filterMyIssues = assignee;
             $scope.isAdmin = accountServices.isAdministrator();
-            $scope.projectId = projectId;
             $scope.issueData = {};
-            $scope.projectData = {};
-            $scope.selectedProject = {};
+            $scope.issueStatus = {};
             $scope.labels = [];
+            $scope.projectData = {};
+            $scope.projectId = projectId;
+            $scope.projectsServices = projectsServices;
+            $scope.selectedProject = {};
+            $scope.show = {all: false};
+            $scope.statusClosed = false;
+            $scope.statusInProgress = false;
+            $scope.statusOpen = false;
+            $scope.statusStoppedProgress = false;
 
-            accountServices.getAllUsers().then(function (users) {
-                $scope.users = users;
-            });
+            $scope.initGetAllUsers = function () {
+                accountServices.getAllUsers().then(function (users) {
+                    $scope.users = users;
+                });
+            };
 
-            projectsServices.getAllProjects().then(function (projects) {
-                $scope.projects = projects;
-            });
+            $scope.intiGetAllProjects = function () {
+                projectsServices.getAllProjects().then(function (projects) {
+                    $scope.projects = projects;
+                });
+            };
 
-            if (projectId) {
-                //TODO Lazy loading
+            $scope.initGetProjectById = function () {
                 projectsServices.getProjectById(projectId).then(function (project) {
+
                     $scope.isProjectLeader = currentUser === project.Lead.Username;
                     $scope.project = project;
+                    
                 }, function () {
                     $location.path('/');
                     notifyServices.showError('A project with this id does not exist');
                 });
+            };
 
-                //TODO Lazy loading
+            $scope.initGetProjectIssues = function () {
                 projectsServices.getProjectIssues(projectId).then(function (issues) {
                     $scope.issues = issues;
-                    datePickerService.datePicker($scope);
+                    datePickerServices.datePicker($scope);
                 });
-            }
+            };
+
+            $scope.addIssue = function (issueData, project, date) {
+                issueData['ProjectId'] = project.Id;
+                issueData['DueDate'] = date;
+                projectsServices.addIssue(issueData);
+            };
+
+            $scope.addProject = function (projectData) {
+                projectsServices.addProject(projectData);
+            };
 
             $scope.editProject = function (project) {
                 var projectData = {
@@ -78,46 +112,20 @@ angular.module('issueTracker.projects', ['issueTracker.projectsServices',
                 projectsServices.editProject(projectData, projectId);
             };
 
-            projectsServices.getLabels().then(function (response) {
-                $scope.loadLabels = function ($query) {
-                    return response.filter(function (label) {
-                        return label.Name.toLowerCase().indexOf($query.toLowerCase()) != -1;
-                    })
-                };
-            });
-
-            $scope.addIssue = function (issueData, project, date) {
-                issueData['ProjectId'] = project.Id;
-                issueData['DueDate'] = date;
-                projectsServices.addIssue(issueData);
-            };
-
-            $scope.addProject = function (projectData) {
-                projectsServices.addProject(projectData);
-            };
-
-            //Filter issues
-            $scope.show = {all: false};
-            $scope.filterMyIssues = {Assignee: {Username: currentUser}};
-            $scope.filterByPriority = {};
-            $scope.statusOpen = false;
-            $scope.statusInProgress = false;
-            $scope.statusStoppedProgress = false;
-            $scope.statusClosed = false;
-            $scope.filterIssues = function () {
+            $scope.filterIssuesByAssignee = function () {
                 if (!$scope.show.all) {
-                    $scope.filterMyIssues = {Assignee: {Username: currentUser}};
+                    $scope.filterMyIssues = assignee;
 
                 } else {
                     $scope.filterMyIssues = '';
 
                 }
             };
+
             $scope.filterIssuesByDueDate = function (day) {
-                filterServices.filterByDueDate($scope, day);
+                filterByDateService.filter($scope, day);
             };
 
-            $scope.issueStatus = {};
             $scope.filterIssuesByStatus = function (status) {
                 function noFilter(filterObj) {
                     for (var status in filterObj) {

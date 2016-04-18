@@ -1,8 +1,12 @@
 'use strict';
 
-angular.module('issueTracker.issues', ['issueTracker.issuesServices',
-        'issueTracker.datePickerService',
-        'issueTracker.commonDirective'
+angular
+    .module('issueTracker.issues', [
+        'issueTracker.datePickerServices',
+        'issueTracker.formatterDirective',
+        'issueTracker.issuesServices',
+        'issueTracker.labels',
+        'issueTracker.parserDirective'
     ])
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider
@@ -15,47 +19,21 @@ angular.module('issueTracker.issues', ['issueTracker.issuesServices',
                 controller: 'IssuesController'
             })
     }])
-    .controller('IssuesController', ['$scope', '$routeParams', '$location', 'issuesServices', 'accountServices', 'datePickerService', 'notifyServices', 'projectsServices',
-        function ($scope, $routeParams, $location, issuesServices, accountServices, datePickerService, notifyServices, projectsServices) {
+    .controller('IssuesController', ['$scope', '$routeParams', '$location', 'accountServices', 'datePickerServices',
+        'issuesServices', 'notifyServices', 'projectsServices',
+        function ($scope, $routeParams, $location, accountServices, datePickerServices, issuesServices, notifyServices, projectsServices) {
+
             var issueId = $routeParams.id;
             $scope.isAdmin = accountServices.isAdministrator();
             $scope.issueId = issueId;
-            issuesServices.getIssueById(issueId).then(function (issueData) {
-                projectsServices.getProjectById(issueData.Project.Id).then(function (project) {
-                    $scope.issuesServices = issuesServices;
-                    $scope.issue = issueData;
 
-                    // Set date
-                    datePickerService.datePicker($scope, issueData.DueDate);
-                    // Get auth roles
-                    $scope.isAssignee = accountServices.getCurrentUser() === issueData.Assignee.Username;
-                    $scope.isProjectLeader = accountServices.getCurrentUser() === project.Lead.Username;
-
-                    if(!$scope.isProjectLeader && !$scope.isAdmin && $location.url().split('/')[3] === 'edit') {
-                        $location.path('/');
-                    }
-                });
-
-                // Get issue comments
-                issuesServices.viewComments(issueId).then(function (comments) {
-                    $scope.comments = comments;
-                })
-            }, function () {
-                $location.path('/');
-                notifyServices.showError('An issue with this id does not exist');
-            });
+            $scope.addIssueComment = function (comment) {
+                issuesServices.addComment(comment, issueId);
+            };
 
             $scope.changeStatus = function (statusId) {
                 issuesServices.changeStatus(issueId, statusId);
             };
-
-            issuesServices.getLabels().then(function (response) {
-                $scope.loadLabels = function ($query) {
-                    return response.filter(function (label) {
-                        return label.Name.toLowerCase().indexOf($query.toLowerCase()) != -1;
-                    })
-                };
-            });
 
             $scope.editIssue = function (issueDate, date) {
                 var editIssueDate = {
@@ -70,7 +48,34 @@ angular.module('issueTracker.issues', ['issueTracker.issuesServices',
                 issuesServices.editIssue(editIssueDate, issueId);
             };
 
-            $scope.addIssueComment = function (comment) {
-                issuesServices.addComment(comment, issueId);
-            };
+            issuesServices.getIssueById(issueId).then(function (issueData) {
+                projectsServices.getProjectById(issueData.Project.Id).then(function (project) {
+                    $scope.issue = issueData;
+                    $scope.isAssignee = accountServices.getCurrentUser() === issueData.Assignee.Username;
+                    $scope.isProjectLeader = accountServices.getCurrentUser() === project.Lead.Username;
+
+                    //Redirect if user tries to reach issues/:id/edit page and is not admin or project lead
+                    if (!$scope.isProjectLeader && !$scope.isAdmin && $location.url().split('/')[3] === 'edit') {
+                        $location.path('/');
+                    }
+                    //Get all comments if is assignee or project lead or admin
+                    if ($scope.isAssignee || $scope.isProjectLeader || $scope.isAdmin) {
+                        issuesServices.viewComments(issueId).then(function viewCommentsSuccess(comments) {
+                            $scope.comments = comments;
+                        });
+                    }
+                    // If on the edit page - load all users
+                    if ($location.url().split('/')[3] === 'edit') {
+                        accountServices.getAllUsers().then(function (users) {
+                            $scope.projectIssue = project;
+                            $scope.usersIssue = users;
+
+                            datePickerServices.datePicker($scope, issueData.DueDate);
+                        });
+                    }
+                });
+            }, function () {
+                $location.path('/');
+                notifyServices.showError('An issue with this id does not exist');
+            });
         }]);

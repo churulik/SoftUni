@@ -1,4 +1,4 @@
-<form name="addProjectForm" class="form-horizontal">
+<form name="addProjectForm" class="form-horizontal" ng-init="initGetAllUsers()">
     <div class="form-group">
         <div class="col-md-offset-1 col-md-11">
             <h3>Add Project</h3>
@@ -22,7 +22,7 @@
             <textarea id="description" ng-model="projectData.Description" class="col-md-8 form-control" required="required" placeholder="Description"></textarea>
         </div>
     </div>
-    <div class="form-group">
+    <div class="form-group" ng-init="initGetAllUsers()">
         <label for="leader" class="control-label col-md-2">Leader</label>
         <div class="col-md-9">
             <select id="leader" ng-model="projectData.LeadId"
@@ -32,7 +32,7 @@
             </select>
         </div>
     </div>
-    <div class="form-group">
+    <div class="form-group" ng-controller="LabelsController" ng-init="initGetAllLabels()">
         <label for="labels" class="control-label col-md-2">Labels</label>
         <div class="col-md-9">
             <tags-input id="labels" ng-model="projectData.Labels" display-property="Name" placeholder="Labels"

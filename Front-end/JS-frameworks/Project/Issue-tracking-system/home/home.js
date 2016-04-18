@@ -1,6 +1,7 @@
 'use strict';
 
-angular.module('issueTracker.home', [])
+angular
+    .module('issueTracker.home', [])
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider.when('/', {
             templateUrl: 'home/home.html',

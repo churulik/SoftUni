@@ -19,7 +19,7 @@
                       placeholder="Description"></textarea>
         </div>
     </div>
-    <div class="form-group">
+    <div class="form-group" ng-init="initGetAllUsers()">
         <label for="assignee" class="control-label col-md-2">Assignee</label>
         <div class="col-md-9">
             <select id="assignee" ng-model="issueData.AssigneeId" required="required" class="form-control">
@@ -28,7 +28,7 @@
             </select>
         </div>
     </div>
-    <div class="form-group">
+    <div class="form-group" ng-init="intiGetAllProjects()">
         <label for="project" class="control-label col-md-2">Project</label>
         <div class="col-md-9">
             <select id="project" ng-model="selectedProject"
@@ -63,7 +63,7 @@
             </select>
         </div>
     </div>
-    <div class="form-group">
+    <div class="form-group" ng-controller="LabelsController" ng-init="initGetAllLabels()">
         <label for="labels" class="control-label col-md-2">Labels</label>
         <div class="col-md-9">
             <tags-input id="labels" ng-model="issueData.Labels" display-property="Name" placeholder="Labels"

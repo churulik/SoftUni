@@ -1,74 +1,65 @@
 'use strict';
 
-angular.module('issueTracker.account', [
+angular
+    .module('issueTracker.account', [
         'issueTracker.accountServices',
         'issueTracker.accordion'
     ])
-    .config(accountRoute)
-    .controller('AccountController', AccountController);
+    .config(['$routeProvider', function ($routeProvider) {
+        $routeProvider
+            .when('/profile/password', {
+                templateUrl: 'account/change-password.html',
+                controller: 'AccountController'
+            })
+            .when('/logout', {
+                template: '<div logout></div>',
+                controller: 'AccountController'
+            });
+    }])
+    .controller('AccountController', ['$scope', '$route', 'accountServices', 'notifyServices',
+        function ($scope, $route, accountServices, notifyServices) {
 
-accountRoute.$inject = ['$routeProvider'];
-AccountController.$inject = ['$scope', '$route', 'notifyServices', 'accountServices'];
+            $scope.changePasswordData = {};
+            $scope.emailValidationRegex = /^(([^<>()\[\]\\.,;:\s@']+(\.[^<>()\[\]\\.,;:\s@']+)*)|('.+'))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            $scope.loginData = {grant_type: 'password'};
+            $scope.registerData = {};
 
-function accountRoute($routeProvider) {
-    $routeProvider
-        .when('/profile/password', {
-            templateUrl: 'account/change-password.html',
-            controller: 'AccountController'
-        })
-        .when('/logout', {
-            template: '<div logout></div>',
-            controller: 'AccountController'
-        });
-}
+            $scope.changePassword = function (changePasswordData) {
+                accountServices.changePassword(changePasswordData);
+            };
 
-function AccountController($scope, $route, notifyServices, accountServices) {
-    $scope.changePasswordData = {};
-    $scope.emailValidationRegex = /^(([^<>()\[\]\\.,;:\s@']+(\.[^<>()\[\]\\.,;:\s@']+)*)|('.+'))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    $scope.loginData = {grant_type: 'password'};
-    $scope.registerData = {};
+            $scope.login = function (loginData) {
 
-    $scope.changePassword = function (changePasswordData) {
-        accountServices.changePassword(changePasswordData);
-    };
+                accountServices.login(loginData).then(function () {
 
-    $scope.login = function (loginData) {
-        accountServices.login(loginData).then(loginSuccess, loginError);
-    };
+                    notifyServices.showInfo('Successful login');
+                    accountServices.getUserInfo();
+                    $route.reload();
 
-    $scope.register = function (registerData) {
-        accountServices.register(registerData).then(registerSuccess, registerError);
-    };
+                }, function (error) {
+                    notifyServices.showError('Unsuccessful login', error);
+                });
+            };
 
-    function loginSuccess() {
-        //Get user Info
-        accountServices.getUserInfo();
-        notifyServices.showInfo('Successful login');
-        $route.reload();
-    }
+            $scope.register = function (registerData) {
+                accountServices.register(registerData).then(function (responce) {
 
-    function loginError(error) {
-        notifyServices.showError('Unsuccessful login', error);
-    }
+                    notifyServices.showInfo('Successful registration');
 
-    function registerSuccess(responce) {
-        notifyServices.showInfo('Successful registration');
+                    //Automatically login the user after registration
+                    var loginData = {
+                        Username: responce.config.data.Email,
+                        Password: responce.config.data.Password,
+                        grant_type: 'password'
+                    };
 
-        //Automatically login the user after registration
-        var loginData = {
-            Username: responce.config.data.Email,
-            Password: responce.config.data.Password,
-            grant_type: 'password'
-        };
+                    accountServices.login(loginData).then(function () {
+                        $route.reload();
+                    });
 
-        accountServices.login(loginData).then(autoLoginSuccess);
-
-        function autoLoginSuccess() {
-            $route.reload();
-        }
-    }
-
-    function registerError(error) {
-        notifyServices.showError('Unsuccessful registration', error);
-    }
-}
+                }, function (error) {
+                    notifyServices.showError('Unsuccessful registration', error);
+                });
+            };
+        }]
+    );

@@ -1,8 +1,8 @@
 'use strict';
 
-angular.module('issueTracker.filterServices', [])
-    .factory('filterServices', function () {
-        function filterByDueDate($scope, day) {
+angular.module('issueTracker.filterByDateService', [])
+    .factory('filterByDateService', function () {
+        function filter($scope, day) {
             var dateNow = new Date(),
                 issueDate;
 
@@ -12,6 +12,7 @@ angular.module('issueTracker.filterServices', [])
                     return issueDate.getTime() <= dateNow.getTime();
                 };
             }
+            
             if (day === 'Today') {
                 $scope.dateFilter = function (issue) {
                     issueDate = new Date(issue.DueDate);
@@ -40,7 +41,7 @@ angular.module('issueTracker.filterServices', [])
         }
 
         return {
-            filterByDueDate: filterByDueDate
+            filter: filter
         }
     });
 

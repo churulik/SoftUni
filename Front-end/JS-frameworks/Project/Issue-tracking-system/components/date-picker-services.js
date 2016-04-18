@@ -1,9 +1,9 @@
 'use strict';
 
-angular.module('issueTracker.datePickerService', [])
-    .factory('datePickerService', [function () {
+angular.module('issueTracker.datePickerServices', [])
+    .factory('datePickerServices', [function () {
         function datePicker($scope, date) {
-            if(date) {
+            if (date) {
                 $scope.dt = new Date(date);
             } else {
                 $scope.today = function () {
@@ -11,8 +11,7 @@ angular.module('issueTracker.datePickerService', [])
                 };
                 $scope.today();
             }
-
-
+            
             $scope.clear = function () {
                 $scope.dt = null;
             };
@@ -54,7 +53,7 @@ angular.module('issueTracker.datePickerService', [])
                 $scope.dt = new Date(year, month, day);
             };
 
-            $scope.formats = ['dd.MM.yyyy','dd-MMMM-yyyy', 'yyyy/MM/dd', 'shortDate'];
+            $scope.formats = ['dd.MM.yyyy', 'dd-MMMM-yyyy', 'yyyy/MM/dd', 'shortDate'];
             $scope.format = $scope.formats[0];
             $scope.altInputFormats = ['M!/d!/yyyy'];
 

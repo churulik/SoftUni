@@ -2,32 +2,31 @@
 
 angular
     .module('issueTracker.dashboard', [])
-    .controller('DashboardController', DashboardController);
+    .controller('DashboardController', ['$scope', 'accountServices', 'issuesServices', 'projectsServices',
+        function ($scope, accountServices, issuesServices, projectsServices) {
+            const itemsPerPage = 5;
+            $scope.accountServices = accountServices;
+            $scope.issuesParams = {
+                pageNumber: 1,
+                itemsPerPage: itemsPerPage
+            };
 
-DashboardController.$inject = ['$scope', 'accountServices', 'issuesServices', 'projectsServices'];
+            $scope.reloadIssues = function () {
+                issuesServices.getMyIssues($scope.issuesParams).then(function (myIssues) {
+                    $scope.totalIssuesItems = myIssues.TotalPages * itemsPerPage;
+                    $scope.myIssues = myIssues;
+                });
+            };
 
-function DashboardController($scope, accountServices, issuesServices, projectsServices) {
-    const itemsPerPage = 5;
-    $scope.accountServices = accountServices;
-    $scope.issuesParams = {
-        pageNumber: 1,
-        itemsPerPage: itemsPerPage
-    };
+            $scope.reloadIssues();
 
-    $scope.reloadIssues = function () {
-        issuesServices.getMyIssues($scope.issuesParams).then(function (myIssues) {
-            $scope.totalIssuesItems = myIssues.TotalPages * itemsPerPage;
-            $scope.myIssues = myIssues;
-        });
-    };
+            projectsServices.getAllProjects().then(function (projects) {
+                var currentUser = accountServices.getCurrentUser();
+                $scope.projectId = '';
+                $scope.projects = projects.filter(function (project) {
+                    return project.Lead.Username === currentUser;
+                });
+            });
+        }]
+    );
 
-    $scope.reloadIssues();
-
-    projectsServices.getAllProjects().then(function (projects) {
-        var currentUser = accountServices.getCurrentUser();
-        $scope.projectId = '';
-        $scope.projects = projects.filter(function (project) {
-            return project.Lead.Username === currentUser;
-        });
-    });
-}

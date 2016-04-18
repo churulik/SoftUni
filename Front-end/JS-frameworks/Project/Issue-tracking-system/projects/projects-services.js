@@ -1,6 +1,7 @@
 'use strict';
 
-angular.module('issueTracker.projectsServices', [])
+angular
+    .module('issueTracker.projectsServices', [])
     .factory('projectsServices', ['$http', '$q', '$location', 'BASE_URL', 'notifyServices',
         function ($http, $q, $location, BASE_URL, notifyServices) {
             function authHeader() {
@@ -46,18 +47,6 @@ angular.module('issueTracker.projectsServices', [])
                 return deferred.promise;
             }
 
-            function getLabels() {
-                var deferred = $q.defer();
-                $http.get(BASE_URL + 'labels/?filter=', {headers: authHeader()})
-                    .then(function (response) {
-                        deferred.resolve(response.data);
-                    }, function (error) {
-                        deferred.reject(error);
-                    });
-
-                return deferred.promise;
-            }
-
             function addProject(projectData) {
                 $http.post(BASE_URL + 'projects', projectData, {headers: authHeader()})
                     .then(function () {
@@ -88,15 +77,10 @@ angular.module('issueTracker.projectsServices', [])
                     });
             }
 
-            // function redirect() {
-            //     return $location.path('/');
-            // }
-
             return {
                 getAllProjects: getAllProjects,
                 getProjectById: getProjectById,
                 getProjectIssues: getProjectIssues,
-                getLabels: getLabels,
                 addProject: addProject,
                 editProject: editProject,
                 addIssue: addIssue

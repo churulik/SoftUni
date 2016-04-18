@@ -1,6 +1,7 @@
 'use strict';
 
-angular.module('issueTracker.navbar', [])
+angular
+    .module('issueTracker.navbar', [])
     .controller('NavbarController', ['$scope', '$location', '$route', 'accountServices',
         function ($scope, $location, $route, accountServices) {
             $scope.accountServices = accountServices;        
