@@ -36,7 +36,7 @@
         <div class="col-md-9">
             <select id="leader" ng-model="issue.Assignee.Id" required="required" class="form-control">
                 <option value="" disabled>-- Select Assignee --</option>
-                <option ng-repeat="assignee in usersIssue | orderBy:'Username'" value="{{assignee.Id}}">{{assignee.Username}}</option>
+                <option ng-repeat="assignee in users | orderBy:'Username'" value="{{assignee.Id}}">{{assignee.Username}}</option>
             </select>
         </div>
     </div>
@@ -45,7 +45,7 @@
         <div class="col-md-9">
             <select id="priority" ng-model="issue.Priority.Id" required="required" class="form-control">
                 <option value="" disabled>-- Select Priority --</option>
-                <option ng-repeat="priority in projectIssue.Priorities" value="{{priority.Id}}">{{priority.Name}}</option>
+                <option ng-repeat="priority in project.Priorities" value="{{priority.Id}}">{{priority.Name}}</option>
             </select>
         </div>
     </div>

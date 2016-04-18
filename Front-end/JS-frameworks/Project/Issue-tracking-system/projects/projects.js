@@ -71,11 +71,24 @@ angular
                 });
             };
 
+            $scope.initAvailableProjects = function () {
+                projectsServices.getAllProjects().then(function (projects) {
+                    datePickerServices.datePicker($scope);
+                    $scope.availableProjects = projects.filter(function (project) {
+                        if(!$scope.isAdmin) {
+                            return project.Lead.Username === currentUser;
+                        } else {
+                            return project;
+                        }
+                    });
+                });
+            };
+
             $scope.initGetProjectById = function () {
                 projectsServices.getProjectById(projectId).then(function (project) {
 
                     $scope.isProjectLeader = currentUser === project.Lead.Username;
-                    $scope.project = project;
+                    $scope.project = project
                     
                 }, function () {
                     $location.path('/');
@@ -86,7 +99,7 @@ angular
             $scope.initGetProjectIssues = function () {
                 projectsServices.getProjectIssues(projectId).then(function (issues) {
                     $scope.issues = issues;
-                    datePickerServices.datePicker($scope);
+                    // datePickerServices.datePicker($scope);
                 });
             };
 

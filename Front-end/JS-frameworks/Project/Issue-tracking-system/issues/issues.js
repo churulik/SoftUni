@@ -67,8 +67,8 @@ angular
                     // If on the edit page - load all users
                     if ($location.url().split('/')[3] === 'edit') {
                         accountServices.getAllUsers().then(function (users) {
-                            $scope.projectIssue = project;
-                            $scope.usersIssue = users;
+                            $scope.project = project;
+                            $scope.users = users;
 
                             datePickerServices.datePicker($scope, issueData.DueDate);
                         });
