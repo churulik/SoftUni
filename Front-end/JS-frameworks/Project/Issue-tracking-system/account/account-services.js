@@ -1,103 +1,106 @@
 'use strict';
 
-angular.module('issueTracker.services.auth', [])
-    .factory('authServices', ['$http', '$q', '$location', 'BASE_URL', 'notifyServices',
-        function ($http, $q, $location, BASE_URL, notifyServices) {            
+angular
+    .module('issueTracker.accountServices', [])
+    .factory('accountServices', accountServices);
 
-            function authHeader() {
-                return {Authorization: sessionStorage['access_token']};
-            }
+accountServices.$inject = ['$http', '$q', '$location', 'BASE_URL', 'notifyServices'];
 
-            function login(loginData) {
-                var deferred = $q.defer();
+function accountServices($http, $q, $location, BASE_URL, notifyServices) {
+    function authHeader() {
+        return {Authorization: sessionStorage['access_token']};
+    }
 
-                $http.post(BASE_URL + 'api/token', $.param(loginData), {
-                    headers: {'Content-Type': 'application/x-www-form-urlencoded'}
-                }).then(function (response) {
-                    sessionStorage['access_token'] = 'Bearer ' + response.data.access_token;
-                    deferred.resolve(response);
-                }, function (error) {
-                    deferred.reject(error)
-                });
+    function changePassword(changePasswordData) {
+        $http.post(BASE_URL + 'api/account/changePassword', changePasswordData, {headers: authHeader()})
+            .then(function () {
+                notifyServices.showInfo('Successfully password change');
+                $location.path('/');
+            }, function (error) {
+                notifyServices.showError('Unsuccessful password change', error);
+            })
+    }
 
-                return deferred.promise;
-            }
+    function getAllUsers() {
+        var deferred = $q.defer();
 
-            function register(registerData) {
-                var deferred = $q.defer();
+        $http.get(BASE_URL + 'users', {
+            headers: authHeader()
+        }).then(function (users) {
+            deferred.resolve(users.data);
+        }, function (error) {
+            deferred.reject(error);
+        });
 
-                $http.post(BASE_URL + 'api/account/register', registerData)
-                    .then(function (response) {
-                        deferred.resolve(response);
-                    }, function (error) {
-                        deferred.reject(error);
-                    });
+        return deferred.promise;
+    }
 
-                return deferred.promise;
-            }
+    function getCurrentUser() {
+        var userInfo = sessionStorage['userInfo'];
+        if (userInfo) {
+            var parseUserInfo = JSON.parse(userInfo);
+            return parseUserInfo.Username;
+        }
+    }
 
-            function changePassword(changePasswordData) {
-                $http.post(BASE_URL + 'api/account/changePassword', changePasswordData, {headers: authHeader()})
-                    .then(function () {
-                        notifyServices.showInfo('Successfully password change');
-                        $location.path('/');
-                    }, function (error) {
-                        notifyServices.showError('Unsuccessful password change', error);
-                    })
-            }
+    function getUserInfo() {
+        $http.get(BASE_URL + 'users/me', {
+            headers: authHeader()
+        }).then(function (response) {
+            sessionStorage['userInfo'] = JSON.stringify(response.data);
+        }, function (error) {
+            console.log(error);
+        });
+    }
 
-            function isAuthenticated() {
-                return sessionStorage['access_token'];
-            }
+    function isAdministrator() {
+        var userInfo = sessionStorage['userInfo'];
+        if (userInfo) {
+            var parseUserInfo = JSON.parse(userInfo);
+            return parseUserInfo.isAdmin;
+        }
+    }
 
-            function getUserInfo() {
-                $http.get(BASE_URL + 'users/me', {
-                    headers: authHeader()
-                }).then(function (response) {
-                    sessionStorage['userInfo'] = JSON.stringify(response.data);
-                }, function (error) {
-                    console.log(error);
-                });
-            }
+    function isAuthenticated() {
+        return sessionStorage['access_token'];
+    }
 
-            function isAdministrator() {
-                var userInfo = sessionStorage['userInfo'];
-                if (userInfo) {
-                    var parseUserInfo = JSON.parse(userInfo);
-                    return parseUserInfo.isAdmin;
-                }
-            }
+    function login(loginData) {
+        var deferred = $q.defer();
 
-            function getAllUsers() {
-                var deferred = $q.defer();
+        $http.post(BASE_URL + 'api/token', $.param(loginData), {
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+        }).then(function (response) {
+            sessionStorage['access_token'] = 'Bearer ' + response.data.access_token;
+            deferred.resolve(response);
+        }, function (error) {
+            deferred.reject(error)
+        });
 
-                $http.get(BASE_URL + 'users', {
-                    headers: authHeader()
-                }).then(function (users) {
-                    deferred.resolve(users.data);
-                }, function (error) {
-                    deferred.reject(error);
-                });
+        return deferred.promise;
+    }
 
-                return deferred.promise;
-            }
+    function register(registerData) {
+        var deferred = $q.defer();
 
-            function getCurrentUser() {
-                var userInfo = sessionStorage['userInfo'];
-                if (userInfo) {
-                    var parseUserInfo = JSON.parse(userInfo);
-                    return parseUserInfo.Username;
-                }
-            }
+        $http.post(BASE_URL + 'api/account/register', registerData)
+            .then(function (response) {
+                deferred.resolve(response);
+            }, function (error) {
+                deferred.reject(error);
+            });
 
-            return {
-                login: login,
-                register: register,
-                changePassword: changePassword,
-                getUserInfo: getUserInfo,
-                isAuthenticated: isAuthenticated,
-                isAdministrator: isAdministrator,
-                getAllUsers: getAllUsers,
-                getCurrentUser: getCurrentUser
-            }
-        }]);
+        return deferred.promise;
+    }
+
+    return {
+        changePassword: changePassword,
+        getAllUsers: getAllUsers,
+        getCurrentUser: getCurrentUser,
+        getUserInfo: getUserInfo,
+        isAdministrator: isAdministrator,
+        isAuthenticated: isAuthenticated,
+        login: login,
+        register: register
+    }
+}

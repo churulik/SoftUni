@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('issueTracker.services.notify', [])
+angular.module('issueTracker.notifyServices', [])
     .factory('notifyServices', function () {
             function showInfo(message) {
                 noty({

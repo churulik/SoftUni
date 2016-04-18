@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="lib/ng-tags-input/ng-tags-input.bootstrap.css">
     <link rel="stylesheet" href="styles/app.css">
 </head>
-<body ng-cloak ng-controller="BaseController">
+<body ng-cloak>
 <nav class="navbar navbar-inverse" ng-controller="NavbarController">
     <div class="container">
         <div class="navbar-header">
@@ -23,13 +23,13 @@
             </button>
             <a class="navbar-brand" href="#/">Issue Tracking System</a>
         </div>
-        <div class="collapse navbar-collapse" id="navbar" ng-if="authServices.isAuthenticated()">
+        <div class="collapse navbar-collapse" id="navbar" ng-if="accountServices.isAuthenticated()">
             <ul class="nav navbar-nav">
                 <li ng-class="{active: isActive('/')}">
                     <a href="#/"><span class="glyphicon glyphicon-tasks"></span> Dashboard</a>
                 </li>
             </ul>
-            <ul class="nav navbar-nav navbar-right" ng-show="!authServices.isAdministrator()">
+            <ul class="nav navbar-nav navbar-right" ng-show="!accountServices.isAdministrator()">
                 <li class="dropdown" ng-class="{active: isActive('/profilerofisword')}">
                     <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                        aria-expanded="false">
@@ -39,7 +39,7 @@
                         <li>
                             <a style="cursor: default">
                                 <span class="glyphicon glyphicon-user"></span>
-                                {{authServices.getCurrentUser()}}
+                                {{accountServices.getCurrentUser()}}
                             </a>
                         </li>
                         <li ng-class="{active: isActive('/profile/password')}">
@@ -49,7 +49,7 @@
                     </ul>
                 </li>
             </ul>
-            <ul class="nav navbar-nav navbar-right" ng-show="authServices.isAdministrator()">
+            <ul class="nav navbar-nav navbar-right" ng-show="accountServices.isAdministrator()">
                 <li class="dropdown" ng-class="{active: isActive('/profile/password')}">
                     <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                        aria-expanded="false">
@@ -59,7 +59,7 @@
                         <li>
                             <a style="cursor: default">
                                 <span class="glyphicon glyphicon-user"></span>
-                                Administrator ({{authServices.getCurrentUser()}})
+                                Administrator ({{accountServices.getCurrentUser()}})
                             </a>
                         </li>
                         <li ng-class="{active: isActive('/profile/password')}">
@@ -73,42 +73,34 @@
     </div>
 </nav>
 <main class="container" ng-view></main>
-<!-- Start Libs -->
+
+<script src="lib/jquery/jquery-2.2.2.js"></script>
 <script src="lib/angular/angular.js"></script>
 <script src="lib/angular/angular-route.js"></script>
 <script src="lib/angular/angular-animate.js"></script>
-<script src="lib/jquery/jquery-2.2.2.js"></script>
 <script src="lib/angular-loading-bar/loading-bar.js"></script>
 <script src="lib/bootstrap/bootstrap.js"></script>
 <script src="lib/ui.bootstrap/ui-bootstrap-tpls-1.3.1.js"></script>
 <script src="lib/jquery.noty/jquery.noty.packaged.js"></script>
-<!-- End Libs -->
-<script src="app.js"></script>
-<!-- Start Controllers -->
-<script src="components/base-controller.js"></script>
-<script src="navbar/navbar-controller.js"></script>
-<script src="home/home-controller.js"></script>
-<script src="account/account-controller.js"></script>
-<script src="dashboard/dashboard-controller.js"></script>
-<script src="issues/issues-controller.js"></script>
-<script src="projects/projects-controller.js"></script>
-<!-- End Controllers -->
-<!-- Start Repositories-->
 <script src="lib/ng-tags-input/ng-tags-input.js"></script>
-<script src="components/accordion.js"></script>
-<!-- End Repositories-->
-<!-- Start Filters -->
-<script src="components/common-filters.js"></script>
-<!-- End Filters -->
-<!-- Start Services -->
-<script src="components/notify-services.js"></script>
-<script src="issues/issues-services.js"></script>
-<script src="projects/projects-services.js"></script>
+
+<script src="app.js"></script>
+<script src="account/account.js"></script>
 <script src="account/account-services.js"></script>
+<script src="account/confirm-password-directive.js"></script>
+<script src="account/logout-directive.js"></script>
+<script src="dashboard/dashboard.js"></script>
+<script src="home/home.js"></script>
+<script src="issues/issues.js"></script>
+<script src="issues/issues-services.js"></script>
+<script src="navbar/navbar.js"></script>
+<script src="projects/projects.js"></script>
+<script src="projects/projects-services.js"></script>
+
+<script src="components/accordion.js"></script>
+<script src="components/common-directives.js"></script>
 <script src="components/date-picker-service.js"></script>
 <script src="components/filter-services.js"></script>
-<!-- End Services -->
-<script src="components/common-directives.js"></script>
-
+<script src="components/notify-services.js"></script>
 </body>
 </html>

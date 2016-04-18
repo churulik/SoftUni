@@ -1,12 +1,12 @@
 'use strict';
 
-angular.module('issueTracker.controllers.home', [])
+angular.module('issueTracker.home', [])
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider.when('/', {
             templateUrl: 'home/home.html',
             controller: 'HomeController'
         })
     }])
-    .controller('HomeController', ['$scope', 'authServices', function ($scope, authServices) {
-        $scope.isAuthenticated = authServices.isAuthenticated();
+    .controller('HomeController', ['$scope', 'accountServices', function ($scope, accountServices) {
+        $scope.isAuthenticated = accountServices.isAuthenticated();
     }]);

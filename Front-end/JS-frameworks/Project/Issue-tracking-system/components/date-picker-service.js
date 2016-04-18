@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('issueTracker.services.datePicker', [])
+angular.module('issueTracker.datePickerService', [])
     .factory('datePickerService', [function () {
         function datePicker($scope, date) {
             if(date) {

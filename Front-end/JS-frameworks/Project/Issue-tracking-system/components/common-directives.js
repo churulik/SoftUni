@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('issueTracker.directives.common', [])
+angular.module('issueTracker.commonDirective', [])
     .directive('toArrayObjectParser', function () {
         return {
             restrict: 'A',

@@ -46,7 +46,55 @@
     </div>
     <div ng-if="issues.length > 0">
         <!-- Filters -->
-        <div class="col-md-2" ng-include="'projects/issue-filters.html'"></div>
+        <div class="col-md-2">
+            <div class="checkbox">
+                <label><input type="checkbox" ng-model="show.all" ng-click="filterIssues()"/>Show all issues</label>
+            </div>
+            <div>
+                <h5 class="bold">Filter by due date:</h5>
+                <div class="radio">
+                    <label><input type="radio" name="issue" ng-click="filterIssuesByDueDate('Today')"/>Today</label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" name="issue" ng-click="filterIssuesByDueDate('InThreeDays')"/>In Three Days</label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" name="issue" ng-click="filterIssuesByDueDate('InFiveDays')"/>In Five Days</label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" name="issue" ng-click="filterIssuesByDueDate('ThisWeek')"/>This Week</label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" name="issue" ng-click="filterIssuesByDueDate('InTenDays')"/>In Ten Days</label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" name="issue" ng-click="filterIssuesByDueDate('InTwoWeeks')"/>In Two Weeks</label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" name="issue" ng-click="filterIssuesByDueDate('All')"/>All Issues</label>
+                </div>
+            </div>
+            <div>
+                <h5 class="bold">Filter by status:</h5>
+                <div class="checkbox">
+                    <label><input type="checkbox" ng-model="issueStatus['Open']"/>Open</label>
+                </div>
+                <div class="checkbox">
+                    <label><input type="checkbox" ng-model="issueStatus['InProgress']"/>In Progress</label>
+                </div>
+                <div class="checkbox">
+                    <label><input type="checkbox" ng-model="issueStatus['StoppedProgress']"/>Stopped Progress</label>
+                </div>
+                <div class="checkbox">
+                    <label><input type="checkbox" ng-model="issueStatus['Closed']"/>Closed</label>
+                </div>
+            </div>
+            <div>
+                <h5 class="bold">Filter by priority:</h5>
+                <input type="text" class="form-control" ng-model="filterByPriority.Priority.Name"
+                       placeholder="Priority name"/>
+            </div>
+        </div>
         <!-- Issues -->
         <div class="col-md-10">
             <table class="table table-hover">
@@ -77,5 +125,4 @@
     <div class="col-md-12" ng-if="issues.length === 0">
         <h4>None</h4>
     </div>
-
 </div>

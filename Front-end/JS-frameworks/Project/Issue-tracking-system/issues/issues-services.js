@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('issueTracker.services.issues', [])
+angular.module('issueTracker.issuesServices', [])
     .factory('issuesServices', ['$http', '$q', '$location', '$route', 'BASE_URL', 'notifyServices',
         function ($http, $q, $location, $route, BASE_URL, notifyServices) {
             function authHeader() {
@@ -11,7 +11,7 @@ angular.module('issueTracker.services.issues', [])
                 var deferred = $q.defer();
 
                 $http.get(
-                    BASE_URL + 'issues/me?pageSize=' + params.pageSize + '&pageNumber=' + params.pageNumber + '&orderBy=DueDate desc',
+                    BASE_URL + 'issues/me?pageSize=' + params.itemsPerPage + '&pageNumber=' + params.pageNumber + '&orderBy=DueDate desc',
                     {headers: authHeader()}
                 ).then(function (myIssues) {
                     deferred.resolve(myIssues.data);
@@ -44,10 +44,6 @@ angular.module('issueTracker.services.issues', [])
                 }, function (error) {
                     notifyServices.showError('Fail to change the status', error);
                 });
-            }
-
-            function redirect() {                
-                return $location.path('/');
             }
 
             function editIssue(issueDate, id) {
@@ -103,7 +99,6 @@ angular.module('issueTracker.services.issues', [])
                 editIssue: editIssue,
                 viewComments: viewComments,
                 addComment: addComment,
-                getLabels: getLabels,
-                redirect: redirect
+                getLabels: getLabels
             }
         }]);

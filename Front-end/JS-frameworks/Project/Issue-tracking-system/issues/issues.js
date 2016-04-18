@@ -1,6 +1,9 @@
 'use strict';
 
-angular.module('issueTracker.controllers.issues', [])
+angular.module('issueTracker.issues', ['issueTracker.issuesServices',
+        'issueTracker.datePickerService',
+        'issueTracker.commonDirective'
+    ])
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider
             .when('/issues/:id', {
@@ -12,22 +15,27 @@ angular.module('issueTracker.controllers.issues', [])
                 controller: 'IssuesController'
             })
     }])
-    .controller('IssuesController', ['$scope', '$routeParams', '$location', 'issuesServices', 'authServices', 'datePickerService','notifyServices',
-        function ($scope, $routeParams, $location, issuesServices, authServices, datePickerService, notifyServices) {
+    .controller('IssuesController', ['$scope', '$routeParams', '$location', 'issuesServices', 'accountServices', 'datePickerService', 'notifyServices', 'projectsServices',
+        function ($scope, $routeParams, $location, issuesServices, accountServices, datePickerService, notifyServices, projectsServices) {
             var issueId = $routeParams.id;
-            $scope.isAdmin = authServices.isAdministrator();
+            $scope.isAdmin = accountServices.isAdministrator();
             $scope.issueId = issueId;
             issuesServices.getIssueById(issueId).then(function (issueData) {
-                $scope.issuesServices = issuesServices;
-                $scope.issue = issueData;
-                
-                // Set date
-                datePickerService.datePicker($scope, issueData.DueDate);
-                
-                // Get auth roles
-                $scope.isAssignee = authServices.getCurrentUser() === issueData.Assignee.Username;
-                $scope.isProjectLeader = authServices.getCurrentUser() === issueData.Author.Username;
-                
+                projectsServices.getProjectById(issueData.Project.Id).then(function (project) {
+                    $scope.issuesServices = issuesServices;
+                    $scope.issue = issueData;
+
+                    // Set date
+                    datePickerService.datePicker($scope, issueData.DueDate);
+                    // Get auth roles
+                    $scope.isAssignee = accountServices.getCurrentUser() === issueData.Assignee.Username;
+                    $scope.isProjectLeader = accountServices.getCurrentUser() === project.Lead.Username;
+
+                    if(!$scope.isProjectLeader && !$scope.isAdmin && $location.url().split('/')[3] === 'edit') {
+                        $location.path('/');
+                    }
+                });
+
                 // Get issue comments
                 issuesServices.viewComments(issueId).then(function (comments) {
                     $scope.comments = comments;
@@ -36,11 +44,11 @@ angular.module('issueTracker.controllers.issues', [])
                 $location.path('/');
                 notifyServices.showError('An issue with this id does not exist');
             });
-        
+
             $scope.changeStatus = function (statusId) {
                 issuesServices.changeStatus(issueId, statusId);
             };
-            
+
             issuesServices.getLabels().then(function (response) {
                 $scope.loadLabels = function ($query) {
                     return response.filter(function (label) {
@@ -48,7 +56,7 @@ angular.module('issueTracker.controllers.issues', [])
                     })
                 };
             });
-            
+
             $scope.editIssue = function (issueDate, date) {
                 var editIssueDate = {
                     Title: issueDate.Title,
@@ -58,7 +66,7 @@ angular.module('issueTracker.controllers.issues', [])
                     PriorityId: issueDate.Priority.Id,
                     Labels: issueDate.Labels
                 };
-                
+
                 issuesServices.editIssue(editIssueDate, issueId);
             };
 

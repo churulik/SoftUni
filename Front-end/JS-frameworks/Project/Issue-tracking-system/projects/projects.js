@@ -1,6 +1,10 @@
 'use strict';
 
-angular.module('issueTracker.controllers.projects', [])
+angular.module('issueTracker.projects', ['issueTracker.projectsServices',
+        'issueTracker.filterServices',
+        'issueTracker.datePickerService',
+        'issueTracker.commonDirective'
+    ])
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider
             .when('/projects', {
@@ -24,20 +28,20 @@ angular.module('issueTracker.controllers.projects', [])
                 controller: 'ProjectsController'
             })
     }])
-    .controller('ProjectsController', ['$scope', '$routeParams', '$location', 'authServices', 'projectsServices',
+    .controller('ProjectsController', ['$scope', '$routeParams', '$location', 'accountServices', 'projectsServices',
         'datePickerService', 'filterServices', 'notifyServices',
-        function ($scope, $routeParams, $location, authServices, projectsServices, datePickerService, filterServices, notifyServices) {
+        function ($scope, $routeParams, $location, accountServices, projectsServices, datePickerService, filterServices, notifyServices) {
             var projectId = $routeParams.id;
-            var currentUser = authServices.getCurrentUser();
+            var currentUser = accountServices.getCurrentUser();
             $scope.projectsServices = projectsServices;
-            $scope.isAdmin = authServices.isAdministrator();
+            $scope.isAdmin = accountServices.isAdministrator();
             $scope.projectId = projectId;
             $scope.issueData = {};
             $scope.projectData = {};
             $scope.selectedProject = {};
             $scope.labels = [];
 
-            authServices.getAllUsers().then(function (users) {
+            accountServices.getAllUsers().then(function (users) {
                 $scope.users = users;
             });
 
@@ -60,19 +64,19 @@ angular.module('issueTracker.controllers.projects', [])
                     $scope.issues = issues;
                     datePickerService.datePicker($scope);
                 });
-
-                $scope.editProject = function (project) {
-                    var projectData = {
-                        Name: project.Name,
-                        Description: project.Description,
-                        LeadId: project.Lead.Id,
-                        Labels: project.Labels,
-                        Priorities: project.Priorities
-                    };
-
-                    projectsServices.editProject(projectData, projectId);
-                };
             }
+
+            $scope.editProject = function (project) {
+                var projectData = {
+                    Name: project.Name,
+                    Description: project.Description,
+                    LeadId: project.Lead.Id,
+                    Labels: project.Labels,
+                    Priorities: project.Priorities
+                };
+
+                projectsServices.editProject(projectData, projectId);
+            };
 
             projectsServices.getLabels().then(function (response) {
                 $scope.loadLabels = function ($query) {

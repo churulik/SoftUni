@@ -5,22 +5,22 @@
         </div>
     </div>
     <div class="form-group">
-        <label for="name" class="control-label col-md-3">Name</label>
-        <div class="col-md-8">
+        <label for="name" class="control-label col-md-2">Name</label>
+        <div class="col-md-9">
             <input type="text" id="name" ng-model="project.Name" class="form-control" required="required">
         </div>
     </div>
     <div class="form-group">
-        <label for="description" class="control-label col-md-3">Description</label>
-        <div class="col-md-8">
+        <label for="description" class="control-label col-md-2">Description</label>
+        <div class="col-md-9">
             <textarea id="description" ng-model="project.Description" class="form-control" required="required">
                 {{project.Description}}
             </textarea>
         </div>
     </div>
     <div class="form-group">
-        <label for="labels" class="control-label col-md-3">Labels</label>
-        <div class="col-md-8">
+        <label for="labels" class="control-label col-md-2">Labels</label>
+        <div class="col-md-9">
             <tags-input id="labels" ng-model="project.Labels" key-priority="Id" display-property="Name" placeholder="Labels"
                         replace-spaces-with-dashes="false" required="required">
                 <auto-complete source="loadLabels($query)" min-length="0"></auto-complete>
@@ -28,20 +28,20 @@
         </div>
     </div>
     <div class="form-group">
-        <label for="priority" class="control-label col-md-3">Priorities</label>
-        <div class="col-md-8">
+        <label for="priority" class="control-label col-md-2">Priorities</label>
+        <div class="col-md-9">
             <input type="text" id="priority" ng-model="project.Priorities" to-string-formatter to-array-object-parser
                    class="form-control" required="required">
         </div>
     </div>
     <div class="form-group" ng-if="isAdmin">
-        <label for="leadId" class="control-label col-md-3">Lead ID</label>
-        <div class="col-md-8">
+        <label for="leadId" class="control-label col-md-2">Lead ID</label>
+        <div class="col-md-9">
             <input type="text" id="leadId" ng-model="project.Lead.Id" class="form-control" required="required">
         </div>
     </div>
     <div class="form-group">
-        <div class="col-md-9 col-md-offset-3">
+        <div class="col-md-10 col-md-offset-2">
             <button type="button" class="btn btn-success" ng-disabled="editProjectForm.$invalid" ng-click="editProject(project)">
                 Edit Project
             </button>
