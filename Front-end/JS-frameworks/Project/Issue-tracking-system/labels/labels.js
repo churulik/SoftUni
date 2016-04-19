@@ -8,7 +8,7 @@ angular
                 $scope.loadLabels = function ($query) {
                     return response.filter(function (label) {
                         return label.Name.toLowerCase().indexOf($query.toLowerCase()) != -1;
-                    })
+                    });
                 };
             });
         };

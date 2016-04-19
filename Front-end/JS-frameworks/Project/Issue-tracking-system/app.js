@@ -16,11 +16,14 @@ angular
         'issueTracker.notifyServices',
         'issueTracker.projects'
     ])
+    
     .constant('BASE_URL', 'http://softuni-issue-tracker.azurewebsites.net/')
+    
     .config(['$routeProvider', 'cfpLoadingBarProvider', function ($routeProvider, cfpLoadingBarProvider) {
         $routeProvider.otherwise({redirectTo: '/'});
         cfpLoadingBarProvider.includeSpinner = false;
     }])
+    
     .run(['$rootScope', '$location', 'accountServices', 'notifyServices',
         function ($rootScope, $location, accountServices, notifyServices) {
             $rootScope.$on("$routeChangeStart", function (event, next) {

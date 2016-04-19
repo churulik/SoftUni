@@ -1,4 +1,4 @@
-<div class="row" ng-init="initGetProjectById()">
+<div ng-init="initProjectById()" class="row">
     <div class="col-md-12">
         <h3>Project
             <span ng-if="isProjectLeader || isAdmin">
@@ -27,7 +27,7 @@
             </span>
         </p>
     </div>
-    <div class="col-md-12" ng-init="initGetProjectIssues()">
+    <div class="col-md-12">
         <h3 class="inline-block">Project Issues</h3>
          <!-- Modal -->
         <div ng-if="isAdmin || isProjectLeader" class="inline-block">
@@ -111,7 +111,7 @@
                 | filter:dateFilter | filter:filterIssuesByStatus">
                 <tr>
                     <td><a ng-href="#/issues/{{issue.Id}}">{{issue.Title}}</a></td>
-                    <td>{{issue.Description}}</td>
+                    <td >{{issue.Description}}</td>
                     <td>{{issue.DueDate | date}}</td>
                     <td>{{issue.Assignee.Username}}</td>
                     <td>{{issue.Priority.Name}}</td>

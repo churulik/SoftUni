@@ -59,96 +59,108 @@ angular
             $scope.statusOpen = false;
             $scope.statusStoppedProgress = false;
 
-            $scope.initGetAllUsers = function () {
-                accountServices.getAllUsers().then(function (users) {
-                    $scope.users = users;
-                });
-            };
+            $scope.initAddIssue = function () {
+                getAllUsers();
 
-            $scope.intiGetAllProjects = function () {
-                projectsServices.getAllProjects().then(function (projects) {
-                    $scope.projects = projects;
-                });
-            };
+                datePickerServices.datePicker($scope);
 
-            $scope.initAvailableProjects = function () {
                 projectsServices.getAllProjects().then(function (projects) {
-                    datePickerServices.datePicker($scope);
                     $scope.availableProjects = projects.filter(function (project) {
-                        if(!$scope.isAdmin) {
+                        if (!$scope.isAdmin) {
                             return project.Lead.Username === currentUser;
                         } else {
                             return project;
                         }
                     });
                 });
+
+                $scope.addIssue = function (issueData, project, date) {
+                    issueData['ProjectId'] = project.Id;
+                    issueData['DueDate'] = date;
+                    projectsServices.addIssue(issueData);
+                };
             };
 
-            $scope.initGetProjectById = function () {
+            $scope.initAddProject = function () {
+                getAllUsers();
+
+                $scope.addProject = function (projectData) {
+                    projectsServices.addProject(projectData);
+                };
+            };
+
+            $scope.initEditProject = function () {
+                getProjectById();
+
+                $scope.editProject = function (project) {
+                    var projectData = {
+                        Name: project.Name,
+                        Description: project.Description,
+                        LeadId: project.Lead.Id,
+                        Labels: project.Labels,
+                        Priorities: project.Priorities
+                    };
+
+                    projectsServices.editProject(projectData, projectId);
+                };
+            };
+
+            $scope.initListAllProjects = function () {
+                projectsServices.getAllProjects().then(function (projects) {
+                    $scope.projects = projects;
+                });
+            };
+
+            $scope.initProjectById = function () {
+                getProjectById();
+
+                projectsServices.getProjectIssues(projectId).then(function (issues) {
+                    $scope.issues = issues;
+                });
+
+                $scope.filterIssuesByAssignee = function () {
+                    if (!$scope.show.all) {
+                        $scope.filterMyIssues = assignee;
+
+                    } else {
+                        $scope.filterMyIssues = '';
+
+                    }
+                };
+
+                $scope.filterIssuesByDueDate = function (day) {
+                    filterByDateService.filter($scope, day);
+                };
+
+                $scope.filterIssuesByStatus = function (status) {
+                    function noFilter(filterObj) {
+                        for (var status in filterObj) {
+                            if (filterObj[status]) {
+                                return false;
+                            }
+                        }
+                        return true;
+                    }
+
+                    return $scope.issueStatus[status.Status.Name] || noFilter($scope.issueStatus);
+                };
+            };
+
+            function getAllUsers() {
+                accountServices.getAllUsers().then(function (users) {
+                    $scope.users = users;
+                });
+            }
+
+            function getProjectById() {
                 projectsServices.getProjectById(projectId).then(function (project) {
 
                     $scope.isProjectLeader = currentUser === project.Lead.Username;
                     $scope.project = project
-                    
+
                 }, function () {
                     $location.path('/');
                     notifyServices.showError('A project with this id does not exist');
                 });
-            };
-
-            $scope.initGetProjectIssues = function () {
-                projectsServices.getProjectIssues(projectId).then(function (issues) {
-                    $scope.issues = issues;
-                    // datePickerServices.datePicker($scope);
-                });
-            };
-
-            $scope.addIssue = function (issueData, project, date) {
-                issueData['ProjectId'] = project.Id;
-                issueData['DueDate'] = date;
-                projectsServices.addIssue(issueData);
-            };
-
-            $scope.addProject = function (projectData) {
-                projectsServices.addProject(projectData);
-            };
-
-            $scope.editProject = function (project) {
-                var projectData = {
-                    Name: project.Name,
-                    Description: project.Description,
-                    LeadId: project.Lead.Id,
-                    Labels: project.Labels,
-                    Priorities: project.Priorities
-                };
-
-                projectsServices.editProject(projectData, projectId);
-            };
-
-            $scope.filterIssuesByAssignee = function () {
-                if (!$scope.show.all) {
-                    $scope.filterMyIssues = assignee;
-
-                } else {
-                    $scope.filterMyIssues = '';
-
-                }
-            };
-
-            $scope.filterIssuesByDueDate = function (day) {
-                filterByDateService.filter($scope, day);
-            };
-
-            $scope.filterIssuesByStatus = function (status) {
-                function noFilter(filterObj) {
-                    for (var status in filterObj) {
-                        if (filterObj[status]) {
-                            return false;
-                        }
-                    }
-                    return true;
-                }
-
-                return $scope.issueStatus[status.Status.Name] || noFilter($scope.issueStatus);
-            };
+            }
         }]);
