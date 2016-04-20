@@ -2,14 +2,15 @@
 
 angular
     .module('issueTracker.dashboard', [])
-    .controller('DashboardController', ['$scope', 'accountServices', 'issuesServices', 'projectsServices', '$timeout',
-        function ($scope, accountServices, issuesServices, projectsServices, $timeout) {
+    .controller('DashboardController', ['$scope', '$location', 'accountServices', 'issuesServices', 'projectsServices',
+        function ($scope, $location, accountServices, issuesServices, projectsServices) {
             const itemsPerPage = 5;
             $scope.accountServices = accountServices;
             $scope.issuesParams = {
                 pageNumber: 1,
                 itemsPerPage: itemsPerPage
             };
+            $scope.projectId = '';
 
             $scope.reloadIssues = function () {
                 issuesServices.getMyIssues($scope.issuesParams).then(function (myIssues) {
@@ -23,11 +24,15 @@ angular
 
             projectsServices.getAllProjects().then(function (projects) {
                 var currentUser = accountServices.getCurrentUser();
-                $scope.projectId = '';
+
                 $scope.projects = projects.filter(function (project) {
                     return project.Lead.Username === currentUser;
                 });
             });
+
+            $scope.projectLeaderProject = function (projectId) {
+                $location.path('/projects/' + projectId)
+            }
         }]
     );
 

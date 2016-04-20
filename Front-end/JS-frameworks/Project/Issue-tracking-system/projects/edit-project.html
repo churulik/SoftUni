@@ -41,7 +41,7 @@
             <div class="col-md-9">
                 <select ng-model="project.Lead.Id" id="leadId" class="form-control">
                     <option value="">-- Select Project Leader --</option>
-                    <option ng-repeat="user in users" value="{{user.Id}}">{{user.Username}}</option>
+                    <option ng-repeat="user in users | orderBy:'Username'" value="{{user.Id}}">{{user.Username}}</option>
                 </select>
             </div>
         </div>

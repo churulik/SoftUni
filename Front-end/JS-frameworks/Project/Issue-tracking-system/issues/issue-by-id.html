@@ -46,7 +46,7 @@
         <div ng-repeat="status in issue.AvailableStatuses">
             <p>
                 <span>-- {{status.Name}}</span>
-                <span ng-if="isAssignee || isAdmin">
+                <span ng-if="isAssignee || isProjectLeader || isAdmin">
                     <button class="btn btn-success btn-sm" ng-click="changeStatus(status.Id)">Change</button>
                 </span>
             </p>

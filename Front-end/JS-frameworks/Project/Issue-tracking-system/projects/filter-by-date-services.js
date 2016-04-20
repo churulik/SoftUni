@@ -24,7 +24,7 @@ angular.module('issueTracker.filterByDateService', [])
             } else if (day === 'InFiveDays') {
                 dateNow.setDate(dateNow.getDate() + 5);
                 returnFilteredDate($scope);
-            } else if (day === 'ThisWeek') {
+            } else if (day === 'InOneWeek') {
                 dateNow.setDate(dateNow.getDate() + 7);
                 returnFilteredDate($scope);
             } else if (day === 'InTenDays') {

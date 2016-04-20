@@ -42,13 +42,10 @@ angular
                     projectsServices.getProjectById(issueData.Project.Id).then(function (project) {
                         $scope.isAssignee = accountServices.getCurrentUser() === issueData.Assignee.Username;
                         $scope.isProjectLeader = accountServices.getCurrentUser() === project.Lead.Username;
+                    });
 
-                        //Show all comments if user is assignee, or project lead, or admin
-                        if ($scope.isAssignee || $scope.isProjectLeader || $scope.isAdmin) {
-                            issuesServices.viewComments(issueId).then(function viewCommentsSuccess(comments) {
-                                $scope.comments = comments;
-                            });
-                        }
+                    issuesServices.viewComments(issueId).then(function viewCommentsSuccess(comments) {
+                        $scope.comments = comments;
                     });
                 }, issueError);
 
@@ -99,6 +96,6 @@ angular
                 $location.path('/');
                 notifyServices.showError('An issue with this id does not exist');
             }
-        }])
+        }]);
 
     

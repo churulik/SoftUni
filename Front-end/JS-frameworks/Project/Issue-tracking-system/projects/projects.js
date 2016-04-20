@@ -35,9 +35,9 @@ angular
             })
     }])
 
-    .controller('ProjectsController', ['$scope', '$routeParams', '$location', 'accountServices', 'datePickerServices',
+    .controller('ProjectsController', ['$scope', '$routeParams', '$location', '$route', 'accountServices', 'datePickerServices',
         'filterByDateService', 'notifyServices', 'projectsServices',
-        function ($scope, $routeParams, $location, accountServices, datePickerServices, filterByDateService, notifyServices, projectsServices) {
+        function ($scope, $routeParams, $location, $route, accountServices, datePickerServices, filterByDateService, notifyServices, projectsServices) {
 
             var currentUser = accountServices.getCurrentUser(),
                 projectId = $routeParams.id,
@@ -49,6 +49,7 @@ angular
             $scope.issueData = {};
             $scope.issueStatus = {};
             $scope.labels = [];
+            $scope.orderIssues = 'DueDate';
             $scope.projectData = {};
             $scope.projectId = projectId;
             $scope.projectsServices = projectsServices;
@@ -61,7 +62,7 @@ angular
 
             $scope.initAddIssue = function () {
                 getAllUsers();
-
+                
                 datePickerServices.datePicker($scope);
 
                 projectsServices.getAllProjects().then(function (projects) {
@@ -77,7 +78,7 @@ angular
                 $scope.addIssue = function (issueData, project, date) {
                     issueData['ProjectId'] = project.Id;
                     issueData['DueDate'] = date;
-                    projectsServices.addIssue(issueData);
+                    projectsServices.addIssue(issueData, projectId);
                 };
             };
 
@@ -145,6 +146,10 @@ angular
 
                     return $scope.issueStatus[status.Status.Name] || noFilter($scope.issueStatus);
                 };
+
+                $scope.orderByIssues = function (parametar) {
+                    $scope.orderIssues = parametar;
+                }
             };
 
             function getAllUsers() {

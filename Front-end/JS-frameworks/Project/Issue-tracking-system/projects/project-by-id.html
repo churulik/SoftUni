@@ -51,6 +51,18 @@
                 <label><input type="checkbox" ng-model="show.all" ng-click="filterIssuesByAssignee()"/>Show all issues</label>
             </div>
             <div>
+                <h5 class="bold">Order by:</h5>
+                <div class="radio">
+                    <label><input type="radio" name="order" ng-click="orderByIssues('Title')"/>Issue Title</label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" name="order" ng-click="orderByIssues('DueDate')"/>Due Date</label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" name="order" ng-click="orderByIssues('Assignee.Username')"/>Assignee</label>
+                </div>
+            </div>
+            <div>
                 <h5 class="bold">Filter by due date:</h5>
                 <div class="radio">
                     <label><input type="radio" name="issue" ng-click="filterIssuesByDueDate('Today')"/>Today</label>
@@ -62,7 +74,7 @@
                     <label><input type="radio" name="issue" ng-click="filterIssuesByDueDate('InFiveDays')"/>In Five Days</label>
                 </div>
                 <div class="radio">
-                    <label><input type="radio" name="issue" ng-click="filterIssuesByDueDate('ThisWeek')"/>This Week</label>
+                    <label><input type="radio" name="issue" ng-click="filterIssuesByDueDate('InOneWeek')"/>In A Week</label>
                 </div>
                 <div class="radio">
                     <label><input type="radio" name="issue" ng-click="filterIssuesByDueDate('InTenDays')"/>In Ten Days</label>
@@ -108,7 +120,7 @@
                     <th class="col-md-2">Status</th>
                 </tr>
                 </thead>
-                <tbody ng-repeat="issue in issues | filter:filterMyIssues | filter:filterByPriority
+                <tbody ng-repeat="issue in issues |orderBy:orderIssues | filter:filterMyIssues | filter:filterByPriority
                 | filter:dateFilter | filter:filterIssuesByStatus">
                 <tr>
                     <td><a ng-href="#/issues/{{issue.Id}}">{{issue.Title}}</a></td>
