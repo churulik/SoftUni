@@ -41,13 +41,19 @@ angular
             }
 
             function getUserInfo() {
+                var deferred = $q.defer();
+
                 $http.get(BASE_URL + 'users/me', {
                     headers: authHeader()
                 }).then(function (response) {
+                    sessionStorage['username'] = response.data.Username;
                     sessionStorage['userInfo'] = JSON.stringify(response.data);
+                    deferred.resolve(response.data);
                 }, function (error) {
-                    console.log(error);
+                    deferred.reject(error);
                 });
+
+                return deferred.promise;
             }
 
             function isAdministrator() {

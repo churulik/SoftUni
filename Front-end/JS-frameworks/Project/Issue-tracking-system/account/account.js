@@ -32,10 +32,11 @@ angular
 
                 accountServices.login(loginData).then(function () {
 
-                    notifyServices.showInfo('Successful login');
-                    accountServices.getUserInfo();
-                    $route.reload();
 
+                    accountServices.getUserInfo().then(function (data) {
+                        notifyServices.showInfo('Welcome home ' + data.Username.split('@')[0] + '.');
+                        $route.reload();
+                    });
                 }, function (error) {
                     notifyServices.showError('Unsuccessful login', error);
                 });
@@ -44,7 +45,7 @@ angular
             $scope.register = function (registerData) {
                 accountServices.register(registerData).then(function (responce) {
 
-                    notifyServices.showInfo('Successful registration');
+                    notifyServices.showInfo('Successful registration. <br> Welcome to Issue Tracking System');
 
                     //Automatically login the user after registration
                     var loginData = {
@@ -54,7 +55,9 @@ angular
                     };
 
                     accountServices.login(loginData).then(function () {
-                        $route.reload();
+                        accountServices.getUserInfo().then(function () {
+                            $route.reload();
+                        });
                     });
 
                 }, function (error) {

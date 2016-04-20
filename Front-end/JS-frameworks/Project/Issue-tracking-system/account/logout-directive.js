@@ -6,8 +6,8 @@ angular
             return {
                 restrict: 'A',
                 link: function () {
+                    notifyServices.showInfo('See you later ' + sessionStorage['username'].split('@')[0] + '.');
                     sessionStorage.clear();
-                    notifyServices.showInfo('Successful log out');
                     $location.path('/');
                 }
             };
