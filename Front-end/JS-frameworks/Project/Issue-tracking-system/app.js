@@ -29,7 +29,7 @@ angular
 
                 // Redirect to Home page if not logged in
                 if (next.originalPath !== '/' && !sessionStorage['access_token']) {
-                    notifyServices.showInfo('Login first');
+                    notifyServices.showInfo('Please login.');
                     return $location.path('/');
                 }
 

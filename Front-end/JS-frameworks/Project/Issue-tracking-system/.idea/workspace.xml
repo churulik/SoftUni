@@ -1,0 +1,825 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" readonly="true" id="795b375f-8ef8-4806-a935-fef2c90ed3a9" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/delay" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/delay/delay.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/account-services.js" afterPath="$PROJECT_DIR$/account/account-services.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/account.js" afterPath="$PROJECT_DIR$/account/account.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/change-password.html" afterPath="$PROJECT_DIR$/account/change-password.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/logout-directive.js" afterPath="$PROJECT_DIR$/account/logout-directive.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/register-login.html" afterPath="$PROJECT_DIR$/account/register-login.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard/dashboard.html" afterPath="$PROJECT_DIR$/dashboard/dashboard.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard/dashboard.js" afterPath="$PROJECT_DIR$/dashboard/dashboard.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/issues/edit-issue.html" afterPath="$PROJECT_DIR$/issues/edit-issue.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/issues/issue-by-id.html" afterPath="$PROJECT_DIR$/issues/issue-by-id.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/angular/angular.js" afterPath="$PROJECT_DIR$/lib/angular/angular.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/navbar/navbar.js" afterPath="$PROJECT_DIR$/navbar/navbar.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/add-issue.html" afterPath="$PROJECT_DIR$/projects/add-issue.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/add-project.html" afterPath="$PROJECT_DIR$/projects/add-project.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/edit-project.html" afterPath="$PROJECT_DIR$/projects/edit-project.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/list-all-projects.html" afterPath="$PROJECT_DIR$/projects/list-all-projects.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/project-by-id.html" afterPath="$PROJECT_DIR$/projects/project-by-id.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/projects.js" afterPath="$PROJECT_DIR$/projects/projects.js" />
+    </list>
+    <ignored path="Issue-tracking-system.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="Issue-tracking-system" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="account.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/account/account.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="206">
+              <caret line="30" column="49" selection-start-line="30" selection-start-column="49" selection-end-line="30" selection-end-column="49" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="527">
+              <caret line="31" column="58" selection-start-line="31" selection-start-column="58" selection-end-line="31" selection-end-column="58" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dashboard.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/dashboard/dashboard.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="6" column="29" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="account-services.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/account/account-services.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="logout-directive.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/account/logout-directive.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="tsconfig.json" />
+        <option value="CSS File" />
+        <option value="HTML File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/views/partials/register-form.html" />
+        <option value="$PROJECT_DIR$/views/partials/login-form.html" />
+        <option value="$PROJECT_DIR$/views/partials/register-login.html" />
+        <option value="$PROJECT_DIR$/home/home.html" />
+        <option value="$PROJECT_DIR$/projects/projects-controller.js" />
+        <option value="$PROJECT_DIR$/issues/issues-controller.js" />
+        <option value="$PROJECT_DIR$/views/modals/add-project-modal.html" />
+        <option value="$PROJECT_DIR$/components/notify-services.js" />
+        <option value="$PROJECT_DIR$/components/accordion.js" />
+        <option value="$PROJECT_DIR$/base/base.js" />
+        <option value="$PROJECT_DIR$/projects/issue-filters.html" />
+        <option value="$PROJECT_DIR$/account/confirm-password-validation-directive.js" />
+        <option value="$PROJECT_DIR$/account/confirm-password-directive.js" />
+        <option value="$PROJECT_DIR$/components/labels-service.js" />
+        <option value="$PROJECT_DIR$/components/call-function-directive.js" />
+        <option value="$PROJECT_DIR$/labels/labels-service.js" />
+        <option value="$PROJECT_DIR$/components/datepicker/datepicker.js" />
+        <option value="$PROJECT_DIR$/components/datepicker/datepicker-service.js" />
+        <option value="$PROJECT_DIR$/components/datepicker-service.js" />
+        <option value="$PROJECT_DIR$/components/date-picker-service.js" />
+        <option value="$PROJECT_DIR$/components/formater-directive.js" />
+        <option value="$PROJECT_DIR$/components/common-directives.js" />
+        <option value="$PROJECT_DIR$/components/parser-directives.js" />
+        <option value="$PROJECT_DIR$/components/filter-services.js" />
+        <option value="$PROJECT_DIR$/projects/projects-services.js" />
+        <option value="$PROJECT_DIR$/issues/issues-services.js" />
+        <option value="$PROJECT_DIR$/labels/labels.js" />
+        <option value="$PROJECT_DIR$/issues/issues.js" />
+        <option value="$PROJECT_DIR$/components/formatter-directive.js" />
+        <option value="$PROJECT_DIR$/projects/projects.js" />
+        <option value="$PROJECT_DIR$/home/home.js" />
+        <option value="$PROJECT_DIR$/load/delay.js" />
+        <option value="$PROJECT_DIR$/navbar/navbar.js" />
+        <option value="$PROJECT_DIR$/projects/project-by-id.html" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/delay/delay.js" />
+        <option value="$PROJECT_DIR$/projects/edit-project.html" />
+        <option value="$PROJECT_DIR$/projects/add-project.html" />
+        <option value="$PROJECT_DIR$/projects/add-issue.html" />
+        <option value="$PROJECT_DIR$/projects/list-all-projects.html" />
+        <option value="$PROJECT_DIR$/account/change-password.html" />
+        <option value="$PROJECT_DIR$/account/register-login.html" />
+        <option value="$PROJECT_DIR$/issues/edit-issue.html" />
+        <option value="$PROJECT_DIR$/issues/issue-by-id.html" />
+        <option value="$PROJECT_DIR$/dashboard/dashboard.js" />
+        <option value="$PROJECT_DIR$/styles/app.css" />
+        <option value="$PROJECT_DIR$/account/account.js" />
+        <option value="$PROJECT_DIR$/account/account-services.js" />
+        <option value="$PROJECT_DIR$/account/logout-directive.js" />
+        <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/dashboard/dashboard.html" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" />
+  <component name="JsBuildToolPackageJson" detection-done="true" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="409" />
+    <option name="y" value="27" />
+    <option name="width" value="1450" />
+    <option name="height" value="1046" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="2" id="Add" />
+    <ConfirmationsSetting value="2" id="Remove" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Issue-tracking-system" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Issue-tracking-system" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Issue-tracking-system" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Issue-tracking-system" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Issue-tracking-system" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dashboard" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Issue-tracking-system" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Issue-tracking-system" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="account" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../../../angular-loading-bar-master/example" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="editor.config.accepted" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Tushe.Tushe-PC\Desktop\Programing\SoftUni\trunk\Front-end\JS-frameworks\Project\Issue-tracking-system" />
+      <recent name="C:\Users\Tushe.Tushe-PC\Desktop\Programing\SoftUni\trunk\Front-end\JS-frameworks\Project\Issue-tracking-system\components" />
+      <recent name="C:\Users\Tushe.Tushe-PC\Desktop\Programing\SoftUni\trunk\Front-end\JS-frameworks\Project\Issue-tracking-system\components\datepicker" />
+      <recent name="C:\Users\Tushe.Tushe-PC\Desktop\Programing\SoftUni\trunk\Front-end\JS-frameworks\Project\Issue-tracking-system\labels" />
+      <recent name="C:\Users\Tushe.Tushe-PC\Desktop\Programing\SoftUni\trunk\Front-end\JS-frameworks\Project\Issue-tracking-system\projects" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Tushe.Tushe-PC\Desktop\Programing\SoftUni\trunk\Front-end\JS-frameworks\Project\Issue-tracking-system\test2" />
+      <recent name="C:\Users\Tushe.Tushe-PC\Desktop\Programing\SoftUni\trunk\Front-end\JS-frameworks\Project\Issue-tracking-system\styles" />
+      <recent name="C:\Users\Tushe.Tushe-PC\Desktop\Programing\SoftUni\trunk\Front-end\JS-frameworks\Project\Issue-tracking-system\js\repository" />
+      <recent name="C:\Users\Tushe.Tushe-PC\Desktop\Programing\SoftUni\trunk\Front-end\JS-frameworks\Project\Issue-tracking-system\views\templates\issues" />
+      <recent name="C:\Users\Tushe.Tushe-PC\Desktop\Programing\SoftUni\trunk\Front-end\JS-frameworks\Project\Issue-tracking-system\lib\angular-loading-bar" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="BashConfigurationType" factoryName="Bash">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="INTERPRETER_PATH" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
+      <method />
+    </configuration>
+    <configuration default="true" type="DartTestRunConfigurationType" factoryName="Dart Test">
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
+      <method />
+    </configuration>
+    <configuration default="true" type="cucumber.js" factoryName="Cucumber.js">
+      <option name="cucumberJsArguments" value="" />
+      <option name="executablePath" />
+      <option name="filePath" />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run-script" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory />
+      <pass-parent-env>true</pass-parent-env>
+      <envs />
+      <ui>bdd</ui>
+      <extra-mocha-options />
+      <test-kind>DIRECTORY</test-kind>
+      <test-directory />
+      <recursive>false</recursive>
+      <method />
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration" cleanupOnStartRun="true">
+    <configuration>C:\Users\Tushe.Tushe-PC\AppData\Roaming\Subversion</configuration>
+    <supportedVersion>125</supportedVersion>
+  </component>
+  <component name="SvnFileUrlMappingImpl">
+    <option name="myMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\Users\Tushe.Tushe-PC\Desktop\Programing\SoftUni\trunk\Front-end\JS-frameworks\Project\Issue-tracking-system" />
+          <option name="myCopyRoot" value="C:\Users\Tushe.Tushe-PC\Desktop\Programing\SoftUni\trunk\Front-end\JS-frameworks\Project\Issue-tracking-system" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+    <option name="myMoreRealMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\Users\Tushe.Tushe-PC\Desktop\Programing\SoftUni\trunk\Front-end\JS-frameworks\Project\Issue-tracking-system" />
+          <option name="myCopyRoot" value="C:\Users\Tushe.Tushe-PC\Desktop\Programing\SoftUni\trunk\Front-end\JS-frameworks\Project\Issue-tracking-system" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="795b375f-8ef8-4806-a935-fef2c90ed3a9" name="Default" comment="" />
+      <created>1460036637895</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1460036637895</updated>
+      <workItem from="1460036641908" duration="202000" />
+      <workItem from="1460039812545" duration="8702000" />
+      <workItem from="1460054544937" duration="3504000" />
+      <workItem from="1460078342257" duration="162000" />
+      <workItem from="1460080344908" duration="32000" />
+      <workItem from="1460101872427" duration="8766000" />
+      <workItem from="1460111111513" duration="1783000" />
+      <workItem from="1460116801228" duration="922000" />
+      <workItem from="1460122778018" duration="9819000" />
+      <workItem from="1460194952447" duration="8415000" />
+      <workItem from="1460218120738" duration="3869000" />
+      <workItem from="1460280026165" duration="1690000" />
+      <workItem from="1460307180675" duration="444000" />
+      <workItem from="1460359577009" duration="903000" />
+      <workItem from="1460360590306" duration="2129000" />
+      <workItem from="1460363217745" duration="29209000" />
+      <workItem from="1460454359131" duration="13003000" />
+      <workItem from="1460467700193" duration="19809000" />
+      <workItem from="1460533839722" duration="11411000" />
+      <workItem from="1460546661681" duration="19731000" />
+      <workItem from="1460622368715" duration="23184000" />
+      <workItem from="1460709237760" duration="8136000" />
+      <workItem from="1460717661840" duration="1053000" />
+      <workItem from="1460718886959" duration="710000" />
+      <workItem from="1460719711880" duration="47000" />
+      <workItem from="1460719908291" duration="84000" />
+      <workItem from="1460730171413" duration="10461000" />
+      <workItem from="1460744287548" duration="5008000" />
+      <workItem from="1460750904060" duration="3545000" />
+      <workItem from="1460767516153" duration="1096000" />
+      <workItem from="1460769766077" duration="869000" />
+      <workItem from="1460771401295" duration="1549000" />
+      <workItem from="1460773364339" duration="412000" />
+      <workItem from="1460773827671" duration="175000" />
+      <workItem from="1460775831443" duration="15787000" />
+      <workItem from="1460813785600" duration="1542000" />
+      <workItem from="1460820946952" duration="11795000" />
+      <workItem from="1460858304072" duration="56000" />
+      <workItem from="1460858443165" duration="197000" />
+      <workItem from="1460886980906" duration="229000" />
+      <workItem from="1460887549873" duration="66000" />
+      <workItem from="1460887900520" duration="4792000" />
+      <workItem from="1460895994452" duration="1633000" />
+      <workItem from="1460901692442" duration="16059000" />
+      <workItem from="1460936294567" duration="873000" />
+      <workItem from="1460937297605" duration="434000" />
+      <workItem from="1460939008098" duration="253000" />
+      <workItem from="1460939275709" duration="212000" />
+      <workItem from="1460944749660" duration="1928000" />
+      <workItem from="1460947129243" duration="608000" />
+      <workItem from="1460969200729" duration="16973000" />
+      <workItem from="1460995085044" duration="2535000" />
+      <workItem from="1461001473646" duration="468000" />
+      <workItem from="1461008294953" duration="198000" />
+      <workItem from="1461058774684" duration="4049000" />
+      <workItem from="1461062843947" duration="6627000" />
+      <workItem from="1461070064755" duration="4518000" />
+      <workItem from="1461080072012" duration="443000" />
+      <workItem from="1461096536664" duration="596000" />
+      <workItem from="1461150690901" duration="34000" />
+      <workItem from="1461151011464" duration="396000" />
+      <workItem from="1461151737266" duration="9783000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="303918000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="409" y="27" width="1450" height="1046" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18130311" sideWeight="0.73851204" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32822758" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24799286" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21352786" sideWeight="0.26148796" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19256018" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="9" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/lib/ng-tags-input/ng-tags-input.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="107" column="11" selection-start-line="107" selection-start-column="4" selection-end-line="107" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/ng-tags-input/ng-tags-input.bootstrap.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-12">
+          <caret line="35" column="10" selection-start-line="35" selection-start-column="10" selection-end-line="35" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/ng-tags-input/ng-tags-input.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="29" column="43" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/ui.bootstrap/ui-bootstrap-tpls-1.3.1.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/templates/navbar.html" />
+    <entry file="file://$PROJECT_DIR$/views/partials/register-form.html" />
+    <entry file="file://$PROJECT_DIR$/views/partials/login-form.html" />
+    <entry file="file://$PROJECT_DIR$/views/modals/add-project-modal.html" />
+    <entry file="file://$PROJECT_DIR$/views/modals/add-issue-modal.html" />
+    <entry file="file://$PROJECT_DIR$/base/base.js" />
+    <entry file="file://$PROJECT_DIR$/projects/issue-filters.html" />
+    <entry file="file://$PROJECT_DIR$/lib/angular/angular-route.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="697" column="0" selection-start-line="697" selection-start-column="0" selection-end-line="697" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/account/confirm-password-directive.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="56" selection-start-line="10" selection-start-column="56" selection-end-line="10" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/angular-loading-bar/loading-bar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="107">
+          <caret line="16" column="35" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/call-function-directive.js" />
+    <entry file="file://$PROJECT_DIR$/lib/angular/angular.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="25686" column="16" selection-start-line="25686" selection-start-column="16" selection-end-line="25686" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/labels/labels-service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="21" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/datepicker/datepicker.js" />
+    <entry file="file://$PROJECT_DIR$/components/date-picker-services.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="32" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/common-filters.js" />
+    <entry file="file://$PROJECT_DIR$/components/accordion.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/notify-services.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="43" selection-start-line="2" selection-start-column="43" selection-end-line="2" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/filter-services.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/issues/issues-services.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="22" column="49" selection-start-line="22" selection-start-column="49" selection-end-line="22" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projects/projects-services.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="278">
+          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/issues/issues.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="103" column="4" selection-start-line="103" selection-start-column="4" selection-end-line="103" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/parser-directive.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="35" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/formatter-directive.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="59" selection-start-line="9" selection-start-column="59" selection-end-line="9" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/labels/labels.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="46" selection-start-line="7" selection-start-column="46" selection-end-line="7" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projects/projects.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="767">
+          <caret line="165" column="13" selection-start-line="165" selection-start-column="13" selection-end-line="165" selection-end-column="13" />
+          <folding>
+            <element signature="e#368#1212#0" expanded="false" />
+            <element signature="e#2418#3206#0" expanded="false" />
+            <element signature="e#3008#3191#0" expanded="false" />
+            <element signature="e#3257#3446#0" expanded="false" />
+            <element signature="e#3350#3431#0" expanded="false" />
+            <element signature="e#3498#4048#0" expanded="false" />
+            <element signature="e#3622#4033#0" expanded="false" />
+            <element signature="e#4316#5457#0" expanded="false" />
+            <element signature="e#4437#4500#0" expanded="false" />
+            <element signature="e#4564#4790#0" expanded="false" />
+            <element signature="e#4855#4935#0" expanded="false" />
+            <element signature="e#5002#5442#0" expanded="false" />
+            <element signature="e#5495#5642#0" expanded="false" />
+            <element signature="e#5682#6094#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/home/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="10" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/home/home.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="67" selection-start-line="11" selection-start-column="67" selection-end-line="11" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/navbar/navbar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="14" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="74" column="39" selection-start-line="74" selection-start-column="39" selection-end-line="74" selection-end-column="39" />
+          <folding>
+            <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <marker date="1461156028627" expanded="true" signature="545:3974" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projects/project-by-id.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="98" selection-start-line="0" selection-start-column="51" selection-end-line="0" selection-end-column="98" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projects/add-project.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="70" selection-start-line="7" selection-start-column="70" selection-end-line="7" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projects/add-issue.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="39" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projects/edit-project.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="18" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/account/change-password.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="36" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/account/register-login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="74" selection-start-line="16" selection-start-column="74" selection-end-line="16" selection-end-column="74" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/issues/edit-issue.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="129" selection-start-line="0" selection-start-column="129" selection-end-line="0" selection-end-column="129" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/issues/issue-by-id.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="45" column="59" selection-start-line="45" selection-start-column="59" selection-end-line="45" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projects/list-all-projects.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="41" selection-start-line="8" selection-start-column="41" selection-end-line="8" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/styles/app.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="61">
+          <caret line="94" column="19" selection-start-line="94" selection-start-column="19" selection-end-line="94" selection-end-column="19" />
+          <folding>
+            <marker date="1461159016091" expanded="true" signature="2734:2940" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/delay/delay.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboard/dashboard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="47" selection-start-line="13" selection-start-column="47" selection-end-line="13" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/account/account-services.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/account/logout-directive.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/account/account.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="30" column="49" selection-start-line="30" selection-start-column="49" selection-end-line="30" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="31" column="58" selection-start-line="31" selection-start-column="58" selection-end-line="31" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboard/dashboard.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="6" column="29" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
