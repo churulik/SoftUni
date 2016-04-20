@@ -1,4 +1,4 @@
-<div ng-init="initEditProject()">
+<div ng-init="initEditProject()" ng-controller="DelayController" ng-hide="delay" class="delay">
     <form name="editProjectForm" class="form-horizontal"  ng-if="isProjectLeader || isAdmin">
         <div class="form-group">
             <div class="col-md-offset-2 col-md-9">
@@ -37,9 +37,12 @@
             </div>
         </div>
         <div class="form-group" ng-if="isAdmin">
-            <label for="leadId" class="control-label col-md-2">Lead Id</label>
+            <label for="leadId" class="control-label col-md-2">Leader</label>
             <div class="col-md-9">
-                <input type="text" ng-model="project.Lead.Id" id="leadId" class="form-control" required="required">
+                <select ng-model="project.Lead.Id" id="leadId" class="form-control">
+                    <option value="">-- Select Project Leader --</option>
+                    <option ng-repeat="user in users" value="{{user.Id}}">{{user.Username}}</option>
+                </select>
             </div>
         </div>
         <div class="form-group">

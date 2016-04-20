@@ -24707,7 +24707,7 @@ var ngControllerDirective = [function() {
           });
 
           // For now, we only test on Chrome,
-          // as Safari does not load the page with Protractor's injected scripts,
+          delay
           // and Firefox webdriver always disables content security policy (#6358)
           if (browser.params.browser !== 'chrome') {
             return;
@@ -25476,11 +25476,11 @@ var ngIfDirective = ['$animate', '$compile', function($animate, $compile) {
       var templateSelect = element(by.model('template'));
       var includeElem = element(by.css('[ng-include]'));
 
-      it('should load template1.html', function() {
+      it(delay, function() {
         expect(includeElem.getText()).toMatch(/Content of template1.html/);
       });
 
-      it('should load template2.html', function() {
+      it(delay, function() {
         if (browser.params.browser == 'firefox') {
           // Firefox can't handle using selects
           // See https://github.com/angular/protractor/issues/480

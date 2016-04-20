@@ -5,10 +5,10 @@ angular
         'ngAnimate',
         'ngRoute',
         'ngTagsInput',
-        'angular-loading-bar',
         'issueTracker.accordion',
         'issueTracker.account',
         'issueTracker.dashboard',
+        'issueTracker.delay',
         'issueTracker.home',
         'issueTracker.issues',
         'issueTracker.labels',
@@ -19,9 +19,8 @@ angular
     
     .constant('BASE_URL', 'http://softuni-issue-tracker.azurewebsites.net/')
     
-    .config(['$routeProvider', 'cfpLoadingBarProvider', function ($routeProvider, cfpLoadingBarProvider) {
+    .config(['$routeProvider', function ($routeProvider) {
         $routeProvider.otherwise({redirectTo: '/'});
-        cfpLoadingBarProvider.includeSpinner = false;
     }])
     
     .run(['$rootScope', '$location', 'accountServices', 'notifyServices',

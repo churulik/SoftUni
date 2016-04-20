@@ -1,4 +1,4 @@
-<div ng-init="initIssueById()" class="row">
+<div ng-init="initIssueById()" ng-controller="DelayController" ng-hide="delay" class="row delay">
     <div class="col-md-12">
         <h3>Issue
             <span ng-if="isProjectLeader || isAdmin">
@@ -52,8 +52,6 @@
             </p>
         </div>
     </div>
-</div>
-<div class="row">
     <div class="col-md-10" ng-if="isAssignee || isProjectLeader || isAdmin">
         <h4>Leave a comment:</h4>
         <form name="issueCommentsForm">
@@ -69,8 +67,6 @@
             </div>
         </form>
     </div>
-</div>
-<div class="row">
     <div class="col-md-10" ng-if="comments.length > 0">
         <h4>Comments:</h4>
         <div ng-repeat="comment in comments">

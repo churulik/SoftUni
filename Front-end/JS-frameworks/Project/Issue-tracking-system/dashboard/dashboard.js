@@ -2,8 +2,8 @@
 
 angular
     .module('issueTracker.dashboard', [])
-    .controller('DashboardController', ['$scope', 'accountServices', 'issuesServices', 'projectsServices',
-        function ($scope, accountServices, issuesServices, projectsServices) {
+    .controller('DashboardController', ['$scope', 'accountServices', 'issuesServices', 'projectsServices', 'cfpLoadingBar', '$timeout',
+        function ($scope, accountServices, issuesServices, projectsServices, cfpLoadingBar, $timeout) {
             const itemsPerPage = 5;
             $scope.accountServices = accountServices;
             $scope.issuesParams = {

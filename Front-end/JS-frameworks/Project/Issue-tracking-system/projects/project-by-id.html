@@ -1,4 +1,4 @@
-<div ng-init="initProjectById()" class="row">
+<div ng-init="initProjectById()" class="row delay" ng-controller="DelayController" ng-hide="delay">
     <div class="col-md-12">
         <h3>Project
             <span ng-if="isProjectLeader || isAdmin">
@@ -6,8 +6,8 @@
             </span>
         </h3>
     </div>
+    <!-- Project -->
     <div class="col-md-12">
-        <!-- Project Info -->
         <p><span class="bold">Name: </span>{{project.Name}}</p>
         <p><span class="bold">Key: </span>{{project.ProjectKey}}</p>
         <p><span class="bold">Description: </span>{{project.Description}}</p>
@@ -27,6 +27,7 @@
             </span>
         </p>
     </div>
+    <!-- Issues -->
     <div class="col-md-12">
         <h3 class="inline-block">Project Issues</h3>
          <!-- Modal -->

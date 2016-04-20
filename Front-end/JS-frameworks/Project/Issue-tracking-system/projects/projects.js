@@ -91,6 +91,7 @@ angular
 
             $scope.initEditProject = function () {
                 getProjectById();
+                getAllUsers();
 
                 $scope.editProject = function (project) {
                     var projectData = {
