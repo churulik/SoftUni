@@ -97,3 +97,13 @@
 .loading-text.ng-hide-remove.ng-hide-remove-active {
     opacity: 1;
 }
+
+a {
+    outline: none;
+    -webkit-appearance: none;
+}
+
+select:-moz-focusring {
+color: transparent;
+text-shadow: 0 0 0 #000;
+}
