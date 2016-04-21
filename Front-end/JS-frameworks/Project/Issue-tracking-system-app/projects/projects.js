@@ -135,9 +135,9 @@ angular
                 };
 
                 $scope.filterIssuesByStatus = function (status) {
-                    function noFilter(filterObj) {
-                        for (var status in filterObj) {
-                            if (filterObj[status]) {
+                    function noFilter(statusesObj) {
+                        for (var status in statusesObj) {
+                            if (statusesObj[status]) {
                                 return false;
                             }
                         }
