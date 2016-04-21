@@ -1,15 +1,12 @@
 <div class="row delay" ng-controller="DelayController" ng-hide="delay">
     <div class="col-md-12">
-        <h2>Dashboard</h2>
-    </div>
-    <div class="col-md-12">
         <h3>Assigned Issues</h3>
         <table class="table">
             <thead>
             <tr>
-                <th>Issues</th>
-                <th>Description</th>
-                <th>Due Date</th>
+                <th><span class="glyphicon glyphicon-edit"></span> Issues</th>
+                <th><span class="glyphicon glyphicon-file"></span> Description</th>
+                <th><span class="glyphicon glyphicon-calendar"></span> Due Date</th>
             </tr>
             </thead>
             <tbody ng-repeat="issue in myIssues.Issues">
