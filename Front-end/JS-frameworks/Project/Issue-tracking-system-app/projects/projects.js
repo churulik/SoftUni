@@ -61,19 +61,26 @@ angular
             $scope.statusStoppedProgress = false;
 
             $scope.initAddIssue = function () {
-                getAllUsers();
-                
-                datePickerServices.datePicker($scope);
+                projectsServices.getProjectById(projectId).then(function (project) {
+                    if (project.Id == projectId && project.Lead.Username !== currentUser && !$scope.isAdmin) {
+                        return $location.path('/projects/' + projectId);
+                    }
 
-                projectsServices.getAllProjects().then(function (projects) {
-                    $scope.availableProjects = projects.filter(function (project) {
-                        if (!$scope.isAdmin) {
-                            return project.Lead.Username === currentUser;
-                        } else {
-                            return project;
-                        }
+                    datePickerServices.datePicker($scope);
+
+                    getAllUsers();
+
+                    projectsServices.getAllProjects().then(function (projects) {
+                        $scope.availableProjects = projects.filter(function (project) {
+                            if (!$scope.isAdmin) {
+                                return project.Lead.Username === currentUser;
+                            } else {
+                                return project;
+                            }
+                        });
                     });
-                });
+                }, redirectIfProjectDoesNotExist);
+
 
                 $scope.addIssue = function (issueData, project, date) {
                     issueData['ProjectId'] = project.Id;
@@ -91,8 +98,16 @@ angular
             };
 
             $scope.initEditProject = function () {
-                getProjectById();
-                getAllUsers();
+                projectsServices.getProjectById(projectId).then(function (project) {
+                    if (project.Id == projectId && project.Lead.Username !== currentUser && !$scope.isAdmin) {
+                        return $location.path('/projects/' + projectId);
+                    }
+                    
+                    $scope.project = project;
+                    getAllUsers();
+
+                }, redirectIfProjectDoesNotExist);
+
 
                 $scope.editProject = function (project) {
                     var projectData = {
@@ -114,7 +129,14 @@ angular
             };
 
             $scope.initProjectById = function () {
-                getProjectById();
+                projectsServices.getProjectById(projectId).then(function (project) {
+                    if (project.Id == projectId && project.Lead.Username !== currentUser && !$scope.isAdmin) {
+                        $location.path('/projects/' + projectId);
+                    }
+                    $scope.isProjectLeader = currentUser === project.Lead.Username;
+                    $scope.project = project;
+
+                }, redirectIfProjectDoesNotExist);
 
                 projectsServices.getProjectIssues(projectId).then(function (issues) {
                     $scope.issues = issues;
@@ -158,15 +180,8 @@ angular
                 });
             }
 
-            function getProjectById() {
-                projectsServices.getProjectById(projectId).then(function (project) {
-
-                    $scope.isProjectLeader = currentUser === project.Lead.Username;
-                    $scope.project = project
-
-                }, function () {
-                    $location.path('/');
-                    notifyServices.showError('A project with this id does not exist');
-                });
+            function redirectIfProjectDoesNotExist() {
+                $location.path('/');
+                notifyServices.showError('A project with this id does not exist');
             }
         }]);

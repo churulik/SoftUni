@@ -29,11 +29,6 @@ angular
             $scope.isAdmin = accountServices.isAdministrator();
             $scope.issueId = issueId;
 
-            $scope.test = {
-                id: 1
-            };
-
-            $scope.testArray = [{id: 1, name: 'n1'}, {id: 2, name: 'n2'}];
             $scope.initIssueById = function () {
                 issuesServices.getIssueById(issueId).then(function (issueData) {
                     $scope.issue = issueData;
@@ -47,7 +42,7 @@ angular
                     issuesServices.viewComments(issueId).then(function viewCommentsSuccess(comments) {
                         $scope.comments = comments;
                     });
-                }, issueError);
+                }, redirectIfIssueDoesNotExist);
 
                 $scope.addIssueComment = function (comment) {
                     issuesServices.addComment(comment, issueId);
@@ -59,24 +54,23 @@ angular
             };
 
             $scope.initEditIssue = function () {
-                accountServices.getAllUsers().then(function (users) {
-                    $scope.users = users;
-                });
-
                 issuesServices.getIssueById(issueId).then(function (issueData) {
                     $scope.issue = issueData;
                     datePickerServices.datePicker($scope, issueData.DueDate);
 
                     projectsServices.getProjectById(issueData.Project.Id).then(function (project) {
+                        //Redirect if user tries to edit issue and is not project lead
+                        if (accountServices.getCurrentUser() !== project.Lead.Username && !$scope.isAdmin) {
+                            return $location.path('/issues/' + issueId);
+                        }
                         $scope.isProjectLeader = accountServices.getCurrentUser() === project.Lead.Username;
                         $scope.project = project;
 
-                        //Redirect if user tries to edit issue and is not project lead
-                        if (!$scope.isProjectLeader && !$scope.isAdmin) {
-                            $location.path('/');
-                        }
+                        accountServices.getAllUsers().then(function (users) {
+                            $scope.users = users;
+                        });
                     });
-                }, issueError);
+                }, redirectIfIssueDoesNotExist);
 
                 $scope.editIssue = function (issueDate, date) {
                     var editIssueDate = {
@@ -92,7 +86,7 @@ angular
                 };
             };
 
-            function issueError() {
+            function redirectIfIssueDoesNotExist() {
                 $location.path('/');
                 notifyServices.showError('An issue with this id does not exist');
             }

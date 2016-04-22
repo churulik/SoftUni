@@ -6,7 +6,7 @@ angular
             return {
                 restrict: 'A',
                 link: function () {
-                    notifyServices.showInfo('See you later ' + sessionStorage['username'].split('@')[0] + '.');
+                    notifyServices.showInfo('See you later ' + sessionStorage['username'].split('@')[0]);
                     sessionStorage.clear();
                     $location.path('/');
                 }

@@ -34,7 +34,7 @@ angular
 
 
                     accountServices.getUserInfo().then(function (data) {
-                        notifyServices.showInfo('Welcome back ' + data.Username.split('@')[0] + '.');
+                        notifyServices.showInfo('Welcome back ' + data.Username.split('@')[0]);
                         $route.reload();
                     });
                 }, function (error) {

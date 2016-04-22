@@ -1,6 +1,7 @@
 'use strict';
 
-angular.module('issueTracker.filterByDateService', [])
+angular
+    .module('issueTracker.filterByDateService', [])
     .factory('filterByDateService', function () {
         function filter($scope, day) {
             var dateNow = new Date(),
