@@ -17,7 +17,7 @@ angular.module('issueTracker.notifyServices', [])
 
             function showError(message, serverError) {
                 var errors = [];
-                if (serverError ) {
+                if (serverError) {
                     if (serverError.data.Message) {
                         errors.push(serverError.data.Message)
                     }
