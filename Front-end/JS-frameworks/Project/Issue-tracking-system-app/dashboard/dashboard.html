@@ -20,6 +20,7 @@
         </table>
         <uib-pagination boundary-links="true" total-items="totalIssuesItems" ng-model="issuesParams.pageNumber"
                         class="pagination-sm" items-per-page="issuesParams.itemsPerPage" ng-change="reloadIssues()"
+                        boundary-link-numbers="true" rotate="false" max-size="5"
                         previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;">
         </uib-pagination>
     </div>
