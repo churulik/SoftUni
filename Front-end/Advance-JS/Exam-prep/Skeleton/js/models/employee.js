@@ -1,6 +1,7 @@
 var app = app || {};
 
 (function (eventSystem) {
+    console.log(eventSystem);
     function Employee(name, workHours) {
         this.setName(name);
         this.setWorkhours(workHours);
